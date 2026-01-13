@@ -66,11 +66,17 @@ const Footer = () => {
                         Quick Links
                     </h3>
                     <ul className="space-y-4 text-gray-600">
-                        <li className="hover:text-gray-800 cursor-pointer">About</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Services</li>
+                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("choose")?.scrollIntoView({ behavior: "smooth" })}>
+                            Choose
+                        </p>
+                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
+                            Services
+                        </p>
                         <li className="hover:text-gray-800 cursor-pointer">Store</li>
                         <li className="hover:text-gray-800 cursor-pointer">Pricing</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Contact</li>
+                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                            Contact
+                        </p>
                     </ul>
                 </div>
 

@@ -12,7 +12,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="bg-white py-10 px-4 overflow-hidden">
+        <section id="contact" className="bg-white py-10 px-4 overflow-hidden">
             {/* Header */}
             <div className="text-center max-w-5xl mx-auto mb-12">
                 <p className="uppercase text-[#C6E589] font-medium tracking-widest text-xs mb-2">

@@ -192,7 +192,7 @@ const FeaturedPets = () => {
     const gapCorrection = visibleCards === 1 ? 2 : 0.666;
 
     return (
-        <div className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
+        <div id='services' className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
             <div className="text-center mb-10 max-w-5xl">
                 <p className="uppercase text-[#C6E589] font-medium tracking-widest pb-4 text-sm">Available Poodles</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-[#333333] pb-6 leading-tight">

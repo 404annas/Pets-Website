@@ -4,14 +4,14 @@ import intro3 from "../assets/intro3.png"
 
 const Intro = () => {
     return (
-        <section className="bg-white flex flex-col items-center
+        <section id="choose" className="bg-white flex flex-col items-center
             py-10
             px-4 sm:px-6 lg:px-10">
 
             {/* Header */}
             <div className="text-center mb-12 sm:mb-16">
                 <span className="text-[#C6E589] uppercase font-medium tracking-wide text-sm sm:text-base">
-                    Intro
+                    Choose
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#8ECC14] mt-2">
                     Why Choose Our Poodles
