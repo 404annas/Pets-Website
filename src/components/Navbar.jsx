@@ -36,13 +36,14 @@ const Navbar = () => {
             {/* NAVBAR */}
             <nav className="flex items-center justify-between px-6 lg:px-10 py-4 bg-white relative z-50">
                 {/* Logo */}
-                <img
+                {/* <img
                     loading="lazy"
                     className="w-28 lg:w-32 cursor-pointer"
                     src={logo}
                     alt="Logo"
                     onClick={() => handleScroll("home")}
-                />
+                /> */}
+                <h1 className="text-[#8ECC14] font-bold text-xl font-serif sm:text-2xl md:text-3xl" onClick={() => handleScroll("home")}>Poodles Place.</h1>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-10 font-medium">
