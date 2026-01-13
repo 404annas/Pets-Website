@@ -16,7 +16,7 @@ const Navbar = () => {
         return () => (document.body.style.overflow = "auto");
     }, [open]);
 
-    const menuItems = ["Home", "About", "Services", "Store", "Pricing"];
+    const menuItems = ["Home", "About", "Services", "Store", "Pricing", "Contact"];
 
     return (
         <>
@@ -26,14 +26,14 @@ const Navbar = () => {
                 <img loading="lazy" className="w-28 lg:w-32" src={logo} alt="Logo" />
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-6 font-medium">
+                <div className="hidden lg:flex items-center gap-10 font-medium">
                     {menuItems.map((item, idx) => (
                         <p
                             key={item}
-                            className={`relative cursor-pointer ${idx === 0 ? "text-[#46425E]" : "text-gray-800"
+                            className={`relative cursor-pointer ${idx === 0 ? "text-[#8ECC14]" : "text-gray-800"
                                 }
-                after:absolute after:left-0 after:-bottom-1
-                after:h-[2px] after:w-0 after:bg-[#46425E]
+                after:absolute after:left-0 after:-bottom-0.5
+                after:h-[2px] after:w-0 after:bg-[#8ECC14] hover:text-[#8ECC14] transition-all duration-300
                 after:transition-all after:duration-300
                 hover:after:w-full`}
                         >
@@ -43,17 +43,17 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Button */}
-                <div className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#DCD7F8] hover:bg-[#c9c3e9] transition-all px-6 py-3 rounded-full">
-                    <FaWhatsapp className="text-green-600" size={22} />
-                    <span className="text-[#46425E]">800-234-000</span>
+                <div className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#C6E589] hover:bg-[#b8da74] transition-all px-6 py-3 rounded-full">
+                    <FaWhatsapp className="text-green-700" size={22} />
+                    <span className="text-gray-800">800-234-000</span>
                 </div>
 
                 {/* Mobile Menu Icon */}
                 <button
                     onClick={() => setOpen(true)}
-                    className="lg:hidden text-[#46425E]"
+                    className="lg:hidden text-[#46425E] cursor-pointer"
                 >
-                    <HiMenuAlt3 size={32} />
+                    <HiMenuAlt3 size={24} />
                 </button>
             </nav>
 
@@ -71,9 +71,9 @@ const Navbar = () => {
         ${open ? "translate-x-0" : "translate-x-full"}`}
             >
                 {/* Close Button */}
-                <div className="flex justify-end p-6">
-                    <button onClick={() => setOpen(false)}>
-                        <HiX size={30} />
+                <div className="flex justify-end p-6 cursor-pointer">
+                    <button onClick={() => setOpen(false)} className="cursor-pointer">
+                        <HiX size={24} />
                     </button>
                 </div>
 
@@ -89,9 +89,9 @@ const Navbar = () => {
                     ))}
 
                     {/* Button */}
-                    <div className="mt-6 flex items-center gap-3 bg-[#DCD7F8] px-6 py-4 rounded-full cursor-pointer w-fit">
-                        <FaWhatsapp className="text-green-600" size={22} />
-                        <span className="text-[#46425E] font-semibold">
+                    <div className="mt-6 flex items-center gap-3 bg-[#C6E589] px-6 py-4 rounded-full cursor-pointer w-fit">
+                        <FaWhatsapp className="text-green-700" size={22} />
+                        <span className="text-gray-800 font-semibold">
                             800-234-000
                         </span>
                     </div>

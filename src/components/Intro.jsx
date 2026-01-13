@@ -10,10 +10,10 @@ const Intro = () => {
 
             {/* Header */}
             <div className="text-center mb-12 sm:mb-16">
-                <span className="text-gray-400 uppercase font-medium tracking-wide text-sm sm:text-base">
+                <span className="text-[#C6E589] uppercase font-medium tracking-wide text-sm sm:text-base">
                     Intro
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#3F3B57] mt-2">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#8ECC14] mt-2">
                     Get to know us more
                 </h2>
             </div>
@@ -38,7 +38,7 @@ const Intro = () => {
                         />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[#3F3B57] mb-3">
+                    <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
                         Pet Experts
                     </h3>
 
@@ -48,7 +48,7 @@ const Intro = () => {
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#FFD278]
                         text-[#FFD278] font-bold hover:bg-[#FFD278] hover:text-white
-                        transition-all duration-300">
+                        transition-all duration-300 cursor-pointer">
                         Read More
                     </button>
                 </div>
@@ -68,7 +68,7 @@ const Intro = () => {
                         />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[#3F3B57] mb-3">
+                    <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
                         Vet Services
                     </h3>
 
@@ -78,7 +78,7 @@ const Intro = () => {
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#4DAFFF]
                         text-[#4DAFFF] font-bold hover:bg-[#4DAFFF] hover:text-white
-                        transition-all duration-300">
+                        transition-all duration-300 cursor-pointer">
                         Read More
                     </button>
                 </div>
@@ -98,7 +98,7 @@ const Intro = () => {
                         />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[#3F3B57] mb-3">
+                    <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
                         Contact Us
                     </h3>
 
@@ -108,7 +108,7 @@ const Intro = () => {
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#E5B5C1]
                         text-[#E5B5C1] font-bold hover:bg-[#E5B5C1] hover:text-white
-                        transition-all duration-300">
+                        transition-all duration-300 cursor-pointer">
                         Read More
                     </button>
                 </div>
