@@ -11,6 +11,7 @@ import {
     Activity,
     Thermometer
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 // Import your assets here
 import dog1 from "../assets/dog1.avif";
@@ -91,6 +92,7 @@ const petData = [
 
 const PetCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div
@@ -104,7 +106,10 @@ const PetCard = ({ pet }) => {
                 transition={{ type: "spring", stiffness: 150, damping: 20, mass: 1 }}
             >
                 {/* FRONT SIDE */}
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]">
+                <div
+                    className={`absolute inset-0 w-full h-full [backface-visibility:hidden] 
+                    ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`} // Fix: Disable clicks when flipped
+                >
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
                         <img
                             loading='lazy'
@@ -123,11 +128,15 @@ const PetCard = ({ pet }) => {
                 </div>
 
                 {/* BACK SIDE */}
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-8 overflow-hidden">
+                <div
+                    className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] 
+                    ${isFlipped ? "pointer-events-auto" : "pointer-events-none"}`} // Fix: Only enable clicks when flipped
+                >
+                    <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-8 overflow-hidden relative">
                         <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white">
                             <RotateCcw size={24} />
                         </div>
+
                         <h2 className="text-3xl font-bold text-[#8ECC14] mt-4">{pet.name}</h2>
                         <p className="text-xs tracking-widest text-gray-500 uppercase mt-1 mb-6">{pet.breed}</p>
 
@@ -152,9 +161,14 @@ const PetCard = ({ pet }) => {
                                 </div>
                             ))}
                         </div>
+
+                        {/* This button will now work perfectly */}
                         <button
-                            onClick={(e) => e.stopPropagation()}
-                            className="bg-[#C6E589] text-gray-800 font-bold px-10 py-3 rounded-2xl hover:scale-103 transition-all mt-auto mb-4 cursor-pointer duration-300"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/pet/${pet.id}`);
+                            }}
+                            className="relative z-[100] bg-[#C6E589] text-gray-800 font-bold px-10 py-3 rounded-2xl hover:scale-103 transition-all mt-auto mb-4 cursor-pointer duration-300"
                         >
                             More Info
                         </button>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <h1 className="text-[#8ECC14] font-bold cursor-pointer text-xl font-serif sm:text-2xl md:text-3xl" onClick={() => handleScroll("home")}>Poodles Place.</h1>
+                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-xl font-serif sm:text-2xl md:text-3xl" >Poodles Place.</Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-10 font-medium">
