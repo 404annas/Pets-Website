@@ -187,7 +187,7 @@ const FeaturedPets = () => {
             {/* Header section remains same */}
             <div className="text-center mb-10 max-w-5xl">
                 <p className="uppercase text-gray-400 font-medium tracking-widest pb-4 text-sm">Our Charming Residents</p>
-                <h1 className="text-4xl font-bold text-[#333333] pb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl font-bold text-[#333333] pb-6 leading-tight">
                     <span className="text-[#3F3B57]">Featured Pets </span>Looking for a Home
                 </h1>
                 <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
@@ -195,7 +195,7 @@ const FeaturedPets = () => {
                     Temporibus porro veritatis reprehenderit error sit quod maxime.
                 </p>
 
-                <div className="flex items-center justify-center gap-4 mt-10">
+                <div className="flex md:flex-row flex-col items-center justify-center gap-4 mt-10">
                     <button className="font-bold bg-[#DCD7F8] text-[#3F3B57] hover:bg-[#c2b8f7] px-10 py-4 cursor-pointer rounded-full transition-all duration-300 shadow-sm">
                         Show Dogs
                     </button>
