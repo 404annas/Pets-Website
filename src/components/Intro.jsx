@@ -1,6 +1,9 @@
 import intro1 from "../assets/intro1.png"
 import intro2 from "../assets/intro2.png"
 import intro3 from "../assets/intro3.png"
+import service1 from "../assets/service1.webp"
+import service2 from "../assets/service2.webp"
+import service3 from "../assets/service3.webp"
 
 const Intro = () => {
     return (
@@ -32,8 +35,8 @@ const Intro = () => {
                     >
                         <img
                             loading="lazy"
-                            className="w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 object-contain"
-                            src={intro1}
+                            className="w-22 h-22 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
+                            src={service2}
                             alt="Pet Experts"
                         />
                     </div>
@@ -63,8 +66,8 @@ const Intro = () => {
                     >
                         <img
                             loading="lazy"
-                            className="w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 object-contain"
-                            src={intro2}
+                            className="w-22 h-22 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
+                            src={service1}
                             alt="Vet Services"
                         />
                     </div>
@@ -94,8 +97,8 @@ const Intro = () => {
                     >
                         <img
                             loading="lazy"
-                            className="w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 object-contain"
-                            src={intro3}
+                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain"
+                            src={service3}
                             alt="Contact Us"
                         />
                     </div>

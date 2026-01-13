@@ -56,13 +56,12 @@ const Hero = () => {
                             male & female, toy, miniature and standard sizes.
                             Raised with love and ready for their new homes.
                         </p>
-
                         {/* CTA */}
                         <div className="group flex items-center justify-between bg-[#8ECC14]
                             hover:bg-[#7db311] transition-colors duration-500
                             p-1.5 pl-8 px-2 rounded-full w-fit cursor-pointer mt-4 mx-auto md:mx-0">
 
-                            <span className="text-gray-800 font-semibold mr-4">
+                            <span onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="text-gray-800 font-semibold mr-4">
                                 View Available Poodles
                             </span>
 
