@@ -7,7 +7,7 @@ import manImage from "../assets/manIcon.avif"
 const Hero = () => {
     return (
         <div className="relative bg-[#DCD7F8] min-h-screen w-full flex items-center overflow-hidden
-            px-4 sm:px-6 md:px-10 lg:px-20 py-10">
+            px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-0">
 
             {/* Background Decoration */}
             <img
