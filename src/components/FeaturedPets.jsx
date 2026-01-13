@@ -84,8 +84,11 @@ const PetCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     return (
-        // Added flex-shrink-0 and calc width to fit exactly 3 per slide on desktop
-        <div className="relative h-[550px] pb-10 w-full md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px]">
+        // Added onClick here and cursor-pointer to the main wrapper
+        <div
+            onClick={() => setIsFlipped(!isFlipped)}
+            className="relative h-[550px] pb-10 w-full md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px] cursor-pointer"
+        >
             <motion.div
                 className="relative w-full h-full [transform-style:preserve-3d]"
                 initial={false}
@@ -94,10 +97,7 @@ const PetCard = ({ pet }) => {
             >
                 {/* FRONT SIDE */}
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]">
-                    {/* 1. Added 'group' class here to detect hover on the whole front face */}
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
-
-                        {/* 2. Added transition and group-hover scaling to the image */}
                         <img
                             loading='lazy'
                             src={pet.image}
@@ -105,13 +105,10 @@ const PetCard = ({ pet }) => {
                             className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                         />
 
-                        {/* Rotate Icon Overlay */}
-                        <button
-                            onClick={() => setIsFlipped(true)}
-                            className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full shadow-md text-white hover:scale-110 transition-transform duration-300 cursor-pointer z-10"
-                        >
+                        {/* Rotate Icon (Now just a visual cue) */}
+                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full shadow-md text-white hover:scale-110 transition-transform duration-300 z-10">
                             <RotateCcw size={24} />
-                        </button>
+                        </div>
 
                         {/* Name Plate */}
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white py-4 rounded-3xl text-center shadow-sm z-10">
@@ -124,14 +121,15 @@ const PetCard = ({ pet }) => {
                 {/* BACK SIDE */}
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-8 overflow-hidden">
-                        <button
-                            onClick={() => setIsFlipped(false)}
-                            className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
-                        >
+
+                        {/* Rotate Icon (Visual cue) */}
+                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white hover:scale-110 transition-transform duration-300">
                             <RotateCcw size={24} />
-                        </button>
+                        </div>
+
                         <h2 className="text-3xl font-bold text-[#8ECC14] mt-4">{pet.name}</h2>
                         <p className="text-xs tracking-widest text-gray-500 uppercase mt-1 mb-6">{pet.breed}</p>
+
                         <div className="flex items-center gap-2 border border-[#B2D33C] px-6 py-2 rounded-full text-gray-700 font-medium mb-6 text-sm">
                             <span>{pet.weight}</span>
                             <span className="text-[#B2D33C]">•</span>
@@ -139,7 +137,9 @@ const PetCard = ({ pet }) => {
                             <span className="text-[#B2D33C]">•</span>
                             <span>{pet.age}</span>
                         </div>
+
                         <h3 className="font-serif text-xl font-bold mb-6 text-[#8ECC14]">Health Info:</h3>
+
                         <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-10">
                             {pet.health.map((item) => (
                                 <div key={item.id} className="relative group flex flex-col items-center">
@@ -155,7 +155,12 @@ const PetCard = ({ pet }) => {
                                 </div>
                             ))}
                         </div>
-                        <button className="bg-[#C6E589] text-gray-800 font-bold px-10 py-3 rounded-2xl hover:scale-103 transition-all mt-auto mb-4 cursor-pointer duration-300">
+
+                        {/* StopPropagation ensures clicking this button doesn't trigger a flip if you add a link here */}
+                        <button
+                            onClick={(e) => e.stopPropagation()}
+                            className="bg-[#C6E589] text-gray-800 font-bold px-10 py-3 rounded-2xl hover:scale-103 transition-all mt-auto mb-4 cursor-pointer duration-300"
+                        >
                             More Info
                         </button>
                     </div>
