@@ -14,7 +14,7 @@ const Intro = () => {
                     Intro
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#8ECC14] mt-2">
-                    Get to know us more
+                    Why Choose Our Poodles
                 </h2>
             </div>
 
@@ -39,11 +39,12 @@ const Intro = () => {
                     </div>
 
                     <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
-                        Pet Experts
+                        Expert Breeders
                     </h3>
 
                     <p className="text-gray-500 leading-relaxed mb-6 px-4 max-w-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, delectus!
+                        Our Poodles are raised by experienced breeders with a strong focus
+                        on health, temperament, and proper care.
                     </p>
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#FFD278]
@@ -69,17 +70,18 @@ const Intro = () => {
                     </div>
 
                     <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
-                        Vet Services
+                        Health & Vet Checked
                     </h3>
 
                     <p className="text-gray-500 leading-relaxed mb-6 px-4 max-w-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, delectus!
+                        Every Poodle is vet-checked, vaccinated, and monitored for
+                        excellent health before joining their new family.
                     </p>
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#4DAFFF]
                         text-[#4DAFFF] font-bold hover:bg-[#4DAFFF] hover:text-white
                         transition-all duration-300 cursor-pointer">
-                        Read More
+                        View Details
                     </button>
                 </div>
 
@@ -99,17 +101,18 @@ const Intro = () => {
                     </div>
 
                     <h3 className="text-2xl font-bold text-[#8ECC14] mb-3">
-                        Contact Us
+                        Easy Adoption Process
                     </h3>
 
                     <p className="text-gray-500 leading-relaxed mb-6 px-4 max-w-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, delectus!
+                        We make it simple to reserve your Poodle by filling, ask questions,
+                        and arrange delivery anywhere in the USA.
                     </p>
 
                     <button className="px-6 py-2 rounded-full border-2 border-[#E5B5C1]
                         text-[#E5B5C1] font-bold hover:bg-[#E5B5C1] hover:text-white
                         transition-all duration-300 cursor-pointer">
-                        Read More
+                        Contact Us
                     </button>
                 </div>
 

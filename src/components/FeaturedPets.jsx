@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
     ChevronLeft,
@@ -21,33 +21,33 @@ import dog4 from "../assets/dog4.avif";
 const petData = [
     {
         id: 1,
-        name: "Rocky",
-        breed: "GERMAN SHEPHERD",
-        weight: "75 lbs",
-        gender: "Male",
-        age: "3 years",
-        image: dog1,
+        name: "Bella",
+        breed: "TOY POODLE",
+        weight: "6 lbs",
+        gender: "Female",
+        age: "4 months",
+        image: "https://images.unsplash.com/photo-1655964107490-4b90c428e4d0?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
         health: [
             { id: 'h1', name: "Heart", icon: Heart, active: true },
             { id: 'h2', name: "Meds", icon: Pill, active: false },
             { id: 'h3', name: "Chip", icon: Cpu, active: true },
-            { id: 'h4', name: "Vax", icon: ShieldCheck, active: false },
-            { id: 'h5', name: "Pulse", icon: Activity, active: false },
+            { id: 'h4', name: "Vax", icon: ShieldCheck, active: true },
+            { id: 'h5', name: "Pulse", icon: Activity, active: true },
             { id: 'h6', name: "Check", icon: Thermometer, active: true },
         ]
     },
     {
         id: 2,
-        name: "Sadie",
-        breed: "SHIH TZU",
-        weight: "12 lbs",
-        gender: "Female",
-        age: "5 years",
-        image: dog2,
+        name: "Max",
+        breed: "MINIATURE POODLE",
+        weight: "14 lbs",
+        gender: "Male",
+        age: "6 months",
+        image: "https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TUlOSUFUVVJFJTIwUE9PRExFfGVufDB8fDB8fHww",
         health: [
-            { id: 's1', name: "Heart", icon: Heart, active: false },
+            { id: 's1', name: "Heart", icon: Heart, active: true },
             { id: 's2', name: "Meds", icon: Pill, active: false },
-            { id: 's3', name: "Chip", icon: Cpu, active: false },
+            { id: 's3', name: "Chip", icon: Cpu, active: true },
             { id: 's4', name: "Vax", icon: ShieldCheck, active: true },
             { id: 's5', name: "Pulse", icon: Activity, active: true },
             { id: 's6', name: "Check", icon: Thermometer, active: true },
@@ -55,32 +55,32 @@ const petData = [
     },
     {
         id: 3,
-        name: "Duke",
-        breed: "BOXER",
-        weight: "70 lbs",
-        gender: "Male",
-        age: "2 years",
-        image: dog3,
+        name: "Luna",
+        breed: "STANDARD POODLE",
+        weight: "45 lbs",
+        gender: "Female",
+        age: "1 year",
+        image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U1RBTkRBUkQlMjBQT09ETEV8ZW58MHx8MHx8fDA%3D",
         health: [
             { id: 'd1', name: "Heart", icon: Heart, active: true },
-            { id: 'd2', name: "Meds", icon: Pill, active: true },
+            { id: 'd2', name: "Meds", icon: Pill, active: false },
             { id: 'd3', name: "Chip", icon: Cpu, active: true },
-            { id: 'd4', name: "Vax", icon: ShieldCheck, active: false },
-            { id: 'd5', name: "Pulse", icon: Activity, active: false },
-            { id: 'd6', name: "Check", icon: Thermometer, active: false },
+            { id: 'd4', name: "Vax", icon: ShieldCheck, active: true },
+            { id: 'd5', name: "Pulse", icon: Activity, active: true },
+            { id: 'd6', name: "Check", icon: Thermometer, active: true },
         ]
     },
     {
         id: 4,
-        name: "Max",
-        breed: "GOLDEN RETRIEVER",
-        weight: "65 lbs",
+        name: "Charlie",
+        breed: "TOY POODLE",
+        weight: "7 lbs",
         gender: "Male",
-        age: "4 years",
-        image: dog4,
+        age: "5 months",
+        image: "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VE9ZJTIwUE9PRExFfGVufDB8fDB8fHww",
         health: [
             { id: 'm1', name: "Heart", icon: Heart, active: true },
-            { id: 'm2', name: "Meds", icon: Pill, active: true },
+            { id: 'm2', name: "Meds", icon: Pill, active: false },
             { id: 'm3', name: "Chip", icon: Cpu, active: true },
             { id: 'm4', name: "Vax", icon: ShieldCheck, active: true },
             { id: 'm5', name: "Pulse", icon: Activity, active: true },
@@ -194,22 +194,23 @@ const FeaturedPets = () => {
     return (
         <div className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
             <div className="text-center mb-10 max-w-5xl">
-                <p className="uppercase text-[#C6E589] font-medium tracking-widest pb-4 text-sm">Our Charming Residents</p>
+                <p className="uppercase text-[#C6E589] font-medium tracking-widest pb-4 text-sm">Available Poodles</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-[#333333] pb-6 leading-tight">
-                    <span className="text-[#8ECC14]">Featured Pets </span>Looking for a Home
+                    <span className="text-[#8ECC14]">Healthy Poodles </span>For Loving Homes
                 </h1>
                 <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod placeat error laboriosam.
+                    Explore our carefully raised Toy, Miniature, and Standard Poodles.
+                    Vet-checked, vaccinated, and ready for families across the USA.
                 </p>
 
-                <div className="flex md:flex-row flex-col items-center justify-center gap-4 mt-10">
+                {/* <div className="flex md:flex-row flex-col items-center justify-center gap-4 mt-10">
                     <button className="font-bold bg-[#C6E589] text-gray-800 hover:bg-[#8ECC14] px-10 py-4 cursor-pointer rounded-full transition-all duration-300 shadow-sm">
                         Show Dogs
                     </button>
                     <button className="font-bold border-2 border-[#C6E589] text-gray-800 hover:bg-[#C6E589] px-10 py-3.5 cursor-pointer rounded-full transition-all duration-300">
                         Show Cats
                     </button>
-                </div>
+                </div> */}
             </div>
 
             <div className="w-full max-w-6xl overflow-hidden px-2">

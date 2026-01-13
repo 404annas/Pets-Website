@@ -45,7 +45,7 @@ const Navbar = () => {
                 {/* Desktop Button */}
                 <div className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#C6E589] hover:bg-[#b8da74] transition-all px-6 py-3 rounded-full">
                     <FaWhatsapp className="text-green-700" size={22} />
-                    <span className="text-gray-800">800-234-000</span>
+                    <span className="text-gray-800">+1 (800) 236-000</span>
                 </div>
 
                 {/* Mobile Menu Icon */}

@@ -29,7 +29,7 @@ const Hero = () => {
                 <div className="w-full md:w-1/2 flex justify-center md:justify-end border-none">
                     <img
                         src={heroMain}
-                        alt="Pet Image"
+                        alt="Poodle Image"
                         className="max-h-[60vh] md:max-h-[80vh] lg:max-h-[90vh] object-contain"
                     />
                 </div>
@@ -38,21 +38,23 @@ const Hero = () => {
                 <div className="w-full md:w-1/2 flex flex-col gap-5 text-center md:text-left border-none">
 
                     <span className="mx-auto md:mx-0 text-gray-800 bg-[#8ECC14] px-5 py-1.5 w-fit rounded-full font-semibold text-sm">
-                        Welcome
+                        Trusted Poodle Breeders
                     </span>
 
                     <h1 className="text-[#82b912] font-bold leading-[0.9]
-                        text-[52px] sm:text-[64px] md:text-[80px] lg:text-[90px]">
-                        Pet <br /> Doctor
+                        text-[52px] sm:text-[64px] md:text-[80px]">
+                        Healthy <br /> Poodles
                     </h1>
 
                     <div className="space-y-3 max-w-md mx-auto md:mx-0">
                         <p className="text-gray-800 font-medium text-lg">
-                            We love pets like you do :)
+                            Premium Poodles Available Across the USA
                         </p>
 
                         <p className="text-[#444346] font-normal leading-normal">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae odit atque quidem. Itaque, eius. Distinctio iste amet architecto quo dolores.
+                            We provide well-trained, healthy and happy Poodles including
+                            male & female, toy, miniature and standard sizes.
+                            Raised with love and ready for their new homes.
                         </p>
 
                         {/* CTA */}
@@ -61,7 +63,7 @@ const Hero = () => {
                             p-1.5 pl-8 px-2 rounded-full w-fit cursor-pointer mt-4 mx-auto md:mx-0">
 
                             <span className="text-gray-800 font-semibold mr-4">
-                                Star Here!
+                                View Available Poodles
                             </span>
 
                             <div className="bg-[#C6E589] p-3 rounded-full">
@@ -77,9 +79,9 @@ const Hero = () => {
             <div className="hidden lg:flex absolute -bottom-13 right-30 z-30 flex-col items-end gap-6 border-none">
 
                 <div className="flex items-center gap-2 text-sm">
-                    <img className="w-16 h-10 object-cover rounded-full" src={manImage} alt="Man" />
-                    <span className="text-gray-600 font-semibold">Call Us Today</span>
-                    <span className="text-gray-800 font-bold">800-236-000</span>
+                    <img className="w-16 h-10 object-cover rounded-full" src={manImage} alt="Support" />
+                    <span className="text-gray-600 font-semibold">Call or WhatsApp</span>
+                    <span className="text-gray-800 font-bold">+1 (800) 236-000</span>
                 </div>
 
                 <div className="bg-[#8ECC14] p-4 rounded-3xl relative bottom-24 -right-20 animate-bounce">

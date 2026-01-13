@@ -16,14 +16,14 @@ const ContactUs = () => {
             {/* Header */}
             <div className="text-center max-w-5xl mx-auto mb-12">
                 <p className="uppercase text-[#C6E589] font-medium tracking-widest text-xs mb-2">
-                    Get in Touch
+                    Contact Breeder
                 </p>
                 <h1 className="font-bold text-[#333333] text-3xl sm:text-4xl">
-                    Make <span className="text-[#8ECC14]">Appointment</span>
+                    Reserve Your <span className="text-[#8ECC14]">Poodle Puppy</span>
                 </h1>
                 <p className="text-gray-500 mt-6 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-                    porro veritatis reprehenderit error sit quod maxime.
+                    Interested in a Toy, Miniature, or Standard Poodle?
+                    Contact us to check availability, pricing, and delivery across the USA.
                 </p>
             </div>
 
@@ -32,10 +32,10 @@ const ContactUs = () => {
                 <div className="w-full lg:w-1/2 border-2 border-[#8ECC14] rounded-[35px] sm:rounded-[45px] p-5 sm:p-8">
                     <div className="mb-6">
                         <p className="uppercase text-gray-400 font-medium tracking-widest text-xs mb-2">
-                            Get in Touch
+                            Inquiry Form
                         </p>
                         <h2 className="text-2xl sm:text-3xl font-bold text-[#8ECC14]">
-                            Appointment Form
+                            Poodle Reservation
                         </h2>
                     </div>
 
@@ -66,10 +66,14 @@ const ContactUs = () => {
                             </label>
                             <div className="relative mt-2">
                                 <select className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-[#8ECC14]">
-                                    <option>Select a Choice...</option>
-                                    <option>Adopt a Dog</option>
-                                    <option>Adopt a Cat</option>
-                                    <option>Volunteer</option>
+                                    <option>Select Poodle Type...</option>
+                                    <option>Toy Poodle (Male)</option>
+                                    <option>Toy Poodle (Female)</option>
+                                    <option>Miniature Poodle (Male)</option>
+                                    <option>Miniature Poodle (Female)</option>
+                                    <option>Standard Poodle (Male)</option>
+                                    <option>Standard Poodle (Female)</option>
+                                    <option>Any Available Poodle</option>
                                 </select>
                                 <ChevronDown
                                     size={18}
@@ -90,7 +94,7 @@ const ContactUs = () => {
                         </div>
 
                         <button className="w-full mt-4 bg-[#8ECC14] hover:bg-[#7fb612] text-white font-bold py-4 rounded-full transition-all cursor-pointer duration-300">
-                            Contact Us Now
+                            Send Inquiry
                         </button>
                     </form>
                 </div>
