@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
-    ChevronLeft, ChevronRight, RotateCcw,
-    Heart, Pill, Cpu, ShieldCheck, Activity, Thermometer
+    ChevronLeft,
+    ChevronRight,
+    RotateCcw,
+    Heart,
+    Pill,
+    Cpu,
+    ShieldCheck,
+    Activity,
+    Thermometer
 } from 'lucide-react';
-import dog1 from "../assets/dog1.avif"
-import dog2 from "../assets/dog2.avif"
-import dog3 from "../assets/dog3.avif"
-import dog4 from "../assets/dog4.avif"
+
+// Import your assets here
+import dog1 from "../assets/dog1.avif";
+import dog2 from "../assets/dog2.avif";
+import dog3 from "../assets/dog3.avif";
+import dog4 from "../assets/dog4.avif";
 
 const petData = [
     {
@@ -62,7 +71,7 @@ const petData = [
         ]
     },
     {
-        id: 4, // Changed ID to 4
+        id: 4,
         name: "Max",
         breed: "GOLDEN RETRIEVER",
         weight: "65 lbs",
@@ -84,7 +93,6 @@ const PetCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     return (
-        // Added onClick here and cursor-pointer to the main wrapper
         <div
             onClick={() => setIsFlipped(!isFlipped)}
             className="relative h-[550px] pb-10 w-full md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px] cursor-pointer"
@@ -104,13 +112,9 @@ const PetCard = ({ pet }) => {
                             alt={pet.name}
                             className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                         />
-
-                        {/* Rotate Icon (Now just a visual cue) */}
-                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full shadow-md text-white hover:scale-110 transition-transform duration-300 z-10">
+                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full shadow-md text-white z-10">
                             <RotateCcw size={24} />
                         </div>
-
-                        {/* Name Plate */}
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white py-4 rounded-3xl text-center shadow-sm z-10">
                             <h2 className="text-3xl font-bold text-[#8ECC14]">{pet.name}</h2>
                             <p className="text-xs tracking-widest text-gray-800 uppercase mt-1">{pet.breed}</p>
@@ -121,21 +125,14 @@ const PetCard = ({ pet }) => {
                 {/* BACK SIDE */}
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-8 overflow-hidden">
-
-                        {/* Rotate Icon (Visual cue) */}
-                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white hover:scale-110 transition-transform duration-300">
+                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white">
                             <RotateCcw size={24} />
                         </div>
-
                         <h2 className="text-3xl font-bold text-[#8ECC14] mt-4">{pet.name}</h2>
                         <p className="text-xs tracking-widest text-gray-500 uppercase mt-1 mb-6">{pet.breed}</p>
 
                         <div className="flex items-center gap-2 border border-[#B2D33C] px-6 py-2 rounded-full text-gray-700 font-medium mb-6 text-sm">
-                            <span>{pet.weight}</span>
-                            <span className="text-[#B2D33C]">•</span>
-                            <span>{pet.gender}</span>
-                            <span className="text-[#B2D33C]">•</span>
-                            <span>{pet.age}</span>
+                            <span>{pet.weight}</span> • <span>{pet.gender}</span> • <span>{pet.age}</span>
                         </div>
 
                         <h3 className="font-serif text-xl font-bold mb-6 text-[#8ECC14]">Health Info:</h3>
@@ -155,8 +152,6 @@ const PetCard = ({ pet }) => {
                                 </div>
                             ))}
                         </div>
-
-                        {/* StopPropagation ensures clicking this button doesn't trigger a flip if you add a link here */}
                         <button
                             onClick={(e) => e.stopPropagation()}
                             className="bg-[#C6E589] text-gray-800 font-bold px-10 py-3 rounded-2xl hover:scale-103 transition-all mt-auto mb-4 cursor-pointer duration-300"
@@ -172,24 +167,32 @@ const PetCard = ({ pet }) => {
 
 const FeaturedPets = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleCards = 3;
+    const [visibleCards, setVisibleCards] = useState(3);
 
-    // Navigation Logic
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) setVisibleCards(1);
+            else setVisibleCards(3);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const nextSlide = () => {
-        if (currentIndex < petData.length - visibleCards) {
-            setCurrentIndex(prev => prev + 1);
-        }
+        if (currentIndex < petData.length - visibleCards) setCurrentIndex(prev => prev + 1);
     };
 
     const prevSlide = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(prev => prev - 1);
-        }
+        if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
     };
 
+    // Responsive math: adjusts width + 2rem (gap-8)
+    const movePercentage = visibleCards === 1 ? 100 : 33.333;
+    const gapCorrection = visibleCards === 1 ? 2 : 0.666;
+
     return (
-        <div className="bg-white py-10 flex flex-col items-center px-4">
-            {/* Header section remains same */}
+        <div className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
             <div className="text-center mb-10 max-w-5xl">
                 <p className="uppercase text-[#C6E589] font-medium tracking-widest pb-4 text-sm">Our Charming Residents</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-[#333333] pb-6 leading-tight">
@@ -197,7 +200,6 @@ const FeaturedPets = () => {
                 </h1>
                 <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod placeat error laboriosam.
-                    Temporibus porro veritatis reprehenderit error sit quod maxime.
                 </p>
 
                 <div className="flex md:flex-row flex-col items-center justify-center gap-4 mt-10">
@@ -210,11 +212,10 @@ const FeaturedPets = () => {
                 </div>
             </div>
 
-            {/* SLIDER CONTAINER */}
             <div className="w-full max-w-6xl overflow-hidden px-2">
                 <motion.div
                     className="flex gap-8"
-                    animate={{ x: `calc(-${currentIndex * (100 / visibleCards)}% - ${currentIndex * 1.33}rem)` }}
+                    animate={{ x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
                     {petData.map(pet => (
@@ -223,9 +224,8 @@ const FeaturedPets = () => {
                 </motion.div>
             </div>
 
-            {/* Slider Controls - Only shown if more than 3 cards */}
             {petData.length > visibleCards && (
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 mt-8">
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
