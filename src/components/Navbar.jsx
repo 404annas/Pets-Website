@@ -43,7 +43,7 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <h1 className="text-[#8ECC14] font-bold text-xl font-serif sm:text-2xl md:text-3xl" onClick={() => handleScroll("home")}>Poodles Place.</h1>
+                <h1 className="text-[#8ECC14] font-bold cursor-pointer text-xl font-serif sm:text-2xl md:text-3xl" onClick={() => handleScroll("home")}>Poodles Place.</h1>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-10 font-medium">
