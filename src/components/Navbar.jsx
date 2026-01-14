@@ -15,12 +15,13 @@ const Navbar = () => {
 
     // Menu with section IDs
     const menuItems = [
-        { label: "Home", id: "home" },
-        { label: "Choose", id: "choose" },
-        { label: "Services", id: "services" },
-        { label: "Store", id: "store" },
-        { label: "Pricing", id: "pricing" },
-        { label: "Contact", id: "contact" },
+        { label: "Home", type: "scroll", id: "home" },
+        { label: "About", type: "route", path: "/about" },
+        { label: "Choose", type: "scroll", id: "choose" },
+        { label: "Services", type: "scroll", id: "services" },
+        { label: "Store", type: "scroll", id: "store" },
+        { label: "Pricing", type: "scroll", id: "pricing" },
+        { label: "Contact", type: "scroll", id: "contact" },
     ];
 
     // Scroll handler
@@ -44,25 +45,40 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-xl font-serif sm:text-2xl md:text-3xl" >Poodles Place.</Link>
+                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >Poodles Place.</Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-10 font-medium">
-                    {menuItems.map((item, idx) => (
-                        <p
-                            key={item.id}
-                            onClick={() => handleScroll(item.id)}
-                            className={`relative cursor-pointer ${idx === 0 ? "text-[#8ECC14]" : "text-gray-800"
-                                }
-                            after:absolute after:left-0 after:-bottom-0.5
-                            after:h-[2px] after:w-0 after:bg-[#8ECC14]
-                            hover:text-[#8ECC14] transition-all duration-300
-                            after:transition-all after:duration-300
-                            hover:after:w-full`}
-                        >
-                            {item.label}
-                        </p>
-                    ))}
+                    {menuItems.map((item, idx) =>
+                        item.type === "route" ? (
+                            <Link
+                                key={item.label}
+                                to={item.path}
+                                className="relative cursor-pointer text-gray-800
+            after:absolute after:left-0 after:-bottom-0.5
+            after:h-[2px] after:w-0 after:bg-[#8ECC14]
+            hover:text-[#8ECC14] transition-all duration-300
+            after:transition-all after:duration-300
+            hover:after:w-full"
+                            >
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <p
+                                key={item.label}
+                                onClick={() => handleScroll(item.id)}
+                                className={`relative cursor-pointer ${idx === 0 ? "text-[#8ECC14]" : "text-gray-800"
+                                    }
+            after:absolute after:left-0 after:-bottom-0.5
+            after:h-[2px] after:w-0 after:bg-[#8ECC14]
+            hover:text-[#8ECC14] transition-all duration-300
+            after:transition-all after:duration-300
+            hover:after:w-full`}
+                            >
+                                {item.label}
+                            </p>
+                        )
+                    )}
                 </div>
 
                 {/* Desktop Button */}
@@ -102,15 +118,26 @@ const Navbar = () => {
 
                 {/* Mobile Menu Items */}
                 <div className="flex flex-col gap-6 px-8 font-medium">
-                    {menuItems.map((item) => (
-                        <p
-                            key={item.id}
-                            onClick={() => handleScroll(item.id)}
-                            className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
-                        >
-                            {item.label}
-                        </p>
-                    ))}
+                    {menuItems.map((item) =>
+                        item.type === "route" ? (
+                            <Link
+                                key={item.label}
+                                to={item.path}
+                                onClick={() => setOpen(false)}
+                                className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
+                            >
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <p
+                                key={item.label}
+                                onClick={() => handleScroll(item.id)}
+                                className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
+                            >
+                                {item.label}
+                            </p>
+                        )
+                    )}
 
                     {/* Button */}
                     <div className="mt-6 flex items-center gap-3 bg-[#C6E589] px-6 py-4 rounded-full cursor-pointer w-fit">

@@ -15,7 +15,7 @@ export const petData = [
         image: "https://images.unsplash.com/photo-1655964107490-4b90c428e4d0?w=1000&q=80",
         health: [
             { name: "Health Check", icon: Heart, active: true },
-            { name: "Wormed", icon: Pill, active: true },
+            { name: "Wormed", icon: Pill, active: false },
             { name: "Microchip", icon: Cpu, active: true },
             { name: "Heartworm treated", icon: ShieldCheck, active: false },
             { name: "Vaccinated", icon: Activity, active: true },
@@ -37,10 +37,10 @@ export const petData = [
         health: [
             { name: "Health Check", icon: Heart, active: true },
             { name: "Wormed", icon: Pill, active: true },
-            { name: "Microchip", icon: Cpu, active: true },
+            { name: "Microchip", icon: Cpu, active: false },
             { name: "Heartworm treated", icon: ShieldCheck, active: true },
             { name: "Vaccinated", icon: Activity, active: true },
-            { name: "De-sexed", icon: Thermometer, active: true },
+            { name: "De-sexed", icon: Thermometer, active: false },
         ]
     },
     {
@@ -56,12 +56,12 @@ export const petData = [
         goodWithKids: "Yes",
         image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&q=80",
         health: [
-            { name: "Health Check", icon: Heart, active: true },
+            { name: "Health Check", icon: Heart, active: false },
             { name: "Wormed", icon: Pill, active: true },
-            { name: "Microchip", icon: Cpu, active: true },
+            { name: "Microchip", icon: Cpu, active: false },
             { name: "Heartworm treated", icon: ShieldCheck, active: true },
             { name: "Vaccinated", icon: Activity, active: true },
-            { name: "De-sexed", icon: Thermometer, active: true },
+            { name: "De-sexed", icon: Thermometer, active: false },
         ]
     },
     {
@@ -78,8 +78,8 @@ export const petData = [
         image: "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&q=80",
         health: [
             { name: "Health Check", icon: Heart, active: true },
-            { name: "Wormed", icon: Pill, active: true },
-            { name: "Microchip", icon: Cpu, active: true },
+            { name: "Wormed", icon: Pill, active: false },
+            { name: "Microchip", icon: Cpu, active: false },
             { name: "Heartworm treated", icon: ShieldCheck, active: true },
             { name: "Vaccinated", icon: Activity, active: true },
             { name: "De-sexed", icon: Thermometer, active: false },

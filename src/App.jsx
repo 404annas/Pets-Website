@@ -6,6 +6,7 @@ import FeaturedPets from './components/FeaturedPets'
 import ContactUs from './components/ContactUs'
 import Footer from './components/Footer'
 import PetDetail from './pages/PetDetail'
+import About from './pages/About';
 
 const Home = () => (
   <>
@@ -23,6 +24,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/about' element={<About />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
         <Footer />

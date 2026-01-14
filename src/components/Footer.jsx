@@ -17,7 +17,7 @@ const Footer = () => {
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
                     <div className="flex items-center gap-2 mb-2">
-                        <h2 className="text-3xl font-bold tracking-tight text-[#6fa00e]">Poodle Place</h2>
+                        <h2 className="text-3xl font-bold font-serif tracking-tight text-[#6fa00e]">Poodles Place.</h2>
                     </div>
                     <p className="text-[10px] uppercase tracking-tight text-gray-600 font-bold mb-8">
                         Premium Poodles Across the USA
@@ -56,7 +56,7 @@ const Footer = () => {
                         <li className="hover:text-gray-800 cursor-pointer">Toy Poodles</li>
                         <li className="hover:text-gray-800 cursor-pointer">Miniature Poodles</li>
                         <li className="hover:text-gray-800 cursor-pointer">Standard Poodles</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Available Puppies</li>
+                        <li className="hover:text-gray-800 cursor-pointer">Available Poodles</li>
                     </ul>
                 </div>
 
@@ -118,7 +118,7 @@ const Footer = () => {
 
             {/* Bottom Bar: Copyright & Links */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-gray-500/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
-                <p>2026 © Poodle Place | All Rights Reserved</p>
+                <p>2026 © Poodles Place | All Rights Reserved</p>
 
                 <div className="flex flex-wrap justify-center gap-6">
                     <span className="cursor-pointer">Developed by <a href="https://techxudo.com/   " target='_blank' className='text-gray-900'>Techxudo</a></span>

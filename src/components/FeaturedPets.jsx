@@ -32,9 +32,9 @@ const petData = [
             { id: 'h1', name: "Heart", icon: Heart, active: true },
             { id: 'h2', name: "Meds", icon: Pill, active: false },
             { id: 'h3', name: "Chip", icon: Cpu, active: true },
-            { id: 'h4', name: "Vax", icon: ShieldCheck, active: true },
+            { id: 'h4', name: "Vax", icon: ShieldCheck, active: false },
             { id: 'h5', name: "Pulse", icon: Activity, active: true },
-            { id: 'h6', name: "Check", icon: Thermometer, active: true },
+            { id: 'h6', name: "Check", icon: Thermometer, active: false },
         ]
     },
     {
@@ -47,11 +47,11 @@ const petData = [
         image: "https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TUlOSUFUVVJFJTIwUE9PRExFfGVufDB8fDB8fHww",
         health: [
             { id: 's1', name: "Heart", icon: Heart, active: true },
-            { id: 's2', name: "Meds", icon: Pill, active: false },
-            { id: 's3', name: "Chip", icon: Cpu, active: true },
+            { id: 's2', name: "Meds", icon: Pill, active: true },
+            { id: 's3', name: "Chip", icon: Cpu, active: false },
             { id: 's4', name: "Vax", icon: ShieldCheck, active: true },
             { id: 's5', name: "Pulse", icon: Activity, active: true },
-            { id: 's6', name: "Check", icon: Thermometer, active: true },
+            { id: 's6', name: "Check", icon: Thermometer, active: false },
         ]
     },
     {
@@ -63,12 +63,12 @@ const petData = [
         age: "1 year",
         image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U1RBTkRBUkQlMjBQT09ETEV8ZW58MHx8MHx8fDA%3D",
         health: [
-            { id: 'd1', name: "Heart", icon: Heart, active: true },
-            { id: 'd2', name: "Meds", icon: Pill, active: false },
-            { id: 'd3', name: "Chip", icon: Cpu, active: true },
+            { id: 'd1', name: "Heart", icon: Heart, active: false },
+            { id: 'd2', name: "Meds", icon: Pill, active: true },
+            { id: 'd3', name: "Chip", icon: Cpu, active: false },
             { id: 'd4', name: "Vax", icon: ShieldCheck, active: true },
             { id: 'd5', name: "Pulse", icon: Activity, active: true },
-            { id: 'd6', name: "Check", icon: Thermometer, active: true },
+            { id: 'd6', name: "Check", icon: Thermometer, active: false },
         ]
     },
     {
@@ -82,10 +82,10 @@ const petData = [
         health: [
             { id: 'm1', name: "Heart", icon: Heart, active: true },
             { id: 'm2', name: "Meds", icon: Pill, active: false },
-            { id: 'm3', name: "Chip", icon: Cpu, active: true },
+            { id: 'm3', name: "Chip", icon: Cpu, active: false },
             { id: 'm4', name: "Vax", icon: ShieldCheck, active: true },
             { id: 'm5', name: "Pulse", icon: Activity, active: true },
-            { id: 'm6', name: "Check", icon: Thermometer, active: true },
+            { id: 'm6', name: "Check", icon: Thermometer, active: false },
         ]
     }
 ];

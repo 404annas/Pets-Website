@@ -11,19 +11,19 @@ const PetDetail = () => {
         window.scrollTo(0, 0);
     }, [id]);
 
-    if (!pet) return <div className="py-10 text-center text-2xl">Pet not found</div>;
+    if (!pet) return <div className="py-10 text-center text-2xl">No Poodle found</div>;
 
     return (
         <div className="bg-white min-h-screen">
             {/* Top Section */}
-            <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row gap-16 items-start">
+            <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
                 <div className="w-full lg:w-1/2">
                     <div className="w-20 h-20 bg-[#E5F4A3] rounded-3xl mb-10"></div>
                     <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-[#8ECC37] mb-4">{pet.name}</h1>
                     <p className="text-gray-400 font-bold tracking-[0.2em] mb-8 uppercase text-sm">{pet.breed}</p>
                     <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-12">{pet.description}</p>
 
-                    <div className="bg-[#E5F4A3] rounded-[50px] p-12 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+                    <div className="bg-[#E5F4A3] rounded-[50px] px-6 py-8 sm:p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
                         <div className="flex items-center gap-2 text-xl"><span className="text-[#8ECC14] font-bold">Breed:</span> <span className="text-gray-600 text-sm">{pet.breed}</span></div>
                         <div className="flex items-center gap-2 text-xl"><span className="text-[#8ECC14] font-bold">Age:</span> <span className="text-gray-600 text-sm">{pet.age}</span></div>
                         <div className="flex items-center gap-2 text-xl"><span className="text-[#8ECC14] font-bold">Weight:</span> <span className="text-gray-600 text-sm">{pet.weight}</span></div>
@@ -44,9 +44,9 @@ const PetDetail = () => {
             </div>
 
             {/* Health Info Section */}
-            <div className="py-10 text-center">
+            <div className="py-10 px-4 text-center">
                 <h3 className="text-[#8ECC37] font-medium mb-10 uppercase text-lg sm:text-xl md:text-2xl">Health Info:</h3>
-                <div className="max-w-6xl mx-auto bg-[#E5F4A3] rounded-[50px] py-16 px-10 flex flex-wrap justify-center gap-16">
+                <div className="max-w-6xl mx-auto bg-[#E5F4A3] rounded-[50px] px-4 py-8 md:py-10 md:px-10 flex flex-wrap justify-center gap-16">
                     {pet.health.map((item, index) => (
                         <div key={index} className="flex flex-col items-center gap-6">
                             <div className={`p-6 rounded-full relative ${item.active ? 'bg-[#8ECC37] text-[#E5F4A3]' : 'bg-gray-100 text-gray-400'}`}>
