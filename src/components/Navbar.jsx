@@ -15,7 +15,7 @@ const Navbar = () => {
 
     // Menu with section IDs
     const menuItems = [
-        { label: "Home", type: "scroll", id: "home" },
+        { label: "Home", type: "route", path: "/" },
         { label: "About", type: "route", path: "/about" },
         { label: "Choose", type: "scroll", id: "choose" },
         { label: "Services", type: "scroll", id: "services" },
@@ -67,7 +67,7 @@ const Navbar = () => {
                             <p
                                 key={item.label}
                                 onClick={() => handleScroll(item.id)}
-                                className={`relative cursor-pointer ${idx === 0 ? "text-[#8ECC14]" : "text-gray-800"
+                                className={`relative cursor-pointer ${item.label === "Home" ? "text-[#8ECC14]" : "text-gray-800"
                                     }
             after:absolute after:left-0 after:-bottom-0.5
             after:h-[2px] after:w-0 after:bg-[#8ECC14]
