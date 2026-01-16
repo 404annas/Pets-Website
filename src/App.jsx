@@ -7,12 +7,15 @@ import ContactUs from './components/ContactUs'
 import Footer from './components/Footer'
 import PetDetail from './pages/PetDetail'
 import About from './pages/About';
+import Testimonials from './components/Testimonials';
+import Application from './pages/Application';
 
 const Home = () => (
   <>
     <Hero />
     <Intro />
     <FeaturedPets />
+    <Testimonials />
     <ContactUs />
   </>
 );
@@ -24,7 +27,8 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/about' element={<About />}/>
+          <Route path='/about' element={<About />} />
+          <Route path='/application' element={<Application />} />
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
         <Footer />

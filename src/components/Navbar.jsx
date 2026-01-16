@@ -19,8 +19,8 @@ const Navbar = () => {
         { label: "About", type: "route", path: "/about" },
         { label: "Choose", type: "scroll", id: "choose" },
         { label: "Services", type: "scroll", id: "services" },
-        { label: "Store", type: "scroll", id: "store" },
-        { label: "Pricing", type: "scroll", id: "pricing" },
+        { label: "FAQ's", type: "scroll", id: "faqs" },
+        { label: "Application", type: "route", path: "/application" },
         { label: "Contact", type: "scroll", id: "contact" },
     ];
 
@@ -48,7 +48,7 @@ const Navbar = () => {
                 <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >Poodles Place.</Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-10 font-medium">
+                <div className="hidden lg:flex items-center gap-8 font-medium">
                     {menuItems.map((item, idx) =>
                         item.type === "route" ? (
                             <Link
