@@ -9,6 +9,10 @@ import PetDetail from './pages/PetDetail'
 import About from './pages/About';
 import Testimonials from './components/Testimonials';
 import Application from './pages/Application';
+import BreedProgram from './pages/BreedProgram';
+import AvailablePoodles from './pages/AvailablePoodles';
+import HealthSubPage from './pages/HealthSubPage';
+import RaisingSubPage from './pages/RaisingSubPage';
 
 const Home = () => (
   <>
@@ -29,6 +33,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/application' element={<Application />} />
+          <Route path='/available' element={<AvailablePoodles />}/>
+          <Route path='/breed-program' element={<BreedProgram />}/>
+          {/* <Route path='/health-testing' element={<HealthSubPage />}/> */}
+          {/* <Route path='/puppy-raising' element={<RaisingSubPage />}/> */}
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
         <Footer />

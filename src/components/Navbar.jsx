@@ -18,7 +18,7 @@ const Navbar = () => {
         { label: "Home", type: "route", path: "/" },
         { label: "About", type: "route", path: "/about" },
         { label: "Choose", type: "scroll", id: "choose" },
-        { label: "Services", type: "scroll", id: "services" },
+        { label: "Breed Program", type: "route", path: "/breed-program" },
         { label: "FAQ's", type: "scroll", id: "faqs" },
         { label: "Application", type: "route", path: "/application" },
         { label: "Contact", type: "scroll", id: "contact" },

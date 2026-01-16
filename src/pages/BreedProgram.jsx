@@ -1,0 +1,228 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+    ShieldCheck, Heart, Dna, Eye, Stethoscope,
+    ArrowRight, Sparkles, CheckCircle2, ChevronDown,
+    Microscope, Users, Home, Calendar, Info, ShieldAlert,
+    UsersRound
+} from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const BreedProgram = () => {
+    const navigate = useNavigate();
+    const [isHealthPanelOpen, setIsHealthPanelOpen] = useState(false);
+
+    // Helper for clean navigation
+    const handleNavigation = (path) => {
+        window.scrollTo(0, 0);
+        navigate(path);
+    };
+
+    return (
+        <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden antialiased">
+
+            {/* 1. HERO SECTION (Adult Red Toy Poodle BG) */}
+            <section className="relative h-screen flex items-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        loading='lazy'
+                        src="https://images.unsplash.com/photo-1608096299210-db7e38487075?w=3000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWR1bHQlMjByZWQlMjBUb3klMjBQb29kbGV8ZW58MHx8MHx8fDA%3D0"
+                        alt="Adult Red Toy Poodle with confident posture"
+                        className="w-full h-full object-cover object-center"
+                    />
+                    {/* Professional Overlay */}
+                    <div className="absolute inset-0 bg-black/50 to-transparent"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="max-w-2xl text-white"
+                    >
+                        <span className="text-[#8ECC14] font-medium uppercase tracking-widest text-xs mb-6 block">
+                            Breeding Program and Ethics
+                        </span>
+                        <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-8">
+                            Intentional. <br />
+                            Preserved. <br />
+                            <span className="text-[#8ECC14]">Not Accidental.</span>
+                        </h1>
+                        <p className="text-base md:text-lg text-gray-300 font-normal leading-relaxed mb-6">
+                            Every decision is made with the future in mind. We never chase color at the expense of health or temperament.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <button onClick={() => handleNavigation('/application')} className="px-8 py-4 bg-[#8ECC14] text-white font-bold uppercase text-xs tracking-widest rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+                                Start Your Journey
+                            </button>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* 2. MANIFESTO GRID */}
+            <section className="py-10 px-6 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+                    {[
+                        { t: "The Whole Dog", d: "Color is beautiful, but a puppy must be structurally sound and emotionally steady." },
+                        { t: "Transparency", d: "Realistic expectations about coat development and outcomes with no pressur.e" },
+                        { t: "Small Scale", d: "Personal by design. We observe temperaments daily to ensure thoughtful matching." },
+                        { t: "Placement Care", d: "A puppy is not sold—it is placed. We seek homes that value responsible ownership." }
+                    ].map((item, i) => (
+                        <div key={i} className="bg-slate-50 p-10 flex flex-col justify-between min-h-[280px] hover:bg-[#E9FBC8]/40 transition-all duration-500 border-b border-slate-100 lg:border-none">
+                            <span className="text-[#8ECC14] font-black text-3xl">0{i + 1}</span>
+                            <div>
+                                <h3 className="text-lg font-bold mb-3 uppercase tracking-tight">{item.t}</h3>
+                                <p className="text-gray-500 leading-relaxed text-sm">{item.d}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* 3. THREE PILLAR CARDS */}
+            <section className="py-10 px-6 bg-slate-900 rounded-[3rem] mx-4 md:mx-10 text-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-20">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter uppercase mb-4">The Three Pillars</h2>
+                        <p className="text-[#8ECC14] font-medium text-xs uppercase tracking-widest">What we select for, every single time</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
+                            <Microscope className="text-[#8ECC14] mb-6" size={32} />
+                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Health Foundations</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed">Decisions built around testing and evidence, following recognized Poodle health guidance.</p>
+                        </div>
+                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
+                            <Heart className="text-[#8ECC14] mb-6" size={32} />
+                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Temperament</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed">Stable nerves, curiosity, and affection. Temperament is shaped from day one till last day.</p>
+                        </div>
+                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
+                            <ShieldCheck className="text-[#8ECC14] mb-6" size={32} />
+                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Breed Type</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed">Balanced structure that moves better and feels better. Toy Poodles, not fragile ornaments.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. HEALTH TESTING ICON LIST */}
+            <section className="py-10 px-6 max-w-5xl mx-auto">
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">Reputable Guidance</h2>
+                    <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">Commonly recommended health testing for Toy Poodles per PCA and Versatility in Poodles.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                        { t: "prcd PRA DNA", d: "Genetic screening for vision.", icon: <Dna size={30} /> },
+                        { t: "Annual Eyes", d: "ACVO Ophthalmologist (CAER).", icon: <Eye size={30} /> },
+                        { t: "Patellar Evaluation", d: "Manual luxation evaluation.", icon: <Stethoscope size={30} /> }
+                    ].map((item, i) => (
+                        <div key={i} className="p-6 bg-slate-50 rounded-2xl flex flex-col items-center text-center border border-slate-100">
+                            <div className="text-[#8ECC14] mb-4">{item.icon}</div>
+                            <h5 className="font-bold text-[#8ECC14] text-lg md:text-xl uppercase mb-2">{item.t}</h5>
+                            <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{item.d}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* 5. EXPANDABLE HEALTH PANEL */}
+                <div className="mt-10 border border-[#C6E589] rounded-2xl overflow-hidden">
+                    <button
+                        onClick={() => setIsHealthPanelOpen(!isHealthPanelOpen)}
+                        className="w-full p-6 flex justify-between items-center bg-white hover:bg-[#e6fcbb] transition-colors cursor-pointer"
+                    >
+                        <span className="font-bold text-sm md:text-base uppercase tracking-tight flex items-center gap-2">
+                            <ShieldAlert className="text-[#70a011]" size={22} />
+                            Health testing we follow for Toy Poodles
+                        </span>
+                        <ChevronDown className={`text-gray-400 transition-transform ${isHealthPanelOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    <AnimatePresence>
+                        {isHealthPanelOpen && (
+                            <motion.div
+                                initial={{ height: 0 }}
+                                animate={{ height: "auto" }}
+                                exit={{ height: 0 }}
+                                className="overflow-hidden"
+                            >
+                                <div className="p-4 md:p-8 bg-slate-50 border-t border-slate-200 text-sm text-slate-600 leading-relaxed space-y-4">
+                                    <p>We perform prcd PRA DNA testing and Annual eye exams yearly via an ACVO ophthalmologist. These are specifically listed for Toy Poodles in the <span className="font-bold text-[#8ECC14]">Poodle Club of America</span> health statement.</p>
+                                    <p>Eye disease in poodles can involve more than one condition, which is why annual eye exams remain important even when DNA testing is completed.</p>
+                                    {/* Subpage CTA Button */}
+                                    <button
+                                        onClick={() => handleNavigation('/health-testing')}
+                                        className="flex items-center gap-2 px-6 py-3 bg-[#8ECC14] text-white font-bold uppercase text-xs tracking-widest rounded-lg hover:bg-[#74a710] transition-all cursor-pointer"
+                                    >
+                                        View Health Testing & OFA CHIC <ArrowRight size={16} />
+                                    </button>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            </section>
+
+            {/* 6. PUPPY RAISING SECTION */}
+            <section className="py-10 px-6 bg-[#C6E589]/50 border-y border-[#E9FBC8]">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#8ECC14] tracking-tighter uppercase mb-8">Raised for <br />Real Life.</h2>
+                        <p className="text-gray-600 mb-10 leading-relaxed text-sm italic border-l-4 border-[#8ECC14] pl-4">
+                            "We focus on early confidence building and calm exposure so puppies grow into companions who can handle normal life."
+                        </p>
+                        <ul className="space-y-4 mb-8">
+                            {[
+                                "Introduction to household sounds and movement",
+                                "Gentle grooming exposure (face, handling)",
+                                "Short sessions building curiosity and coordination",
+                                "Human interaction teaching trust and calmness"
+                            ].map((li, i) => (
+                                <li key={i} className="flex gap-3 text-sm font-bold text-slate-700 items-center">
+                                    <p><CheckCircle2 size={20} className='text-[#6e9e0e]' /></p>
+                                    {li}
+                                </li>
+                            ))}
+                        </ul>
+                        {/* Subpage CTA Button */}
+                        <button
+                            onClick={() => handleNavigation('/puppy-raising')}
+                            className="px-8 py-4 bg-[#8ECC14] text-white font-bold uppercase text-xs tracking-widest rounded-xl hover:bg-[#74a710] transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                            View Full Raising Protocol <ArrowRight size={16} />
+                        </button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=800&q=80" alt="Raised in home" className="rounded-3xl shadow-xl" />
+                        <img src="https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=800&q=80" alt="Grooming exposure" className="rounded-3xl shadow-xl mt-10" />
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. PLACEMENT ETHICS */}
+            <section className="py-10 px-6 text-center">
+                <div className="max-w-3xl mx-auto">
+                    <UsersRound className="text-[#8ECC14] mx-auto mb-8" size={30} />
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#8ECC14] uppercase tracking-tight mb-8">Placement Ethics</h2>
+                    <p className="text-gray-500 mb-10 text-base md:text-lg leading-relaxed">
+                        We look for families who want a companion for life and understand grooming needs.
+                        It’s about protecting the dogs and supporting the families.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onClick={() => handleNavigation('/available')} className="px-10 py-5 bg-[#8ECC14] text-white font-bold uppercase text-sm tracking-widest rounded-xl hover:bg-[#74a710] transition-all duration-300 cursor-pointer">
+                            See Available Puppies
+                        </button>
+                        <button onClick={() => handleNavigation('/application')} className="px-10 py-5 border-2 border-slate-900 text-slate-900 font-bold uppercase text-sm tracking-widest rounded-xl hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                            Start Application
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default BreedProgram;
