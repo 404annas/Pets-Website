@@ -1,211 +1,197 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import {
-    ShieldCheck, Dna, Eye, Stethoscope,
-    Database, ArrowRight, ArrowLeft,
-    FileSearch, AlertCircle, Activity,
-    Lock, Search, Check
+import { 
+  Dna, Eye, Stethoscope, Database, 
+  ArrowRight, ArrowLeft, ShieldCheck, 
+  Search, Check, Activity, FileText
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const HealthSubPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    return (
-        <div className="bg-white min-h-screen text-slate-900 font-sans selection:bg-[#8ECC14]/20">
-
-            {/* 1. MINIMALIST ARCHITECTURAL HERO */}
-            <section className="pt-32 pb-20 px-6 border-b border-slate-100">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-10">
-                    <div className="max-w-3xl">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                        >
-                            <div className="flex items-center gap-3 mb-6">
-                                <span className="w-12 h-[1px] bg-[#8ECC14]"></span>
-                                <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#8ECC14]">Protocol 01-A</span>
-                            </div>
-                            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
-                                Health <br />
-                                <span className="text-slate-200">Integrity.</span>
-                            </h1>
-                            <p className="text-xl text-slate-500 font-light leading-relaxed">
-                                Health testing is not a checklist done once. It is an ongoing responsibility that protects the dogs we love and the families who welcome them.
-                            </p>
-                        </motion.div>
-                    </div>
-                    <div className="hidden lg:block pb-4">
-                        <div className="text-right">
-                            <p className="text-[10px] font-mono text-slate-300 uppercase mb-1">Standard Reference</p>
-                            <p className="text-sm font-bold">PCA / VIP GUIDELINES</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 2. THE SPECIFICATION GRID (Different from Bento) */}
-            <section className="py-24 px-6 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                    {/* Side Label */}
-                    <div className="lg:col-span-3">
-                        <h2 className="text-xs font-mono uppercase tracking-[0.4em] text-slate-400 sticky top-32">
-                            Biological Screening
-                        </h2>
-                    </div>
-
-                    {/* Content Rows */}
-                    <div className="lg:col-span-9 space-y-24">
-
-                        {/* Row 1: DNA */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-                            <div>
-                                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 group-hover:border-[#8ECC14] transition-colors">
-                                    <Dna size={20} className="text-[#8ECC14]" />
-                                </div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">prcd PRA DNA Testing</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">
-                                    Screening for progressive retinal atrophy. By knowing the genetic status of our breeding dogs, we can scientifically ensure no puppy is born at risk for this specific form of vision loss.
-                                </p>
-                            </div>
-                            <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-[#8ECC14]">
-                                <p className="text-[10px] font-mono uppercase text-slate-400 mb-4 tracking-widest">Purpose</p>
-                                <p className="text-sm font-bold text-slate-700 leading-relaxed">
-                                    "Knowing the status allows us to avoid pairings that could lead to avoidable inherited vision impairment."
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Row 2: Eyes */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-                            <div>
-                                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 group-hover:border-[#8ECC14] transition-colors">
-                                    <Eye size={20} className="text-[#8ECC14]" />
-                                </div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">Annual Eye Exams</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">
-                                    Eyes deserve ongoing attention. Annual exams by an ACVO ophthalmologist monitor conditions that DNA testing cannot detect.
-                                </p>
-                            </div>
-                            <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-[#8ECC14]">
-                                <p className="text-[10px] font-mono uppercase text-slate-400 mb-4 tracking-widest">Requirement</p>
-                                <p className="text-sm font-bold text-slate-700 leading-relaxed">
-                                    "DNA testing is not a substitute for clinical exams. We conduct these annually to ensure long-term health."
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Row 3: Patellar */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-                            <div>
-                                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 group-hover:border-[#8ECC14] transition-colors">
-                                    <Stethoscope size={20} className="text-[#8ECC14]" />
-                                </div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">Patellar Evaluation</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">
-                                    Evaluating knee stability in Toy Poodles helps reduce the risk of future mobility challenges and joint discomfort.
-                                </p>
-                            </div>
-                            <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-[#8ECC14]">
-                                <p className="text-[10px] font-mono uppercase text-slate-400 mb-4 tracking-widest">Clinical Goal</p>
-                                <p className="text-sm font-bold text-slate-700 leading-relaxed">
-                                    "Ensuring these active, small dogs maintain mobility throughout their senior years."
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* 3. THE DATA TRANSPARENCY (OFA/CHIC) */}
-            <section className="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 overflow-hidden relative">
-                <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
-                    <div>
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-10 leading-none">
-                            Public Data. <br />
-                            <span className="text-[#8ECC14]">Public Trust.</span>
-                        </h2>
-                        <div className="space-y-12">
-                            <div className="flex gap-6">
-                                <Database className="text-[#8ECC14] shrink-0" size={24} />
-                                <div>
-                                    <h4 className="font-bold text-lg mb-2">OFA Public Database</h4>
-                                    <p className="text-slate-400 text-sm leading-relaxed font-light italic">
-                                        The Orthopedic Foundation for Animals maintains a database where results are recorded publicly. Transparency is the only way to build trust.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex gap-6">
-                                <FileSearch className="text-[#8ECC14] shrink-0" size={24} />
-                                <div>
-                                    <h4 className="font-bold text-lg mb-2">CHIC Certification</h4>
-                                    <p className="text-slate-400 text-sm leading-relaxed font-light italic">
-                                        A CHIC number signifies that the breeder completed all recommended tests and made the information available to the public.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="p-10 border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-sm">
-                            <ShieldCheck className="text-[#8ECC14] mb-8" size={60} />
-                            <p className="text-2xl font-light leading-relaxed mb-8">
-                                "We believe openness protects dogs and families alike. A CHIC number doesn't mean flawless health—it means <span className="text-[#8ECC14] font-bold">total transparency.</span>"
-                            </p>
-                            <div className="flex items-center gap-4 text-[10px] font-mono tracking-widest text-slate-500">
-                                <div className="w-2 h-2 rounded-full bg-[#8ECC14]"></div>
-                                VERIFIED REGISTRY DATA
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. THE ETHICS STATEMENT */}
-            <section className="py-32 px-6 max-w-4xl mx-auto">
-                <div className="text-center">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#8ECC14] mb-8 block">Final Declaration</span>
-                    <h2 className="text-4xl font-black uppercase tracking-tighter mb-10">What we will never promise</h2>
-                    <p className="text-xl text-slate-500 font-light leading-relaxed mb-12">
-                        We will never promise a dog with zero health risk. No living being comes with guarantees. What we do promise is <span className="text-slate-900 font-bold">careful planning, responsible testing, and transparent records.</span>
-                    </p>
-                    <div className="flex items-center justify-center gap-2 text-[#8ECC14]">
-                        <Activity size={20} />
-                        <p className="font-mono text-xs font-bold tracking-widest">HEALTH FIRST. ALWAYS.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. NAVIGATION LINKS */}
-            <section className="pb-32 px-6">
-                <div className="max-w-7xl mx-auto border-t border-slate-100 pt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <button
-                        onClick={() => navigate('/breeding-program')}
-                        className="group flex flex-col items-start p-8 rounded-[2rem] hover:bg-slate-50 transition-all text-left"
-                    >
-                        <ArrowLeft className="text-slate-300 group-hover:text-slate-900 transition-colors mb-4" />
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-1">Return</span>
-                        <span className="text-xl font-black uppercase tracking-tight">Breeding Program</span>
-                    </button>
-
-                    <button
-                        onClick={() => navigate('/puppy-raising')}
-                        className="group flex flex-col items-end p-8 rounded-[2rem] hover:bg-[#E9FBC8]/30 transition-all text-right"
-                    >
-                        <ArrowRight className="text-[#8ECC14] mb-4" />
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#8ECC14] mb-1">Next Protocol</span>
-                        <span className="text-xl font-black uppercase tracking-tight text-slate-900">Puppy Raising</span>
-                    </button>
-                </div>
-            </section>
-
+  return (
+    <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden selection:bg-[#8ECC14]/20">
+      
+      {/* 1. EDITORIAL HERO */}
+      <section className="relative pt-20 md:pt-28 pb-10 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between pb-10">
+          <div className="max-w-4xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <span className="h-[1.5px] w-12 bg-[#8ECC14]"></span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#8ECC14]">Protocol & Standards</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-10">
+                Health comes <br />
+                <span className="text-[#8ECC14]">Before</span> Everything.
+              </h1>
+              <p className="text-base md:text-lg text-gray-500 font-normal leading-relaxed max-w-2xl">
+                Every pairing. Every litter. Every time. Protecting the dogs we love and the families who welcome them.
+              </p>
+            </motion.div>
+          </div>
+          <div className="mt-10 md:mt-0">
+             <div className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#C6E589] border border-[#b3d868] text-[10px] font-bold uppercase tracking-widest text-[#74a512]">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#74a512] animate-pulse"></div>
+                Active Monitoring
+             </div>
+          </div>
         </div>
-    );
+      </section>
+
+      {/* 2. PHILOSOPHY ROW (Asymmetric) */}
+      <section className="py-10 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-[#8ECC14] mb-6">Real Life Impact</h2>
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight leading-none">
+              Testing does not create <span className='text-[#8ECC14]'>perfect dogs</span>. It creates <span className='text-[#8ECC14]'>informed choices</span>.
+            </h3>
+          </div>
+          <div className="lg:col-span-8 lg:pl-20">
+            <p className="text-base md:text-lg text-gray-500 font-normal leading-relaxed mb-10">
+              When you bring a Toy Poodle home, you are planning for years of companionship. Health testing stacks the odds in favor of a long, comfortable, happy life. It allows us to:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+               {[
+                 "Reduce avoidable inherited risk",
+                 "Make informed breeding decisions",
+                 "Be honest with families about facts",
+                 "Protect the Toy Poodle breed lineage"
+               ].map((item, i) => (
+                 <div key={i} className="flex items-center gap-4 pb-4 border-b border-slate-100">
+                    <Check size={20} className="text-[#8ECC14]" />
+                    <span className="text-base font-bold tracking-tight text-slate-700">{item}</span>
+                 </div>
+               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. THE TRIAD (Technical Cards with Border Accents) */}
+      <section className="py-10 px-14 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#8ECC14] mb-4 block">Monitoring</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter uppercase text-[#8ECC14]">Primary Screenings</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              { 
+                t: "prcd PRA DNA Testing", 
+                d: "Genetic screening for a form of retinal atrophy that leads to vision loss. Knowing the status of every puppy.",
+                icon: <Dna />
+              },
+              { 
+                t: "Annual Eye Examinations", 
+                d: "Manual evaluations by ACVO ophthalmologists. These monitor conditions that DNA testing cannot detect.",
+                icon: <Eye />
+              },
+              { 
+                t: "Patellar luxation evaluation", 
+                d: "Evaluating knee stability to reduce the risk of future mobility challenges and joint discomfort.",
+                icon: <Stethoscope />
+              }
+            ].map((test, i) => (
+              <div key={i} className="group relative">
+                <div className="w-10 h-10 bg-white shadow-sm border border-slate-100 flex items-center justify-center text-[#8ECC14] mb-8 group-hover:bg-[#8ECC14] group-hover:text-white transition-all duration-500">
+                  {test.icon}
+                </div>
+                <h4 className="text-xl font-bold mb-4 uppercase tracking-tighter">{test.t}</h4>
+                <p className="text-gray-500 text-sm leading-relaxed font-normal">{test.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. THE DATA BLOCK (OFA / CHIC) - Floating Design */}
+      <section className="py-10 px-6 max-w-7xl mx-auto">
+        <div className="bg-slate-900 rounded-[4rem] px-10 py-14 md:p-20 text-white flex flex-col lg:flex-row gap-10 items-center overflow-hidden relative">
+          <div className="lg:w-1/2 z-10">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-10">
+              Transparency is <br />
+              <span className="text-[#8ECC14]">Mandatory.</span>
+            </h2>
+            <div className="space-y-10">
+               <div>
+                 <h5 className="text-[#8ECC14] font-bold text-xs sm:text-sm uppercase tracking-widest mb-2">OFA Public Database</h5>
+                 <p className="text-slate-400 font-light text-sm md:text-base leading-relaxed max-w-md">Results are recorded publicly through the Orthopedic Foundation for Animals. Transparency builds trust.</p>
+               </div>
+               <div>
+                 <h5 className="text-[#8ECC14] font-bold text-xs sm:text-sm uppercase tracking-widest mb-2">CHIC Certification</h5>
+                 <p className="text-slate-400 font-light text-sm md:text-base leading-relaxed max-w-md">Recognition for completing recommended breed testing. It means the information is available publicly.</p>
+               </div>
+            </div>
+          </div>
+          <div className="lg:w-1/2 relative z-10">
+             <div className="bg-white/5 border border-white/10 px-6 py-8 md:p-10 rounded-[3rem] backdrop-blur-md">
+                <ShieldCheck className="text-[#8ECC14] mb-8" size={30} />
+                <p className="text-xl font-light leading-relaxed mb-8">
+                  "Openness protects families. A CHIC number signifies <span className="text-[#8ECC14] font-bold">accountability</span> and <span className="text-[#8ECC14] font-bold">verified results</span>."
+                </p>
+                <div className="flex gap-2">
+                  <div className="h-1 w-8 bg-[#8ECC14]"></div>
+                  <div className="h-1 w-8 bg-white/20"></div>
+                  <div className="h-1 w-8 bg-white/20"></div>
+                </div>
+             </div>
+          </div>
+          {/* Abstract Glow */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8ECC14]/10 blur-[120px]"></div>
+        </div>
+      </section>
+
+      {/* 5. THE PROMISE (Monochrome Minimal) */}
+      <section className="py-10 px-6 max-w-4xl mx-auto text-center">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#8ECC14] mb-8 block">Final Note</span>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 text-[#8ECC14]">What we will never promise</h2>
+        <p className="text-base md:text-lg text-gray-500 font-normal leading-relaxed mb-10">
+          We will never promise a dog with zero health risk. No living being comes with guarantees. What we do promise is <span className="text-slate-900 font-bold underline decoration-[#8ECC14] decoration-2 underline-offset-8">careful planning and transparent records.</span>
+        </p>
+        <Activity className="mx-auto text-[#8ECC14]" size={32} />
+      </section>
+
+      {/* 6. SOPHISTICATED NAV */}
+      <section className="pb-10 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button 
+            onClick={() => {window.scrollTo(0,0); navigate('/breed-program')}}
+            className="flex items-center justify-between p-10 bg-slate-50 rounded-3xl hover:bg-slate-100 transition-all duration-300 group cursor-pointer"
+          >
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 block mb-2">Back</span>
+              <span className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-[#8ECC14] transition-colors duration-300">Ethics Overview</span>
+            </div>
+            <ArrowLeft className="text-gray-400 group-hover:-translate-x-2 transition-transform duration-300" />
+          </button>
+
+          <button 
+            onClick={() => {window.scrollTo(0,0); navigate('/puppy-raising')}}
+            className="flex items-center justify-between p-10 bg-slate-900 text-white rounded-3xl hover:bg-slate-800 transition-all duration-300 cursor-pointer group"
+          >
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-slate-500 block mb-2">Forward</span>
+              <span className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-[#8ECC14] transition-colors duration-300">Raising Protocol</span>
+            </div>
+            <ArrowRight className="text-[#8ECC14] group-hover:translate-x-2 transition-transform duration-300" />
+          </button>
+        </div>
+      </section>
+
+    </div>
+  );
 };
 
 export default HealthSubPage;

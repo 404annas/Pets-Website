@@ -35,8 +35,8 @@ const App = () => {
           <Route path='/application' element={<Application />} />
           <Route path='/available' element={<AvailablePoodles />}/>
           <Route path='/breed-program' element={<BreedProgram />}/>
-          {/* <Route path='/health-testing' element={<HealthSubPage />}/> */}
-          {/* <Route path='/puppy-raising' element={<RaisingSubPage />}/> */}
+          <Route path='/health-testing' element={<HealthSubPage />}/>
+          <Route path='/puppy-raising' element={<RaisingSubPage />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
         <Footer />
