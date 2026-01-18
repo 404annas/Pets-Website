@@ -1,20 +1,32 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { PawPrint, ShieldCheck, ChevronLeft, ChevronRight, UsersRound } from 'lucide-react';
+import {
+    PawPrint,
+    ShieldCheck,
+    ChevronLeft,
+    ChevronRight,
+    UsersRound,
+    Handshake,
+    Award,
+    BookOpen,
+    ExternalLink,
+    CheckCircle2
+} from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const testimonials = [
-    { name: "Michael Brown", img: "https://i.pravatar.cc/150?u=19", text: "Poodles Place helped me find the perfect companion. Every interaction was caring and professional!" },
-    { name: "David Smith", img: "https://i.pravatar.cc/150?u=21", text: "Finding a healthy, socialized poodle was easy. They really care about where their dogs go." },
-    { name: "Jessica Williams", img: "https://i.pravatar.cc/150?u=13", text: "The facility is world-class. You can tell the dogs are happy and loved from day one." },
-    { name: "Robert Wilson", img: "https://i.pravatar.cc/150?u=5", text: "Best decision of our lives! Our poodle is smart, healthy, and fits right in with our kids." },
-    { name: "Sarah Jenkins", img: "https://i.pravatar.cc/150?u=28", text: "Incredible support even after adoption. They are always there to answer my training questions." }
+    { name: "Linda DuBose", img: "https://i.pravatar.cc/150?u=11", text: "As a mentor, I've watched this program prioritize genetics and temperament above all else. They truly honor the legacy of Scarlet’s Fancy Poodles." },
+    { name: "Sarah J.", img: "https://i.pravatar.cc/150?u=28", text: "The connection to the Apricot Red Poodle Club gave us so much confidence. You aren't just buying a puppy; you're joining a community." },
+    { name: "Michael Brown", img: "https://i.pravatar.cc/150?u=19", text: "Incredible health standards! It's clear that their mentorship from experienced breeders has made them one of the most ethical kennels today." },
+    { name: "David Smith", img: "https://i.pravatar.cc/150?u=21", text: "The AKC standards are met with precision. My Toy Poodle is structurally perfect and has the best temperament of any dog I've owned." }
 ];
 
 const About = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
 
-    // Responsive Logic for Slider
+    const navigate = useNavigate()
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 768) setVisibleCards(1);
@@ -33,9 +45,8 @@ const About = () => {
         if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
     };
 
-    // Math for smooth translation
     const movePercentage = visibleCards === 1 ? 100 : 33.333;
-    const gapCorrection = visibleCards === 1 ? 2 : 0.666; // Based on gap-8 or gap-12
+    const gapCorrection = visibleCards === 1 ? 2 : 0.666;
 
     return (
         <div className="bg-white min-h-screen">
@@ -44,23 +55,12 @@ const About = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-16">
                 <div className="w-full lg:w-1/2 relative">
                     <div className="relative z-10 w-[85%] h-[500px] overflow-hidden rounded-[60px] shadow-md">
-                        <img
-                            loading='lazy'
-                            src="https://images.unsplash.com/photo-1721035667386-50a2d3b2cd68?w=1000&auto=format&fit=crop&q=100"
-                            className="w-full h-full object-cover"
-                            alt="Journey"
-                        />
+                        <img loading='lazy' src="https://images.unsplash.com/photo-1721035667386-50a2d3b2cd68?w=1000&q=100" className="w-full h-full object-cover" alt="Journey" />
                     </div>
                     <div className="absolute -bottom-10 -right-4 z-20 w-64 h-64 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
-                        <img
-                            loading='lazy'
-                            src="https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?w=1000&auto=format&fit=crop&q=100"
-                            className="w-full h-full object-cover"
-                            alt="Small Poodle"
-                        />
+                        <img loading='lazy' src="https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?w=1000&q=100" className="w-full h-full object-cover" alt="Small Poodle" />
                     </div>
                 </div>
-
                 <div className="w-full lg:w-1/2">
                     <p className="uppercase text-[#8ECC14] font-semibold tracking-wider text-xs mb-4">OUR JOURNEY</p>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#333] leading-none mb-8">
@@ -70,7 +70,6 @@ const About = () => {
                         Poodles Place started as a small backyard hobby, driven by a love for poodles and a desire
                         to see them in loving homes. Focused on responsible breeding and lifelong companionship.
                     </p>
-
                     <div className="space-y-8">
                         {[
                             { title: "Mission & Values", description: "Ethical breeding, socialization, and health-first philosophy.", icon: <PawPrint size={20} /> },
@@ -107,7 +106,6 @@ const About = () => {
                             Make a Difference
                         </button>
                     </div>
-
                     <div className="w-full lg:w-1/2 relative">
                         <div className="w-full h-[550px] overflow-hidden rounded-[60px] shadow-md">
                             <img loading='lazy' src="https://images.unsplash.com/photo-1544047963-99e58dfea839?w=2000&q=100" className="w-full h-full object-cover" alt="Mission" />
@@ -141,7 +139,6 @@ const About = () => {
                             <img src="https://images.unsplash.com/photo-1766471416360-e7932245d3c2?w=1000&q=100" className="w-full h-full object-cover" alt="Poodle" />
                         </div>
                     </div>
-
                     <div className="w-full lg:w-1/2">
                         <p className="uppercase text-[#C6E589] font-semibold tracking-wider text-xs mb-4">TRANSFORMING LIVES</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] leading-none mb-8">
@@ -157,6 +154,124 @@ const About = () => {
                 </div>
             </section>
 
+            {/* SECTION: PARTNERS & MENTORSHIP (New Section) */}
+            {/* SECTION: PARTNERS & MENTORSHIP */}
+            <section className="py-10 px-6 bg-[#F9FFF0]">
+                <div className="max-w-7xl mx-auto">
+                    {/* Header Block */}
+                    <div className="text-center mb-10">
+                        <p className="uppercase text-[#8ECC14] font-semibold tracking-wider text-xs mb-4">Partners & Mentorship</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] mb-6 leading-14">
+                            Support Our <span className="text-[#8ECC14]">Mission</span>
+                        </h2>
+                        <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed text-base md:text-lg">
+                            Behind every ethical breeding program is a network of support, wisdom, and shared values.
+                            These partnerships ensure our puppies thrive and continue the tradition of quality this breed deserves.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-10">
+                        {/* Left Column: Mentors & Organizations */}
+                        <div className="space-y-10">
+                            {/* Mentor Spotlight */}
+                            <div>
+                                <h3 className="text-2xl font-bold text-[#333] mb-6 flex items-center gap-3">
+                                    <UsersRound className="text-[#8ECC14]" size={28} /> Mentors Who Made Us Better
+                                </h3>
+                                <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-[#C6E589]">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#C6E589]">
+                                            <img src="https://i.pravatar.cc/150?u=44" className="w-full h-full object-cover" alt="Linda DuBose" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-xl font-bold text-[#333]">Honoring Linda DuBose</h4>
+                                            <p className="text-[#8ECC14] text-sm font-semibold italic">Scarlet’s Fancy Poodles</p>
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-500 leading-relaxed text-sm mb-6">
+                                        Our founder’s close friend and mentor taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more than superficial color claims. Her influence is woven through every puppy we place.
+                                    </p>
+                                    <Link to={"/about-breeder"} className="flex items-center gap-2 text-[#8ECC14] font-bold text-sm hover:underline cursor-pointer">
+                                        Visit About Breeder <ExternalLink size={14} />
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Organizations */}
+                            <div>
+                                <h3 className="text-2xl font-bold text-[#333] mb-6 flex items-center gap-3">
+                                    <Handshake className="text-[#8ECC14]" size={28} /> Breed Organizations
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="p-6 bg-white rounded-3xl border border-[#C6E589] hover:shadow-sm transition-all duration-300">
+                                        <Award className="text-[#8ECC14] mb-3" size={32} />
+                                        <h5 className="font-bold text-sm text-[#333] mb-2 uppercase">Apricot Red Poodle Club</h5>
+                                        <p className="text-xs text-gray-400 leading-relaxed">Promoting excellence, education, and research specifically for red and apricot.</p>
+                                    </div>
+                                    <div className="p-6 bg-white rounded-3xl border border-[#C6E589] hover:shadow-sm transition-all duration-300">
+                                        <ShieldCheck className="text-[#8ECC14] mb-3" size={32} />
+                                        <h5 className="font-bold text-sm text-[#333] mb-2 uppercase">American Kennel Club</h5>
+                                        <p className="text-xs text-gray-400 leading-relaxed">Supporting recognized standards, health recommendations, and breed integrity.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Values & Benefits */}
+                        <div className="space-y-10">
+                            {/* Mentorship Values */}
+                            <div className="bg-white p-8 rounded-[40px] border border-[#C6E589]">
+                                <h3 className="text-xl font-bold text-[#333] mb-6">What Mentorship Means to Us</h3>
+                                <div className="space-y-6">
+                                    {[
+                                        { t: "Continued Learning", d: "A shared commitment to evolving ethical practices and breed standards." },
+                                        { t: "Giving Back", d: "Sharing what we've learned with emerging breeders and maintaining openness." },
+                                        { t: "Growth & Humility", d: "Securing a strong future for the breed through deep, thoughtful study." }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-start gap-4">
+                                            <div className="mt-1 bg-[#C6E589] p-1.5 rounded-full text-[#66920f]">
+                                                <CheckCircle2 size={14} />
+                                            </div>
+                                            <div>
+                                                <h5 className="font-bold text-[#333] text-sm uppercase">{item.t}</h5>
+                                                <p className="text-gray-400 text-xs">{item.d}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Benefit to Families */}
+                            <div className="bg-[#e2fab3] p-8 rounded-[40px]">
+                                <h3 className="text-xl font-bold text-[#333] mb-4">Why This Matters to You</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                    When you bring a puppy home, you are bringing decades of shared wisdom and medical practices grounded in experience.
+                                </p>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Decades of Wisdom</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Network of Support</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Ethical Standards</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Dog-First Philosophy</li>
+                                </ul>
+                            </div>
+
+                            {/* Final CTA Block */}
+                            <div className="text-center pt-4">
+                                <h4 className="text-xl font-bold text-[#333] mb-6">Interested in Learning More?</h4>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button onClick={() => navigate("/#contact")} className="bg-[#8ECC14] text-white font-bold px-8 py-4 rounded-2xl hover:bg-[#74a710] transition-all duration-300 cursor-pointer text-sm shadow-sm">
+                                        Contact Us About Mentorship
+                                    </button>
+                                    <button onClick={() => navigate('/breed-program')} className="border-2 border-[#8ECC14] text-[#333] font-bold px-8 py-4 rounded-2xl hover:bg-[#E5F4A3] transition-all duration-300 cursor-pointer text-sm">
+                                        See Our Breeding Program
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* SECTION 4: TESTIMONIALS SLIDER */}
             <section className="py-10 px-6 bg-white overflow-hidden relative">
                 <div className="absolute top-0 left-10 w-16 h-16 bg-[#C6E589] rounded-2xl -z-10"></div>
@@ -165,30 +280,15 @@ const About = () => {
                         Happy Clients <span className="text-[#8ECC14]">Testimonials</span>
                     </h2>
                 </div>
-
                 <div className="max-w-7xl mx-auto px-4 lg:px-12 relative">
-                    {/* Left Arrow */}
-                    <button
-                        onClick={prevSlide}
-                        disabled={currentIndex === 0}
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden
-                        ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}
-                    >
+                    <button onClick={prevSlide} disabled={currentIndex === 0} className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}>
                         <ChevronLeft size={24} />
                     </button>
-
-                    {/* Testimonial Track */}
                     <div className="overflow-hidden w-full">
-                        <motion.div
-                            className="flex gap-8 md:gap-12"
-                            animate={{ x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                        >
+                        <motion.div className="flex gap-8 md:gap-12" animate={{ x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` }} transition={{ type: "spring", stiffness: 100, damping: 20 }}>
                             {testimonials.map((user, i) => (
                                 <div key={i} className="flex flex-col-reverse items-center text-center w-full md:w-[calc(33.333%-2rem)] flex-shrink-0">
-                                    <p className="text-gray-500 italic relative px-4 text-sm md:text-base leading-relaxed">
-                                        "{user.text}"
-                                    </p>
+                                    <p className="text-gray-500 italic relative px-4 text-sm md:text-base leading-relaxed">"{user.text}"</p>
                                     <h4 className="text-xl font-bold text-[#8ECC14] mb-2">{user.name}</h4>
                                     <div className="w-24 h-24 rounded-full overflow-hidden border-4 mb-4 border-[#F9FFF0] shadow-sm">
                                         <img loading='lazy' src={user.img} className="w-full h-full object-cover" alt={user.name} />
@@ -197,24 +297,14 @@ const About = () => {
                             ))}
                         </motion.div>
                     </div>
-
-                    {/* Right Arrow */}
-                    <button
-                        onClick={nextSlide}
-                        disabled={currentIndex >= testimonials.length - visibleCards}
-                        className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden
-                        ${currentIndex >= testimonials.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}
-                    >
+                    <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex >= testimonials.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}>
                         <ChevronRight size={24} />
                     </button>
                 </div>
-
-                {/* Mobile Controls (Visible only on small screens) */}
                 <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
                     <button onClick={prevSlide} disabled={currentIndex === 0} className="p-3 border-2 border-[#C6E589] rounded-full text-[#8ECC14]"><ChevronLeft size={20} /></button>
                     <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className="p-3 border-2 border-[#C6E589] rounded-full text-[#8ECC14]"><ChevronRight size={20} /></button>
                 </div>
-
                 <div className="absolute bottom-10 right-10 w-16 h-16 bg-[#C6E589] rounded-2xl -z-10"></div>
             </section>
 
@@ -234,7 +324,6 @@ const About = () => {
                             <p className="font-bold text-[#3F3B57]">Environment First Philosophy</p>
                         </div>
                     </div>
-
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
                         <img loading='lazy' src="https://images.unsplash.com/photo-1651571475974-07deef85e33b?w=1000&q=100" className="w-full h-64 object-cover rounded-[50px]" alt="Facility" />
                         <img loading='lazy' src="https://images.unsplash.com/photo-1556292577-86da403c8d42?w=1000&q=100" className="w-full h-64 object-cover rounded-[50px] mt-12" alt="Play Area" />

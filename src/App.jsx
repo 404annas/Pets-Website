@@ -13,6 +13,8 @@ import BreedProgram from './pages/BreedProgram';
 import AvailablePoodles from './pages/AvailablePoodles';
 import HealthSubPage from './pages/HealthSubPage';
 import RaisingSubPage from './pages/RaisingSubPage';
+import ScrollToHash from './components/ScrollToHash';
+import AboutBreeder from './pages/AboutBreeder';
 
 const Home = () => (
   <>
@@ -28,6 +30,7 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-screen">
+        <ScrollToHash />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -36,6 +39,7 @@ const App = () => {
           <Route path='/available' element={<AvailablePoodles />}/>
           <Route path='/breed-program' element={<BreedProgram />}/>
           <Route path='/health-testing' element={<HealthSubPage />}/>
+          <Route path='/about-breeder' element={<AboutBreeder />}/>
           <Route path='/puppy-raising' element={<RaisingSubPage />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>

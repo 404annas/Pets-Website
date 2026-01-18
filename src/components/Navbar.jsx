@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
     const [open, setOpen] = useState(false);
 
     // Lock body scroll when sidebar is open
@@ -31,6 +32,21 @@ const Navbar = () => {
             section.scrollIntoView({ behavior: "smooth" });
         }
         setOpen(false); // close mobile menu
+    };
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleNavScroll = (hash) => {
+        setOpen(false);
+
+        if (location.pathname !== "/") {
+            navigate(`/#${hash}`);
+        } else {
+            document
+                .getElementById(hash)
+                ?.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
@@ -66,7 +82,7 @@ const Navbar = () => {
                         ) : (
                             <p
                                 key={item.label}
-                                onClick={() => handleScroll(item.id)}
+                                onClick={() => handleNavScroll(item.id)}
                                 className={`relative cursor-pointer ${item.label === "Home" ? "text-[#8ECC14]" : "text-gray-800"
                                     }
             after:absolute after:left-0 after:-bottom-0.5
@@ -131,7 +147,7 @@ const Navbar = () => {
                         ) : (
                             <p
                                 key={item.label}
-                                onClick={() => handleScroll(item.id)}
+                                onClick={() => handleNavScroll(item.id)}
                                 className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
                             >
                                 {item.label}
