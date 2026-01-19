@@ -217,7 +217,7 @@ const FeaturedPets = () => {
             {/* LOWER CONTENT SECTIONS */}
             <div className="mt-5 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Waitlist */}
-                <div className="bg-[#E9FBC8]/30 p-4 md:p-8 rounded-[40px] border border-[#C6E598]/30">
+                <div className="bg-[#E9FBC8]/30 px-4 py-6 md:p-8 rounded-[40px] border border-[#C6E598]/30">
                     <UsersRound size={30} className="text-[#8ECC14] mb-4" />
                     <h3 className="text-2xl text-[#8ECC14] font-bold mb-3">No Puppies Right Now?</h3>
                     <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">
@@ -228,7 +228,7 @@ const FeaturedPets = () => {
                 </div>
 
                 {/* Shipping */}
-                <div className="bg-slate-50 p-4 md:p-8 rounded-[40px] border border-slate-200">
+                <div className="bg-slate-50 px-4 py-6 md:p-8 rounded-[40px] border border-slate-200">
                     <Truck size={30} className="text-slate-800 mb-4" />
                     <h3 className="text-2xl font-bold mb-3">Visiting & Pickup</h3>
                     <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">

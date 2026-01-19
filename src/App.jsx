@@ -15,12 +15,28 @@ import HealthSubPage from './pages/HealthSubPage';
 import RaisingSubPage from './pages/RaisingSubPage';
 import ScrollToHash from './components/ScrollToHash';
 import AboutBreeder from './pages/AboutBreeder';
+import HealthContract from './pages/HealthContract';
+import PastLitters from './pages/PastLitters';
+import LitterShowcase from './pages/LitterShowcase';
+import GalleryHub from './pages/GalleryHub';
+import OurDogs from './pages/OurDogs';
+import OurDogsSubpage from './pages/OurDogsSubpage';
+import RedPoodleGenetics from './pages/RedPoodleGenetics';
+import ToyPoodleStandard from './pages/ToyPoodleStandard';
+import WhyRed from './components/WhyRed';
+import HomePhilosophy from './components/HomePhilosophy';
+import Mentorship from './pages/Mentorship';
+import ExploreProgram from './components/ExploreProgram';
 
 const Home = () => (
   <>
     <Hero />
     <Intro />
+    <WhyRed />
+    <HomePhilosophy />
     <FeaturedPets />
+    <Mentorship />
+    <ExploreProgram />
     <Testimonials />
     <ContactUs />
   </>
@@ -40,7 +56,15 @@ const App = () => {
           <Route path='/breed-program' element={<BreedProgram />}/>
           <Route path='/health-testing' element={<HealthSubPage />}/>
           <Route path='/about-breeder' element={<AboutBreeder />}/>
+          <Route path='/health-contract' element={<HealthContract />}/>
           <Route path='/puppy-raising' element={<RaisingSubPage />}/>
+          <Route path='/past-litters' element={<PastLitters />}/>
+          <Route path='/past-litters/:id' element={<LitterShowcase />}/>
+          <Route path='/galleries' element={<GalleryHub />}/>
+          <Route path='/our-dogs' element={<OurDogs />}/>
+          <Route path='/dogs-page' element={<OurDogsSubpage />}/>
+          <Route path='/the-red-story' element={<RedPoodleGenetics />}/>
+          <Route path='/red-toy-standard' element={<ToyPoodleStandard />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
         <Footer />

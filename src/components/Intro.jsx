@@ -1,6 +1,4 @@
-import intro1 from "../assets/intro1.png"
-import intro2 from "../assets/intro2.png"
-import intro3 from "../assets/intro3.png"
+import { Link } from "react-router-dom"
 import service1 from "../assets/service1.webp"
 import service2 from "../assets/service2.webp"
 import service3 from "../assets/service3.webp"
@@ -50,11 +48,11 @@ const Intro = () => {
                         on health, temperament, and proper care.
                     </p>
 
-                    <button className="px-6 py-2 rounded-full border-2 border-[#FFD278]
+                    <Link to={"/breed-program"} className="px-6 py-2 rounded-full border-2 border-[#FFD278]
                         text-[#FFD278] font-bold hover:bg-[#FFD278] hover:text-white
                         transition-all duration-300 cursor-pointer">
                         Read More
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Card 2 */}
@@ -81,11 +79,11 @@ const Intro = () => {
                         excellent health before joining their new family.
                     </p>
 
-                    <button className="px-6 py-2 rounded-full border-2 border-[#4DAFFF]
+                    <Link to={"/health-contract"} className="px-6 py-2 rounded-full border-2 border-[#4DAFFF]
                         text-[#4DAFFF] font-bold hover:bg-[#4DAFFF] hover:text-white
                         transition-all duration-300 cursor-pointer">
                         View Details
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Card 3 */}
@@ -112,11 +110,11 @@ const Intro = () => {
                         and arrange delivery anywhere in the USA.
                     </p>
 
-                    <button className="px-6 py-2 rounded-full border-2 border-[#E5B5C1]
+                    <Link to={"/application"} className="px-6 py-2 rounded-full border-2 border-[#E5B5C1]
                         text-[#E5B5C1] font-bold hover:bg-[#E5B5C1] hover:text-white
                         transition-all duration-300 cursor-pointer">
                         Contact Us
-                    </button>
+                    </Link>
                 </div>
 
             </div>

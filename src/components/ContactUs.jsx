@@ -62,22 +62,37 @@ const ContactUs = () => {
 
                         <div>
                             <label className="text-sm font-semibold text-gray-600">
-                                I'm Interested In *
+                                Nature of Inquiry *
                             </label>
                             <div className="relative mt-2">
-                                <select className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-[#8ECC14]">
-                                    <option>Select Poodle Type...</option>
-                                    <option>Toy Poodle (Male)</option>
-                                    <option>Toy Poodle (Female)</option>
-                                    <option>Miniature Poodle (Male)</option>
-                                    <option>Miniature Poodle (Female)</option>
-                                    <option>Standard Poodle (Male)</option>
-                                    <option>Standard Poodle (Female)</option>
-                                    <option>Any Available Poodle</option>
+                                <select className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-[#8ECC14] text-gray-700">
+                                    <option value="" disabled selected>Select Inquiry Type...</option>
+
+                                    <optgroup label="New Puppy Inquiry">
+                                        <option>Toy Poodle (Red/Apricot)</option>
+                                        <option>Join the Waiting List</option>
+                                        <option>Service/Therapy Potential</option>
+                                    </optgroup>
+
+                                    <optgroup label="Specific Pairings / Archive">
+                                        <option>Ruby x Jasper Line</option>
+                                        <option>Bella x Winston Line</option>
+                                        <option>Penny x Oliver Line</option>
+                                        <option>Daisy x Max Line</option>
+                                    </optgroup>
+
+                                    <optgroup label="Health & Contract">
+                                        <option>Health Guarantee Questions</option>
+                                        <option>Contract Review</option>
+                                    </optgroup>
+
+                                    <optgroup label="Other">
+                                        <option>General Question</option>
+                                    </optgroup>
                                 </select>
                                 <ChevronDown
                                     size={18}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
                                 />
                             </div>
                         </div>
@@ -93,7 +108,7 @@ const ContactUs = () => {
                             />
                         </div>
 
-                        <button className="w-full mt-4 bg-[#8ECC14] hover:bg-[#7fb612] text-white font-bold py-4 rounded-full transition-all cursor-pointer duration-300">
+                        <button className="w-full mt-4 bg-[#8ECC14] hover:bg-[#7fb612] text-white font-bold py-4 rounded-full transition-all cursor-pointer duration-300 shadow-lg shadow-[#8ECC14]/20">
                             Send Inquiry
                         </button>
                     </form>

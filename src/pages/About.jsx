@@ -8,7 +8,6 @@ import {
     UsersRound,
     Handshake,
     Award,
-    BookOpen,
     ExternalLink,
     CheckCircle2
 } from 'lucide-react';
@@ -102,8 +101,8 @@ const About = () => {
                         <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
                             Ensuring poodles are healthy, well-trained, and emotionally ready for your family.
                         </p>
-                        <button className="bg-[#C6E589] text-[#3F3B57] font-bold px-10 py-5 rounded-[25px] hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-md cursor-pointer">
-                            Make a Difference
+                        <button onClick={() => navigate("/our-dogs")} className="bg-[#C6E589] text-[#3F3B57] font-bold px-6 py-4 rounded-xl hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
+                            Meet Our Dogs
                         </button>
                     </div>
                     <div className="w-full lg:w-1/2 relative">
@@ -147,7 +146,7 @@ const About = () => {
                         <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
                             Hundreds of poodles placed into loving homes across the country.
                         </p>
-                        <button className="bg-[#C6E589] text-[#3F3B57] font-bold px-10 py-5 rounded-[25px] hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-md cursor-pointer">
+                        <button onClick={() => navigate("/#contact")} className="bg-[#C6E589] text-[#3F3B57] font-bold px-6 py-4 rounded-xl hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
                             Donate To Our Cause
                         </button>
                     </div>

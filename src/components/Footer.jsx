@@ -7,6 +7,7 @@ import {
     Twitter,
     Linkedin
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -47,50 +48,37 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Column 2: Adopt */}
-                <div>
-                    <h3 className="text-xl text-[#6fa00e] font-bold mb-6">
-                        Our Poodles
-                    </h3>
-                    <ul className="space-y-4 text-gray-600">
-                        <li className="hover:text-gray-800 cursor-pointer">Toy Poodles</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Miniature Poodles</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Standard Poodles</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Available Poodles</li>
-                    </ul>
-                </div>
-
-                {/* Column 3: Navigation */}
+                {/* Column 3: Quick Links */}
                 <div>
                     <h3 className="text-xl text-[#6fa00e] font-bold mb-6">
                         Quick Links
                     </h3>
                     <ul className="space-y-4 text-gray-600">
-                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("choose")?.scrollIntoView({ behavior: "smooth" })}>
-                            Choose
-                        </p>
-                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
-                            Services
-                        </p>
-                        <li className="hover:text-gray-800 cursor-pointer">Store</li>
-                        <li className="hover:text-gray-800 cursor-pointer">Pricing</li>
-                        <p className='hover:text-gray-800 cursor-pointer' onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                            Contact
-                        </p>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/">Home</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/about">About</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/application">Application</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/breed-program">Breed Program</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/health-testing">Health Testing</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/about-breeder">About Breeder</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/health-contract">Health Contract</Link></li>
                     </ul>
                 </div>
 
-                {/* Column 4: Resources */}
-                {/* <div>
-                    <h3 className="text-xl text-[#6fa00e] font-bold mb-6">Resources</h3>
+                {/* Column 4: More Links */}
+                <div>
+                    <h3 className="text-xl text-[#6fa00e] font-bold mb-6">
+                        More Links
+                    </h3>
                     <ul className="space-y-4 text-gray-600">
-                        <li className="hover:text-gray-800 cursor-pointer transition-colors">Blog</li>
-                        <li className="hover:text-gray-800 cursor-pointer transition-colors">Changelog</li>
-                        <li className="hover:text-gray-800 cursor-pointer transition-colors">Licensing</li>
-                        <li className="hover:text-gray-800 cursor-pointer transition-colors">Style Guide</li>
-                        <li className="hover:text-gray-800 cursor-pointer transition-colors">Instructions</li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/puppy-raising">Puppy Raising</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/past-litters">Past Litters</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/our-dogs">Our Dogs</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/dogs-page">Dogs Page</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/the-red-story">The Red Story</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/red-toy-standard">Red Toy Standard</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/available">Available Poodles</Link></li>
                     </ul>
-                </div> */}
+                </div>
 
                 {/* Column 5: Follow & Donation */}
                 <div>

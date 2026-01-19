@@ -18,21 +18,12 @@ const Navbar = () => {
     const menuItems = [
         { label: "Home", type: "route", path: "/" },
         { label: "About", type: "route", path: "/about" },
-        { label: "Choose", type: "scroll", id: "choose" },
+        { label: "Past Litters", type: "route", path: "/past-litters" },
         { label: "Breed Program", type: "route", path: "/breed-program" },
-        { label: "FAQ's", type: "scroll", id: "faqs" },
+        { label: "The Red Story", type: "route", path: "/the-red-story" },
+        { label: "Poodle Standard", type: "route", path: "/red-toy-standard" },
         { label: "Application", type: "route", path: "/application" },
-        { label: "Contact", type: "scroll", id: "contact" },
     ];
-
-    // Scroll handler
-    const handleScroll = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-        setOpen(false); // close mobile menu
-    };
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -64,7 +55,7 @@ const Navbar = () => {
                 <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >Poodles Place.</Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-8 font-medium">
+                <div className="hidden lg:flex items-center gap-5 font-medium">
                     {menuItems.map((item, idx) =>
                         item.type === "route" ? (
                             <Link
@@ -98,10 +89,10 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Button */}
-                <div className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#C6E589] hover:bg-[#b8da74] transition-all px-6 py-3 rounded-full">
+                <div onClick={() => navigate("/#contact")} className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#C6E589] hover:bg-[#b8da74] transition-all px-6 py-3 rounded-full">
                     <FaWhatsapp className="text-green-700" size={22} />
-                    <span className="text-gray-800">+1 (800) 236-000</span>
-                </div>
+                    <span className="text-gray-800">Contact</span>
+                    </div>
 
                 {/* Mobile Menu Icon */}
                 <button
@@ -156,10 +147,10 @@ const Navbar = () => {
                     )}
 
                     {/* Button */}
-                    <div className="mt-6 flex items-center gap-3 bg-[#C6E589] px-6 py-4 rounded-full cursor-pointer w-fit">
+                    <div onClick={() => navigate("/#contact")} className="mt-6 flex items-center gap-3 bg-[#C6E589] px-6 py-4 rounded-full cursor-pointer w-fit">
                         <FaWhatsapp className="text-green-700" size={22} />
                         <span className="text-gray-800 font-semibold">
-                            +1 (800) 236-000
+                            Contact
                         </span>
                     </div>
                 </div>

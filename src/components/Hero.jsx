@@ -3,8 +3,11 @@ import heroMain from "../assets/heroMain.png"
 import heroBottom from "../assets/heroBottom.png"
 import manImage from "../assets/manIcon.avif"
 import heroPaw from "../assets/heroPaw3.png"
+import { useNavigate } from "react-router-dom"
 
 const Hero = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="relative bg-[#C6E589] min-h-screen w-full flex items-center overflow-hidden
             px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-0">
@@ -61,7 +64,7 @@ const Hero = () => {
                             hover:bg-[#7db311] transition-colors duration-500
                             p-1.5 pl-8 px-2 rounded-full w-fit cursor-pointer mt-4 mx-auto md:mx-0">
 
-                            <span onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="text-gray-800 font-semibold mr-4">
+                            <span onClick={() => navigate("/available")} className="text-gray-800 font-semibold mr-4">
                                 View Available Poodles
                             </span>
 
