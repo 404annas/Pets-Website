@@ -10,7 +10,10 @@ import {
     Activity,
     Sun,
     ShieldCheck,
-    UsersRound
+    UsersRound,
+    Eye,
+    Compass,
+    Target
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -103,17 +106,89 @@ const RaisingSubPage = () => {
             </section>
 
             {/* 4. PUPPY MATCHING */}
-            <section className="py-10 px-6">
-                <div className="max-w-5xl mx-auto bg-[#C6E589] px-8 py-10 md:p-12 rounded-[2rem] border border-[#aac96c]">
-                    <div className="flex items-center gap-4 mb-6 text-[#75a712]">
-                        <Zap size={30} fill="currentColor" />
-                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tighter">Thoughtful Matching</h2>
+            <section className="bg-white py-10 px-6">
+                <div className="max-w-7xl mx-auto border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-sm">
+
+                    {/* Top Header Bar */}
+                    <div className="bg-gray-50 border-b border-gray-100 px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div className="flex items-center gap-3">
+                            <Target className="text-[#8ECC14]" size={20} />
+                            <span className="text-xs font-bold uppercase tracking-widest text-[#8ECC14]">Placement Protocol</span>
+                        </div>
+                        <div className="h-px flex-grow bg-gray-200 hidden md:block mx-8"></div>
+                        <span className="text-[#8ECC14] text-xs font-bold uppercase tracking-widest">Est. 2024 • Professional Matching</span>
                     </div>
-                    <p className="text-base text-slate-600 leading-relaxed mb-8">
-                        No two puppies are the same. Some are <span className="text-[#75a712] font-bold">bold explorers</span>, some are <span className="text-[#75a712] font-bold">gentle observers</span>. We pay attention to these differences to help families find a puppy that fits their lifestyle. Matching protects the puppy and the family.
-                    </p>
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#75a712] uppercase tracking-widest border-t border-[#75a712] pt-6">
-                        <ShieldCheck size={20} className="text-[#75a712]" /> Support does not end at pickup
+
+                    <div className="grid lg:grid-cols-2">
+
+                        {/* Left Side: The Narrative */}
+                        <div className="px-6 py-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
+                            <h2 className="text-gray-900 text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-4">
+                                Thoughtful <br />
+                                <span className="text-[#8ECC14]">Matching</span>
+                            </h2>
+                            <p className="text-gray-500 text-base leading-relaxed mb-6">
+                                No two puppies are the same. We pay attention to the differences that define a dog's future, helping families find a puppy that fits their specific lifestyle.
+                            </p>
+                            <div className="bg-[#E2F1C4]/50 px-4 py-6 md:p-8 rounded-3xl">
+                                <p className="text-gray-800 font-medium leading-normal md:text-base text-sm">
+                                    "Our goal is to ensure the energy in the home matches the energy of the pup. This protection benefits the puppy, the family, and the bond they will share for the next 15 years."
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Side: The Evaluation (Technical Data Look) */}
+                        <div className="px-6 py-8 md:p-10 bg-white flex flex-col justify-center">
+                            <div className="space-y-1">
+
+                                {/* Profile A */}
+                                <div className="group border border-gray-100 rounded-2xl px-4 py-6 md:p-6 hover:border-[#C6E589] transition-all duration-300">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 rounded-lg bg-[#E2F1C4] flex items-center justify-center text-[#8ECC14]">
+                                                <Compass size={18} />
+                                            </div>
+                                            <h4 className="font-black uppercase text-base tracking-tight text-gray-900">The Bold Explorer</h4>
+                                        </div>
+                                        <span className="text-xs md:block hidden font-bold text-[#C6E589] uppercase">Profile A</span>
+                                    </div>
+                                    <p className="text-gray-500 text-sm leading-normal">
+                                        Highly curious, driven by scent and sound. These pups lead the pack and thrive in active, adventurous environments.
+                                    </p>
+                                </div>
+
+                                {/* Connector */}
+                                <div className="ml-10 h-6 border-l-2 border-dashed border-gray-100"></div>
+
+                                {/* Profile B */}
+                                <div className="group border border-gray-100 rounded-2xl px-4 py-6 md:p-6 hover:border-[#C6E589] transition-all">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 rounded-lg bg-[#E2F1C4] flex items-center justify-center text-[#8ECC14]">
+                                                <Eye size={18} />
+                                            </div>
+                                            <h4 className="font-black uppercase text-base tracking-tight text-gray-900">The Gentle Observer</h4>
+                                        </div>
+                                        <span className="text-xs font-bold md:block hidden text-[#C6E589] uppercase">Profile B</span>
+                                    </div>
+                                    <p className="text-gray-500 text-sm leading-normal">
+                                        Intuitive and calm. These pups prefer to watch before engaging, making them exceptional companions for quieter, focused homes.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom Status Bar */}
+                    <div className="bg-[#8ECC14] py-6 px-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div className="flex items-center gap-3 text-white">
+                            <ShieldCheck size={20} />
+                            <span className="text-xs font-bold uppercase tracking-widest">Our support does not end</span>
+                        </div>
+                        <button onClick={() => navigate("/#contact")} className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest hover:gap-4 transition-all duration-300 cursor-pointer">
+                            Inquire About Our Process <ArrowRight size={14} />
+                        </button>
                     </div>
                 </div>
             </section>

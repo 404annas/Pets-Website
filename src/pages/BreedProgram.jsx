@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     ShieldCheck, Heart, Dna, Eye, Stethoscope,
-    ArrowRight, Sparkles, CheckCircle2, ChevronDown,
-    Microscope, Users, Home, Calendar, Info, ShieldAlert,
+    ArrowRight, CheckCircle2, ChevronDown,
+    Microscope, ShieldAlert,
     UsersRound
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
+const pillars = [
+    {
+        title: "Health Foundations",
+        desc: "Decisions built around testing and evidence, following recognized Poodle health guidance. We verify genetic health to reduce avoidable risks.",
+        icon: <Microscope size={22} />,
+        label: "Genetic Integrity"
+    },
+    {
+        title: "Stable Temperament",
+        desc: "Stable nerves, curiosity, affection and confidence. Temperament is shaped from the first heartbeat until the day they join your home.",
+        icon: <Heart size={22} />,
+        label: "Behavioral Soundness"
+    },
+    {
+        title: "Breed Type & Structure",
+        desc: "Balanced structure that moves better and feels better. We strive to preserve the elegance and intelligence Toy Poodles are known for.",
+        icon: <ShieldCheck size={22} />,
+        label: "Structural Balance"
+    }
+];
 
 const BreedProgram = () => {
     const navigate = useNavigate();
@@ -81,32 +102,66 @@ const BreedProgram = () => {
             </section>
 
             {/* 3. THREE PILLAR CARDS */}
-            <section className="py-10 px-6 bg-slate-900 rounded-[3rem] mx-4 md:mx-10 text-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-20">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter uppercase mb-4">The Three Pillars</h2>
-                        <p className="text-[#8ECC14] font-medium text-xs uppercase tracking-widest">What we select for, every single time</p>
+            <section className="px-4 md:px-10 py-10 bg-white">
+            <div className="bg-slate-900 rounded-[2rem] overflow-hidden">
+                <div className="max-w-7xl mx-auto px-8 py-10">
+                    
+                    {/* Header: Compact & Precise */}
+                    <div className="pb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                        <div className="max-w-xl">
+                            <span className="text-[#8ECC14] font-semibold uppercase tracking-widest text-xs mb-3 block">
+                                Core Breeding Philosophy
+                            </span>
+                            <h2 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none">
+                                The Three Pillars
+                            </h2>
+                        </div>
+                        <p className="text-slate-400 max-w-xs text-sm leading-normal border-l border-[#8ECC14]/30 pl-6">
+                            Every litter is the result of careful planning and a deep respect for the Toy Poodle breed.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
-                            <Microscope className="text-[#8ECC14] mb-6" size={32} />
-                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Health Foundations</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed">Decisions built around testing and evidence, following recognized Poodle health guidance.</p>
-                        </div>
-                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
-                            <Heart className="text-[#8ECC14] mb-6" size={32} />
-                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Temperament</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed">Stable nerves, curiosity, and affection. Temperament is shaped from day one till last day.</p>
-                        </div>
-                        <div className="bg-white/5 border border-white/10 p-4 md:p-10 rounded-3xl hover:bg-white/10 transition-colors duration-300">
-                            <ShieldCheck className="text-[#8ECC14] mb-6" size={32} />
-                            <h4 className="text-xl font-black uppercase mb-4 tracking-tight">Breed Type</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed">Balanced structure that moves better and feels better. Toy Poodles, not fragile ornaments.</p>
-                        </div>
+                    {/* Content Grid: Professional Row Style */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 rounded-2xl overflow-hidden">
+                        {pillars.map((pillar, idx) => (
+                            <div 
+                                key={idx} 
+                                className={`p-8 md:p-10 flex flex-col hover:bg-white/[0.02] transition-colors border-b md:border-b-0 md:border-r border-white/10 last:border-none`}
+                            >
+                                <div className="flex items-center justify-between mb-8">
+                                    <div className="w-10 h-10 rounded-lg bg-[#8ECC14]/10 flex items-center justify-center text-[#8ECC14]">
+                                        {pillar.icon}
+                                    </div>
+                                    <span className="text-white/20 text-xs font-black tracking-widest uppercase">
+                                        0{idx + 1}
+                                    </span>
+                                </div>
+
+                                <div className="mb-4">
+                                    <span className="text-[#8ECC14] text-[10px] font-bold uppercase tracking-widest mb-1 block opacity-80">
+                                        {pillar.label}
+                                    </span>
+                                    <h4 className="text-white text-lg md:text-xl font-bold uppercase tracking-tight">
+                                        {pillar.title}
+                                    </h4>
+                                </div>
+
+                                <p className="text-slate-400 text-sm leading-relaxed">
+                                    {pillar.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Footer Detail */}
+                    <div className="mt-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-[#8ECC14]">
+                        <span>Quality over Quantity</span>
+                        <div className="hidden md:block h-px flex-grow mx-8 bg-white/5"></div>
+                        <span>Established with Integrity</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             {/* 4. HEALTH TESTING ICON LIST */}
             <section className="py-10 px-6 max-w-5xl mx-auto">
