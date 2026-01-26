@@ -6,6 +6,15 @@ const ToyPoodleStandard = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const navigate = useNavigate();
 
+  const items = [
+    { i: <Ruler size={32} />, t: "Size", c: "10″ Height", desc: "Compact & Perfect", color: "bg-[#f8fdf0]" },
+    { i: <Brain size={32} />, t: "Brainy", c: "Eager Learner", desc: "Top-tier intelligence", color: "bg-white" },
+    { i: <Smile size={32} />, t: "People", c: "Affectionate", desc: "Loyal companion", color: "bg-white" },
+    { i: <Scissors size={32} />, t: "Coat", c: "Dense Curls", desc: "Hypoallergenic", color: "bg-[#f8fdf0]" },
+    { i: <Zap size={32} />, t: "Energy", c: "Playful", desc: "Active lifestyle", color: "bg-[#f8fdf0]" },
+    { i: <ShieldCheck size={32} />, t: "Social", c: "Adaptive", desc: "Friendly nature", color: "bg-white" }
+  ];
+
   const faqs = [
     { q: "Will my red Toy Poodle stay red?", a: "Red Toy Poodles are known for their rich coloring, but coat shade can change as a puppy matures. Some dogs retain deep red tones into adulthood, while others soften slightly into copper or warm apricot shades." },
     { q: "Are Toy Poodles good with children?", a: "Yes, they can be wonderful family dogs. They are affectionate and emotionally attuned. Because of their small size, gentle handling and supervision are important, especially with younger children." },
@@ -35,10 +44,10 @@ const ToyPoodleStandard = () => {
           </div>
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-[#E2F1C4] rounded-full blur-3xl opacity-30 animate-pulse"></div>
-            <img 
-                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000" 
-                alt="Elegant Toy Poodle" 
-                className="relative z-10 rounded-[3rem] shadow-sm"
+            <img
+              src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000"
+              alt="Elegant Toy Poodle"
+              className="relative z-10 rounded-[3rem] shadow-sm"
             />
           </div>
         </div>
@@ -54,10 +63,10 @@ const ToyPoodleStandard = () => {
 
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { icon: <Ruler size={32}/>, t: "Size & Proportion", d: "10 inches or shorter at the shoulder. A true Toy looks squarely balanced—not too long or leggy—so every step is confident and graceful." },
-              { icon: <HeartPulse size={32}/>, t: "Temperament", d: "Alert and emotionally responsive. They feel your mood, follow your movements, and are people-oriented without being clingy." },
-              { icon: <Brain size={32}/>, t: "Intelligence", d: "One of the smartest breeds on the planet. They love mental enrichment, puzzles, and training games as much as lap time." },
-              { icon: <Scissors size={32}/>, t: "Coat Type", d: "Tight, low-shedding curls that are allergy-friendly. Requires professional grooming every 4–6 weeks to maintain health." }
+              { icon: <Ruler size={32} />, t: "Size & Proportion", d: "10 inches or shorter at the shoulder. A true Toy looks squarely balanced—not too long or leggy—so every step is confident and graceful." },
+              { icon: <HeartPulse size={32} />, t: "Temperament", d: "Alert and emotionally responsive. They feel your mood, follow your movements, and are people-oriented without being clingy." },
+              { icon: <Brain size={32} />, t: "Intelligence", d: "One of the smartest breeds on the planet. They love mental enrichment, puzzles, and training games as much as lap time." },
+              { icon: <Scissors size={32} />, t: "Coat Type", d: "Tight, low-shedding curls that are allergy-friendly. Requires professional grooming every 4–6 weeks to maintain health." }
             ].map((trait, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-[#8ECC14] transition-colors duration-300">
                 <div className="text-[#C6E589] group-hover:text-[#8ECC14] transition-colors duration-300">{trait.icon}</div>
@@ -74,29 +83,29 @@ const ToyPoodleStandard = () => {
       {/* TYPICAL BEHAVIORS */}
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <div className="bg-gray-900 rounded-[3rem] px-6 py-10 sm:p-10 md:p-16 relative overflow-hidden text-center text-white mb-20">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ECC14] blur-[120px] opacity-20"></div>
-           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 relative z-10">
-             "Half dog, half brain <br /> <span className="text-[#8ECC14]">with a sprinkle of clown spirit."</span>
-           </h2>
-           <p className="text-gray-400">— Common owner description —</p>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ECC14] blur-[120px] opacity-20"></div>
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 relative z-10">
+            "Half dog, half brain <br /> <span className="text-[#8ECC14]">with a sprinkle of clown spirit."</span>
+          </h2>
+          <p className="text-gray-400">— Common owner description —</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-10">
           {[
-            { 
-                icon: <Search size={24} />, 
-                t: "Curious Thinkers", 
-                d: "They don’t just sniff, they investigate. They turn toys over with paws and study your shoes like a mystery." 
+            {
+              icon: <Search size={24} />,
+              t: "Curious Thinkers",
+              d: "They don’t just sniff, they investigate. They turn toys over with paws and study your shoes like a mystery."
             },
-            { 
-                icon: <Zap size={24} />, 
-                t: "Playful, Yet Poised", 
-                d: "Lap warmers one minute, zoom-about playmakers the next. They thrive on hide-and-seek and fetch." 
+            {
+              icon: <Zap size={24} />,
+              t: "Playful, Yet Poised",
+              d: "Lap warmers one minute, zoom-about playmakers the next. They thrive on hide-and-seek and fetch."
             },
-            { 
-                icon: <UsersRound size={24} />, 
-                t: "Social Butterflies", 
-                d: "Adore people and children. They are wonderful family companions, loyal cuddle and loving buddies." 
+            {
+              icon: <UsersRound size={24} />,
+              t: "Social Butterflies",
+              d: "Adore people and children. They are wonderful family companions, loyal cuddle and loving buddies."
             }
           ].map((item, i) => (
             <div key={i} className="text-center group">
@@ -111,22 +120,58 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* QUICK VISUAL CHECKLIST */}
-      <section className="py-10 px-6 bg-[#E2F1C4]/30">
+      <section className="py-10 px-6 bg-[#E2F1C4]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center font-semibold uppercase text-xs tracking-widest text-[#C6E589] mb-10">Quick Visual Checklist</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { i: <Ruler size={30}/>, t: "Size", c: "10″ Height" },
-              { i: <Brain size={30}/>, t: "Brainy", c: "Eager Learner" },
-              { i: <Smile size={30}/>, t: "People", c: "Affectionate" },
-              { i: <Scissors size={30}/>, t: "Coat", c: "Dense Curls" },
-              { i: <Zap size={30}/>, t: "Energy", c: "Playful/Poised" },
-              { i: <ShieldCheck size={30}/>, t: "Social", c: "Adaptive" }
-            ].map((check, i) => (
-              <div key={i} className="bg-white px-3 py-6 md:p-6 rounded-2xl shadow-sm text-center flex flex-col items-center">
-                <div className="text-[#8ECC14] mb-3">{check.i}</div>
-                <h4 className="text-base font-bold uppercase text-gray-900 mb-1">{check.t}</h4>
-                <p className="text-[11px] text-gray-400 font-bold uppercase">{check.c}</p>
+
+          {/* Header Section with a modern "split" look */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div className="space-y-2">
+              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none text-gray-900">
+                The <span className="text-white" style={{ WebkitTextStroke: '1.5px #8ECC14' }}>Spec</span> Sheet
+              </h2>
+              <p className="text-[#8ECC14] font-bold tracking-widest uppercase text-sm pl-1">Quick Visual Checklist</p>
+            </div>
+            <div className="text-right">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-600">01—06</span>
+            </div>
+          </div>
+
+          {/* The Modern Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black/5 overflow-hidden rounded-3xl shadow-md">
+            {items.map((check, i) => (
+              <div
+                key={i}
+                className={`group relative px-6 py-6 md:p-8 flex flex-col justify-between min-h-[280px] transition-all duration-500 
+                         border-r border-b border-black/5 ${check.color} hover:bg-[#8ECC14]`}
+              >
+                {/* Top Row: Icon & Number */}
+                <div className="flex justify-between items-start">
+                  <div className="p-4 bg-white rounded-2xl shadow-sm text-[#8ECC14] group-hover:bg-black group-hover:text-white transition-colors duration-500">
+                    {check.i}
+                  </div>
+                  <span className="text-xs font-black text-gray-300 group-hover:text-white/50 transition-colors">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* Bottom Row: Text content */}
+                <div className="mt-8">
+                  <h4 className="text-2xl font-black uppercase tracking-tighter text-gray-900 group-hover:text-white transition-colors">
+                    {check.t}
+                  </h4>
+                  <div className="h-1 w-8 bg-[#8ECC14] group-hover:bg-white my-3 transition-all duration-300 group-hover:w-16"></div>
+                  <p className="text-sm font-bold text-gray-800 group-hover:text-white uppercase tracking-wide">
+                    {check.c}
+                  </p>
+                  <p className="text-xs text-gray-400 group-hover:text-white/70 uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {check.desc}
+                  </p>
+                </div>
+
+                {/* Decorative background text on hover */}
+                <span className="absolute bottom-4 right-6 text-6xl font-black text-black/5 pointer-events-none group-hover:text-white/10 transition-colors tracking-tight">
+                  {check.t}
+                </span>
               </div>
             ))}
           </div>
@@ -139,7 +184,7 @@ const ToyPoodleStandard = () => {
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-gray-100 last:border-0">
-              <button 
+              <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex justify-between items-center py-6 text-left hover:text-[#8ECC14] transition-colors duration-300 cursor-pointer"
               >
@@ -158,7 +203,7 @@ const ToyPoodleStandard = () => {
       <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-[#E2F1C4] py-6 px-6 z-40 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => navigate('/the-red-story')}
               className="flex items-center gap-2 text-[#8ECC14] font-bold text-base uppercase cursor-pointer group"
             >
@@ -166,17 +211,17 @@ const ToyPoodleStandard = () => {
             </button>
           </div>
           <div className="flex gap-3">
-            <button 
-                onClick={() => navigate('/available')}
-                className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-[#8ECC14] transition-colors duration-300 cursor-pointer"
+            <button
+              onClick={() => navigate('/available')}
+              className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-[#8ECC14] transition-colors duration-300 cursor-pointer"
             >
-               Available Puppies
+              Available Puppies
             </button>
-            <button 
-                onClick={() => navigate('/application')}
-                className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-[#C6E589] transition-all duration-300 cursor-pointer"
+            <button
+              onClick={() => navigate('/application')}
+              className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-[#C6E589] transition-all duration-300 cursor-pointer"
             >
-               Puppy Application
+              Puppy Application
             </button>
           </div>
         </div>

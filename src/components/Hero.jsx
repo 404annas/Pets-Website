@@ -1,12 +1,32 @@
-import { ArrowRight, MoveDown } from "lucide-react"
-import heroMain from "../assets/heroMain.png"
-import heroBottom from "../assets/heroBottom.png"
-import manImage from "../assets/manIcon.avif"
-import heroPaw from "../assets/heroPaw3.png"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"; // Added useEffect
+import { ArrowRight, MoveDown, X, CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import heroMain from "../assets/heroMain.png";
+import heroBottom from "../assets/heroBottom.png";
+import manImage from "../assets/manIcon.avif";
+import heroPaw from "../assets/heroPaw3.png";
+import { useNavigate } from "react-router-dom";
+
+import poodle from "../assets/poodle6.jfif";
+import poodle3 from "../assets/poodle3.jfif";
 
 const Hero = () => {
     const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Stop scroll logic
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        // Cleanup: ensures scroll is restored if the component unmounts
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpen]);
 
     return (
         <div className="relative bg-[#C6E589] min-h-screen w-full flex items-center overflow-hidden
@@ -77,6 +97,89 @@ const Hero = () => {
                 </div>
             </div>
 
+            {/* TRIGGER DIV */}
+            <div
+                onClick={() => setIsOpen(true)}
+                className="bg-[#8ECC14] p-2 rounded-full relative top-80 sm:top-60 md:top-40 lg:left-10 lg:top-20 cursor-pointer hover:scale-110 transition-all duration-300 z-40 border-4 border-white shadow-xl"
+            >
+                <img loading="lazy" className="w-12 h-12 rounded-full cursor-pointer object-cover" src={poodle} alt="Poodle" />
+            </div>
+
+            {/* POPUP MODAL */}
+            <AnimatePresence>
+                {isOpen && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        />
+
+                        {/* Modal Box */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="relative bg-[#E2F1C4] w-full max-w-4xl rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/20"
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="absolute top-5 right-5 z-50 p-2 bg-white/50 hover:bg-white rounded-full transition-all duration-300 cursor-pointer"
+                            >
+                                <X size={20} className="text-gray-800" />
+                            </button>
+
+                            {/* Left Side: Dual Images */}
+                            <div className="w-full md:w-1/2 p-6 md:p-8 bg-[#8ECC14]/20 flex flex-col gap-4">
+                                <img loading="lazy" src={poodle3} alt="Red Poodle 1" className="w-full h-full object-cover rounded-3xl shadow-lg" />
+                            </div>
+
+                            {/* Right Side: Content */}
+                            <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <span className="w-8 h-[2px] bg-[#8ECC14]"></span>
+                                    <span className="text-[#8ECC14] font-bold text-xs uppercase tracking-widest">Premium Collection</span>
+                                </div>
+
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-none uppercase mb-4">
+                                    The Rare <br /> <span className="text-[#8ECC14]">Red Poodle</span>
+                                </h2>
+
+                                <p className="text-gray-700 text-sm leading-relaxed mb-6 font-medium">
+                                    Our Red Poodles are celebrated for their deep mahogany coats and exceptional temperaments.
+                                    Beyond their stunning color, they carry a lineage of intelligence and health excellence
+                                    perfect for luxury companionship.
+                                </p>
+
+                                <div className="space-y-3 mb-8">
+                                    {[
+                                        "Genetic Health Cleared",
+                                        "Rich Mahogany Coat",
+                                        "Socialized from Day 1"
+                                    ].map((text, i) => (
+                                        <div key={i} className="flex items-center gap-2">
+                                            <CheckCircle size={16} className="text-[#8ECC14]" />
+                                            <span className="text-xs font-semibold text-gray-800 uppercase tracking-tight">{text}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <button
+                                    onClick={() => { navigate("/available"); setIsOpen(false); }}
+                                    className="w-full bg-gray-900 text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#8ECC14] transition-all duration-300 cursor-pointer"
+                                >
+                                    Explore This Breed
+                                </button>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
             {/* Floating Bottom Right Elements */}
             <div className="hidden lg:flex absolute -bottom-13 right-30 z-30 flex-col items-end gap-6 border-none">
 
@@ -95,4 +198,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero;

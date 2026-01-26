@@ -1,4 +1,5 @@
-import { ShieldCheck, Stethoscope, AlertTriangle, ClipboardList, CheckCircle2, MessageSquare, PawPrint, Download, Balloon, Heart, Copyright, FileCheckCorner, Bandage, Accessibility, Activity, ReplaceAll } from 'lucide-react';
+import { title } from 'framer-motion/client';
+import { ShieldCheck, Stethoscope, AlertTriangle, ClipboardList, CheckCircle2, MessageSquare, PawPrint, Download, Balloon, Heart, Copyright, FileCheckCorner, Bandage, Accessibility, Activity, ReplaceAll, BadgePercent } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const HealthContract = () => {
@@ -187,30 +188,79 @@ const HealthContract = () => {
             </section>
 
             {/* THE PACKET - Grid of Documents */}
-            <section className="py-10 px-6 bg-[#E2F1C4]">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col lg:flex-row justify-between items-end mb-10 gap-6">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
-                            Full Contract <br /> Included With <br /> <span className='text-[#8ECC14]'>Every Puppy</span>
-                        </h2>
-                        <p className="text-gray-600 max-w-sm text-sm">
-                            We provide these documents so there is no guesswork, no hidden terms, and no surprise obligations later.
-                        </p>
+            <section className="relative py-10 px-6 bg-[#E2F1C4] overflow-hidden">
+                {/* Subtle Background Decoration */}
+                <div className="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(#8ECC14 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+                        <div className="max-w-2xl">
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="h-[1px] w-10 bg-[#8ECC14]"></span>
+                                <span className="text-[#8ECC14] font-bold tracking-[0.2em] text-xs uppercase">Guaranteed Protection</span>
+                            </div>
+                            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-gray-900">
+                                Full Contract <br />
+                                <span className="text-transparent" style={{ WebkitTextStroke: '1px #8ECC14' }}>Included With</span> <br />
+                                <span className='text-[#8ECC14]'>Every Puppy</span>
+                            </h2>
+                        </div>
+                        <div className="lg:mb-2">
+                            <p className="text-gray-700 max-w-sm text-base leading-relaxed border-l-2 border-[#8ECC14] pl-6">
+                                We provide these documents so there is <span className="font-bold text-gray-900">no guesswork</span>, no hidden terms, and no surprise obligations later.
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
                         {[
-                            "Sales Contract",
-                            "Health Guarantee",
-                            "Vet Check Forms",
-                            "AKC Paperwork",
-                            "Microchip Info"
+                            {
+                                title: "Sales Contract",
+                                icon: <BadgePercent />
+                            },
+                            {
+                                title: "Health Guarantee",
+                                icon: <Heart />
+                            },
+                            {
+                                title: "Vet Check Forms",
+                                icon: <Stethoscope />
+                            },
+                            {
+                                title: "AKC Paperwork",
+                                icon: <FileCheckCorner />
+                            },
+                            {
+                                title: "Microchip Info",
+                                icon: <Accessibility />
+                            }
                         ].map((doc, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm border-1 border-[#b7e261]">
-                                <ClipboardList className="text-[#C6E589] mb-3" size={24} />
-                                <span className="text-sm font-bold uppercase tracking-widest text-gray-800 leading-tight">
-                                    {doc}
+                            <div
+                                key={idx}
+                                className="group relative bg-white/80 backdrop-blur-sm p-8 flex flex-col items-start justify-between 
+                                       hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(142,204,20,0.3)]
+                                       border border-[#C6E589]"
+                            >
+                                {/* Number Indicator */}
+                                <span className="absolute top-6 right-8 text-xs font-black text-[#8ECC14]/30 group-hover:text-[#8ECC14] transition-colors">
+                                    0{idx + 1}
                                 </span>
+
+                                <div className="bg-[#E2F1C4] p-3 rounded-2xl mb-12 group-hover:scale-110 transition-transform duration-500">
+                                    {doc.icon}
+                                </div>
+
+                                <div>
+                                    <h3 className="text-base font-black uppercase text-gray-800 leading-tight mb-2">
+                                        {doc.title}
+                                    </h3>
+                                    <div className="flex items-center gap-1">
+                                        <CheckCircle2 size={12} className="text-[#8ECC14]" />
+                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Verified Paperwork</span>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
