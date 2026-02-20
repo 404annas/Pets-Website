@@ -52,7 +52,7 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >Poodles Place.</Link>
+                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >USA Poodles</Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-5 font-medium">

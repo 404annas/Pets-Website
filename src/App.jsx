@@ -27,11 +27,17 @@ import WhyRed from './components/WhyRed';
 import HomePhilosophy from './components/HomePhilosophy';
 import Mentorship from './pages/Mentorship';
 import ExploreProgram from './components/ExploreProgram';
+import Navbar2 from './components/Navbar2';
+import Hero2 from './components/Hero2';
+import Steps from './components/Steps';
+import Benefits from './components/Benifits';
 
 const Home = () => (
   <>
-    <Hero />
-    <Intro />
+    <Hero2 />
+    <Steps />
+    <Benefits />
+    {/* <Intro /> */}
     <WhyRed />
     <HomePhilosophy />
     <FeaturedPets />
