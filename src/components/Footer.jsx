@@ -18,7 +18,7 @@ const Footer = () => {
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
                     <div className="flex items-center gap-2 mb-2">
-                        <h2 className="text-3xl font-bold font-serif tracking-tight text-[#6fa00e]">Poodles Place.</h2>
+                        <h2 className="text-3xl font-bold font-serif tracking-tight text-[#6fa00e]">USA Poodles</h2>
                     </div>
                     <p className="text-[10px] uppercase tracking-tight text-gray-600 font-bold mb-8">
                         Premium Poodles Across the USA
@@ -43,7 +43,7 @@ const Footer = () => {
                             <div className="bg-[#6fa00e] p-2.5 rounded-full text-[#C6E589]">
                                 <Mail size={18} strokeWidth={3} />
                             </div>
-                            <span className="text-gray-600">info@poodleplace.com</span>
+                            <span className="text-gray-600">info@usapoodles.com</span>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ const Footer = () => {
 
             {/* Bottom Bar: Copyright & Links */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-gray-500/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
-                <p>2026 © Poodles Place | All Rights Reserved</p>
+                <p>2026 © USA Poodles | All Rights Reserved</p>
 
                 <div className="flex flex-wrap justify-center gap-6">
                     <span className="cursor-pointer">Developed by <a href="https://techxudo.com/   " target='_blank' className='text-gray-900'>Techxudo</a></span>
