@@ -43,7 +43,7 @@ const Navbar = () => {
     return (
         <>
             {/* NAVBAR */}
-            <nav className="flex items-center justify-between px-6 lg:px-10 py-4 bg-white relative z-50">
+            <nav className="flex items-center justify-between px-6 lg:px-6 py-4 bg-white relative z-50">
                 {/* Logo */}
                 {/* <img
                     loading="lazy"
@@ -52,7 +52,7 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <Link to={"/"} className="text-[#8ECC14] font-bold cursor-pointer text-2xl font-serif sm:text-3xl  md:text-4xl" >USA Poodles</Link>
+                <Link to={"/"} className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold cursor-pointer text-2xl font-serif sm:text-3xl md:text-4xl" >USA Poodles</Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-5 font-medium">
@@ -63,8 +63,8 @@ const Navbar = () => {
                                 to={item.path}
                                 className="relative cursor-pointer text-gray-800
             after:absolute after:left-0 after:-bottom-0.5
-            after:h-[2px] after:w-0 after:bg-[#8ECC14]
-            hover:text-[#8ECC14] transition-all duration-300
+            after:h-[2px] after:w-0 after:bg-pink-500
+            hover:text-pink-500 transition-all duration-300
             after:transition-all after:duration-300
             hover:after:w-full"
                             >
@@ -74,11 +74,11 @@ const Navbar = () => {
                             <p
                                 key={item.label}
                                 onClick={() => handleNavScroll(item.id)}
-                                className={`relative cursor-pointer ${item.label === "Home" ? "text-[#8ECC14]" : "text-gray-800"
+                                className={`relative cursor-pointer ${item.label === "Home" ? "text-pink-500" : "text-gray-800"
                                     }
             after:absolute after:left-0 after:-bottom-0.5
-            after:h-[2px] after:w-0 after:bg-[#8ECC14]
-            hover:text-[#8ECC14] transition-all duration-300
+            after:h-[2px] after:w-0 after:bg-pink-500
+            hover:text-pink-500 transition-all duration-300
             after:transition-all after:duration-300
             hover:after:w-full`}
                             >
@@ -89,10 +89,11 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Button */}
-                <div onClick={() => navigate("/#contact")} className="hidden lg:flex items-center gap-2 cursor-pointer font-medium bg-[#C6E589] hover:bg-[#b8da74] transition-all px-6 py-3 rounded-full">
-                    <FaWhatsapp className="text-green-700" size={22} />
-                    <span className="text-gray-800">Contact</span>
-                    </div>
+                <div onClick={() => navigate("/#contact")} className="flex justify-end items-center">
+                    <button className="bg-[#1479cc] text-gray-800 text- font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
+                        Book An Appointment
+                    </button>
+                </div>
 
                 {/* Mobile Menu Icon */}
                 <button
@@ -131,7 +132,7 @@ const Navbar = () => {
                                 key={item.label}
                                 to={item.path}
                                 onClick={() => setOpen(false)}
-                                className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
+                                className="text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
                             >
                                 {item.label}
                             </Link>
@@ -139,7 +140,7 @@ const Navbar = () => {
                             <p
                                 key={item.label}
                                 onClick={() => handleNavScroll(item.id)}
-                                className="text-lg text-gray-800 cursor-pointer hover:text-[#8ECC14] transition"
+                                className="text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
                             >
                                 {item.label}
                             </p>
@@ -147,11 +148,10 @@ const Navbar = () => {
                     )}
 
                     {/* Button */}
-                    <div onClick={() => navigate("/#contact")} className="mt-6 flex items-center gap-3 bg-[#C6E589] px-6 py-4 rounded-full cursor-pointer w-fit">
-                        <FaWhatsapp className="text-green-700" size={22} />
-                        <span className="text-gray-800 font-semibold">
-                            Contact
-                        </span>
+                    <div onClick={() => navigate("/#contact")} className="flex-1 flex justify-end items-center">
+                        <button className="bg-[#1479cc] text-gray-800 text- font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
+                            Book An Appointment
+                        </button>
                     </div>
                 </div>
             </aside>

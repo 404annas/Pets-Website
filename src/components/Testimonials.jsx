@@ -4,7 +4,7 @@ import { Plus, Minus, MessageCircle, FileText, AlertTriangle, ShieldAlert } from
 
 const faqData = {
     "Availability and Process": [
-        { q: "Do you always have puppies available?", a: "Not always. Responsible breeding takes time, planning, and respect for each dog’s health. Puppies are posted on our Available Puppies page when they are old enough to be assessed and meet health checkpoints." },
+        { q: "Do you always have puppies available?", a: "Not always. Responsible breeding takes time, planning, and respect for each dog's health. Puppies are posted on our Available Puppies page when they are old enough to be assessed and meet health checkpoints." },
         { q: "How does your waitlist work?", a: "If no puppies are currently available, you can join our waitlist. We notify people on the list about upcoming litters and expected timelines so you never miss a chance, and we can match puppies thoughtfully rather than rushing placements." },
         { q: "Can I reserve a puppy before it is born?", a: "Yes. Once a litter is planned and confirmed, we share expected birth and go-home dates and allow reservations through our application process." }
     ],
@@ -40,7 +40,7 @@ const faqData = {
 • Puppies are always available with no waitlist
 • The breeder avoids health testing transparency
 • Communication feels rushed or defensive
-• “Teacup” or similar labels are used as marketing ploys rather than breed standards
+• "Teacup" or similar labels are used as marketing ploys rather than breed standards
 
 These are common markers breeders and breed club guides suggest you avoid.`
         }
@@ -59,7 +59,7 @@ const FAQSection = () => {
             if (line.trim().startsWith('•')) {
                 return (
                     <div key={i} className="flex items-start gap-3 my-2 group/item">
-                        <ShieldAlert size={18} className="text-[#8ECC14] mt-1 flex-shrink-0 transition-transform group-hover/item:scale-110" />
+                        <ShieldAlert size={18} className="text-pink-700 mt-1 flex-shrink-0 transition-transform group-hover/item:scale-110" />
                         <span className="text-gray-700">{line.replace('•', '').trim()}</span>
                     </div>
                 );
@@ -69,7 +69,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div id='faqs' className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
+        <div id='faqs' className="min-h-screen bg-gradient-to-b from-pink-50 to-blue-50 py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
 
                 {/* Header Section */}
@@ -77,7 +77,7 @@ const FAQSection = () => {
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-[#C6E598] font-medium tracking-wider uppercase text-sm"
+                        className="text-pink-700 font-medium tracking-wider uppercase text-sm"
                     >
                         Resources & Guidance
                     </motion.span>
@@ -85,7 +85,7 @@ const FAQSection = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="mt-4 text-3xl md:text-4xl font-bold text-[#8ECC14] tracking-tight"
+                        className="mt-4 text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr"
                     >
                         Frequently Asked Questions
                     </motion.h1>
@@ -93,9 +93,9 @@ const FAQSection = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="mt-6 text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+                        className="mt-6 text-base md:text-lg text-blue-500 max-w-2xl mx-auto leading-normal"
                     >
-                        We get a lot of questions, and we think that’s a great thing. Curious or careful, both show you care about doing this right. Many of the answers below are based on real questions families have asked over time.
+                        We get a lot of questions, and we think that's a great thing. Curious or careful, both show you care about doing this right. Many of the answers below are based on real questions families have asked over time.
                     </motion.p>
                 </header>
 
@@ -106,8 +106,8 @@ const FAQSection = () => {
                             key={tab}
                             onClick={() => { setActiveTab(tab); setOpenIndex(null); }}
                             className={`px-5 py-2.5 rounded-full text-sm cursor-pointer font-medium transition-all duration-300 shadow-sm ${activeTab === tab
-                                ? 'bg-white text-[#8ECC14] shadow-md ring-1 ring-[#C6E598]'
-                                : 'bg-transparent text-gray-500 hover:bg-gray-100'
+                                ? 'bg-white text-pink-700 shadow-sm ring-1 ring-pink-200'
+                                : 'bg-transparent text-blue-500 hover:bg-pink-50'
                                 }`}
                         >
                             {tab}
@@ -116,7 +116,7 @@ const FAQSection = () => {
                 </div>
 
                 {/* Accordion Container */}
-                <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-[#C6E598]">
+                <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-pink-200">
                     <div className="divide-y divide-slate-100">
                         {faqData[activeTab].map((item, index) => {
                             const isOpen = openIndex === index;
@@ -124,12 +124,12 @@ const FAQSection = () => {
                                 <div key={index} className="group">
                                     <button
                                         onClick={() => setOpenIndex(isOpen ? null : index)}
-                                        className="w-full px-8 py-7 flex justify-between items-center text-left transition-colors hover:bg-[#ebf8d3] cursor-pointer"
+                                        className="w-full px-8 py-7 flex justify-between items-center text-left transition-colors hover:bg-pink-50 cursor-pointer"
                                     >
-                                        <span className={`text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-[#8ECC14]' : 'text-slate-800'}`}>
+                                        <span className={`text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-pink-700' : 'text-blue-700'}`}>
                                             {item.q}
                                         </span>
-                                        <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#C6E598] text-[#73a312] rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'}`}>
+                                        <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-pink-100 text-pink-700 rotate-180' : 'bg-blue-100 text-blue-400 group-hover:bg-blue-200'}`}>
                                             {isOpen ? <Minus size={18} strokeWidth={3} /> : <Plus size={18} strokeWidth={3} />}
                                         </div>
                                     </button>
@@ -155,10 +155,10 @@ const FAQSection = () => {
                 </div>
 
                 {/* Still Have Questions? Section */}
-                <div className="mt-10 bg-[#E9FBC8] rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden text-center">
+                <div className="mt-10 bg-gradient-to-r from-pink-100 to-blue-100 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden text-center">
                     <div className="relative z-10">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#8ECC14] mb-4">Still Have Questions?</h2>
-                        <p className="text-gray-700 max-w-xl mx-auto mb-10 text-base md:text-lg">
+                        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mb-4 fr">Still Have Questions?</h2>
+                        <p className="text-blue-500 max-w-xl mx-auto mb-10 text-base md:text-lg">
                             No problem. We are here to help and want you to feel confident and informed. Reach out if you want more detail on any topic.
                         </p>
 
@@ -167,7 +167,7 @@ const FAQSection = () => {
                                 <MessageCircle size={20} />
                                 Contact Us
                             </button>
-                            <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-8 py-4 bg-[#8ECC14] text-white rounded-2xl font-bold transition-all duration-300 shadow-sm cursor-pointer hover:translate-y-[-2px]">
+                            <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-700 to-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-sm cursor-pointer hover:translate-y-[-2px]">
                                 <FileText size={20} />
                                 Start Your Puppy Application
                             </button>

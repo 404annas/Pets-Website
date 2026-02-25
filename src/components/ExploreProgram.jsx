@@ -19,11 +19,11 @@ const ExploreProgram = () => {
             d: "How we select parents, plan litters, and raise puppies.",
             link: "/breed-program",
             icon: <HeartPulse size={24} />,
-            color: "bg-[#E2F1C4]/40"
+            color: "bg-gradient-to-br from-pink-50 to-blue-50"
         },
         {
             t: "Health Guarantee",
-            d: "Clear, honest commitments to your puppy’s wellbeing.",
+            d: "Clear, honest commitments to your puppy's wellbeing.",
             link: "/health-contract",
             icon: <ShieldCheck size={24} />,
             color: "bg-white"
@@ -33,23 +33,23 @@ const ExploreProgram = () => {
             d: "A thoughtful process to ensure the best possible matches.",
             link: "/application",
             icon: <FileEdit size={24} />,
-            color: "bg-[#8ECC14] text-white"
+            color: "bg-gradient-to-r from-pink-500 to-blue-500 text-white"
         }
     ];
 
     return (
-        <section className="py-10 px-6 bg-white overflow-hidden">
+        <section className="py-10 px-6 bg-gradient-to-b from-white to-pink-50 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="max-w-xl">
-                        <h2 className="text-gray-500 font-semibold uppercase text-xs tracking-widest mb-4">
+                        <h2 className="text-blue-600 font-semibold uppercase text-xs tracking-widest mb-4">
                             Explore Our Program
                         </h2>
-                        <h3 className="text-4xl md:text-5xl font-black text-gray-900 uppercase tracking-tighter leading-none">
-                            Not sure <br /> <span className="text-[#8ECC14]">where to start?</span>
+                        <h3 className="text-4xl md:text-5xl font-black text-gray-900 uppercase fr leading-none">
+                            Not sure <br /> <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">where to start?</span>
                         </h3>
                     </div>
-                    <p className="text-gray-500 max-w-xs text-sm md:text-base">
+                    <p className="text-blue-500 max-w-xs text-sm md:text-base">
                         These pages answer the questions we hear most often and provide a deep dive into our daily operations.
                     </p>
                 </div>
@@ -60,7 +60,7 @@ const ExploreProgram = () => {
                             key={i}
                             whileHover={{ y: -12 }}
                             onClick={() => navigate(item.link)}
-                            className={`${item.color} px-6 py-8 md:p-10 rounded-[3rem] border border-[#C6E589] flex flex-col justify-between h-[380px] cursor-pointer group shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden`}
+                            className={`${item.color} px-6 py-8 md:p-10 rounded-[3rem] border border-pink-200 flex flex-col justify-between h-[380px] cursor-pointer group shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden`}
                         >
                             {/* Decorative Background Number */}
                             <span className={`absolute -right-3 -bottom-6 text-9xl font-black opacity-5 pointer-events-none select-none ${i === 3 ? 'text-white' : 'text-gray-900'}`}>
@@ -68,7 +68,7 @@ const ExploreProgram = () => {
                             </span>
 
                             <div className="relative z-10">
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm transition-transform duration-300 group-hover:scale-110 ${i === 3 ? 'bg-white text-[#8ECC14]' : 'bg-white text-[#8ECC14]'}`}>
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm transition-transform duration-300 group-hover:scale-110 ${i === 3 ? 'bg-white text-pink-700' : 'bg-white text-pink-700'}`}>
                                     {item.icon}
                                 </div>
 
@@ -82,10 +82,10 @@ const ExploreProgram = () => {
                             </div>
 
                             <div className="relative z-10 flex items-center gap-2 mt-8">
-                                <span className={`text-[10px] font-black uppercase tracking-widest ${i === 3 ? 'text-white' : 'text-[#8ECC14]'}`}>
+                                <span className={`text-[10px] font-black uppercase tracking-widest ${i === 3 ? 'text-white' : 'text-pink-700'}`}>
                                     View Details
                                 </span>
-                                <div className={`p-2 rounded-full transition-all duration-300 ${i === 3 ? 'bg-white text-[#8ECC14]' : 'bg-[#E2F1C4] text-[#8ECC14] group-hover:bg-[#8ECC14] group-hover:text-white'}`}>
+                                <div className={`p-2 rounded-full transition-all duration-300 ${i === 3 ? 'bg-white text-pink-700' : 'bg-pink-100 text-pink-700 group-hover:bg-gradient-to-r group-hover:from-pink-700 group-hover:to-blue-700 group-hover:text-white'}`}>
                                     <ArrowUpRight size={14} />
                                 </div>
                             </div>
@@ -95,11 +95,11 @@ const ExploreProgram = () => {
 
                 {/* Bottom decorative line */}
                 <div className="mt-10 flex items-center gap-4">
-                    <div className="h-px flex-grow bg-gray-100"></div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#8ECC14]">
+                    <div className="h-px flex-grow bg-pink-100"></div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-pink-700">
                         Transparency • Trust • Lineage
                     </p>
-                    <div className="h-px flex-grow bg-gray-100"></div>
+                    <div className="h-px flex-grow bg-pink-100"></div>
                 </div>
             </div>
         </section>

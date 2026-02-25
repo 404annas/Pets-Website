@@ -10,17 +10,17 @@ const WhyRed = () => {
     ];
 
     return (
-        <section className="py-10 px-6 bg-gray-50">
+        <section className="py-10 px-6 bg-gradient-to-b from-pink-50 to-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-10">
-                    <h2 className="text-[#8ECC14] text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Why Red Toy Poodles <br /> Steal Hearts</h2>
-                    <p className="text-gray-500 font-semibold uppercase text-xs">More than a color. It is a presence.</p>
+                    <h2 className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-4xl md:text-5xl font-black uppercase fr mb-4">Why Red Toy Poodles <br /> Steal Hearts</h2>
+                    <p className="text-blue-600 font-semibold uppercase text-sm">More than a color. It is a presence.</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {points.map((p, i) => (
-                        <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100 group">
-                            <div className="w-12 h-12 bg-[#E2F1C4] rounded-xl flex items-center justify-center text-[#8ECC14] mb-6 group-hover:bg-[#8ECC14] group-hover:text-white transition-colors">
+                        <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-pink-200 group">
+                            <div className="w-12 h-12 bg-gradient-to-br from-pink-100 to-blue-100 rounded-xl flex items-center justify-center text-pink-700 mb-6 group-hover:bg-gradient-to-br group-hover:from-pink-700 group-hover:to-blue-700 group-hover:text-white transition-colors">
                                 {p.icon}
                             </div>
                             <h3 className="text-lg font-black uppercase tracking-tight text-gray-900 mb-3">{p.t}</h3>
@@ -30,7 +30,7 @@ const WhyRed = () => {
                 </div>
 
                 <div className="mt-10 text-center">
-                    <p className="text-lg text-gray-600 font-medium">"We do not chase color alone. We protect the whole dog."</p>
+                    <p className="text-lg text-blue-600 font-medium">"We do not chase color alone. We protect the whole dog."</p>
                 </div>
             </div>
         </section>

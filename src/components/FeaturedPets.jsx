@@ -107,12 +107,12 @@ const PetCard = ({ pet }) => {
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`}>
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
                         <img loading='lazy' src={pet.image} alt={pet.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full shadow-md text-white z-10"><RotateCcw size={24} /></div>
+                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full shadow-md text-white z-10"><RotateCcw size={24} /></div>
 
-                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-[#8ECC14] font-bold text-[10px] uppercase tracking-widest z-10 shadow-sm border border-[#8ECC14]/20">{pet.availability}</div>
+                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest z-10 shadow-sm border border-pink-200">{pet.availability}</div>
 
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white py-4 rounded-3xl text-center shadow-sm z-10">
-                            <h2 className="text-3xl font-bold text-[#8ECC14]">{pet.name}</h2>
+                            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">{pet.name}</h2>
                             <p className="text-xs tracking-widest text-gray-800 uppercase mt-1">{pet.breed}</p>
                         </div>
                     </div>
@@ -121,32 +121,32 @@ const PetCard = ({ pet }) => {
                 {/* BACK SIDE */}
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] ${isFlipped ? "pointer-events-auto" : "pointer-events-none"}`}>
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-6 text-center">
-                        <div className="absolute top-6 right-6 bg-[#8ECC14] p-2 rounded-full text-white"><RotateCcw size={24} /></div>
+                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full text-white"><RotateCcw size={24} /></div>
 
-                        <h2 className="text-3xl font-bold text-[#8ECC14] mt-4">{pet.name}</h2>
+                        <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4">{pet.name}</h2>
                         <p className="text-sm tracking-widest text-gray-500 uppercase mt-1 mb-4">{pet.color} • {pet.size}</p>
 
                         <div className="flex gap-2 mb-4 text-xs font-bold text-gray-600 bg-slate-50 px-4 py-2 rounded-full">
-                            <span>Born: {pet.birthdate}</span> | <span className="text-[#8ECC14]">Home: {pet.goHome}</span>
+                            <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Home: {pet.goHome}</span>
                         </div>
 
                         <p className="text-xs text-gray-500 italic mb-4 leading-tight px-2">"{pet.personality}"</p>
 
-                        <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[#8ECC14]">Health Check:</h3>
+                        <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-pink-700">Health Check:</h3>
                         <div className="grid grid-cols-3 gap-x-6 gap-y-3 mb-6">
                             {pet.health.map((item) => (
                                 <div key={item.id} className="flex flex-col items-center">
-                                    <div className={`p-4 rounded-full ${item.active ? 'bg-[#E5F4A3] text-[#7A9518]' : 'bg-gray-100 text-gray-400'}`}>
+                                    <div className={`p-4 rounded-full ${item.active ? 'bg-pink-200 text-pink-500' : 'bg-blue-200 text-blue-500'}`}>
                                         <item.icon size={18} />
                                     </div>
-                                    <span className="text-xs font-medium mt-1 uppercase text-gray-400">{item.name}</span>
+                                    <span className="text-xs font-medium mt-1 uppercase text-gray-500">{item.name}</span>
                                 </div>
                             ))}
                         </div>
 
                         <button
                             onClick={(e) => { e.stopPropagation(); navigate(`/pet/${pet.id}`); }}
-                            className="bg-[#C6E589] text-gray-800 font-bold w-full py-3.5 rounded-2xl hover:bg-[#8ECC14] transition-all duration-300 mt-auto cursor-pointer"
+                            className="bg-pink-400 text-white font-bold w-full py-3.5 rounded-2xl hover:bg-pink-500 transition-all duration-300 mt-auto cursor-pointer"
                         >
                             Get More Details
                         </button>
@@ -181,11 +181,11 @@ const FeaturedPets = () => {
     return (
         <div id='available' className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
             <div className="text-center mb-10 max-w-4xl">
-                <p className="uppercase text-[#C6E589] font-bold tracking-widest pb-3 text-xs">Available Puppies</p>
-                <h1 className="text-3xl md:text-4xl font-bold text-[#333333] pb-4">
-                    Meet Today’s <span className="text-[#8ECC14]">Little Red Hearts</span>
+                <p className="uppercase text-pink-700 font-bold tracking-widest pb-3 text-xs">Available Puppies</p>
+                <h1 className="text-3xl md:text-4xl font-bold text-[#333333] fr pb-4">
+                    Meet Today’s <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Little Red Hearts</span>
                 </h1>
-                <p className="text-gray-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                <p className="text-blue-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
                     Every puppy is from health-tested parents, raised in a loving home environment,
                     and evaluated for temperament and confidence.
                 </p>
@@ -205,10 +205,10 @@ const FeaturedPets = () => {
 
             {petData.length > visibleCards && (
                 <div className="flex items-center gap-4">
-                    <button onClick={prevSlide} disabled={currentIndex === 0} className={`border-2 border-[#C6E589] p-3.5 rounded-full text-[#5d850f] cursor-pointer transition-all ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589]'}`}>
+                    <button onClick={prevSlide} disabled={currentIndex === 0} className={`border-2 border-pink-400 p-3.5 rounded-full text-pink-700 cursor-pointer transition-all ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-pink-400 hover:text-white'}`}>
                         <ChevronLeft size={20} />
                     </button>
-                    <button onClick={nextSlide} disabled={currentIndex >= petData.length - visibleCards} className={`border-2 border-[#C6E589] p-3.5 rounded-full text-[#5d850f] cursor-pointer transition-all ${currentIndex >= petData.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589]'}`}>
+                    <button onClick={nextSlide} disabled={currentIndex >= petData.length - visibleCards} className={`border-2 border-pink-400 p-3.5 rounded-full text-pink-700 cursor-pointer transition-all ${currentIndex >= petData.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-pink-400 hover:text-white'}`}>
                         <ChevronRight size={20} />
                     </button>
                 </div>
@@ -217,25 +217,25 @@ const FeaturedPets = () => {
             {/* LOWER CONTENT SECTIONS */}
             <div className="mt-5 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Waitlist */}
-                <div className="bg-[#E9FBC8]/30 px-4 py-6 md:p-8 rounded-[40px] border border-[#C6E598]/30">
-                    <UsersRound size={30} className="text-[#8ECC14] mb-4" />
-                    <h3 className="text-2xl text-[#8ECC14] font-bold mb-3">No Puppies Right Now?</h3>
-                    <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">
+                <div className="bg-pink-100/30 px-4 py-6 md:p-8 rounded-[40px] border border-pink-200/30">
+                    <UsersRound size={30} className="text-pink-500 mb-4" />
+                    <h3 className="text-2xl text-transparent bg-gradient-to-r from-pink-500 to-blue-700 bg-clip-text font-bold fr mb-3">No Puppies Right Now?</h3>
+                    <p className="text-blue-500 text-sm md:text-base mb-6 leading-relaxed">
                         If our current litters are committed, join the waitlist. We notify
                         families first as soon new litters are confirmed or spots open.
                     </p>
-                    <button onClick={() => {window.scrollTo(0,0); navigate('/application')}} className="bg-[#8ECC14] text-white font-bold px-8 py-3 rounded-2xl cursor-pointer hover:scale-105 transition-all duration-300">Join the Waitlist</button>
+                    <button onClick={() => {window.scrollTo(0,0); navigate('/application')}} className="bg-pink-700 text-white font-bold px-8 py-3 rounded-2xl cursor-pointer hover:scale-105 transition-all duration-300">Join the Waitlist</button>
                 </div>
 
                 {/* Shipping */}
-                <div className="bg-slate-50 px-4 py-6 md:p-8 rounded-[40px] border border-slate-200">
-                    <Truck size={30} className="text-slate-800 mb-4" />
-                    <h3 className="text-2xl font-bold mb-3">Visiting & Pickup</h3>
-                    <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">
+                <div className="bg-blue-50 px-4 py-6 md:p-8 rounded-[40px] border border-blue-200">
+                    <Truck size={30} className="text-blue-500 mb-4" />
+                    <h3 className="text-2xl font-bold mb-3 text-transparent bg-gradient-to-r from-pink-500 to-blue-700 bg-clip-text fr">Visiting & Pickup</h3>
+                    <p className="text-pink-500 text-sm md:text-base mb-6 leading-relaxed">
                         We support breeder transport for out-of-town families
                         including trusted travel partners and health certificates.
                     </p>
-                    <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="border-2 border-slate-800 text-slate-800 font-bold px-8 py-2.5 rounded-2xl cursor-pointer hover:bg-slate-800 hover:text-white transition-all duration-300">Inquire Now</button>
+                    <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="border-2 border-blue-800 text-blue-800 font-bold px-8 py-2.5 rounded-2xl cursor-pointer hover:bg-blue-800 hover:text-white transition-all duration-300">Inquire Now</button>
                 </div>
             </div>
         </div>

@@ -61,11 +61,11 @@ const About = () => {
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2">
-                    <p className="uppercase text-[#8ECC14] font-semibold tracking-wider text-xs mb-4">OUR JOURNEY</p>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#333] leading-none mb-8">
-                        From <span className="text-[#8ECC14]">Humble Beginnings</span> to Heartfelt Journeys
+                    <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">OUR JOURNEY</p>
+                    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold fr text-[#333] leading-none mb-8">
+                        From <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Humble Beginnings</span> to Heartfelt Journeys
                     </h2>
-                    <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
+                    <p className="text-blue-500 text-base md:text-lg leading-relaxed mb-10">
                         Poodles Place started as a small backyard hobby, driven by a love for poodles and a desire
                         to see them in loving homes. Focused on responsible breeding and lifelong companionship.
                     </p>
@@ -76,11 +76,11 @@ const About = () => {
                             { title: "Shelter Facilities", description: "Spacious, clean, and loving environments.", icon: <ShieldCheck size={20} /> }
                         ].map((item, idx) => (
                             <div key={idx} className="flex items-start gap-6 group">
-                                <div className="bg-[#E5F4A3] p-4 rounded-2xl text-[#8ECC14] group-hover:bg-[#8ECC14] group-hover:text-white transition-colors duration-300">
+                                <div className="bg-pink-100 p-4 rounded-2xl text-pink-700 group-hover:bg-pink-700 group-hover:text-white transition-colors duration-300">
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-[#8ECC14]">{item.title}</h4>
+                                    <h4 className="text-xl font-bold text-pink-700 fr">{item.title}</h4>
                                     <p className="text-gray-400 text-sm">{item.description}</p>
                                 </div>
                             </div>
@@ -93,15 +93,15 @@ const About = () => {
             <section className="py-10 px-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center mb-10 gap-10 md:gap-20">
                     <div className="w-full lg:w-1/2">
-                        <div className="w-16 h-16 bg-[#E5F4A3] rounded-2xl mb-8"></div>
-                        <p className="uppercase text-[#8ECC14] font-semibold tracking-wider text-xs mb-4">OUR HEARTFELT MISSION</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] leading-none mb-8">
-                            <span className="text-[#8ECC14]">Nurturing Lives,</span> Creating Bonds With Furry Pets
+                        <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl mb-8"></div>
+                        <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">OUR HEARTFELT MISSION</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold fr text-[#333] leading-none mb-8">
+                            <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Nurturing Lives,</span> Creating Bonds With Furry Pets
                         </h2>
-                        <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
+                        <p className="text-blue-500 text-base md:text-lg leading-relaxed mb-10">
                             Ensuring poodles are healthy, well-trained, and emotionally ready for your family.
                         </p>
-                        <button onClick={() => navigate("/our-dogs")} className="bg-[#C6E589] text-[#3F3B57] font-bold px-6 py-4 rounded-xl hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
+                        <button onClick={() => navigate("/our-dogs")} className="bg-pink-700 text-white font-bold px-6 py-4 rounded-xl hover:bg-pink-800 hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
                             Meet Our Dogs
                         </button>
                     </div>
@@ -123,13 +123,13 @@ const About = () => {
                         <div className="w-full h-64 overflow-hidden rounded-[50px] shadow-md">
                             <img loading='lazy' src="https://images.unsplash.com/photo-1594387974538-72145cc6c0c6?w=1000&q=100" className="w-full h-full object-cover" alt="Adoption" />
                         </div>
-                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-[#8ECC14] transition-all duration-300">
-                            <h3 className="text-5xl font-bold text-[#8ECC14] group-hover:text-white mb-2">95%</h3>
-                            <p className="text-gray-500 font-bold text-xs uppercase group-hover:text-white">Adoption Success Rate</p>
+                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-blue-700 transition-all duration-300">
+                            <h3 className="text-5xl font-bold text-blue-700 group-hover:text-white mb-2">95%</h3>
+                            <p className="text-blue-700 font-bold text-xs uppercase group-hover:text-white">Adoption Success Rate</p>
                         </div>
-                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-[#8ECC14] transition-all duration-300">
-                            <h3 className="text-5xl font-bold text-[#8ECC14] group-hover:text-white mb-2">98%</h3>
-                            <p className="text-gray-500 font-bold text-xs uppercase group-hover:text-white">Care Satisfaction</p>
+                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-pink-700 transition-all duration-300">
+                            <h3 className="text-5xl font-bold text-pink-700 group-hover:text-white mb-2">98%</h3>
+                            <p className="text-pink-700 font-bold text-xs uppercase group-hover:text-white">Care Satisfaction</p>
                         </div>
                         <div className="w-full h-64 overflow-hidden rounded-[50px] shadow-md">
                             <img loading='lazy' src="https://media.istockphoto.com/id/2208781930/photo/portrait-of-two-beautiful-curly-dogs-sharing-a-beige-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=cRgAVcD9DjrX04dD8UMa9iOkvn7odJTYL3K_5AzSQmQ=" className="w-full h-full object-cover" alt="Dogs" />
@@ -139,14 +139,14 @@ const About = () => {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2">
-                        <p className="uppercase text-[#C6E589] font-semibold tracking-wider text-xs mb-4">TRANSFORMING LIVES</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] leading-none mb-8">
-                            Our <span className="text-[#8ECC14]">Impact</span> by the Numbers
+                        <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">TRANSFORMING LIVES</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] leading-none mb-8">
+                            Our <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Impact</span> by the <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Numbers</span>
                         </h2>
-                        <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
+                        <p className="text-blue -500 text-base md:text-lg leading-relaxed mb-10">
                             Hundreds of poodles placed into loving homes across the country.
                         </p>
-                        <button onClick={() => navigate("/#contact")} className="bg-[#C6E589] text-[#3F3B57] font-bold px-6 py-4 rounded-xl hover:bg-[#8ECC14] hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
+                        <button onClick={() => navigate("/#contact")} className="bg-pink-700 font-bold px-6 py-4 rounded-xl hover:bg-pink-800 text-white transition-all duration-300 shadow-sm cursor-pointer">
                             Donate To Our Cause
                         </button>
                     </div>
@@ -159,11 +159,11 @@ const About = () => {
                 <div className="max-w-7xl mx-auto">
                     {/* Header Block */}
                     <div className="text-center mb-10">
-                        <p className="uppercase text-[#8ECC14] font-semibold tracking-wider text-xs mb-4">Partners & Mentorship</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] mb-6 leading-14">
-                            Support Our <span className="text-[#8ECC14]">Mission</span>
+                        <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">Partners & Mentorship</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] mb-6 leading-14">
+                            Support Our <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Mission</span>
                         </h2>
-                        <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed text-base md:text-lg">
+                        <p className="text-blue-500 max-w-3xl mx-auto leading-normal text-base md:text-lg">
                             Behind every ethical breeding program is a network of support, wisdom, and shared values.
                             These partnerships ensure our puppies thrive and continue the tradition of quality this breed deserves.
                         </p>
@@ -174,23 +174,23 @@ const About = () => {
                         <div className="space-y-10">
                             {/* Mentor Spotlight */}
                             <div>
-                                <h3 className="text-2xl font-bold text-[#333] mb-6 flex items-center gap-3">
-                                    <UsersRound className="text-[#8ECC14]" size={28} /> Mentors Who Made Us Better
+                                <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr mb-6 flex items-center gap-3">
+                                    <UsersRound className="text-pink-500" size={28} /> Mentors Who Made Us Better
                                 </h3>
-                                <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-[#C6E589]">
+                                <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-pink-500">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#C6E589]">
+                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-500">
                                             <img src="https://i.pravatar.cc/150?u=44" className="w-full h-full object-cover" alt="Linda DuBose" />
                                         </div>
                                         <div>
                                             <h4 className="text-xl font-bold text-[#333]">Honoring Linda DuBose</h4>
-                                            <p className="text-[#8ECC14] text-sm font-semibold italic">Scarlet’s Fancy Poodles</p>
+                                            <p className="text-pink-700 text-sm font-semibold italic">Scarlet’s Fancy Poodles</p>
                                         </div>
                                     </div>
                                     <p className="text-gray-500 leading-relaxed text-sm mb-6">
                                         Our founder’s close friend and mentor taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more than superficial color claims. Her influence is woven through every puppy we place.
                                     </p>
-                                    <Link to={"/about-breeder"} className="flex items-center gap-2 text-[#8ECC14] font-bold text-sm hover:underline cursor-pointer">
+                                    <Link to={"/about-breeder"} className="flex items-center gap-2 text-pink-700 font-bold text-sm hover:underline cursor-pointer">
                                         Visit About Breeder <ExternalLink size={14} />
                                     </Link>
                                 </div>
@@ -198,19 +198,19 @@ const About = () => {
 
                             {/* Organizations */}
                             <div>
-                                <h3 className="text-2xl font-bold text-[#333] mb-6 flex items-center gap-3">
-                                    <Handshake className="text-[#8ECC14]" size={28} /> Breed Organizations
+                                <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-700 to-pink-700 bg-clip-text fr mb-6 flex items-center gap-3">
+                                    <Handshake className="text-blue-500" size={28} /> Breed Organizations
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="p-6 bg-white rounded-3xl border border-[#C6E589] hover:shadow-sm transition-all duration-300">
-                                        <Award className="text-[#8ECC14] mb-3" size={32} />
+                                    <div className="p-6 bg-white rounded-3xl border border-blue-200 hover:shadow-sm transition-all duration-300">
+                                        <Award className="text-blue-700 mb-3" size={32} />
                                         <h5 className="font-bold text-sm text-[#333] mb-2 uppercase">Apricot Red Poodle Club</h5>
-                                        <p className="text-xs text-gray-400 leading-relaxed">Promoting excellence, education, and research specifically for red and apricot.</p>
+                                        <p className="text-xs text-blue-400 leading-relaxed">Promoting excellence, education, and research specifically for red and apricot.</p>
                                     </div>
-                                    <div className="p-6 bg-white rounded-3xl border border-[#C6E589] hover:shadow-sm transition-all duration-300">
-                                        <ShieldCheck className="text-[#8ECC14] mb-3" size={32} />
+                                    <div className="p-6 bg-white rounded-3xl border border-pink-200 hover:shadow-sm transition-all duration-300">
+                                        <ShieldCheck className="text-pink-700 mb-3" size={32} />
                                         <h5 className="font-bold text-sm text-[#333] mb-2 uppercase">American Kennel Club</h5>
-                                        <p className="text-xs text-gray-400 leading-relaxed">Supporting recognized standards, health recommendations, and breed integrity.</p>
+                                        <p className="text-xs text-pink-400 leading-relaxed">Supporting recognized standards, health recommendations, and breed integrity.</p>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@ const About = () => {
                         {/* Right Column: Values & Benefits */}
                         <div className="space-y-10">
                             {/* Mentorship Values */}
-                            <div className="bg-white p-8 rounded-[40px] border border-[#C6E589]">
+                            <div className="bg-white p-8 rounded-[40px] border border-pink-500">
                                 <h3 className="text-xl font-bold text-[#333] mb-6">What Mentorship Means to Us</h3>
                                 <div className="space-y-6">
                                     {[
@@ -228,12 +228,12 @@ const About = () => {
                                         { t: "Growth & Humility", d: "Securing a strong future for the breed through deep, thoughtful study." }
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-start gap-4">
-                                            <div className="mt-1 bg-[#C6E589] p-1.5 rounded-full text-[#66920f]">
+                                            <div className="mt-1 bg-pink-700 p-1.5 rounded-full text-pink-300">
                                                 <CheckCircle2 size={14} />
                                             </div>
                                             <div>
                                                 <h5 className="font-bold text-[#333] text-sm uppercase">{item.t}</h5>
-                                                <p className="text-gray-400 text-xs">{item.d}</p>
+                                                <p className="text-pink-500 text-xs">{item.d}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -241,16 +241,16 @@ const About = () => {
                             </div>
 
                             {/* Benefit to Families */}
-                            <div className="bg-[#e2fab3] p-8 rounded-[40px]">
+                            <div className="bg-blue-50 p-8 rounded-[40px]">
                                 <h3 className="text-xl font-bold text-[#333] mb-4">Why This Matters to You</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                <p className="text-blue-500 text-sm leading-relaxed mb-6">
                                     When you bring a puppy home, you are bringing decades of shared wisdom and medical practices grounded in experience.
                                 </p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
-                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Decades of Wisdom</li>
-                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Network of Support</li>
-                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Ethical Standards</li>
-                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-[#8ECC14]" /> Dog-First Philosophy</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-blue-700" /> Decades of Wisdom</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-blue-700" /> Network of Support</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-blue-700" /> Ethical Standards</li>
+                                    <li className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#333]"><PawPrint size={18} className="text-blue-700" /> Dog-First Philosophy</li>
                                 </ul>
                             </div>
 
@@ -258,10 +258,10 @@ const About = () => {
                             <div className="text-center pt-4">
                                 <h4 className="text-xl font-bold text-[#333] mb-6">Interested in Learning More?</h4>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button onClick={() => navigate("/#contact")} className="bg-[#8ECC14] text-white font-bold px-8 py-4 rounded-2xl hover:bg-[#74a710] transition-all duration-300 cursor-pointer text-sm shadow-sm">
+                                    <button onClick={() => navigate("/#contact")} className="bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl hover:bg-blue-800 transition-all duration-300 cursor-pointer text-sm shadow-sm">
                                         Contact Us About Mentorship
                                     </button>
-                                    <button onClick={() => navigate('/breed-program')} className="border-2 border-[#8ECC14] text-[#333] font-bold px-8 py-4 rounded-2xl hover:bg-[#E5F4A3] transition-all duration-300 cursor-pointer text-sm">
+                                    <button onClick={() => navigate('/breed-program')} className="border-2 border-pink-500 text-[#333] hover:text-white font-bold px-8 py-4 rounded-2xl hover:bg-pink-500 transition-all duration-300 cursor-pointer text-sm">
                                         See Our Breeding Program
                                     </button>
                                 </div>
@@ -273,14 +273,14 @@ const About = () => {
 
             {/* SECTION 4: TESTIMONIALS SLIDER */}
             <section className="py-10 px-6 bg-white overflow-hidden relative">
-                <div className="absolute top-0 left-10 w-16 h-16 bg-[#C6E589] rounded-2xl -z-10"></div>
+                <div className="absolute top-0 left-10 w-16 h-16 bg-pink-500 rounded-2xl -z-10"></div>
                 <div className="max-w-7xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333]">
-                        Happy Clients <span className="text-[#8ECC14]">Testimonials</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333]">
+                        Happy Clients <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Testimonials</span>
                     </h2>
                 </div>
                 <div className="max-w-7xl mx-auto px-4 lg:px-12 relative">
-                    <button onClick={prevSlide} disabled={currentIndex === 0} className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}>
+                    <button onClick={prevSlide} disabled={currentIndex === 0} className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-blue-200 text-blue-700 rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-blue-500 hover:text-white'}`}>
                         <ChevronLeft size={24} />
                     </button>
                     <div className="overflow-hidden w-full">
@@ -288,7 +288,7 @@ const About = () => {
                             {testimonials.map((user, i) => (
                                 <div key={i} className="flex flex-col-reverse items-center text-center w-full md:w-[calc(33.333%-2rem)] flex-shrink-0">
                                     <p className="text-gray-500 italic relative px-4 text-sm md:text-base leading-relaxed">"{user.text}"</p>
-                                    <h4 className="text-xl font-bold text-[#8ECC14] mb-2">{user.name}</h4>
+                                    <h4 className="text-xl font-bold text-blue-700 mb-2">{user.name}</h4>
                                     <div className="w-24 h-24 rounded-full overflow-hidden border-4 mb-4 border-[#F9FFF0] shadow-sm">
                                         <img loading='lazy' src={user.img} className="w-full h-full object-cover" alt={user.name} />
                                     </div>
@@ -296,31 +296,31 @@ const About = () => {
                             ))}
                         </motion.div>
                     </div>
-                    <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-[#C6E589] text-[#8ECC14] rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex >= testimonials.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-[#C6E589] hover:text-white'}`}>
+                    <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 border-2 border-blue-200 text-blue-700 rounded-full transition-all duration-300 cursor-pointer bg-white md:block hidden ${currentIndex >= testimonials.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-blue-500 hover:text-white'}`}>
                         <ChevronRight size={24} />
                     </button>
                 </div>
                 <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
-                    <button onClick={prevSlide} disabled={currentIndex === 0} className="p-3 border-2 border-[#C6E589] rounded-full text-[#8ECC14]"><ChevronLeft size={20} /></button>
-                    <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className="p-3 border-2 border-[#C6E589] rounded-full text-[#8ECC14]"><ChevronRight size={20} /></button>
+                    <button onClick={prevSlide} disabled={currentIndex === 0} className="p-3 border-2 border-blue-200 rounded-full text-blue-700"><ChevronLeft size={20} /></button>
+                    <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className="p-3 border-2 border-blue-200 rounded-full text-blue-700"><ChevronRight size={20} /></button>
                 </div>
-                <div className="absolute bottom-10 right-10 w-16 h-16 bg-[#C6E589] rounded-2xl -z-10"></div>
+                <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-200 rounded-2xl -z-10"></div>
             </section>
 
             {/* SECTION 5: OUR ELITE FACILITIES */}
             <section className="py-10 px-6 md:px-10 bg-[#FAFAFA]">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
                     <div className="w-full lg:w-1/2">
-                        <p className="uppercase text-[#C6E589] font-bold tracking-wider text-xs mb-4">WORLD CLASS CARE</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#333] leading-none mb-8">
-                            A <span className="text-[#8ECC14]">Heavenly</span> Space for Our Residents
+                        <p className="uppercase text-pink-700 font-bold tracking-wider text-xs mb-4">WORLD CLASS CARE</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] leading-none mb-8">
+                            A <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Heavenly</span> Space for Our Residents
                         </h2>
-                        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
+                        <p className="text-blue-500 text-base md:text-lg leading-relaxed mb-10">
                             Poodles live in luxury suites with access to private play areas and constant care.
                         </p>
                         <div className="flex items-center gap-4">
-                            <div className="bg-[#8ECC14] w-12 h-1"></div>
-                            <p className="font-bold text-[#3F3B57]">Environment First Philosophy</p>
+                            <div className="bg-pink-700 w-12 h-1"></div>
+                            <p className="font-bold text-pink-700">Environment First Philosophy</p>
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">

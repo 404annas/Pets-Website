@@ -31,12 +31,14 @@ import Navbar2 from './components/Navbar2';
 import Hero2 from './components/Hero2';
 import Steps from './components/Steps';
 import Benefits from './components/Benifits';
+import PetsSlider from './components/PetsSlider';
 
 const Home = () => (
   <>
     <Hero2 />
     <Steps />
     <Benefits />
+    <PetsSlider />
     {/* <Intro /> */}
     <WhyRed />
     <HomePhilosophy />
