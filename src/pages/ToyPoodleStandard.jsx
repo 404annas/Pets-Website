@@ -7,11 +7,11 @@ const ToyPoodleStandard = () => {
   const navigate = useNavigate();
 
   const items = [
-    { i: <Ruler size={32} />, t: "Size", c: "10″ Height", desc: "Compact & Perfect", color: "bg-[#f8fdf0]" },
+    { i: <Ruler size={32} />, t: "Size", c: "10″ Height", desc: "Compact & Perfect", color: "bg-brand-blue-500/5" },
     { i: <Brain size={32} />, t: "Brainy", c: "Eager Learner", desc: "Top-tier intelligence", color: "bg-white" },
     { i: <Smile size={32} />, t: "People", c: "Affectionate", desc: "Loyal companion", color: "bg-white" },
-    { i: <Scissors size={32} />, t: "Coat", c: "Dense Curls", desc: "Hypoallergenic", color: "bg-[#f8fdf0]" },
-    { i: <Zap size={32} />, t: "Energy", c: "Playful", desc: "Active lifestyle", color: "bg-[#f8fdf0]" },
+    { i: <Scissors size={32} />, t: "Coat", c: "Dense Curls", desc: "Hypoallergenic", color: "bg-brand-blue-500/5" },
+    { i: <Zap size={32} />, t: "Energy", c: "Playful", desc: "Active lifestyle", color: "bg-brand-blue-500/5" },
     { i: <ShieldCheck size={32} />, t: "Social", c: "Adaptive", desc: "Friendly nature", color: "bg-white" }
   ];
 
@@ -32,7 +32,7 @@ const ToyPoodleStandard = () => {
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h1 className="text-[#8ECC14] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
+            <h1 className="text-brand-pink-700 text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
               More than <br /> <span className="text-gray-900">Curly Cuteness</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-800 font-medium mb-6 leading-snug">
@@ -43,7 +43,7 @@ const ToyPoodleStandard = () => {
             </p>
           </div>
           <div className="lg:w-1/2 relative">
-            <div className="absolute -inset-4 bg-[#E2F1C4] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+            <div className="absolute -inset-4 bg-brand-blue-500/15 rounded-full blur-3xl opacity-30 animate-pulse"></div>
             <img
               src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000"
               alt="Elegant Toy Poodle"
@@ -57,7 +57,7 @@ const ToyPoodleStandard = () => {
       <section className="py-10 px-6 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-[#8ECC14] text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-center">AKC Official Traits</h2>
+            <h2 className="text-brand-pink-700 text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-center">AKC Official Traits</h2>
             <p className="text-center text-gray-500 uppercase text-xs font-semibold">What the Standard Says & What It Means at Home</p>
           </div>
 
@@ -68,8 +68,8 @@ const ToyPoodleStandard = () => {
               { icon: <Brain size={32} />, t: "Intelligence", d: "One of the smartest breeds on the planet. They love mental enrichment, puzzles, and training games as much as lap time." },
               { icon: <Scissors size={32} />, t: "Coat Type", d: "Tight, low-shedding curls that are allergy-friendly. Requires professional grooming every 4–6 weeks to maintain health." }
             ].map((trait, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-[#8ECC14] transition-colors duration-300">
-                <div className="text-[#C6E589] group-hover:text-[#8ECC14] transition-colors duration-300">{trait.icon}</div>
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-brand-pink-700 transition-colors duration-300">
+                <div className="text-brand-blue-500 group-hover:text-brand-pink-700 transition-colors duration-300">{trait.icon}</div>
                 <div>
                   <h3 className="text-xl font-black uppercase tracking-tight text-gray-900 mb-2">{trait.t}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{trait.d}</p>
@@ -83,9 +83,9 @@ const ToyPoodleStandard = () => {
       {/* TYPICAL BEHAVIORS */}
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <div className="bg-gray-900 rounded-[3rem] px-6 py-10 sm:p-10 md:p-16 relative overflow-hidden text-center text-white mb-20">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ECC14] blur-[120px] opacity-20"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-700 blur-[120px] opacity-20"></div>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 relative z-10">
-            "Half dog, half brain <br /> <span className="text-[#8ECC14]">with a sprinkle of clown spirit."</span>
+            "Half dog, half brain <br /> <span className="text-brand-pink-700">with a sprinkle of clown spirit."</span>
           </h2>
           <p className="text-gray-400">— Common owner description —</p>
         </div>
@@ -109,7 +109,7 @@ const ToyPoodleStandard = () => {
             }
           ].map((item, i) => (
             <div key={i} className="text-center group">
-              <div className="w-16 h-16 bg-[#E2F1C4] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#8ECC14] group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-brand-blue-500/15 rounded-2xl flex items-center justify-center mx-auto mb-6 text-brand-pink-700 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
               <h3 className="text-2xl font-black uppercase tracking-tighter mb-4">{item.t}</h3>
@@ -120,16 +120,16 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* QUICK VISUAL CHECKLIST */}
-      <section className="py-10 px-6 bg-[#E2F1C4]">
+      <section className="py-10 px-6 bg-brand-blue-500/15">
         <div className="max-w-7xl mx-auto">
 
           {/* Header Section with a modern "split" look */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="space-y-2">
               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none text-gray-900">
-                The <span className="text-white" style={{ WebkitTextStroke: '1.5px #8ECC14' }}>Spec</span> Sheet
+                The <span className="text-white" style={{ WebkitTextStroke: '1.5px var(--color-brand-pink-700)' }}>Spec</span> Sheet
               </h2>
-              <p className="text-[#8ECC14] font-bold tracking-widest uppercase text-sm pl-1">Quick Visual Checklist</p>
+              <p className="text-brand-pink-700 font-bold tracking-widest uppercase text-sm pl-1">Quick Visual Checklist</p>
             </div>
             <div className="text-right">
               <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-600">01—06</span>
@@ -142,11 +142,11 @@ const ToyPoodleStandard = () => {
               <div
                 key={i}
                 className={`group relative px-6 py-6 md:p-8 flex flex-col justify-between min-h-[280px] transition-all duration-500 
-                         border-r border-b border-black/5 ${check.color} hover:bg-[#8ECC14]`}
+                         border-r border-b border-black/5 ${check.color} hover:bg-brand-pink-700`}
               >
                 {/* Top Row: Icon & Number */}
                 <div className="flex justify-between items-start">
-                  <div className="p-4 bg-white rounded-2xl shadow-sm text-[#8ECC14] group-hover:bg-black group-hover:text-white transition-colors duration-500">
+                  <div className="p-4 bg-white rounded-2xl shadow-sm text-brand-pink-700 group-hover:bg-black group-hover:text-white transition-colors duration-500">
                     {check.i}
                   </div>
                   <span className="text-xs font-black text-gray-300 group-hover:text-white/50 transition-colors">
@@ -159,7 +159,7 @@ const ToyPoodleStandard = () => {
                   <h4 className="text-2xl font-black uppercase tracking-tighter text-gray-900 group-hover:text-white transition-colors">
                     {check.t}
                   </h4>
-                  <div className="h-1 w-8 bg-[#8ECC14] group-hover:bg-white my-3 transition-all duration-300 group-hover:w-16"></div>
+                  <div className="h-1 w-8 bg-brand-pink-700 group-hover:bg-white my-3 transition-all duration-300 group-hover:w-16"></div>
                   <p className="text-sm font-bold text-gray-800 group-hover:text-white uppercase tracking-wide">
                     {check.c}
                   </p>
@@ -186,7 +186,7 @@ const ToyPoodleStandard = () => {
             <div key={i} className="border-b border-gray-100 last:border-0">
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full flex justify-between items-center py-6 text-left hover:text-[#8ECC14] transition-colors duration-300 cursor-pointer"
+                className="w-full flex justify-between items-center py-6 text-left hover:text-brand-pink-700 transition-colors duration-300 cursor-pointer"
               >
                 <span className="font-bold text-base uppercase pr-8">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
@@ -200,12 +200,12 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* PINNED NAVIGATION BAR */}
-      <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-[#E2F1C4] py-6 px-6 z-40 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+      <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-brand-blue-500/30 py-6 px-6 z-40 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <button
               onClick={() => navigate('/the-red-story')}
-              className="flex items-center gap-2 text-[#8ECC14] font-bold text-base uppercase cursor-pointer group"
+              className="flex items-center gap-2 text-brand-pink-700 font-bold text-base uppercase cursor-pointer group"
             >
               The Science of Red <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -213,13 +213,13 @@ const ToyPoodleStandard = () => {
           <div className="flex gap-3">
             <button
               onClick={() => navigate('/available')}
-              className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-[#8ECC14] transition-colors duration-300 cursor-pointer"
+              className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer"
             >
               Available Puppies
             </button>
             <button
               onClick={() => navigate('/application')}
-              className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-[#C6E589] transition-all duration-300 cursor-pointer"
+              className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-brand-blue-500 transition-all duration-300 cursor-pointer"
             >
               Puppy Application
             </button>

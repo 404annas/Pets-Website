@@ -88,15 +88,15 @@ const PastLitters = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6">
                     <div className="max-w-2xl">
-                        <h1 className="text-[#8ECC14] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none mb-6">
+                        <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mb-6">
                             Past Litters <br /> <span className='text-gray-900'>Archive</span>
                         </h1>
-                        <p className="text-gray-600 text-base md:text-lg leading-6 font-normal">
+                        <p className="text-brand-blue-500 text-base md:text-lg leading-6 font-normal">
                             A living history of our Toy Poodle families—showcasing health, temperament, and lineage in action.
                         </p>
                     </div>
                     <div className="hidden lg:block">
-                        <History size={100} className="text-[#8ECC14]" />
+                        <History size={100} className="text-brand-pink-700" />
                     </div>
                 </div>
             </section>
@@ -104,13 +104,13 @@ const PastLitters = () => {
             {/* STICKY FILTER NAV */}
             <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-4 px-6">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-widest text-gray-900">Jump to Year</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">Jump to Year</span>
                     <div className="flex gap-4 md:gap-8">
                         {['2025', '2024', '2023'].map((year) => (
                             <button
                                 key={year}
                                 onClick={() => scrollToYear(year)}
-                                className={`text-sm font-bold uppercase cursor-pointer tracking-widest transition-all ${activeYear === year ? 'text-[#8ECC14] border-b-2 border-[#8ECC14]' : 'text-gray-400 hover:text-gray-600'
+                                className={`text-sm font-bold uppercase cursor-pointer tracking-widest transition-all ${activeYear === year ? 'text-brand-pink-700 border-b-2 border-brand-pink-700' : 'text-brand-blue-500 hover:text-brand-blue-700'
                                     }`}
                             >
                                 {year}
@@ -129,10 +129,10 @@ const PastLitters = () => {
                             {/* Year Indicator */}
                             <div className="lg:w-1/6">
                                 <div className="sticky top-24">
-                                    <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#C6E589] leading-none select-none">
+                                    <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-brand-blue-500 leading-none fr select-none">
                                         {section.year.slice(2)}
                                     </span>
-                                    <p className="text-[#8ECC14] font-bold uppercase tracking-widest text-xs mt-2">Historical Records</p>
+                                    <p className="text-brand-pink-700 font-bold uppercase tracking-widest text-xs mt-2">Historical Records</p>
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@ const PastLitters = () => {
                                             />
                                             <div
                                                 onClick={() => navigate(`/past-litters/${litter.parents.replace(/\s+/g, '-').toLowerCase()}`)}
-                                                className="absolute bottom-0 left-0 cursor-pointer bg-[#8ECC14] text-white p-4 flex items-center gap-3 hover:bg-gray-900 transition-colors duration-300"
+                                                className="absolute bottom-0 left-0 cursor-pointer bg-brand-pink-500 text-white p-4 flex items-center gap-3 hover:bg-brand-pink-700 transition-colors duration-300"
                                             >
                                                 <Camera size={18} />
                                                 <span className="text-[10px] font-black uppercase tracking-widest">View Full Gallery</span>
@@ -161,33 +161,33 @@ const PastLitters = () => {
                                         {/* Details side */}
                                         <div className="w-full md:w-1/2">
                                             <div className="flex items-center gap-3 mb-4">
-                                                <div className="h-px w-8 bg-[#C6E589]"></div>
-                                                <h3 className="text-3xl font-black text-gray-900 tracking-tighter uppercase">{litter.parents}</h3>
+                                                <div className="h-px w-8 bg-brand-blue-500"></div>
+                                                <h3 className="text-3xl font-black text-gray-900 fr tracking-tighter uppercase">{litter.parents}</h3>
                                             </div>
 
                                             <div className="grid grid-cols-2 gap-4 mb-8">
                                                 <div className="flex flex-col">
-                                                    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Born</span>
+                                                    <span className="text-[10px] text-brand-pink-500 font-bold uppercase tracking-widest">Born</span>
                                                     <span className="text-sm font-semibold">{litter.date}</span>
                                                 </div>
                                                 <div className="flex flex-col">
-                                                    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Go Home</span>
+                                                    <span className="text-[10px] text-brand-pink-500 font-bold uppercase tracking-widest">Go Home</span>
                                                     <span className="text-sm font-semibold">{litter.goHome}</span>
                                                 </div>
                                             </div>
 
                                             <div className="space-y-4 mb-8">
                                                 <div className="flex items-start gap-4">
-                                                    <Info className="text-[#C6E589] shrink-0" size={20} />
-                                                    <p className="text-gray-500 text-sm leading-relaxed">{litter.details}</p>
+                                                    <Info className="text-brand-blue-500 shrink-0" size={20} />
+                                                    <p className="text-brand-blue-500 text-sm leading-relaxed">{litter.details}</p>
                                                 </div>
-                                                <div className="bg-[#F9FFF0] p-4 border-l-4 border-[#C6E589]">
-                                                    <span className="block text-[10px] font-black text-[#8ECC14] uppercase mb-1">Outcome Highlights</span>
+                                                <div className="bg-brand-blue-500/5 p-4 border-l-4 border-brand-blue-500">
+                                                    <span className="block text-[10px] font-black text-brand-pink-700 uppercase mb-1">Outcome Highlights</span>
                                                     <p className="text-gray-700 text-sm font-medium">{litter.highlights}</p>
                                                 </div>
                                             </div>
 
-                                            <button onClick={() => navigate("/#contact")} className="group/btn flex items-center gap-2 text-gray-900 font-black text-xs uppercase tracking-widest border-b-2 border-gray-900 pb-1 hover:text-[#8ECC14] hover:border-[#8ECC14] cursor-pointer transition-all duration-300">
+                                            <button onClick={() => navigate("/#contact")} className="group/btn flex items-center gap-2 text-brand-pink-500 font-black text-xs uppercase tracking-widest border-b-2 border-brand-pink-500 pb-1 hover:text-brand-pink-700 hover:border-brand-pink-700 cursor-pointer transition-all duration-300">
                                                 Discuss this Pairing <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                                             </button>
                                         </div>
@@ -202,12 +202,12 @@ const PastLitters = () => {
             {/* FOOTER CTA */}
             <section className="py-10 px-6 bg-gray-50 border-t border-gray-100">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-[#8ECC14] text-3xl font-black uppercase mb-6 tracking-tighter">Looking for your future Poodle?</h2>
+                    <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl font-black uppercase mb-6 tracking-tighter">Looking for your future Poodle?</h2>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link to={"/available"} className="bg-gray-900 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#8ECC14] transition-colors duration-300">
+                        <Link to={"/available"} className="bg-brand-pink-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-pink-700 transition-colors duration-300">
                             View Available Puppies
                         </Link>
-                        <button onClick={() => navigate("/galleries")} className="bg-white border-2 border-gray-200 text-gray-500 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs cursor-pointer hover:border-[#C6E589] hover:text-gray-900 transition-all duration-300">
+                        <button onClick={() => navigate("/galleries")} className="bg-white border-2 border-brand-blue-500 text-gray-700 hover:bg-blue-50 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs cursor-pointer hover:border-brand-blue-500 transition-all duration-300">
                             Browse All Photo Galleries
                         </button>
                     </div>

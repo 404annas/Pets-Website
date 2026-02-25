@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
-import contactMain from "../assets/contactMain.webp";
+import contactMain from "../assets/contactMain.svg";
 
 const ContactUs = () => {
     const pillVariants = {
@@ -115,7 +115,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="w-full lg:w-1/2 relative flex justify-center">
+                <div className="w-full lg:w-1/2 md:-mt-40 relative flex justify-center">
                     {/* <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full -z-10" /> */}
 
                     <div className="relative w-full max-w-[420px] sm:max-w-[500px]">

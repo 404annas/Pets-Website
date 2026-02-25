@@ -16,3 +16,10 @@ body {
 .fr {
     font-family: "Fredoka", sans-serif;
 }
+
+@theme {
+  --color-brand-blue-500: #3B82F6;
+  --color-brand-pink-500: #EC4899;
+  --color-brand-pink-700: #BE185D;
+  --color-brand-blue-700: #1D4ED8;
+}

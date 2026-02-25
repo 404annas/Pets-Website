@@ -57,11 +57,11 @@ const ApplicationPage = () => {
         return (
             <div className="min-h-screen bg-white -mt-20 flex items-center justify-center p-6">
                 <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-center max-w-md">
-                    <div className="w-20 h-20 bg-[#E9FBC8] rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Check size={40} className="text-[#8ECC14]" />
+                    <div className="w-20 h-20 bg-brand-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Check size={40} className="text-white" />
                     </div>
-                    <h2 className="text-3xl text-[#8ECC14] font-bold mb-4">Application Submitted!</h2>
-                    <p className="text-gray-600">We will review your details personally within 24–48 hours. Keep an eye on your email.</p>
+                    <h2 className="text-3xl text-transparent fr bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text font-bold mb-4">Application Submitted!</h2>
+                    <p className="text-brand-blue-500">We will review your details personally within 24–48 hours. Keep an eye on your email.</p>
                 </motion.div>
             </div>
         );
@@ -72,9 +72,10 @@ const ApplicationPage = () => {
 
             {/* 1. HERO SECTION */}
             <section className="pt-10 pb-10 px-4 max-w-5xl mx-auto text-center">
-                <span className="text-[#C6E589] font-bold tracking-widest uppercase text-xs">First Step</span>
-                <h1 className="text-3xl md:text-4xl text-[#8ECC14] font-bold mt-4 mb-6">Puppy Application Process</h1>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <span className="text-brand-pink-700 font-bold tracking-widest uppercase text-xs">First Step</span>
+                <h1 className="text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-brand-pink-700 
+ to-brand-blue-700 font-bold fr mt-4 mb-6 uppercase">Puppy Application Process</h1>
+                <p className="text-base md:text-lg text-brand-blue-500 leading-relaxed max-w-3xl mx-auto">
                     Choosing a puppy is a big deal. This process is built on clarity and care, helping us match you with the Toy Poodle who fits your family best.
                 </p>
             </section>
@@ -83,11 +84,11 @@ const ApplicationPage = () => {
 
                 {/* 2. THE FORM (LEFT COLUMN) */}
                 <div className="lg:col-span-7">
-                    <div className="bg-slate-50 rounded-[2rem] p-4 md:p-8 shadow-sm border border-[#C6E589]">
+                    <div className="bg-slate-50 rounded-[2rem] p-4 md:p-8 shadow-sm border border-brand-blue-500">
                         {/* Progress Header */}
                         <div className="flex justify-between items-end mb-8">
                             <div>
-                                <p className="text-[#8ECC14] font-bold text-sm uppercase">Step {currentStep + 1} of 5</p>
+                                <p className="text-brand-pink-700 font-bold text-sm uppercase">Step {currentStep + 1} of 5</p>
                                 <h3 className="text-xl font-bold">
                                     {currentStep === 0 && "Basic Information"}
                                     {currentStep === 1 && "Home Environment"}
@@ -98,7 +99,7 @@ const ApplicationPage = () => {
                             </div>
                             <div className="flex gap-1">
                                 {[0, 1, 2, 3, 4].map(i => (
-                                    <div key={i} className={`h-1.5 w-8 rounded-full ${i <= currentStep ? 'bg-[#8ECC14]' : 'bg-slate-200'}`} />
+                                    <div key={i} className={`h-1.5 w-8 rounded-full ${i <= currentStep ? 'bg-brand-pink-500' : 'bg-slate-200'}`} />
                                 ))}
                             </div>
                         </div>
@@ -116,16 +117,16 @@ const ApplicationPage = () => {
                                     {currentStep === 0 && (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div className="md:col-span-2">
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Full Name *</label>
-                                                <input type="text" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none transition-all" value={formData.fullName} onChange={e => setFormData({ ...formData, fullName: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Full Name *</label>
+                                                <input type="text" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none transition-all" value={formData.fullName} onChange={e => setFormData({ ...formData, fullName: e.target.value })} />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Email Address *</label>
-                                                <input type="email" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none transition-all" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Email Address *</label>
+                                                <input type="email" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none transition-all" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Phone Number *</label>
-                                                <input type="number" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none transition-all" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Phone Number *</label>
+                                                <input type="number" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none transition-all" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} />
                                             </div>
                                         </div>
                                     )}
@@ -134,20 +135,20 @@ const ApplicationPage = () => {
                                     {currentStep === 1 && (
                                         <div className="space-y-4">
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-2 block">Living Situation *</label>
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-2 block">Living Situation *</label>
                                                 <div className="flex flex-wrap gap-2">
                                                     {['House', 'Apartment', 'Other'].map(v => (
-                                                        <button key={v} type="button" onClick={() => setFormData({ ...formData, homeType: v })} className={`px-4 py-2 rounded-lg border transition-all cursor-pointer ${formData.homeType === v ? 'bg-[#8ECC14] border-[#8ECC14] text-white' : 'bg-white border-slate-200 hover:border-[#8ECC14]'}`}>{v}</button>
+                                                        <button key={v} type="button" onClick={() => setFormData({ ...formData, homeType: v })} className={`px-4 py-2 rounded-lg border transition-all cursor-pointer ${formData.homeType === v ? 'bg-brand-pink-500 border-brand-pink-500 text-white' : 'bg-white border-slate-200 hover:border-brand-pink-500'}`}>{v}</button>
                                                     ))}
                                                 </div>
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Who lives in your household? *</label>
-                                                <input type="text" placeholder="e.g. 2 adults, 1 child" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none transition-all" value={formData.householdSize} onChange={e => setFormData({ ...formData, householdSize: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Who lives in your household? *</label>
+                                                <input type="text" placeholder="e.g. 2 adults, 1 child" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none transition-all" value={formData.householdSize} onChange={e => setFormData({ ...formData, householdSize: e.target.value })} />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Other Pets? *</label>
-                                                <input type="text" placeholder="Specify breed/age or 'None'" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none transition-all" value={formData.hasOtherPets} onChange={e => setFormData({ ...formData, hasOtherPets: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Other Pets? *</label>
+                                                <input type="text" placeholder="Specify breed/age or 'None'" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none transition-all" value={formData.hasOtherPets} onChange={e => setFormData({ ...formData, hasOtherPets: e.target.value })} />
                                             </div>
                                         </div>
                                     )}
@@ -156,12 +157,12 @@ const ApplicationPage = () => {
                                     {currentStep === 2 && (
                                         <div className="space-y-4">
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Dog Experience (Min 10 chars) *</label>
-                                                <textarea className="w-full p-3 rounded-xl border border-slate-200 min-h-[80px] focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none resize-none transition-all" value={formData.experienceLevel} onChange={e => setFormData({ ...formData, experienceLevel: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Dog Experience (Min 10 chars) *</label>
+                                                <textarea className="w-full p-3 rounded-xl border border-slate-200 min-h-[80px] focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none resize-none transition-all" value={formData.experienceLevel} onChange={e => setFormData({ ...formData, experienceLevel: e.target.value })} />
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-1 block">Reason for a Toy Poodle? *</label>
-                                                <textarea className="w-full p-3 rounded-xl border border-slate-200 min-h-[80px] focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] outline-none resize-none transition-all" value={formData.reasonForPoodle} onChange={e => setFormData({ ...formData, reasonForPoodle: e.target.value })} />
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-1 block">Reason for a Toy Poodle? *</label>
+                                                <textarea className="w-full p-3 rounded-xl border border-slate-200 min-h-[80px] focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 outline-none resize-none transition-all" value={formData.reasonForPoodle} onChange={e => setFormData({ ...formData, reasonForPoodle: e.target.value })} />
                                             </div>
                                         </div>
                                     )}
@@ -170,15 +171,15 @@ const ApplicationPage = () => {
                                     {currentStep === 3 && (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-2 block">Sex Preference *</label>
-                                                <select className="w-full p-3 rounded-xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] transition-all" value={formData.poodlePreference} onChange={e => setFormData({ ...formData, poodlePreference: e.target.value })}>
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-2 block">Sex Preference *</label>
+                                                <select className="w-full p-3 rounded-xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 transition-all" value={formData.poodlePreference} onChange={e => setFormData({ ...formData, poodlePreference: e.target.value })}>
                                                     <option value="">Select...</option>
                                                     <option>Male</option><option>Female</option><option>No Preference</option>
                                                 </select>
                                             </div>
                                             <div>
-                                                <label className="text-xs font-bold uppercase text-[#8ECC14] mb-2 block">Color Preference *</label>
-                                                <select className="w-full p-3 rounded-xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-inset focus:ring-[#8ECC14] transition-all" value={formData.colorPreference} onChange={e => setFormData({ ...formData, colorPreference: e.target.value })}>
+                                                <label className="text-xs font-bold uppercase text-brand-pink-500 mb-2 block">Color Preference *</label>
+                                                <select className="w-full p-3 rounded-xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-inset focus:ring-brand-pink-500 transition-all" value={formData.colorPreference} onChange={e => setFormData({ ...formData, colorPreference: e.target.value })}>
                                                     <option value="">Select...</option>
                                                     <option>Deep Red</option><option>Apricot</option><option>Any</option>
                                                 </select>
@@ -188,9 +189,9 @@ const ApplicationPage = () => {
 
                                     {/* STEP 4: COMMITMENT */}
                                     {currentStep === 4 && (
-                                        <div className="bg-[#E9FBC8]/30 p-4 rounded-xl border border-[#C6E598]">
+                                        <div className="bg-brand-pink-50 p-4 rounded-xl border border-brand-blue-500">
                                             <div className="flex gap-3">
-                                                <input type="checkbox" className="mt-1 accent-[#8ECC14]" checked={formData.commitmentAgreement} onChange={e => setFormData({ ...formData, commitmentAgreement: e.target.checked })} />
+                                                <input type="checkbox" className="mt-1 accent-brand-blue-500" checked={formData.commitmentAgreement} onChange={e => setFormData({ ...formData, commitmentAgreement: e.target.checked })} />
                                                 <label className="text-sm text-gray-700">I confirm that I am prepared for the 15+ year commitment, grooming costs, and socialization required for a Toy Poodle.</label>
                                             </div>
                                         </div>
@@ -199,13 +200,13 @@ const ApplicationPage = () => {
                             </AnimatePresence>
 
                             {/* NAV BUTTONS */}
-                            <div className="mt-8 flex justify-between items-center border-t pt-6">
-                                <button type="button" onClick={handleBack} className={`text-gray-400 hover:text-gray-800 transition-all duration-300 font-bold flex items-center gap-1 cursor-pointer ${currentStep === 0 ? 'invisible' : 'visible'}`}><ChevronLeft size={18} /> Back</button>
+                            <div className="mt-8 flex justify-between items-center border-t border-brand-blue-500 pt-6">
+                                <button type="button" onClick={handleBack} className={`text-gray-400 hover:text-brand-blue-700 transition-all duration-300 font-bold flex items-center gap-1 cursor-pointer ${currentStep === 0 ? 'invisible' : 'visible'}`}><ChevronLeft size={18} /> Back</button>
 
                                 {currentStep === 4 ? (
-                                    <button type="button" disabled={!isStepValid()} onClick={() => setIsSubmitted(true)} className="bg-[#8ECC14] text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 flex items-center cursor-pointer hover:scale-95 transition-all duration-300 gap-2">Submit Application <Send size={18} /></button>
+                                    <button type="button" disabled={!isStepValid()} onClick={() => setIsSubmitted(true)} className="bg-brand-blue-500 text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 flex items-center cursor-pointer hover:scale-95 transition-all duration-300 gap-2">Submit Application <Send size={18} /></button>
                                 ) : (
-                                    <button type="button" disabled={!isStepValid()} onClick={handleNext} className="bg-[#8ECC14] cursor-pointer hover:scale-95 transition-all duration-300 text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 disabled:hover:cursor-not-allowed flex items-center gap-2">Next Step <ChevronRight size={18} /></button>
+                                    <button type="button" disabled={!isStepValid()} onClick={handleNext} className="bg-brand-blue-500 cursor-pointer hover:scale-95 transition-all duration-300 text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 disabled:hover:cursor-not-allowed flex items-center gap-2">Next Step <ChevronRight size={18} /></button>
                                 )}
                             </div>
                         </form>
@@ -225,10 +226,10 @@ const ApplicationPage = () => {
                                 { s: "5", t: "Go-Home", d: "Handoff with full health records and care guide." }
                             ].map(item => (
                                 <div key={item.s} className="flex gap-4">
-                                    <span className="w-8 h-8 rounded-full bg-[#C6E5A8] flex items-center justify-center font-bold text-xs flex-shrink-0 text-[#5f8a0b]">{item.s}</span>
+                                    <span className="w-8 h-8 rounded-full bg-brand-pink-200 flex items-center justify-center font-bold text-xs flex-shrink-0 text-brand-pink-700">{item.s}</span>
                                     <div>
-                                        <h4 className="font-bold text-sm uppercase text-[#8ECC14] tracking-tight">{item.t}</h4>
-                                        <p className="text-gray-500 text-sm">{item.d}</p>
+                                        <h4 className="font-bold text-sm uppercase text-brand-pink-700 fr tracking-tight">{item.t}</h4>
+                                        <p className="text-brand-blue-500 text-sm">{item.d}</p>
                                     </div>
                                 </div>
                             ))}
@@ -242,7 +243,7 @@ const ApplicationPage = () => {
             <div className="bg-red-50 p-6 rounded-2xl max-w-4xl mx-auto mb-10 border border-red-100">
                 <div className="flex items-center gap-2 text-red-600 mb-3">
                     <AlertOctagon size={20} />
-                    <h4 className="font-bold text-3xl">Scam Alert</h4>
+                    <h4 className="font-bold text-3xl fr uppercase">Scam Alert!</h4>
                 </div>
                 <p className="text-base text-red-800/80 leading-relaxed mb-4">Beware of breeders or advertisements who pressure immediate payment, refuse health testing, or use stock photos.</p>
                 <ul className="text-sm space-y-2 text-red-700 font-medium">
@@ -254,11 +255,11 @@ const ApplicationPage = () => {
             </div>
 
             {/* 4. FAQ SECTION (FULL WIDTH) */}
-            <section className="bg-slate-50 py-10 px-4">
+            <section className="bg-pink-50 py-10 px-4">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <MessageSquare className="mx-auto text-[#8ECC14] mb-4" size={32} />
-                        <h2 className="text-3xl md:text-4xl text-[#8ECC14] font-extrabold">Common Questions</h2>
+                        <MessageSquare className="mx-auto text-brand-pink-500 mb-4" size={32} />
+                        <h2 className="text-3xl md:text-4xl text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text font-extrabold fr uppercase">Common Questions</h2>
                     </div>
                     <div className="space-y-4">
                         {faqs.map((faq, i) => (
@@ -274,8 +275,8 @@ const ApplicationPage = () => {
 const AccordionItem = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="bg-white rounded-2xl border border-[#C6E5A8] overflow-hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="w-full p-5 flex justify-between items-center text-left font-bold transition-all duration-300 text-[#8ECC14] hover:bg-[#e7fcd2] cursor-pointer">
+        <div className="bg-white rounded-2xl border border-brand-pink-500 overflow-hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="w-full p-5 flex justify-between items-center text-left font-bold transition-all duration-300 text-brand-pink-700 hover:bg-pink-100 cursor-pointer">
                 {title}
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
             </button>

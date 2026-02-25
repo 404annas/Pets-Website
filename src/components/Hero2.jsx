@@ -26,7 +26,7 @@ const Hero2 = () => {
                 </h1>
 
                 <p className="mt-6 text-blue-600 text-base max-w-4xl mx-auto font-medium">
-                    We provide well-trained, healthy and happy Poodles including male & female, toy, miniature and standard sizes. Raised with love and ready for their new homes.
+                    USA Poodle is America’s premier breeder of AKC grand champion Red Toy Poodles. That’s all we do. We produce champions with perfect confirmation and perfect temperament.
                 </p>
 
                 {/* <Link to={"/available"}>
@@ -71,7 +71,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 2. Dog Card (Center - Blue - Tallest) */}
-                <div className="w-60 h-[500px] rounded-full flex items-end justify-center overflow-hidden pt-16 relative z-10">
+                <div className="w-70 h-[500px] rounded-full flex items-end justify-center overflow-hidden pt-16 relative z-10">
                     {/* REPLACE SRC WITH TRANSPARENT DOG PNG */}
                     <img
                         loading='lazy'
@@ -82,7 +82,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 3. Rabbit Card (Right - Yellow) */}
-                <div className="w-56 rounded-full flex items-end justify-center overflow-hidden pt-12 mt-12 md:mt-16 relative rotate-12">
+                <div className="w-56 h-96 rounded-full flex items-end justify-center overflow-hidden pt-12 mt-12 md:mt-16 relative rotate-12">
                     {/* REPLACE SRC WITH TRANSPARENT RABBIT PNG */}
                     <img
                         loading='lazy'

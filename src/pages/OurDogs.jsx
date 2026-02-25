@@ -74,7 +74,7 @@ const OurDogs = () => {
     ];
 
     const DogCard = ({ dog, type }) => (
-        <div className="bg-white border border-[#C6E589] rounded-[2.5rem] overflow-hidden group shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full">
+        <div className="bg-white border border-brand-blue-500 rounded-[2.5rem] overflow-hidden group shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full">
             {/* Image Container */}
             <div className="relative overflow-hidden aspect-[4/5]">
                 <img
@@ -84,7 +84,7 @@ const OurDogs = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute top-6 left-6">
-                    <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest text-[#8ECC14] shadow-sm">
+                    <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest text-brand-pink-500 shadow-sm">
                         {type === 'dam' ? 'Dam / Queen' : 'Sire / King'}
                     </span>
                 </div>
@@ -93,7 +93,7 @@ const OurDogs = () => {
             {/* Content */}
             <div className="p-8 flex flex-col flex-grow">
                 <div className="mb-6">
-                    <h3 className="text-3xl md:text-4xl font-black text-gray-900 leading-none mb-1">{dog.callName}</h3>
+                    <h3 className="text-3xl md:text-4xl font-black fr text-gray-900 leading-none mb-1">{dog.callName}</h3>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{dog.registeredName}</p>
                 </div>
 
@@ -104,7 +104,7 @@ const OurDogs = () => {
                     <div className='text-sm'><span className="text-gray-400 block text-xs uppercase mb-1 tracking-tighter">Dam</span><strong className="text-sm">{dog.dam}</strong></div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-6 border-l-2 border-[#C6E589] pl-4">
+                <p className="text-gray-600 text-sm mb-6 border-l-2 border-brand-blue-500 pl-4">
                     "{dog.personality}"
                 </p>
 
@@ -114,19 +114,19 @@ const OurDogs = () => {
                     <div className="flex justify-between text-[11px]"><span className="text-gray-400 uppercase font-semibold">Known For</span> <span className='text-xs'>{dog.knownFor}</span></div>
                 </div>
 
-                <div className="bg-[#F9FFF0] p-4 rounded-2xl mb-6">
+                <div className="bg-brand-blue-500/5 p-4 rounded-2xl mb-6">
                     <div className="flex items-center gap-2 mb-1">
-                        <CheckCircle size={18} className="text-[#8ECC14]" />
+                        <CheckCircle size={18} className="text-brand-pink-700" />
                         <span className="text-sm font-bold uppercase text-gray-800">Health Testing</span>
                     </div>
                     <p className="text-xs text-gray-500">OFA and DNA testing completed, results available upon request.</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 mt-auto">
-                    {/* <button onClick={() => navigate("/dogs-page")} className="bg-gray-900 text-white text-xs font-bold uppercase py-3 rounded-full hover:bg-[#8ECC14] transition-colors duration-300 cursor-pointer">
+                    {/* <button onClick={() => navigate("/dogs-page")} className="bg-gray-900 text-white text-xs font-bold uppercase py-3 rounded-full hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer">
                         Full Profile
                     </button> */}
-                    <button onClick={() => navigate("/#contact")} className="border-2 border-[#C6E589] text-gray-600 text-xs font-bold uppercase py-3 rounded-full hover:border-[#9cbd5a] transition-all duration-300 cursor-pointer">
+                    <button onClick={() => navigate("/#contact")} className="border-2 border-brand-blue-500 text-gray-600 text-xs font-bold uppercase py-3 rounded-full hover:border-brand-pink-500 transition-all duration-300 cursor-pointer">
                         Inquire
                     </button>
                 </div>
@@ -141,10 +141,10 @@ const OurDogs = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
-                        <h1 className="text-[#8ECC14] text-4xl sm:text-5xl md::text-6xl lg:text-8xl font-black leading-[0.9] uppercase tracking-tighter mb-8">
-                            Meet our <br /> <span className="text-gray-900 underline decoration-[#C6E589] decoration-8">Kings & Queens</span>
+                        <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md::text-6xl lg:text-7xl font-black leading-[0.9] uppercase tracking-tighter mb-8">
+                            Meet our <br /> <span className="text-gray-900 underline decoration-brand-blue-500 decoration-8">Kings & Queens</span>
                         </h1>
-                        <p className="text-base md:text-lg text-gray-600 max-w-lg">
+                        <p className="text-base md:text-lg text-brand-blue-500 max-w-lg">
                             "Healthy puppies start with healthy parents, and we take that seriously."
                         </p>
                     </div>
@@ -160,37 +160,37 @@ const OurDogs = () => {
             </section>
 
             {/* PHILOSOPHY SECTION */}
-            <section className="py-10 px-6 bg-[#E2F1C4]/40">
+            <section className="py-10 px-6 bg-blue-50">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
                     <div className="lg:w-1/2">
-                        <h2 className="text-[#8ECC14] text-4xl font-black uppercase mb-6 tracking-tighter leading-none">
+                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl font-black uppercase mb-6 tracking-tighter leading-none">
                             Healthy puppies start with <br /> healthy parents.
                         </h2>
-                        <p className="text-base md:text-lg leading-normal text-gray-600 mb-6">
-                            Our Toy Poodles are not <span className='text-gray-900 font-medium'>“breeding stock.”</span> They are our daily companions, our little comedians, and our proud constants. If you want to understand our program, start here. The parents tell the story.
+                        <p className="text-base md:text-lg leading-normal text-brand-blue-500 mb-6">
+                            Our Toy Poodles are not <span className='text-brand-blue-700 font-medium'>“breeding stock.”</span> They are our daily companions, our little comedians, and our proud constants. If you want to understand our program, start here. The parents tell the story.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
                             {["AKC Registered", "Loved as Family", "Health Focused", "Integrity Minded"].map((text, i) => (
-                                <div key={i} className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gray-800">
-                                    <Star size={18} className="text-[#8ECC14]" /> {text}
+                                <div key={i} className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-pink-700">
+                                    <Star size={18} className="text-brand-pink-700" /> {text}
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="w-full lg:w-1/2 bg-white px-6 py-8 md:px-8 md:py-10 rounded-[3rem] shadow-sm">
-                        <h3 className="text-gray-900 font-black uppercase text-lg md:text-xl tracking-wide mb-6">Transparency Matters!</h3>
+                    <div className="w-full lg:w-1/2 bg-white px-6 py-8 md:px-8 md:py-10 rounded-2xl shadow-sm">
+                        <h3 className="text-gray-900 font-black fr uppercase text-lg md:text-xl tracking-wide mb-6">Transparency Matters!</h3>
                         <div className="space-y-6">
-                            <p className="text-sm text-gray-500">"Lineage analysis helps us avoid repeating known health risks and preserve stable temperaments."</p>
+                            <p className="text-sm text-brand-blue-500">"Lineage analysis helps us avoid repeating known health risks and preserve stable temperaments."</p>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3">
-                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-[#C6E589]" /> Color & Size</li>
-                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-[#C6E589]" /> Pedigree History</li>
-                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-[#C6E589]" /> Health Summaries</li>
-                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-[#C6E589]" /> Full Photo Galleries</li>
+                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-brand-blue-500" /> Color & Size</li>
+                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-brand-blue-500" /> Pedigree History</li>
+                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-brand-blue-500" /> Health Summaries</li>
+                                <li className="flex items-center gap-2 text-sm font-semibold text-gray-700"><CheckCircle size={18} className="text-brand-blue-500" /> Full Photo Galleries</li>
                             </ul>
 
                             <button
                                 onClick={() => navigate('/dogs-page')}
-                                className="flex items-center gap-2 text-[#8ECC14] font-bold uppercase tracking-widest text-xs border-b-2 border-[#8ECC14] pb-1 hover:text-gray-900 hover:border-gray-900 transition-all duration-300 cursor-pointer"
+                                className="flex items-center gap-2 text-brand-pink-500 font-bold uppercase tracking-widest text-xs border-b-2 border-brand-pink-500 pb-1 hover:text-brand-pink-700 hover:border-brand-pink-700 transition-all duration-300 cursor-pointer"
                             >
                                 Why Pedigree Matters ? <ArrowUpRight size={14} />
                             </button>
@@ -203,15 +203,15 @@ const OurDogs = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10 pb-10">
                     <div>
-                        <h2 className="text-[#8ECC14] text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Kings & Queens</h2>
-                        <p className="text-gray-500 text-base">Scroll to meet our dams and sires</p>
+                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Kings & Queens</h2>
+                        <p className="text-brand-blue-500 text-base">Scroll to meet our dams and sires</p>
                     </div>
-                    <div className="flex bg-gray-50 p-1.5 rounded-full">
+                    <div className="flex bg-blue-50 p-1.5 rounded-full">
                         {['all', 'dams', 'sires'].map((t) => (
                             <button
                                 key={t}
                                 onClick={() => setFilter(t)}
-                                className={`px-8 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300 cursor-pointer ${filter === t ? 'bg-[#8ECC14] text-white shadow-sm' : 'text-gray-400 hover:text-gray-700'}`}
+                                className={`px-8 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300 cursor-pointer ${filter === t ? 'bg-brand-pink-700 text-white shadow-sm' : 'text-brand-blue-500 hover:text-brand-blue-700'}`}
                             >
                                 {t}
                             </button>
@@ -223,10 +223,10 @@ const OurDogs = () => {
                 {(filter === 'all' || filter === 'dams') && (
                     <div className="mb-10">
                         <div className="mb-10">
-                            <h3 className="text-gray-900 text-2xl md:text-3xl font-black uppercase mb-2 flex items-center gap-4">
+                            <h3 className="text-gray-900 fr text-2xl md:text-3xl font-black uppercase mb-2 flex items-center gap-4">
                                 Meet the Dams <div className="h-px flex-grow bg-gray-100"></div>
                             </h3>
-                            <p className="text-gray-400 text-xs ">Our moms, the soul of the nursery. Tap a photo to open full profile.</p>
+                            <p className="text-brand-blue-500 text-xs ">Our moms, the soul of the nursery. Tap a photo to open full profile.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {dams.map(dam => <DogCard key={dam.id} dog={dam} type="dam" />)}
@@ -238,10 +238,10 @@ const OurDogs = () => {
                 {(filter === 'all' || filter === 'sires') && (
                     <div className="mb-10">
                         <div className="mb-10">
-                            <h3 className="text-gray-900 text-2xl md:text-3xl font-black uppercase mb-2 flex items-center gap-4">
+                            <h3 className="text-gray-900 fr text-2xl md:text-3xl font-black uppercase mb-2 flex items-center gap-4">
                                 Meet the Sires <div className="h-px flex-grow bg-gray-100"></div>
                             </h3>
-                            <p className="text-gray-400 text-xs">Our dads, the charm and confidence. Tap a photo to open full profile.</p>
+                            <p className="text-brand-pink-500 text-xs">Our dads, the charm and confidence. Tap a photo to open full profile.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {sires.map(sire => <DogCard key={sire.id} dog={sire} type="sire" />)}
@@ -252,16 +252,16 @@ const OurDogs = () => {
 
             {/* RETIRED / GUARDIAN SECTION */}
             <section className="py-10 px-6 bg-gray-900 text-white overflow-hidden relative">
-                <div className="absolute top-0 right-0 w-1/3 h-full bg-[#8ECC14]/10 blur-[100px]"></div>
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-pink-700/10 blur-[100px]"></div>
                 <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
                     <div className="md:w-2/3">
-                        <h2 className="text-[#8ECC14] text-4xl md:text-5xl font-black uppercase mb-6 tracking-tighter">Retired Dogs & <br /> Guardian Homes</h2>
+                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl md:text-5xl font-black uppercase mb-6 tracking-tighter">Retired Dogs & <br /> Guardian Homes</h2>
                         <p className="text-gray-400 text-base md:text-lg leading-normal mb-8 max-w-2xl">
                             Retirement is not an afterthought here. It is part of doing this ethically. Some of our dogs remain cherished family members, while others live in carefully selected guardian homes. They deserve comfort, attention, and a life that stays rich and loved.
                         </p>
                     </div>
                     <div className="md:w-1/3">
-                        <div className="p-1 border border-[#8ECC14] rounded-[2rem]">
+                        <div className="p-1 border border-brand-pink-700 rounded-[2rem]">
                             <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=600" className="rounded-[1.8rem] w-full h-96 object-cover object-bottom opacity-70" alt="Retired Poodle" />
                         </div>
                     </div>
@@ -270,22 +270,22 @@ const OurDogs = () => {
 
             {/* HELP CHOOSING CTA */}
             <section className="py-10 px-6 max-w-5xl mx-auto text-center">
-                <div className="bg-[#E2F1C4] rounded-[3rem] px-6 py-8 lg:p-10">
-                    <Heart size={40} className="text-[#8ECC14] mx-auto mb-8" />
-                    <h2 className="text-gray-900 text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-tight">
+                <div className="bg-blue-50 rounded-[3rem] px-6 py-8 lg:p-10">
+                    <Heart size={40} className="text-brand-pink-700 mx-auto mb-8" />
+                    <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-3xl md:text-5xl font-black uppercase tracking-tight fr mb-6 leading-none">
                         Want help choosing <br /> who you connect with?
                     </h2>
-                    <p className="text-gray-600 mb-10 max-w-3xl mx-auto">
+                    <p className="text-brand-blue-500 mb-10 max-w-3xl mx-auto">
                         People fall in love with different things. Whether you want a calm lap companion or a bright little athlete, tell us what fits your life and we will guide you toward the right lines.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4">
-                        <button onClick={() => navigate("/available")} className="bg-gray-900 text-white px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs hover:bg-[#8ECC14] transition-all duration-300 cursor-pointer shadow-sm shadow-[#8ECC14]/20">
+                        <button onClick={() => navigate("/available")} className="bg-brand-pink-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs hover:bg-brand-pink-700 transition-all duration-300 cursor-pointer shadow-sm shadow-brand-pink-700/20">
                             See Available Puppies
                         </button>
-                        <button onClick={() => navigate("/application")} className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs border-2 border-gray-200 hover:border-[#C6E589] transition-all duration-300 cursor-pointer">
+                        <button onClick={() => navigate("/application")} className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs border-2 border-gray-200 hover:border-brand-blue-500 transition-all duration-300 cursor-pointer">
                             Start Puppy Application
                         </button>
-                        <button onClick={() => navigate("/dogs-page")} className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs border-2 border-[#a2c263] hover:bg-[#c2e975] transition-all duration-300 cursor-pointer">
+                        <button onClick={() => navigate("/dogs-page")} className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-wide text-xs border-2 border-brand-blue-500 hover:bg-brand-blue-500/20 transition-all duration-300 cursor-pointer">
                             Pedigree & Lineage
                         </button>
                     </div>
