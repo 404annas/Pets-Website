@@ -38,7 +38,7 @@ const Home = () => (
     <Hero2 />
     <Steps />
     <Benefits />
-    <PetsSlider />
+    {/* <PetsSlider /> */}
     {/* <Intro /> */}
     <WhyRed />
     <HomePhilosophy />
