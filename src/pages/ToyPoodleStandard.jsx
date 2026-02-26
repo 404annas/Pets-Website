@@ -32,13 +32,13 @@ const ToyPoodleStandard = () => {
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h1 className="text-brand-pink-700 text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
+            <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6">
               More than <br /> <span className="text-gray-900">Curly Cuteness</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-800 font-medium mb-6 leading-snug">
+            <p className="text-base md:text-lg text-brand-blue-500 font-medium mb-6 leading-snug">
               "A Breed With Brains, Heart, and Style."
             </p>
-            <p className="text-gray-600 text-base max-w-xl">
+            <p className="text-brand-pink-500 text-base max-w-xl">
               Spend five minutes with a Toy Poodle and you’ll realize they’re opinionated puzzle-solvers, stylish couch companions, and built-in cheerleaders for your day.
             </p>
           </div>
@@ -57,8 +57,8 @@ const ToyPoodleStandard = () => {
       <section className="py-10 px-6 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-brand-pink-700 text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-center">AKC Official Traits</h2>
-            <p className="text-center text-gray-500 uppercase text-xs font-semibold">What the Standard Says & What It Means at Home</p>
+            <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">AKC Official Traits</h2>
+            <p className="text-center text-brand-blue-500 uppercase text-xs font-semibold">What the Standard Says & What It Means at Home</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -68,10 +68,10 @@ const ToyPoodleStandard = () => {
               { icon: <Brain size={32} />, t: "Intelligence", d: "One of the smartest breeds on the planet. They love mental enrichment, puzzles, and training games as much as lap time." },
               { icon: <Scissors size={32} />, t: "Coat Type", d: "Tight, low-shedding curls that are allergy-friendly. Requires professional grooming every 4–6 weeks to maintain health." }
             ].map((trait, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-brand-pink-700 transition-colors duration-300">
+              <div key={i} className="bg-white p-8 rounded-2xl border border-brand-blue-500 flex gap-6 items-start group hover:border-brand-pink-500 transition-colors duration-300">
                 <div className="text-brand-blue-500 group-hover:text-brand-pink-700 transition-colors duration-300">{trait.icon}</div>
                 <div>
-                  <h3 className="text-xl font-black uppercase tracking-tight text-gray-900 mb-2">{trait.t}</h3>
+                  <h3 className="text-xl font-black uppercase tracking-tight fr text-gray-900 mb-2">{trait.t}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{trait.d}</p>
                 </div>
               </div>
@@ -82,12 +82,12 @@ const ToyPoodleStandard = () => {
 
       {/* TYPICAL BEHAVIORS */}
       <section className="py-10 px-6 max-w-7xl mx-auto">
-        <div className="bg-gray-900 rounded-[3rem] px-6 py-10 sm:p-10 md:p-16 relative overflow-hidden text-center text-white mb-20">
+        <div className="bg-gray-900 rounded-2xl px-6 py-10 sm:p-10 md:p-16 relative overflow-hidden text-center text-white mb-20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-700 blur-[120px] opacity-20"></div>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 relative z-10">
-            "Half dog, half brain <br /> <span className="text-brand-pink-700">with a sprinkle of clown spirit."</span>
+          <h2 className="text-4xl md:text-5xl font-black fr uppercase tracking-tight mb-6 relative z-10">
+            "Half dog, half brain <br /> <span className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">with a sprinkle of clown spirit."</span>
           </h2>
-          <p className="text-gray-400">— Common owner description —</p>
+          <p className="text-brand-pink-500">— Common owner description —</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-10">
@@ -112,32 +112,32 @@ const ToyPoodleStandard = () => {
               <div className="w-16 h-16 bg-brand-blue-500/15 rounded-2xl flex items-center justify-center mx-auto mb-6 text-brand-pink-700 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tighter mb-4">{item.t}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.d}</p>
+              <h3 className="text-2xl font-black uppercase tracking-tight fr mb-4">{item.t}</h3>
+              <p className="text-brand-blue-500 text-sm leading-relaxed">{item.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* QUICK VISUAL CHECKLIST */}
-      <section className="py-10 px-6 bg-brand-blue-500/15">
+      <section className="py-10 px-6 bg-blue-50">
         <div className="max-w-7xl mx-auto">
 
           {/* Header Section with a modern "split" look */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="space-y-2">
-              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none text-gray-900">
+              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight fr leading-none text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">
                 The <span className="text-white" style={{ WebkitTextStroke: '1.5px var(--color-brand-pink-700)' }}>Spec</span> Sheet
               </h2>
-              <p className="text-brand-pink-700 font-bold tracking-widest uppercase text-sm pl-1">Quick Visual Checklist</p>
+              <p className="text-brand-pink-700 font-bold tracking-wide uppercase text-sm pl-1">Quick Visual Checklist</p>
             </div>
             <div className="text-right">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-600">01—06</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-blue-700">01—06</span>
             </div>
           </div>
 
           {/* The Modern Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black/5 overflow-hidden rounded-3xl shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black/5 overflow-hidden rounded-3xl">
             {items.map((check, i) => (
               <div
                 key={i}
@@ -156,7 +156,7 @@ const ToyPoodleStandard = () => {
 
                 {/* Bottom Row: Text content */}
                 <div className="mt-8">
-                  <h4 className="text-2xl font-black uppercase tracking-tighter text-gray-900 group-hover:text-white transition-colors">
+                  <h4 className="text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-white transition-colors fr">
                     {check.t}
                   </h4>
                   <div className="h-1 w-8 bg-brand-pink-700 group-hover:bg-white my-3 transition-all duration-300 group-hover:w-16"></div>
@@ -169,7 +169,7 @@ const ToyPoodleStandard = () => {
                 </div>
 
                 {/* Decorative background text on hover */}
-                <span className="absolute bottom-4 right-6 text-6xl font-black text-black/5 pointer-events-none group-hover:text-white/10 transition-colors tracking-tight">
+                <span className="absolute bottom-4 right-6 text-6xl font-black text-black/5 pointer-events-none group-hover:text-white/10 transition-colors tracking-tight fr">
                   {check.t}
                 </span>
               </div>
@@ -180,13 +180,13 @@ const ToyPoodleStandard = () => {
 
       {/* FAQ SECTION */}
       <section className="py-10 px-6 max-w-5xl mx-auto">
-        <h2 className="text-center text-gray-900 text-3xl md:text-4xl font-black uppercase mb-10">Standard FAQ</h2>
+        <h2 className="text-center text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase mb-10">Standard FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-gray-100 last:border-0">
+            <div key={i} className="border-b border-gray-200 last:border-0">
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full flex justify-between items-center py-6 text-left hover:text-brand-pink-700 transition-colors duration-300 cursor-pointer"
+                className="w-full flex justify-between items-center py-6 text-left text-brand-blue-700 hover:text-brand-pink-700 transition-colors duration-300 cursor-pointer"
               >
                 <span className="font-bold text-base uppercase pr-8">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
@@ -205,7 +205,7 @@ const ToyPoodleStandard = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => navigate('/the-red-story')}
-              className="flex items-center gap-2 text-brand-pink-700 font-bold text-base uppercase cursor-pointer group"
+              className="flex items-center gap-2 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr font-bold text-base uppercase cursor-pointer group"
             >
               The Science of Red <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -213,13 +213,13 @@ const ToyPoodleStandard = () => {
           <div className="flex gap-3">
             <button
               onClick={() => navigate('/available')}
-              className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer"
+              className="bg-brand-pink-500 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer"
             >
               Available Puppies
             </button>
             <button
               onClick={() => navigate('/application')}
-              className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-brand-blue-500 transition-all duration-300 cursor-pointer"
+              className="bg-white border-2 border-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:border-brand-blue-500 hover:bg-blue-50 transition-all duration-300 cursor-pointer"
             >
               Puppy Application
             </button>

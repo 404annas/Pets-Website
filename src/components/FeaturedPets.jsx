@@ -109,11 +109,11 @@ const PetCard = ({ pet }) => {
                         <img loading='lazy' src={pet.image} alt={pet.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                         <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full shadow-md text-white z-10"><RotateCcw size={24} /></div>
 
-                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest z-10 shadow-sm border border-pink-200">{pet.availability}</div>
+                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest fr z-10 shadow-sm border border-pink-200">{pet.availability}</div>
 
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white py-4 rounded-3xl text-center shadow-sm z-10">
-                            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">{pet.name}</h2>
-                            <p className="text-xs tracking-widest text-gray-800 uppercase mt-1">{pet.breed}</p>
+                            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr uppercase">{pet.name}</h2>
+                            <p className="text-xs tracking-widest text-brand-blue-500 uppercase mt-1">{pet.breed}</p>
                         </div>
                     </div>
                 </div>
@@ -123,8 +123,8 @@ const PetCard = ({ pet }) => {
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-6 text-center">
                         <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full text-white"><RotateCcw size={24} /></div>
 
-                        <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4">{pet.name}</h2>
-                        <p className="text-sm tracking-widest text-gray-500 uppercase mt-1 mb-4">{pet.color} • {pet.size}</p>
+                        <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4 fr uppercase">{pet.name}</h2>
+                        <p className="text-sm tracking-widest text-brand-blue-500 uppercase mt-1 mb-4">{pet.color} • {pet.size}</p>
 
                         <div className="flex gap-2 mb-4 text-xs font-bold text-gray-600 bg-slate-50 px-4 py-2 rounded-full">
                             <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Home: {pet.goHome}</span>
@@ -182,7 +182,7 @@ const FeaturedPets = () => {
         <div id='available' className="bg-white py-10 flex flex-col items-center px-4 overflow-hidden">
             <div className="text-center mb-10 max-w-4xl">
                 <p className="uppercase text-pink-700 font-bold tracking-widest pb-3 text-xs">Available Puppies</p>
-                <h1 className="text-3xl md:text-4xl font-bold text-[#333333] fr pb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-[#333333] fr uppercase pb-4">
                     Meet Today’s <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Little Red Hearts</span>
                 </h1>
                 <p className="text-blue-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">

@@ -13,7 +13,7 @@ const GalleryHub = () => {
             img: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=80&w=1200",
             buttonText: "Explore the Archive",
             link: "/past-litters",
-            icon: <Camera className="text-[#8ECC14]" />
+            icon: <Camera className="text-brand-blue-500" />
         },
         {
             title: "Our Sires & Dams",
@@ -23,7 +23,7 @@ const GalleryHub = () => {
             img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
             buttonText: "Meet Our Dogs",
             link: "/our-dogs",
-            icon: <Heart className="text-[#8ECC14]" />
+            icon: <Heart className="text-brand-pink-500" />
         },
         {
             title: "Life at Home",
@@ -33,7 +33,7 @@ const GalleryHub = () => {
             img: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=1200",
             buttonText: "Inquire Now",
             link: "/#contact",
-            icon: <Home className="text-[#8ECC14]" />
+            icon: <Home className="text-brand-blue-500" />
         },
         {
             title: "Happy Families",
@@ -43,7 +43,7 @@ const GalleryHub = () => {
             img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200",
             buttonText: "See Success Stories",
             link: "/#faqs",
-            icon: <Users className="text-[#8ECC14]" />
+            icon: <Users className="text-brand-pink-500" />
         }
     ];
 
@@ -53,14 +53,14 @@ const GalleryHub = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6">
                     <div className="max-w-2xl">
-                        <h1 className="text-[#8ECC14] text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-4">
+                        <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight fr leading-none mb-4">
                             Our Visual <br /> <span className="text-gray-900">Collections</span>
                         </h1>
-                        <p className="text-gray-600 text-base md:text-lg pl-1 leading-relaxed">
+                        <p className="text-brand-blue-500 text-base md:text-lg pl-1 leading-normal">
                             A deep dive into the heart of our program. Explore our legacy, our environment, and the families who make this all possible.
                         </p>
                     </div>
-                    <div className="h-24 w-[2px] bg-gradient-to-b from-[#8ECC14] to-transparent hidden lg:block"></div>
+                    <div className="h-24 w-[2px] bg-gradient-to-b from-brand-pink-500 to-transparent hidden lg:block"></div>
                 </div>
             </section>
 
@@ -91,33 +91,33 @@ const GalleryHub = () => {
                                     <div className="p-3 bg-white shadow-sm rounded-xl">
                                         {item.icon}
                                     </div>
-                                    <span className="text-[#C6E589] font-semibold uppercase tracking-widest text-xs">Collection {idx + 1}</span>
+                                    <span className="text-brand-blue-500 font-semibold uppercase tracking-widest text-xs">Collection {idx + 1}</span>
                                 </div>
 
-                                <h2 className="text-gray-900 text-3xl md:text-4xl font-black uppercase tracking-tighter mb-2">{item.title}</h2>
-                                <h3 className="text-[#8ECC14] text-base md:text-lg font-bold italic mb-6">{item.subtitle}</h3>
+                                <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-3xl md:text-4xl font-black uppercase tracking-tight fr mb-2">{item.title}</h2>
+                                <h3 className="text-brand-pink-700 text-base md:text-lg font-bold italic mb-6">{item.subtitle}</h3>
 
-                                <p className="text-gray-500 leading-relaxed mb-8">
+                                <p className="text-brand-blue-500 leading-relaxed mb-8">
                                     {item.desc}
                                 </p>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
                                     {item.highlights.map((tag, i) => (
                                         <div key={i} className="flex items-center gap-2">
-                                            <div className="w-2 h-2 rounded-full bg-[#8ECC14]"></div>
-                                            <span className="text-[10px] font-semibold uppercase tracking-widest text-gray-500">{tag}</span>
+                                            <div className="w-2 h-2 rounded-full bg-brand-pink-500"></div>
+                                            <span className="text-[10px] font-semibold fr uppercase tracking-widest text-gray-500">{tag}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 <button
                                     onClick={() => navigate(item.link)}
-                                    className="flex items-center gap-4 group/btn text-gray-900 font-black text-xs uppercase tracking-widest"
+                                    className="flex items-center gap-4 group/btn text-brand-pink-500 font-black text-xs uppercase tracking-widest"
                                 >
-                                    <span className="border-b-2 border-gray-900 pb-1 group-hover/btn:text-[#8ECC14] group-hover/btn:border-[#8ECC14] transition-all duration-300 cursor-pointer">
+                                    <span className="border-b-2 border-brandpink-500 pb-1 group-hover/btn:text-brand-pink-700 group-hover/btn:border-brand-pink-700 transition-all duration-300 cursor-pointer">
                                         {item.buttonText}
                                     </span>
-                                    <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform duration-300 text-[#8ECC14]" />
+                                    <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform duration-300 text-brand-pink-500" />
                                 </button>
                             </div>
                         </div>
@@ -127,24 +127,24 @@ const GalleryHub = () => {
 
             {/* FOOTER CTA */}
             <section className="py-10 px-6 max-w-7xl mx-auto">
-                <div className="bg-gray-900 rounded-[3rem] px-8 py-10 md:p-20 text-center relative overflow-hidden">
+                <div className="bg-gray-900 rounded-2xl px-8 py-10 md:p-20 text-center relative overflow-hidden">
                     {/* Decorative Glow */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ECC14] blur-[120px] opacity-20"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-500 blur-[120px] opacity-20"></div>
 
-                    <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 relative z-10">
+                    <h2 className="text-white fr text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-8 relative z-10">
                         Have a question about <br /> our visual history?
                     </h2>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
                         <button
                             onClick={() => navigate('/#contact')}
-                            className="bg-[#8ECC14] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all duration-300 cursor-pointer shadow-md shadow-[#8ECC14]/20"
+                            className="bg-brand-pink-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all duration-300 cursor-pointer shadow-md shadow-brand-pink-500/20"
                         >
                             Contact Breeder
                         </button>
                         <button
                             onClick={() => navigate('/available')}
-                            className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#C6E589] transition-all duration-300 cursor-pointer shadow-md"
+                            className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-blue-500 hover:text-white transition-all duration-300 cursor-pointer shadow-md"
                         >
                             See Available Puppies
                         </button>

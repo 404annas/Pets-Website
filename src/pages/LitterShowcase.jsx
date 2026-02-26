@@ -48,7 +48,7 @@ const LitterShowcase = () => {
 
     // If ID is wrong or not found, show a simple error
     if (!litter) {
-        return <div className="py-20 text-center">Litter not found. <Link to="/past-litters" className="text-green-500">Go Back</Link></div>;
+        return <div className="py-20 text-center">Litter not found. <Link to="/past-litters" className="text-brand-blue-500">Go Back</Link></div>;
     }
 
     return (
@@ -56,10 +56,10 @@ const LitterShowcase = () => {
             {/* HEADER NAV */}
             <nav className="py-6 px-6 border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur-md z-50">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/past-litters" className="flex items-center gap-2 text-gray-400 hover:text-[#8ECC14] transition-colors duration-300 text-xs font-bold uppercase tracking-widest">
+                    <Link to="/past-litters" className="flex items-center gap-2 text-brand-pink-500 hover:text-brand-blue-500 transition-colors duration-300 text-xs font-bold uppercase tracking-wide">
                         <ArrowLeft size={16} /> Back to Archive
                     </Link>
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#8ECC14]">{litter.parents} <span className='text-gray-900'>Profile</span></div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-brand-pink-500">{litter.parents} <span className='text-brand-blue-500'>Profile</span></div>
                 </div>
             </nav>
 
@@ -67,31 +67,31 @@ const LitterShowcase = () => {
                 <div className="grid lg:grid-cols-12 gap-10">
                     {/* LEFT: TEXT CONTENT */}
                     <div className="lg:col-span-5">
-                        <h1 className="text-[#8ECC14] text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-4">
+                        <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none mb-4">
                             {litter.parents}
                         </h1>
 
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <p className="text-brand-blue-500 text-sm sm:text-base leading-relaxed mb-6">
                             {litter.description}
                         </p>
 
                         {/* DOG DETAILS CARD */}
-                        <div className="bg-[#F9FFF0] border-l-4 border-[#8ECC14] px-6 py-8 md:p-8 rounded-r-3xl mb-10">
-                            <h3 className="text-gray-900 font-black uppercase text-sm tracking-widest mb-6 flex items-center gap-2">
-                                <Info size={18} className="text-[#8ECC14]" /> Litter Specification
+                        <div className="bg-pink-50 border-l-4 border-brand-pink-500 px-6 py-8 md:p-8 rounded-r-3xl mb-10">
+                            <h3 className="text-brand-blue-700 font-black uppercase fr text-sm tracking-widest mb-6 flex items-center gap-2">
+                                <Info size={18} className="text-brand-blue-700" /> Litter Specification
                             </h3>
                             <div className="space-y-4">
                                 {Object.entries(litter.stats).map(([key, value]) => (
                                     <div key={key} className="flex justify-between border-b border-[#E2F1C4] pb-2 capitalize">
-                                        <span className="text-xs uppercase font-bold text-gray-500 tracking-wide">{key}</span>
-                                        <span className="text-sm font-bold text-gray-800">{value}</span>
+                                        <span className="text-xs uppercase font-bold text-brand-blue-700 tracking-wide">{key}</span>
+                                        <span className="text-sm font-bold text-brand-pink-700">{value}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-4">
-                            <button onClick={() => navigate("/#contact")} className="bg-gray-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#8ECC14] transition-all duration-300 cursor-pointer text-center">
+                            <button onClick={() => navigate("/#contact")} className="bg-brand-pink-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-pink-700 transition-all duration-300 cursor-pointer text-center">
                                 Inquire About Future Pairings
                             </button>
                         </div>
@@ -121,14 +121,14 @@ const LitterShowcase = () => {
             {/* FOOTER SECTION */}
             <section className="py-10 px-6 bg-gray-50 border-t border-gray-100">
                 <div className="max-w-4xl mx-auto text-center">
-                    <Camera size={40} className="mx-auto text-[#C6E589] mb-4" />
-                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-[#8ECC14]">The Development Matters</h2>
-                    <p className="text-gray-500 mb-8 max-w-xl mx-auto text-sm md:text-base">
+                    <Camera size={40} className="mx-auto text-brand-pink-700 mb-4" />
+                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr">The Development Matters</h2>
+                    <p className="text-brand-blue-500 mb-8 max-w-xl mx-auto text-sm md:text-base">
                         Our galleries aren't just for show. They allow you to see the consistency of coat,
                         structure, and expression across our generations.
                     </p>
                     <div className="flex justify-center gap-6">
-                        <Link to="/available" className="text-[#8ECC14] font-black uppercase tracking-widest text-xs border-b-2 border-[#8ECC14] pb-1">
+                        <Link to="/available" className="text-brand-pink-700 font-black uppercase tracking-widest text-xs border-b-2 border-brand-pink-700 fr pb-1">
                             Check Availability
                         </Link>
                     </div>
