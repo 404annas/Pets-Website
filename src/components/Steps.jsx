@@ -1,4 +1,4 @@
-import { HeartPlus, Route, UserRoundCheck } from 'lucide-react';
+import { Clock, HeartHandshake, HeartPlus, Route, UserRoundCheck } from 'lucide-react';
 import React from 'react';
 
 // Reusable exact paw cluster from your design
@@ -63,12 +63,12 @@ const Steps = () => {
 
                     {/* 4. Compassionate Care (Pink) */}
                     <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-full md:w-auto flex items-center justify-center gap-3">
-                        <span className="text-2xl drop-shadow-sm">❤️</span> COMPASSIONATE CARE
+                        <span className="text-2xl drop-shadow-sm"><HeartHandshake /></span> COMPASSIONATE CARE
                     </div>
 
                     {/* 5. Fast Service (Blue) */}
                     <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-72 flex items-center justify-center gap-3 transform -rotate-3 -translate-x-4">
-                        <span className="text-2xl drop-shadow-sm">⏱️</span> FAST SERVICE
+                        <span className="text-2xl drop-shadow-sm"><Clock /></span> FAST SERVICE
                     </div>
 
                 </div>

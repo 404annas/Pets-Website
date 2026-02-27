@@ -18,7 +18,7 @@ const Footer = () => {
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
                     <div className="flex items-center gap-2 mb-2">
-                        <h2 className="text-3xl font-bold font-serif tracking-tight text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">USA Poodles</h2>
+                        <h2 className="text-3xl font-bold font-serif tracking-tight text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">USA Poodle</h2>
                     </div>
                     <p className="text-[10px] uppercase tracking-tight text-blue-600 font-bold mb-8">
                         Premium Poodles Across the USA

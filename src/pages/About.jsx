@@ -272,7 +272,7 @@ const About = () => {
             </section>
 
             {/* SECTION 4: TESTIMONIALS SLIDER */}
-            <section className="py-10 px-6 bg-white overflow-hidden relative">
+            {/* <section className="py-10 px-6 bg-white overflow-hidden relative">
                 <div className="absolute top-0 left-10 w-16 h-16 bg-pink-500 rounded-2xl -z-10"></div>
                 <div className="max-w-7xl mx-auto text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333]">
@@ -305,7 +305,7 @@ const About = () => {
                     <button onClick={nextSlide} disabled={currentIndex >= testimonials.length - visibleCards} className="p-3 border-2 border-blue-200 rounded-full text-blue-700"><ChevronRight size={20} /></button>
                 </div>
                 <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-200 rounded-2xl -z-10"></div>
-            </section>
+            </section> */}
 
             {/* SECTION 5: OUR ELITE FACILITIES */}
             <section className="py-10 px-6 md:px-10 bg-[#FAFAFA]">
