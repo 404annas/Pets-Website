@@ -20,7 +20,7 @@ const FloatingIcons = () => {
             </a>
 
             <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/usapoodle/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg bg-gradient-to-br from-[#db7726] via-[#c0246a] to-[#434caf] transition-transform duration-300 hover:scale-110"
