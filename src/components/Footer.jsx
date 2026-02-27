@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <footer className="bg-pink-100 text-white pt-10 pb-8 px-6 md:px-10">
             {/* Top Section: Grid Layout */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
@@ -29,14 +29,21 @@ const Footer = () => {
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <MapPin size={18} strokeWidth={3} />
                             </div>
-                            <span className="text-gray-600">United States</span>
+                            <span className="text-gray-600">9452 Telephone Road Suite 210, Ventura, CA 93004, United States</span>
+                        </div>
+
+                        <div className="flex items-center gap-4 group cursor-pointer">
+                            <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
+                                <MapPin size={18} strokeWidth={3} />
+                            </div>
+                            <span className="text-gray-600">2108 N ST STE N, Sacramento, CA 95816, United States</span>
                         </div>
 
                         <div className="flex items-center gap-4 group cursor-pointer">
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <Phone size={18} strokeWidth={3} />
                             </div>
-                            <span className="text-gray-600">+1 (800) 555-POOD</span>
+                            <a href="tel:(805) 888-0133" className="text-gray-600">(805) 888-0133</a>
                         </div>
 
                         <div className="flex items-center gap-4 group cursor-pointer">

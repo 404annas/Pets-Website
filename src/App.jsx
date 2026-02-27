@@ -32,6 +32,7 @@ import Hero2 from './components/Hero2';
 import Steps from './components/Steps';
 import Benefits from './components/Benifits';
 import PetsSlider from './components/PetsSlider';
+import FloatingIcons from './components/FloatingIcons';
 
 const Home = () => (
   <>
@@ -75,6 +76,7 @@ const App = () => {
           <Route path='/red-toy-standard' element={<ToyPoodleStandard />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
         </Routes>
+        <FloatingIcons />
         <Footer />
       </div>
     </Router>

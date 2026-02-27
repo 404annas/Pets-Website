@@ -117,7 +117,7 @@ const About = () => {
             </section>
 
             {/* SECTION 3: IMPACT BY THE NUMBERS */}
-            <section className="py-10 px-6 bg-white">
+            {/* <section className="py-10 px-6 bg-white">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-20 items-center">
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-6 relative">
                         <div className="w-full h-64 overflow-hidden rounded-[50px] shadow-md">
@@ -151,7 +151,7 @@ const About = () => {
                         </button>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* SECTION: PARTNERS & MENTORSHIP (New Section) */}
             {/* SECTION: PARTNERS & MENTORSHIP */}
