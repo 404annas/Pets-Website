@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import {
-    RotateCcw,
     Heart,
     Pill,
     Cpu,
@@ -10,7 +10,7 @@ import {
     Thermometer
 } from 'lucide-react';
 
-import mainPoodle from "../assets/mainPoodle.jfif"
+import mainPoodle from "../assets/mainPoodle.jfif";
 
 const BackgroundPaw = ({ className, color }) => (
     <svg className={`absolute pointer-events-none z-0 ${className}`} fill={color || "#EC4899"} viewBox="0 0 30 30">
@@ -41,11 +41,13 @@ const sellingPet = {
 
 const SellingCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div
-            onClick={() => setIsFlipped(!isFlipped)}
-            className="relative h-[500px] w-[340px] md:w-[380px] [perspective:1000px] cursor-pointer z-10"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+            className="relative h-[500px] w-[340px] md:w-[380px] [perspective:1000px] z-10"
         >
             <motion.div
                 className="relative w-full h-full [transform-style:preserve-3d]"
@@ -56,9 +58,6 @@ const SellingCard = ({ pet }) => {
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`}>
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
                         <img loading="lazy" src={pet.image} alt={pet.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full shadow-md text-white z-10">
-                            <RotateCcw size={24} />
-                        </div>
                         <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest fr z-10 shadow-sm border border-pink-200">
                             {pet.availability}
                         </div>
@@ -71,9 +70,6 @@ const SellingCard = ({ pet }) => {
 
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] ${isFlipped ? "pointer-events-auto" : "pointer-events-none"}`}>
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-6 text-center">
-                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full text-white">
-                            <RotateCcw size={24} />
-                        </div>
                         <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4 fr uppercase">{pet.name}</h2>
                         <p className="text-sm tracking-widest text-brand-blue-500 uppercase mt-1 mb-4">{pet.color} - {pet.size}</p>
                         <div className="flex gap-2 mb-4 text-xs font-bold text-gray-600 bg-slate-50 px-4 py-2 rounded-full">
@@ -123,16 +119,14 @@ const Benefits = () => {
                 </h2>
             </div>
 
-            <div className="relative mt-10">
-
-                {/* Big Animated Arrow */}
+            <div className="relative mt-4">
                 <svg
-                    className="absolute -top-28 right-10 w-40 h-60 z-20 hidden md:block"
-                    viewBox="0 0 100 100"
+                    className="absolute -top-15 -right-25 w-28 h-44 z-30 hidden md:block pointer-events-none"
+                    viewBox="0 0 80 180"
                     fill="none"
                 >
                     <motion.path
-                        d="M50 20 Q80 5 50 80 M50 80 L40 65 M50 80 L65 70"
+                        d="M10 12 C42 -2 58 24 52 54 C46 84 34 108 24 125 M24 126 L13 112 M24 126 L38 118"
                         stroke="#DB2777"
                         strokeWidth="3"
                         fill="transparent"
@@ -143,24 +137,6 @@ const Benefits = () => {
                         transition={{ duration: 1.5, ease: "easeInOut" }}
                     />
                 </svg>
-
-                {/* Modern Sleek Tag — positioned at arrow tip (bottom of SVG, right side) */}
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.6, duration: 0.4 }}
-                    className="absolute bottom-60 -right-20 z-30 hidden md:block animate-bounce"
-                >
-                    <div className="relative flex items-center gap-3 bg-gradient-to-r from-pink-700 to-blue-700 text-white pl-3 pr-5 py-2.5 rounded-2xl shadow-[0_8px_32px_rgba(219,39,119,0.4)]">
-                        <div className="relative flex-shrink-0">
-                            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-pink-700 text-xs font-black">R</div>
-                            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-blue-400 border-2 border-white rounded-full animate-pulse" />
-                        </div>
-                        <div className="flex flex-col leading-tight">
-                            <span className="font-black uppercase tracking-wider cur text-4xl text-white">Ricky</span>
-                        </div>
-                    </div>
-                </motion.div> */}
 
                 <SellingCard pet={sellingPet} />
             </div>

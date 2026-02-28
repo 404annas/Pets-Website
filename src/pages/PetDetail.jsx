@@ -207,9 +207,9 @@ const PetDetail = () => {
                 </div>
             </div>
 
-            <div className="border-t border-slate-100">
+            {/* <div className="border-t border-slate-100">
                 <FeaturedPets />
-            </div>
+            </div> */}
         </div>
     );
 };

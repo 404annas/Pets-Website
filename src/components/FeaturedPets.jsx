@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 const petData = [
     {
         id: 1,
-        name: "Bella",
+        name: "Ricky",
         breed: "TOY POODLE",
         availability: "Available",
         color: "Deep Red",
@@ -40,52 +40,52 @@ const petData = [
             { id: 'h6', name: "Check", icon: Thermometer, active: true },
         ]
     },
-    {
-        id: 2,
-        name: "Rufus",
-        breed: "TOY POODLE",
-        availability: "Available",
-        color: "Rich Red",
-        size: "Toy Standard",
-        birthdate: "Oct 15, 2025",
-        goHome: "Dec 10–12, 2025",
-        personality: "Playful explorer, loves gentle games.",
-        weight: "7 lbs",
-        gender: "Male",
-        age: "4 months",
-        image: "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VE9ZJTIwUE9PRExFfGVufDB8fDB8fHww",
-        health: [
-            { id: 'm1', name: "Heart", icon: Heart, active: true },
-            { id: 'm2', name: "Meds", icon: Pill, active: true },
-            { id: 'm3', name: "Chip", icon: Cpu, active: true },
-            { id: 'm4', name: "Vax", icon: ShieldCheck, active: true },
-            { id: 'm5', name: "Pulse", icon: Activity, active: true },
-            { id: 'm6', name: "Check", icon: Thermometer, active: true },
-        ]
-    },
-    {
-        id: 3,
-        name: "Luna",
-        breed: "STANDARD POODLE",
-        color: "Apricot",
-        availability: "Waitlist",
-        size: "Standard Class",
-        birthdate: "Sept 20, 2025",
-        goHome: "Waitlist",
-        personality: "Gentle soul, highly intelligent.",
-        weight: "45 lbs",
-        gender: "Female",
-        age: "1 year",
-        image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U1RBTkRBUkQlMjBQT09ETEV8ZW58MHx8MHx8fDA%3D",
-        health: [
-            { id: 'd1', name: "Heart", icon: Heart, active: true },
-            { id: 'd2', name: "Meds", icon: Pill, active: true },
-            { id: 'd3', name: "Chip", icon: Cpu, active: true },
-            { id: 'd4', name: "Vax", icon: ShieldCheck, active: true },
-            { id: 'd5', name: "Pulse", icon: Activity, active: true },
-            { id: 'd6', name: "Check", icon: Thermometer, active: true },
-        ]
-    },
+    // {
+    //     id: 2,
+    //     name: "Rufus",
+    //     breed: "TOY POODLE",
+    //     availability: "Available",
+    //     color: "Rich Red",
+    //     size: "Toy Standard",
+    //     birthdate: "Oct 15, 2025",
+    //     goHome: "Dec 10–12, 2025",
+    //     personality: "Playful explorer, loves gentle games.",
+    //     weight: "7 lbs",
+    //     gender: "Male",
+    //     age: "4 months",
+    //     image: "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VE9ZJTIwUE9PRExFfGVufDB8fDB8fHww",
+    //     health: [
+    //         { id: 'm1', name: "Heart", icon: Heart, active: true },
+    //         { id: 'm2', name: "Meds", icon: Pill, active: true },
+    //         { id: 'm3', name: "Chip", icon: Cpu, active: true },
+    //         { id: 'm4', name: "Vax", icon: ShieldCheck, active: true },
+    //         { id: 'm5', name: "Pulse", icon: Activity, active: true },
+    //         { id: 'm6', name: "Check", icon: Thermometer, active: true },
+    //     ]
+    // },
+    // {
+    //     id: 3,
+    //     name: "Luna",
+    //     breed: "STANDARD POODLE",
+    //     color: "Apricot",
+    //     availability: "Waitlist",
+    //     size: "Standard Class",
+    //     birthdate: "Sept 20, 2025",
+    //     goHome: "Waitlist",
+    //     personality: "Gentle soul, highly intelligent.",
+    //     weight: "45 lbs",
+    //     gender: "Female",
+    //     age: "1 year",
+    //     image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U1RBTkRBUkQlMjBQT09ETEV8ZW58MHx8MHx8fDA%3D",
+    //     health: [
+    //         { id: 'd1', name: "Heart", icon: Heart, active: true },
+    //         { id: 'd2', name: "Meds", icon: Pill, active: true },
+    //         { id: 'd3', name: "Chip", icon: Cpu, active: true },
+    //         { id: 'd4', name: "Vax", icon: ShieldCheck, active: true },
+    //         { id: 'd5', name: "Pulse", icon: Activity, active: true },
+    //         { id: 'd6', name: "Check", icon: Thermometer, active: true },
+    //     ]
+    // },
 ];
 
 const PetCard = ({ pet }) => {
@@ -94,8 +94,9 @@ const PetCard = ({ pet }) => {
 
     return (
         <div
-            onClick={() => setIsFlipped(!isFlipped)}
-            className="relative h-[550px] pb-10 w-full md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px] cursor-pointer"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+            className="relative h-[550px] pb-10 w-full grid grid-cols-1 md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px]"
         >
             <motion.div
                 className="relative w-full h-full [transform-style:preserve-3d]"
@@ -107,7 +108,7 @@ const PetCard = ({ pet }) => {
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`}>
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
                         <img loading='lazy' src={pet.image} alt={pet.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full shadow-md text-white z-10"><RotateCcw size={24} /></div>
+                        {/* <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full shadow-md text-white z-10"><RotateCcw size={24} /></div> */}
 
                         <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest fr z-10 shadow-sm border border-pink-200">{pet.availability}</div>
 
@@ -121,7 +122,7 @@ const PetCard = ({ pet }) => {
                 {/* BACK SIDE */}
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] ${isFlipped ? "pointer-events-auto" : "pointer-events-none"}`}>
                     <div className="h-full w-full bg-white rounded-[40px] shadow-md border border-gray-100 flex flex-col items-center p-6 text-center">
-                        <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full text-white"><RotateCcw size={24} /></div>
+                        {/* <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-700 to-blue-700 p-2 rounded-full text-white"><RotateCcw size={24} /></div> */}
 
                         <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4 fr uppercase">{pet.name}</h2>
                         <p className="text-sm tracking-widest text-brand-blue-500 uppercase mt-1 mb-4">{pet.color} • {pet.size}</p>
@@ -161,6 +162,7 @@ const FeaturedPets = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
     const navigate = useNavigate();
+    const canSlide = petData.length > visibleCards;
 
     useEffect(() => {
         const handleResize = () => {
@@ -193,8 +195,8 @@ const FeaturedPets = () => {
 
             <div className="w-full max-w-6xl overflow-hidden px-2">
                 <motion.div
-                    className="flex gap-8"
-                    animate={{ x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` }}
+                    className={`flex gap-8 ${canSlide ? '' : 'justify-center'}`}
+                    animate={canSlide ? { x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` } : { x: 0 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
                     {petData.map(pet => (

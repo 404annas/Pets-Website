@@ -43,7 +43,7 @@ const Home = () => (
     {/* <Intro /> */}
     <WhyRed />
     <HomePhilosophy />
-    <FeaturedPets />
+    {/* <FeaturedPets /> */}
     <Mentorship />
     <ExploreProgram />
     <Testimonials />
