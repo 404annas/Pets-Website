@@ -1,6 +1,6 @@
 import React from 'react'
 
-import heroMainLeft from "../assets/left.jpeg"
+import heroMainLeft from "../assets/left3.jfif"
 import heroMainMiddle from "../assets/middle.jpeg"
 import heroMainRight from "../assets/right.jpeg"
 import { Link } from 'react-router-dom';

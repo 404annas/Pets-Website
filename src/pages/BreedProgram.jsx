@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import smallPoodle1 from "../assets/small3.jfif"
+import smallPoodle2 from "../assets/small4.jfif"
+
 const pillars = [
     {
         title: "Health Foundations",
@@ -251,8 +254,8 @@ const BreedProgram = () => {
                         </button>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=800&q=80" alt="Raised in home" className="rounded-3xl shadow-xl" />
-                        <img src="https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=800&q=80" alt="Grooming exposure" className="rounded-3xl shadow-xl mt-10" />
+                        <img src={smallPoodle1} alt="Raised in home" className="rounded-3xl shadow-xl object-cover" />
+                        <img src={smallPoodle2} alt="Grooming exposure" className="rounded-3xl shadow-xl mt-10 h-[100%] object-cover" />
                     </div>
                 </div>
             </section>

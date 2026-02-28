@@ -13,6 +13,14 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import about1Img from "../assets/about1.jfif"
+import about1Img2 from "../assets/about2.jfif"
+import about1Img3 from "../assets/about3.jfif"
+import about1Img4 from "../assets/about4.jfif"
+import about1Img5 from "../assets/about5.jfif"
+import about1Img6 from "../assets/about6.jfif"
+import about1Img7 from "../assets/about7.jfif"
+
 const testimonials = [
     { name: "Linda DuBose", img: "https://i.pravatar.cc/150?u=11", text: "As a mentor, I've watched this program prioritize genetics and temperament above all else. They truly honor the legacy of Scarlet’s Fancy Poodles." },
     { name: "Sarah J.", img: "https://i.pravatar.cc/150?u=28", text: "The connection to the Apricot Red Poodle Club gave us so much confidence. You aren't just buying a puppy; you're joining a community." },
@@ -53,11 +61,11 @@ const About = () => {
             {/* SECTION 1: OUR JOURNEY */}
             <section className="py-10 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-16">
                 <div className="w-full lg:w-1/2 relative">
-                    <div className="relative z-10 w-[85%] h-[500px] overflow-hidden rounded-[60px] shadow-md">
-                        <img loading='lazy' src="https://images.unsplash.com/photo-1721035667386-50a2d3b2cd68?w=1000&q=100" className="w-full h-full object-cover" alt="Journey" />
+                    <div className="relative z-10 w-[85%] h-[600px] overflow-hidden rounded-[60px] shadow-md">
+                        <img loading='lazy' src={about1Img} className="w-full h-full object-bottom object-cover" alt="Journey" />
                     </div>
                     <div className="absolute -bottom-10 -right-4 z-20 w-64 h-64 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
-                        <img loading='lazy' src="https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?w=1000&q=100" className="w-full h-full object-cover" alt="Small Poodle" />
+                        <img loading='lazy' src={about1Img2} className="w-full h-full object-bottom object-cover" alt="Small Poodle" />
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2">
@@ -106,11 +114,11 @@ const About = () => {
                         </button>
                     </div>
                     <div className="w-full lg:w-1/2 relative">
-                        <div className="w-full h-[550px] overflow-hidden rounded-[60px] shadow-md">
-                            <img loading='lazy' src="https://images.unsplash.com/photo-1544047963-99e58dfea839?w=2000&q=100" className="w-full h-full object-cover" alt="Mission" />
+                        <div className="w-[90%] h-[550px] overflow-hidden rounded-[60px] shadow-md">
+                            <img loading='lazy' src={about1Img3} className="w-full h-full object-cover" alt="Mission" />
                         </div>
                         <div className="absolute -bottom-12 -left-12 w-72 h-72 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
-                            <img loading='lazy' src="https://images.unsplash.com/photo-1581562324420-eff2f5aaa4b5?w=1000&q=100" className="w-full h-full object-cover" alt="Pup" />
+                            <img loading='lazy' src={about1Img4} className="w-full h-full object-cover" alt="Pup" />
                         </div>
                     </div>
                 </div>
@@ -324,8 +332,8 @@ const About = () => {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                        <img loading='lazy' src="https://images.unsplash.com/photo-1651571475974-07deef85e33b?w=1000&q=100" className="w-full h-64 object-cover rounded-[50px]" alt="Facility" />
-                        <img loading='lazy' src="https://images.unsplash.com/photo-1556292577-86da403c8d42?w=1000&q=100" className="w-full h-64 object-cover rounded-[50px] mt-12" alt="Play Area" />
+                        <img loading='lazy' src={about1Img5} className="w-full h-70 object-cover rounded-[50px]" alt="Facility" />
+                        <img loading='lazy' src={about1Img6} className="w-full h-70 object-cover rounded-[50px] mt-12" alt="Play Area" />
                     </div>
                 </div>
             </section>

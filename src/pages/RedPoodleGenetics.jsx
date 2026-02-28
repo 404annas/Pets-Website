@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { ChevronDown, Dna, Palette, Activity, ShieldCheck, Heart, Sparkles, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import poodle9 from "../assets/poodle9.jfif"
+
 const RedPoodleGenetics = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const navigate = useNavigate();
@@ -19,6 +21,7 @@ const RedPoodleGenetics = () => {
     { q: "How do you reduce the chance of fading?", a: "We focus on pedigree planning and avoiding known fading lines, while acknowledging that environmental factors always play a role." }
   ];
 
+  
   return (
     <div className="bg-white text-gray-700 leading-relaxed">
       
@@ -40,7 +43,7 @@ const RedPoodleGenetics = () => {
             </div>
           </div>
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img loading='lazy' src="https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=100&w=1000" className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
+            <img loading='lazy' src={poodle9} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
             <img loading='lazy' src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000" className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
           </div>
         </div>

@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import poodle from "../assets/poodle8.jfif"
+
 const RaisingSubPage = () => {
     const navigate = useNavigate();
 
@@ -97,7 +99,7 @@ const RaisingSubPage = () => {
                     </div>
                     <div className="relative h-64 md:h-80 overflow-hidden rounded-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=1000&q=80"
+                            src={poodle}
                             className="w-full h-full object-cover opacity-70"
                             alt="Puppy bonding"
                         />
