@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { Heart, Star, ArrowUpRight, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import poodle11 from "../assets/poodle11.jfif"
+import poodle12 from "../assets/poodle12.jfif"
+import poodle13 from "../assets/poodle13.jfif"
+import poodle14 from "../assets/poodle14.jfif"
+import poodle15 from "../assets/poodle15.jfif"
+import poodle16 from "../assets/poodle16.jfif"
+
 const OurDogs = () => {
     const [filter, setFilter] = useState('all');
 
@@ -149,12 +156,12 @@ const OurDogs = () => {
                         </p>
                     </div>
                     <div className="grid grid-cols-3 gap-2 h-[400px]">
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover grayscale" alt="Poodle 1" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-8"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover" alt="Poodle 2" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-4"><img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover grayscale" alt="Poodle 3" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover" alt="Poodle 4" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-4"><img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover grayscale" alt="Poodle 5" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-8"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=2000" className="w-full h-full object-cover" alt="Poodle 6" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={poodle11} className="w-full h-full object-cover grayscale" alt="Poodle 1" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-4"><img src={poodle15} className="w-full h-full object-cover" alt="Poodle 5" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-8"><img src={poodle12} className="w-full h-full object-cover grayscale" alt="Poodle 2" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={poodle14} className="w-full h-full object-cover object-top" alt="Poodle 4" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-4"><img src={poodle13} className="w-full h-full object-cover grayscale" alt="Poodle 3" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-8"><img src={poodle16} className="w-full h-full object-cover" alt="Poodle 6" /></div>
                     </div>
                 </div>
             </section>

@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import smallPoodle1 from "../assets/small3.jfif"
 import smallPoodle2 from "../assets/small4.jfif"
 
+import poodle from "../assets/poodle8.jfif"
+
 const pillars = [
     {
         title: "Health Foundations",

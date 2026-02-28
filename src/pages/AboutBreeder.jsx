@@ -1,5 +1,14 @@
 import { AudioLines, AudioWaveform, Ban, Blocks, Dna, HeartHandshake, Home, Languages, LineSquiggle, SearchCheck, ShieldCheck } from "lucide-react";
 
+import poodleSmall from "../assets/small1.jfif"
+import middlePoodle from "../assets/middle2.jfif"
+import aboutBreeder from "../assets/about8.jfif"
+import aboutBreeder2 from "../assets/about11.jfif"
+
+import point1 from "../assets/point1.jfif"
+import point2 from "../assets/point2.jfif"
+import point3 from "../assets/point3.jfif"
+
 const AboutBreeder = () => {
     const images = {
         hero: "https://images.unsplash.com/photo-1604916287784-c324202b3205?auto=format&fit=crop&q=80&w=1200",
@@ -49,19 +58,19 @@ const AboutBreeder = () => {
 
     const moments = [
         {
-            img: "https://plus.unsplash.com/premium_photo-1700403586581-4aa6b8640492?w=900&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBvb2RsZXxlbnwwfHwwfHx8MA%3D%3D",
+            img: point1,
             title: "Opening Eyes",
             desc: "The first time a puppy opens their eyes and sees the world.",
             id: "01"
         },
         {
-            img: "https://images.unsplash.com/photo-1749702850202-427f9942af7f?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9vZGxlJTIwaW4lMjBsaXZpbmd8ZW58MHx8MHx8fDA%3D",
+            img: point2,
             title: "Wobbly Steps",
             desc: "The awkward, wobbly first steps across our living room floor.",
             id: "02"
         },
         {
-            img: "https://images.unsplash.com/photo-1627753350455-b0654e90c882?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9vZGxlJTIwaW4lMjBoYW5kfGVufDB8fDB8fHww",
+            img: point3,
             title: "Quiet Sleep",
             desc: "The quiet moment when one falls asleep in the palm of your hand.",
             id: "03"
@@ -117,9 +126,9 @@ const AboutBreeder = () => {
 
                             <div className="relative z-10 rounded-2xl overflow-hidden shadow-sm">
                                 <img
-                                    src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=100&w=3000&auto=format&fit=crop"
+                                    src={middlePoodle}
                                     alt="Red Toy Poodle in a home environment"
-                                    className="w-full h-[500px] object-cover object-center"
+                                    className="w-full h-[500px] object-cover object-top"
                                 />
                                 {/* Subtle overlay tag */}
                                 <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
@@ -164,9 +173,9 @@ const AboutBreeder = () => {
                                     and endlessly entertaining.
                                 </p>
                                 <img
-                                    src="https://images.unsplash.com/photo-1555596873-1916fae19257?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9vZGxlfGVufDB8fDB8fHww"
+                                    src={poodleSmall}
                                     alt="First Poodle"
-                                    className="mt-8 rounded-xl w-full h-48 object-cover"
+                                    className="mt-8 rounded-xl w-full h-80 object-cover"
                                 />
                             </div>
                         </div>
@@ -262,7 +271,7 @@ const AboutBreeder = () => {
             {/* SECTION 4: MENTORSHIP */}
             <section className="bg-white py-10 px-8 border-gray-100">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-                    <img src={images.mentor} alt="Mentorship" className="w-full md:w-1/3 h-80 object-cover rounded-full shadow-sm" />
+                    <img src={aboutBreeder} alt="Mentorship" className="w-full md:w-1/3 h-88 object-cover rounded-full shadow-sm" />
                     <div className="flex-1">
                         <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-2xl md:text-3xl fr uppercase font-bold mb-6">How we learned to do this properly ?</h2>
                         <p className="text-base md:text-lg text-brand-blue-500 mb-6">
@@ -323,9 +332,9 @@ const AboutBreeder = () => {
                         <div className="lg:w-7/12 lg:pl-16 pt-12 lg:pt-0 flex flex-col">
                             <div className="relative">
                                 {/* Main Large Image */}
-                                <div className="aspect-[16/10] overflow-hidden rounded-sm shadow-2xl">
+                                <div className="aspect-[16/14] overflow-hidden rounded-sm shadow-2xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvb2RsZXxlbnwwfHwwfHx8MA%3D%3D"
+                                        src={aboutBreeder2}
                                         alt="Raising puppies"
                                         className="w-full h-full object-cover"
                                     />

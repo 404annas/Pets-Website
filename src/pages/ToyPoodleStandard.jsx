@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { ChevronDown, Ruler, Brain, HeartPulse, Scissors, Search, Zap, Users, Home, Smile, ShieldCheck, ArrowRight, UsersRound } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import poodle from "../assets/poodle18.jfif"
+
 const ToyPoodleStandard = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const navigate = useNavigate();
@@ -45,9 +47,10 @@ const ToyPoodleStandard = () => {
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-brand-blue-500/15 rounded-full blur-3xl opacity-30 animate-pulse"></div>
             <img
-              src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000"
+            loading='lazy'
+              src={poodle}
               alt="Elegant Toy Poodle"
-              className="relative z-10 rounded-[3rem] shadow-sm"
+              className="relative z-10 rounded-[3rem] shadow-sm h-[80vh] w-full object-cover"
             />
           </div>
         </div>
