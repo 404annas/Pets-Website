@@ -3,6 +3,7 @@ import { ChevronDown, Dna, Palette, Activity, ShieldCheck, Heart, Sparkles, Aler
 import { useNavigate } from 'react-router-dom';
 
 import poodle9 from "../assets/poodle9.jfif"
+import poodle10 from "../assets/poodle10.jfif"
 
 const RedPoodleGenetics = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -44,7 +45,7 @@ const RedPoodleGenetics = () => {
           </div>
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
             <img loading='lazy' src={poodle9} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
-            <img loading='lazy' src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=100&w=1000" className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
+            <img loading='lazy' src={poodle10} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
           </div>
         </div>
       </section>
