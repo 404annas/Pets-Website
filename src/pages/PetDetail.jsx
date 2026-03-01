@@ -166,7 +166,7 @@ const PetDetail = () => {
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
                             {pet.health.map((item, index) => (
                                 <div key={index} className="flex flex-col items-center p-8 bg-pink-50 rounded-[40px] border border-brand-pink-500">
-                                    <div className={`p-4 rounded-full mb-4 ${item.active ? 'bg-brand-pink-500 text-white' : 'bg-gray-100 text-gray-400'}`}>
+                                    <div className={`p-4 rounded-full mb-4 ${item.active ? 'bg-brand-pink-500 text-white' : 'bg-brand-blue-500 text-white'}`}>
                                         <item.icon size={28} />
                                     </div>
                                     <p className="font-bold text-brand-pink-700 fr text-sm mb-1">{item.name}</p>
