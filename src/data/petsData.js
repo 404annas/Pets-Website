@@ -1,5 +1,19 @@
 import { Heart, Pill, Cpu, ShieldCheck, Activity, Thermometer } from 'lucide-react';
 
+import mainPoodle from "../assets/middle.jpeg";
+import poodle1 from "../assets/left3.jfif"
+import poodle2 from "../assets/middle2.jfif"
+import poodle3 from "../assets/poodle8.jfif"
+import poodle4 from "../assets/point3.jfif"
+import poodle5 from "../assets/right.jpeg"
+import poodle6 from "../assets/poodle9.jfif"
+import poodle7 from "../assets/poodle10.jfif"
+import poodle8 from "../assets/poodle11.jfif"
+import poodle9 from "../assets/poodle12.jfif"
+import poodle10 from "../assets/poodle13.jfif"
+import poodle11 from "../assets/about6.jfif"
+import poodle12 from "../assets/point2.jfif"
+
 export const petData = [
     {
         id: 1,
@@ -7,20 +21,32 @@ export const petData = [
         breed: "TOY POODLE",
         color: "Deep Red",
         estimatedSize: "Small Toy Class",
-        birthdate: "October 15, 2025",
-        goHomeWindow: "December 10–12, 2025",
+        birthdate: "December 15, 2025",
         personalitySnapshot: "Warm snuggler, curious about people and sounds.",
         description: "Bella is a handsome Toy Poodle with a playful and outgoing personality. She has a boundless amount of energy and loves nothing more than running around and playing with her favorite toys. Bella is incredibly friendly and enjoys meeting new people and dogs.",
-        weight: "6 lbs",
-        gender: "Female",
+        weight: "5 - 5.5 pounds",
+        gender: "Male",
         age: "4 months",
-        adoptionFee: "$1200",
+        adoptionFee: "$5000",
         goodWithDogs: "Yes",
         goodWithKids: "Yes",
-        image: "https://images.unsplash.com/photo-1655964107490-4b90c428e4d0?w=1000&q=80",
+        image: mainPoodle,
         gallery: [
-            "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?w=1000&q=80",
-            "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1000&q=80",
+            poodle1,
+            poodle2,
+            poodle3,
+            poodle4,
+            poodle5,
+            poodle6,
+            poodle7,
+            poodle8,
+            poodle9,
+            poodle10,
+            poodle11,
+            poodle12
+        ],
+        videos: [
+
         ],
         health: [
             { name: "Health Check", icon: Heart, active: true },

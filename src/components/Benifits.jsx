@@ -25,8 +25,8 @@ const sellingPet = {
     availability: "Available",
     color: "Deep Red",
     size: "Small Toy Class",
-    birthdate: "Oct 15, 2025",
-    goHome: "Dec 10-12, 2025",
+    birthdate: "Dec 15, 2025",
+    weight: "5 - 5.5 pounds",
     personality: "Warm snuggler, curious about sounds.",
     health: [
         { id: 'h1', name: "Heart", icon: Heart, active: true },
@@ -73,7 +73,7 @@ const SellingCard = ({ pet }) => {
                         <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text mt-4 fr uppercase">{pet.name}</h2>
                         <p className="text-sm tracking-widest text-brand-blue-500 uppercase mt-1 mb-4">{pet.color} - {pet.size}</p>
                         <div className="flex gap-2 mb-4 text-xs font-bold text-gray-600 bg-slate-50 px-4 py-2 rounded-full">
-                            <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Home: {pet.goHome}</span>
+                            <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Weight: {pet.weight}</span>
                         </div>
                         <p className="text-xs text-gray-500 italic mb-4 leading-tight px-2">"{pet.personality}"</p>
                         <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-pink-700">Health Check:</h3>

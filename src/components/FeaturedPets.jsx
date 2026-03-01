@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import mainPoodle from "../assets/mainPoodle.jfif";
+
 const petData = [
     {
         id: 1,
@@ -24,13 +26,12 @@ const petData = [
         availability: "Available",
         color: "Deep Red",
         size: "Small Toy Class",
-        birthdate: "Oct 15, 2025",
-        goHome: "Dec 10–12, 2025",
+        birthdate: "Dec 15, 2025",
+        weight: "5 - 5.5 pounds",
         personality: "Warm snuggler, curious about sounds.",
-        weight: "6 lbs",
-        gender: "Female",
+        gender: "Male",
         age: "4 months",
-        image: "https://images.unsplash.com/photo-1655964107490-4b90c428e4d0?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+        image: mainPoodle,
         health: [
             { id: 'h1', name: "Heart", icon: Heart, active: true },
             { id: 'h2', name: "Meds", icon: Pill, active: false },
@@ -128,7 +129,7 @@ const PetCard = ({ pet }) => {
                         <p className="text-sm tracking-widest text-brand-blue-500 uppercase mt-1 mb-4">{pet.color} • {pet.size}</p>
 
                         <div className="flex gap-2 mb-4 text-xs font-bold text-gray-600 bg-slate-50 px-4 py-2 rounded-full">
-                            <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Home: {pet.goHome}</span>
+                            <span>Born: {pet.birthdate}</span> | <span className="text-blue-700">Weight: {pet.weight}</span>
                         </div>
 
                         <p className="text-xs text-gray-500 italic mb-4 leading-tight px-2">"{pet.personality}"</p>

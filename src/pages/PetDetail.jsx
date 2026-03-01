@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { petData } from '../data/petsData'; // Ensure your data file has 'gallery' and 'color' fields
-import FeaturedPets from '../components/FeaturedPets';
+// import FeaturedPets from '../components/FeaturedPets'; // Un-comment if needed
 import {
-    CheckCircle2,
     Calendar,
     Ruler,
     Palette,
     ClipboardCheck,
-    Truck,
-    Users,
     ArrowRight,
     Camera,
     Info
@@ -19,7 +16,7 @@ const PetDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const pet = petData.find(p => p.id === parseInt(id));
-    const [activeImage, setActiveImage] = useState("");
+    const[activeImage, setActiveImage] = useState("");
 
     useEffect(() => {
         if (pet) {
@@ -38,20 +35,22 @@ const PetDetail = () => {
                 <div className="w-full lg:w-1/2">
                     <div className="relative group">
                         <img
+                            loading='lazy'
                             src={activeImage}
                             alt={pet.name}
-                            className="w-full h-[400px] md:h-[400px] object-cover object-center rounded-[20px] md:rounded-[30px] shadow-sm transition-all duration-500"
+                            className="w-full h-[400px] md:h-[470px] object-cover object-center rounded-[20px] md:rounded-[30px] shadow-sm transition-all duration-500"
                         />
                         <div className="absolute top-6 left-6 bg-pink-50 fr backdrop-blur-sm px-4 py-2 rounded-full text-brand-pink-500 font-bold text-xs uppercase tracking-widest shadow-sm">
                             Available for Reservation
                         </div>
                     </div>
 
-                    {/* Thumbnail Selector */}
+                    {/* Thumbnail Selector - FIX: Sliced to first 5 images only */}
                     {pet.gallery && (
                         <div className="flex gap-4 mt-4 overflow-x-auto pb-2 no-scrollbar">
-                            {[pet.image, ...pet.gallery].map((img, idx) => (
+                            {[pet.image, ...pet.gallery].slice(0, 5).map((img, idx) => (
                                 <img
+                                    loading='lazy'
                                     key={idx}
                                     src={img}
                                     onClick={() => setActiveImage(img)}
@@ -92,16 +91,16 @@ const PetDetail = () => {
                             </p>
                         </div>
                         <div className="bg-slate-50 p-5 rounded-2xl border border-brand-pink-500">
-                            <p className="text-brand-pink-500 text-xs font-bold uppercase mb-1">Go-Home Window</p>
+                            <p className="text-brand-pink-500 text-xs font-bold uppercase mb-1">Weight</p>
                             <p className="text-brand-pink-500 font-bold flex items-center gap-2">
-                                <Truck size={18} className="text-brand-pink-500" /> {pet.goHomeWindow || "Dec 10–12, 2025"}
+                                <Ruler size={18} className="text-brand-pink-500" /> {pet.weight || "5 - 5.5 pounds"}
                             </p>
                         </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <button
-                            onClick={() => {window.scrollTo(0,0); navigate('/application')}}
+                            onClick={() => { window.scrollTo(0, 0); navigate('/application') }}
                             className="flex-1 bg-brand-blue-500 text-white font-bold px-8 py-5 rounded-xl hover:bg-brand-blue-700 transition-all duration-300 shadow-md shadow-brand-blue-500/20 flex items-center justify-center gap-2 cursor-pointer"
                         >
                             Reserve {pet.name} <ArrowRight size={20} />
@@ -125,7 +124,8 @@ const PetDetail = () => {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[pet.image, ...pet.gallery, pet.image].slice(0, 4).map((img, i) => (
+                        {/* FIX: Removed duplicate pet.image and removed .slice(0, 4) so it shows all images! */}
+                        {[pet.image, ...pet.gallery].map((img, i) => (
                             <div key={i} className={`rounded-[30px] overflow-hidden shadow-sm ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
                                 <img src={img} alt="Gallery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                             </div>
@@ -181,7 +181,7 @@ const PetDetail = () => {
                 </div>
             </div>
 
-            {/* 4. RESERVATION PROCESS (FROM CONTENT) */}
+            {/* 4. RESERVATION PROCESS */}
             <div className="bg-slate-900 py-10 px-4 text-white">
                 <div className="max-w-6xl mx-auto text-center mb-16">
                     <h2 className="text-4xl font-bold mb-6 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase">How to Reserve {pet.name}?</h2>
@@ -206,10 +206,6 @@ const PetDetail = () => {
                     ))}
                 </div>
             </div>
-
-            {/* <div className="border-t border-slate-100">
-                <FeaturedPets />
-            </div> */}
         </div>
     );
 };

@@ -8,6 +8,7 @@ import poodle13 from "../assets/poodle13.jfif"
 import poodle14 from "../assets/poodle14.jfif"
 import poodle15 from "../assets/poodle15.jfif"
 import poodle16 from "../assets/poodle16.jfif"
+import poodle19 from "../assets/poodle19.jfif"
 
 const OurDogs = () => {
     const [filter, setFilter] = useState('all');
@@ -269,7 +270,7 @@ const OurDogs = () => {
                     </div>
                     <div className="md:w-1/3">
                         <div className="p-1 border border-brand-pink-700 rounded-[2rem]">
-                            <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=600" className="rounded-[1.8rem] w-full h-96 object-cover object-bottom opacity-70" alt="Retired Poodle" />
+                            <img loading="lazy" src={poodle19} className="rounded-[1.8rem] w-full h-96 object-cover object-top opacity-70" alt="Retired Poodle" />
                         </div>
                     </div>
                 </div>
