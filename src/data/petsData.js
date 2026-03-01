@@ -1,18 +1,23 @@
-import { Heart, Pill, Cpu, ShieldCheck, Activity, Thermometer } from 'lucide-react';
+import { Heart, Pill, Cpu, ShieldCheck, Activity, Thermometer, Projector } from 'lucide-react';
 
-import mainPoodle from "../assets/middle.jpeg";
+import mainPoodle from "../assets/poodle18.jfif";
 import poodle1 from "../assets/left3.jfif"
-import poodle2 from "../assets/middle2.jfif"
-import poodle3 from "../assets/poodle8.jfif"
-import poodle4 from "../assets/point3.jfif"
-import poodle5 from "../assets/right.jpeg"
-import poodle6 from "../assets/poodle9.jfif"
-import poodle7 from "../assets/poodle10.jfif"
-import poodle8 from "../assets/poodle11.jfif"
-import poodle9 from "../assets/poodle12.jfif"
+import poodle2 from "../assets/poodle11.jfif"
+import poodle3 from "../assets/mainPoodle.jfif"
+import poodle4 from "../assets/poodle4.jfif"
+import poodle5 from "../assets/poodle5.jfif"
+import poodle6 from "../assets/poodle6.jfif"
+import poodle7 from "../assets/poodle7.jfif"
+import poodle8 from "../assets/poodle3.jfif"
 import poodle10 from "../assets/poodle13.jfif"
-import poodle11 from "../assets/about6.jfif"
+import poodle9 from "../assets/small1.jfif"
+import poodle11 from "../assets/small2.jfif"
 import poodle12 from "../assets/point2.jfif"
+import poodle13 from "../assets/poodle21.jfif"
+import poodle14 from "../assets/poodle22.jfif"
+import poodle15 from "../assets/poodle23.jfif"
+import poodle16 from "../assets/poodle24.jfif"
+import poodle17 from "../assets/poodle25.jfif"
 
 import poodleVideo1 from "../assets/video1.mp4";
 import poodleVideo2 from "../assets/video2.mp4";
@@ -34,7 +39,10 @@ export const petData = [
         birthdate: "December 15, 2025",
         personalitySnapshot: "Warm snuggler, curious about people and sounds.",
         description: "Bella is a handsome Toy Poodle with a playful and outgoing personality. She has a boundless amount of energy and loves nothing more than running around and playing with her favorite toys. Bella is incredibly friendly and enjoys meeting new people and dogs.",
-        weight: "5 - 5.5 pounds",
+        weight: "35 oz",
+        projectedAdultWeight: "5 - 5.5 pounds",
+        fatherWeight: "5.5 lb",
+        motherWeight: "5 lb",
         gender: "Male",
         age: "4 months",
         adoptionFee: "$5000",
@@ -50,10 +58,15 @@ export const petData = [
             poodle6,
             poodle7,
             poodle8,
-            poodle9,
             poodle10,
+            poodle9,
             poodle11,
-            poodle12
+            // poodle12,
+            poodle13,
+            poodle14,
+            poodle15,
+            poodle16,
+            poodle17
         ],
         videos: [
             poodleVideo1,

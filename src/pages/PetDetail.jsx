@@ -176,9 +176,10 @@ const PetDetail = () => {
                         <div className="space-y-4">
                             {[
                                 { l: "Gender", v: pet.gender },
-                                { l: "Current Weight", v: pet.weight },
-                                { l: "Good With Dogs", v: pet.goodWithDogs || "Yes" },
-                                { l: "Good With Kids", v: pet.goodWithKids || "Yes" },
+                                { l: "Weight", v: pet.weight },
+                                { l: "Projected Adult Weight", v: pet.projectedAdultWeight },
+                                { l: "Father Weight", v: pet.fatherWeight },
+                                { l: "Mother Weight", v: pet.motherWeight },
                                 { l: "Adoption Fee", v: pet.adoptionFee || "$3,500" },
                             ].map((item, i) => (
                                 <div key={i} className="flex justify-between items-center p-4 bg-white rounded-2xl border border-brand-blue-500">

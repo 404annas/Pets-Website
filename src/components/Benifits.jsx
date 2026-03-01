@@ -26,7 +26,7 @@ const sellingPet = {
     color: "Deep Red",
     size: "Small Toy Class",
     birthdate: "Dec 15, 2025",
-    weight: "5 - 5.5 pounds",
+    weight: "35 oz",
     personality: "Warm snuggler, curious about sounds.",
     health: [
         { id: 'h1', name: "Heart", icon: Heart, active: true },
