@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import smallPoodle1 from "../assets/small3.jfif"
 import smallPoodle2 from "../assets/small4.jfif"
 
-import poodle from "../assets/poodle8.jfif"
+import poodle from "../assets/heroDog2.png"
 
 const pillars = [
     {
@@ -52,7 +52,7 @@ const BreedProgram = () => {
                 <div className="absolute inset-0 z-0">
                     <img
                         loading='lazy'
-                        src="https://images.unsplash.com/photo-1608096299210-db7e38487075?w=3000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWR1bHQlMjByZWQlMjBUb3klMjBQb29kbGV8ZW58MHx8MHx8fDA%3D0"
+                        src={poodle}
                         alt="Adult Red Toy Poodle with confident posture"
                         className="w-full h-full object-cover object-center"
                     />
