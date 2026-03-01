@@ -9,14 +9,15 @@ import {
     ClipboardCheck,
     ArrowRight,
     Camera,
-    Info
+    Info,
+    Video
 } from 'lucide-react';
 
 const PetDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const pet = petData.find(p => p.id === parseInt(id));
-    const[activeImage, setActiveImage] = useState("");
+    const [activeImage, setActiveImage] = useState("");
 
     useEffect(() => {
         if (pet) {
@@ -133,6 +134,36 @@ const PetDetail = () => {
                     </div>
                 </div>
             </div>
+
+            {pet.videos && pet.videos.length > 0 && (
+                <div className="bg-white py-10 px-4">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex items-end justify-between mb-12">
+                            <div>
+                                <p className="text-brand-pink-500 font-medium uppercase tracking-widest text-xs mb-2">Watch in Motion</p>
+                                <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase">Video Gallery</h2>
+                            </div>
+                            <Video size={40} className="text-brand-blue-500 hidden md:block" />
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {pet.videos.map((vid, i) => (
+                                <div key={i} className={`rounded-[30px] overflow-hidden shadow-sm bg-black ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+                                    <video
+                                        src={vid}
+                                        // controls
+                                        muted
+                                        loop
+                                        autoPlay
+                                        playsInline
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* 3. HEALTH & SPECS GRID */}
             <div className="max-w-7xl mx-auto px-4 py-10">

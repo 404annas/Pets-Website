@@ -14,6 +14,16 @@ import poodle10 from "../assets/poodle13.jfif"
 import poodle11 from "../assets/about6.jfif"
 import poodle12 from "../assets/point2.jfif"
 
+import poodleVideo1 from "../assets/video1.mp4";
+import poodleVideo2 from "../assets/video2.mp4";
+import poodleVideo3 from "../assets/video3.mp4";
+import poodleVideo4 from "../assets/video4.mp4";
+import poodleVideo5 from "../assets/video5.mp4";
+import poodleVideo6 from "../assets/video6.mp4";
+import poodleVideo7 from "../assets/video7.mp4";
+import poodleVideo8 from "../assets/video8.mp4";
+import poodleVideo9 from "../assets/video9.mp4";
+
 export const petData = [
     {
         id: 1,
@@ -46,7 +56,15 @@ export const petData = [
             poodle12
         ],
         videos: [
-
+            poodleVideo1,
+            poodleVideo2,
+            poodleVideo3,
+            poodleVideo4,
+            poodleVideo5,
+            poodleVideo6,
+            poodleVideo7,
+            poodleVideo8,
+            poodleVideo9
         ],
         health: [
             { name: "Health Check", icon: Heart, active: true },
