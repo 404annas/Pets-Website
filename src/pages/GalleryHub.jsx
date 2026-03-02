@@ -1,6 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { Camera, Heart, Home, Users, ArrowRight } from 'lucide-react';
 
+import poodle1 from '../assets/poodle27.jfif';
+import poodle2 from '../assets/poodle26.jfif';
+import poodle3 from '../assets/poodle28.jfif';
+import poodle4 from '../assets/small4.jfif';
+
 const GalleryHub = () => {
     const navigate = useNavigate();
 
@@ -10,7 +15,7 @@ const GalleryHub = () => {
             subtitle: "A Legacy of Excellence",
             desc: "Our archive is a living record of every pairing we have ever done. We maintain this gallery so families can see the consistency of our lines, the retention of our deep red coats, and the steady development of temperament from birth to placement.",
             highlights: ["Visual growth tracking", "Coat color evolution", "Litter consistency"],
-            img: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=80&w=1200",
+            img: poodle1,
             buttonText: "Explore the Archive",
             link: "/past-litters",
             icon: <Camera className="text-brand-blue-500" />
@@ -20,7 +25,7 @@ const GalleryHub = () => {
             subtitle: "The Genetic Foundation",
             desc: "Great puppies start with exceptional parents. This collection showcases our adult Poodles in their element—at home, in the field, and as part of our family. We choose our dogs for their glowing confidence, sound structure, and joyful souls.",
             highlights: ["Health-tested parents", "Confident temperaments", "Sound structure"],
-            img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
+            img: poodle2,
             buttonText: "Meet Our Dogs",
             link: "/our-dogs",
             icon: <Heart className="text-brand-pink-500" />
@@ -30,7 +35,7 @@ const GalleryHub = () => {
             subtitle: "Real Life Creates Real Dogs",
             desc: "We don't believe in quiet kennels. Our puppies grow up in the heart of our home. This gallery documents the sounds of the vacuum, the chaos of first baths, and the 'poodle pile' naps that happen in our living room every single day.",
             highlights: ["Early socialization", "Household desensitization", "Hands-on care"],
-            img: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=1200",
+            img: poodle3,
             buttonText: "Inquire Now",
             link: "/#contact",
             icon: <Home className="text-brand-blue-500" />
@@ -40,7 +45,7 @@ const GalleryHub = () => {
             subtitle: "The Journey Continues",
             desc: "Our relationship with a puppy doesn't end at go-home day. This collection is a tribute to the families who have welcomed our fluffballs into their lives. From mountain hikes to birthday parties, see how our puppies grow up.",
             highlights: ["Owner updates", "Then & Now photos", "Life-long community"],
-            img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200",
+            img: poodle4,
             buttonText: "See Success Stories",
             link: "/#faqs",
             icon: <Users className="text-brand-pink-500" />
@@ -80,7 +85,7 @@ const GalleryHub = () => {
                                     loading='lazy'
                                         src={item.img}
                                         alt={item.title}
-                                        className="w-full h-[400px] object-cover"
+                                        className="w-full h-[600px] object-cover object-top"
                                     />
                                 </div>
                             </div>
