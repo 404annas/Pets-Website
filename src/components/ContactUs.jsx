@@ -29,7 +29,7 @@ const ContactUs = () => {
 
             <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
                 {/* LEFT FORM */}
-                <div className="w-full lg:w-1/2 border-2 border-blue-500 rounded-[35px] sm:rounded-[45px] p-5 sm:p-8">
+                <div className="w-full lg:w-1/2 border-2 border-blue-500 rounded-[35px] sm:rounded-[45px] p-6 sm:p-8">
                     <div className="mb-6">
                         <p className="uppercase text-blue-400 font-medium tracking-widest text-xs mb-2">
                             Inquiry Form
@@ -115,7 +115,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="w-full lg:w-1/2 md:-mt-40 relative flex justify-center">
+                <div className="w-full lg:w-1/2 -mt-20 md:-mt-40 relative flex justify-center">
                     {/* <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full -z-10" /> */}
 
                     <div className="relative w-full max-w-[420px] sm:max-w-[500px]">

@@ -87,7 +87,7 @@ const AboutBreeder = () => {
 
                         {/* Text Column */}
                         <div className="w-full lg:w-3/5">
-                            <div className="inline-block px-4 py-1 bg-brand-pink-500 text-white text-xs font-bold uppercase tracking-[0.3em] mb-6">
+                            <div className="inline-block px-4 py-1 bg-brand-pink-500 text-white text-xs font-bold uppercase tracking-widest mb-6">
                                 Established with Love
                             </div>
 
@@ -97,7 +97,7 @@ const AboutBreeder = () => {
                             </h1>
 
                             <div className="max-w-xl">
-                                <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-6 border-l-4 border-brand-blue-700 pl-6 uppercase tracking-tight">
+                                <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-6 border-l-4 border-brand-blue-700 pl-6 uppercase tracking-tight leading-none">
                                     Who we are — <span className="text-brand-blue-500">Passionate people, playful poodles</span>
                                 </h2>
 
@@ -122,7 +122,7 @@ const AboutBreeder = () => {
                         {/* Image Column */}
                         <div className="w-full lg:w-2/5 relative">
                             {/* Abstract shape behind image */}
-                            <div className="absolute -bottom-6 -right-6 w-full h-full border-[12px] border-brand-blue-500 z-0 rounded-2xl" />
+                            <div className="absolute -bottom-5 -right-5 w-full h-full border-[12px] border-brand-blue-500 z-0 rounded-2xl" />
 
                             <div className="relative z-10 rounded-2xl overflow-hidden shadow-sm">
                                 <img
@@ -132,7 +132,7 @@ const AboutBreeder = () => {
                                 />
                                 {/* Subtle overlay tag */}
                                 <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
-                                    <p className="text-xs uppercase tracking-widest text-brand-pink-700 font-bold">
+                                    <p className="text-[11px] uppercase tracking-widest text-brand-pink-700 font-bold">
                                         Real Life • Real Dogs • Real Connection
                                     </p>
                                 </div>
@@ -144,7 +144,7 @@ const AboutBreeder = () => {
             </section>
 
             {/* SECTION 2: THE ORIGIN STORY */}
-            <section className="bg-blue-50 py-10 px-6 overflow-hidden">
+            <section className="bg-blue-50 py-10 px-4 sm:px-6 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
 
                     {/* Header with Background Text Effect */}
@@ -152,7 +152,7 @@ const AboutBreeder = () => {
                         <span className="absolute -top-10 left-0 text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black opacity-80 select-none fr hidden lg:block">
                             ORIGIN
                         </span>
-                        <h2 className="relative z-10 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-4xl md:text-5xl fr font-black uppercase tracking-tight">
+                        <h2 className="relative z-10 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-3xl sm:text-4xl md:text-5xl fr font-black uppercase tracking-tight">
                             How this all really started ?
                         </h2>
                     </div>
@@ -164,7 +164,7 @@ const AboutBreeder = () => {
                             <div className="absolute inset-0 bg-brand-blue-500/20 rounded-3xl translate-x-3 translate-y-3"></div>
                             <div className="relative bg-white px-6 py-8 sm:p-8 md:p-12 rounded-3xl shadow-sm border border-brand-blue-500/30">
                                 <p className="text-brand-pink-700 font-semibold mb-4 tracking-widest uppercase text-xs">Phase 01</p>
-                                <p className="text-2xl font-medium text-gray-800 leading-snug mb-6">
+                                <p className="text-xl md:text-2xl font-medium text-gray-800 leading-snug mb-6">
                                     This did not begin with a plan to <span className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">“become breeders.”</span>
                                 </p>
                                 <p className="text-gray-600 leading-relaxed">
@@ -189,7 +189,7 @@ const AboutBreeder = () => {
                                     Curious about why some dogs seem to glow with confidence while others struggle.
                                 </p>
                                 <div className="mt-6 flex gap-4">
-                                    <div className="h-[1px] w-12 bg-brand-blue-500/20 self-center"></div>
+                                    <div className="h-[1px] w-12 bg-brand-blue-500 self-center"></div>
                                     <p className="italic text-brand-pink-700 text-sm">Late nights reading pedigrees & studying health testing</p>
                                 </div>
                             </div>
@@ -197,7 +197,7 @@ const AboutBreeder = () => {
                             {/* The "2 AM" Highlight Block */}
                             <div className="bg-white/60 backdrop-blur-md px-4 py-6 md:p-8 rounded-2xl border-l-8 border-brand-pink-500 shadow-sm">
                                 <h3 className="text-gray-800 fr font-bold text-xl mb-4 uppercase tracking-tighter">The Real Lessons</h3>
-                                <p className="text-gray-700 leading-loose italic">
+                                <p className="text-gray-700 leading-normal italic">
                                     "Then came the lessons you don’t get from books.
                                     <span className="text-brand-pink-500 font-bold not-italic px-1 underline decoration-brand-blue-500">Weighing newborns at 2 a.m.</span>
                                     Holding our breath during first feedings. Learning to tell the difference
@@ -214,7 +214,7 @@ const AboutBreeder = () => {
                                 <p className="text-brand-blue-500 text-sm md:text-base leading-relaxed">
                                     Realizing that breeding well is equal parts science, instinct, and humility.
                                     There is nothing casual about doing this right.
-                                    <span className="block mt-4 text-brand-pink-700 fr font-bold text-xl md:text-2xl uppercase tracking-tighter">
+                                    <span className="block mt-4 text-brand-pink-700 fr font-bold text-lg sm:text-xl md:text-2xl uppercase tracking-tighter">
                                         And there is nothing more rewarding.
                                     </span>
                                 </p>
@@ -257,8 +257,8 @@ const AboutBreeder = () => {
                     ))}
 
                     {/* Full Width Quote Card */}
-                    <div className="max-w-6xl mt-6 bg-gray-900 p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-                        <p className="text-white text-base md:text-lg md:max-w-2xl italic opacity-90 leading-relaxed text-center md:text-left">
+                    <div className="max-w-6xl mt-6 bg-gray-900 p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+                        <p className="text-white text-base md:text-lg md:max-w-2xl italic leading-normal text-center md:text-left">
                             "If a decision benefits us but not the dog, it’s the wrong decision. Full stop."
                         </p>
                         <p className="text-brand-pink-500 font-bold uppercase tracking-widest text-sm shrink-0">
@@ -269,9 +269,9 @@ const AboutBreeder = () => {
             </section>
 
             {/* SECTION 4: MENTORSHIP */}
-            <section className="bg-white py-10 px-8 border-gray-100">
+            <section className="bg-white py-10 px-4 sm:px-8 border-gray-100">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-                    <img src={aboutBreeder} alt="Mentorship" className="w-full md:w-1/3 h-88 object-cover rounded-full shadow-sm" />
+                    <img src={aboutBreeder} alt="Mentorship" className="w-full md:w-1/3 h-80 sm:h-88 object-cover rounded-full shadow-sm" />
                     <div className="flex-1">
                         <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-2xl md:text-3xl fr uppercase font-bold mb-6">How we learned to do this properly ?</h2>
                         <p className="text-base md:text-lg text-brand-blue-500 mb-6">
@@ -319,7 +319,7 @@ const AboutBreeder = () => {
                             <div className="mt-10 space-y-4">
                                 {["Weigh the puppies", "Clean the whelping area", "First grooming session", "Sit on the floor during playtime"].map((item, idx) => (
                                     <div key={idx} className="flex items-center gap-4 group cursor-default">
-                                        <div className="w-8 h-[1px] bg-brand-blue-500/20 group-hover:w-12 transition-all duration-300"></div>
+                                        <div className="w-8 h-[1px] bg-brand-pink-500 group-hover:w-12 transition-all duration-300"></div>
                                         <span className="uppercase text-xs font-bold tracking-widest text-brand-blue-500 group-hover:text-brand-pink-700 transition-colors">
                                             {item}
                                         </span>
@@ -332,7 +332,7 @@ const AboutBreeder = () => {
                         <div className="lg:w-7/12 lg:pl-16 pt-12 lg:pt-0 flex flex-col">
                             <div className="relative">
                                 {/* Main Large Image */}
-                                <div className="aspect-[16/14] overflow-hidden rounded-sm shadow-2xl">
+                                <div className="aspect-[16/14] overflow-hidden rounded-sm">
                                     <img
                                         src={aboutBreeder2}
                                         alt="Raising puppies"
@@ -363,7 +363,7 @@ const AboutBreeder = () => {
                 <p className="text-base md:text-lg text-brand-blue-500 italic mb-12">
                     "If this ever stops being about love for the dogs, we’ll stop. That’s the promise."
                 </p>
-                <div className="flex flex-wrap justify-center gap-8 text-brand-pink-700 font-medium">
+                <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-brand-pink-700 font-medium">
                     <span className="flex items-center gap-2"><LineSquiggle /> Strengthening Red Lines</span>
                     <span className="flex items-center gap-2"><AudioLines /> Sound Structure</span>
                     <span className="flex items-center gap-2"><AudioWaveform /> Joyful Temperaments</span>
@@ -377,7 +377,7 @@ const AboutBreeder = () => {
                     {/* Header Area */}
                     <div className="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-6">
                         <div className="relative">
-                            <span className="text-brand-blue-500 fr font-black text-4xl md:text-5xl lg:text-6xl opacity-20 absolute -top-8 -left-4 select-none">
+                            <span className="text-brand-blue-500 fr font-black text-4xl md:text-5xl lg:text-6xl opacity-20 absolute -top-8 -left-4 select-none lg:block hidden">
                                 CANDID
                             </span>
                             <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-3xl sm:text-4xl md:text-5xl fr font-black uppercase tracking-tighter relative z-10">
@@ -387,7 +387,7 @@ const AboutBreeder = () => {
                     </div>
 
                     {/* Horizontal Row Wrapper */}
-                    <div className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory no-scrollbar">
+                    <div className="flex lg:flex-row flex-col overflow-x-auto pb-10 gap-10 sm:gap-4 snap-x snap-mandatory no-scrollbar">
                         {moments.map((item, i) => (
                             <div
                                 key={i}
@@ -396,9 +396,10 @@ const AboutBreeder = () => {
                                 {/* Image Container with Custom Frame */}
                                 <div className="relative h-[500px] w-full mb-6 overflow-hidden rounded-2xl">
                                     <img
+                                        loading="lazy"
                                         src={item.img}
                                         alt={item.title}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+                                        className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
                                     />
 
                                     {/* ID Tag */}

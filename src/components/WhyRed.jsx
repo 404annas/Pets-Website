@@ -30,7 +30,7 @@ const WhyRed = () => {
                 </div>
 
                 <div className="mt-10 text-center">
-                    <p className="text-lg text-blue-600 font-medium">"We do not chase color alone. We protect the whole dog."</p>
+                    <p className="text-base sm:text-lg text-blue-600 font-medium leading-none">"We do not chase color alone. We protect the whole dog."</p>
                 </div>
             </div>
         </section>

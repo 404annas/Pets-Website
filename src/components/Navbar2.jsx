@@ -20,7 +20,7 @@ const Navbar2 = () => {
             </ul>
 
             {/* 3. Call to Action Button (Right) */}
-            <div className="flex-1 flex justify-end items-center">
+            <div className="flex-1 flex justify-end items-center lg:block hidden">
                 <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-105 duration-300 shadow-md">
                     Book An Appointment
                 </button>

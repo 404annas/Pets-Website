@@ -3,7 +3,7 @@ import { Activity, Heart, Ruler } from 'lucide-react';
 const HomePhilosophy = () => {
     return (
         <section className="py-10 px-6 bg-gradient-to-b from-white to-pink-50">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-10 md:gap-16">
                 <div className="lg:w-1/2 order-2 lg:order-1">
                     <div className="grid grid-cols-1 gap-4">
                         {[

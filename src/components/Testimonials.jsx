@@ -126,7 +126,7 @@ const FAQSection = () => {
                                         onClick={() => setOpenIndex(isOpen ? null : index)}
                                         className="w-full px-8 py-7 flex justify-between items-center text-left transition-colors hover:bg-pink-50 cursor-pointer"
                                     >
-                                        <span className={`text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-pink-700' : 'text-blue-700'}`}>
+                                        <span className={`text-sm sm:text-base md:text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-pink-700' : 'text-blue-700'}`}>
                                             {item.q}
                                         </span>
                                         <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-pink-100 text-pink-700 rotate-180' : 'bg-blue-100 text-blue-400 group-hover:bg-blue-200'}`}>
@@ -142,7 +142,7 @@ const FAQSection = () => {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                                             >
-                                                <div className="px-8 pb-8 text-gray-600 leading-relaxed text-base border-t border-slate-50 pt-4 whitespace-pre-line">
+                                                <div className="px-8 pb-8 text-gray-600 leading-relaxed text-sm sm:text-base border-t border-slate-50 pt-4 whitespace-pre-line">
                                                     {formatAnswer(item.a)}
                                                 </div>
                                             </motion.div>
@@ -167,9 +167,9 @@ const FAQSection = () => {
                                 <MessageCircle size={20} />
                                 Contact Us
                             </button>
-                            <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-700 to-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-sm cursor-pointer hover:translate-y-[-2px]">
+                            <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-6 sm:px-8 py-4 bg-gradient-to-r from-pink-700 to-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-sm cursor-pointer hover:translate-y-[-2px]">
                                 <FileText size={20} />
-                                Start Your Puppy Application
+                                Start Your Application
                             </button>
                         </div>
                     </div>

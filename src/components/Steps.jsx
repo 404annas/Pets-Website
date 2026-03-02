@@ -3,7 +3,7 @@ import React from 'react';
 
 // Reusable exact paw cluster from your design
 const PawCluster = ({ className }) => (
-    <div className={`absolute pointer-events-none w-32 h-32 text- z-0 ${className}`}>
+    <div className={`lg:block hidden absolute pointer-events-none w-32 h-32 text- z-0 ${className}`}>
         <svg className="absolute top-0 right-0 w-7 h-7 transform rotate-12" fill="#EC4899" viewBox="0 0 30 30"><path d="M22.1 19.3c-1.4-2.7-4.1-4.4-7.1-4.4-3 0-5.7 1.7-7.1 4.4-1.2 2.2-1.2 4.8 0 7 1.4 2.7 4.1 4.4 7.1 4.4 3 0 5.7-1.7 7.1-4.4 1.2-2.2 1.2-4.8 0-7zM9.6 11.5c2.2 0 3.9-1.7 3.9-3.9s-1.7-3.9-3.9-3.9-3.9 1.8-3.9 3.9 1.8 3.9 3.9 3.9zm10.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zM4.1 16.2c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zm21.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9z" /></svg>
         <svg className="absolute top-6 left-0 w-8 h-8 transform -rotate-12" fill="#3B82F6" viewBox="0 0 30 30"><path d="M22.1 19.3c-1.4-2.7-4.1-4.4-7.1-4.4-3 0-5.7 1.7-7.1 4.4-1.2 2.2-1.2 4.8 0 7 1.4 2.7 4.1 4.4 7.1 4.4 3 0 5.7-1.7 7.1-4.4 1.2-2.2 1.2-4.8 0-7zM9.6 11.5c2.2 0 3.9-1.7 3.9-3.9s-1.7-3.9-3.9-3.9-3.9 1.8-3.9 3.9 1.8 3.9 3.9 3.9zm10.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zM4.1 16.2c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zm21.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9z" /></svg>
         <svg className="absolute bottom-0 left-6 w-11 h-11 transform rotate-12" fill="#EC4899" viewBox="0 0 30 30"><path d="M22.1 19.3c-1.4-2.7-4.1-4.4-7.1-4.4-3 0-5.7 1.7-7.1 4.4-1.2 2.2-1.2 4.8 0 7 1.4 2.7 4.1 4.4 7.1 4.4 3 0 5.7-1.7 7.1-4.4 1.2-2.2 1.2-4.8 0-7zM9.6 11.5c2.2 0 3.9-1.7 3.9-3.9s-1.7-3.9-3.9-3.9-3.9 1.8-3.9 3.9 1.8 3.9 3.9 3.9zm10.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zM4.1 16.2c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zm21.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9z" /></svg>
@@ -47,27 +47,27 @@ const Steps = () => {
                 <div className="relative z-10 flex flex-col items-center gap-5 pt-16 pb-16 w-full px-4 uppercase">
 
                     {/* 1. Expert Care (Pink) */}
-                    <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-72 flex items-center justify-center gap-3 transform -rotate-2 -translate-x-2">
+                    <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white text-base sm:text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-72 flex items-center justify-center gap-3 transform -rotate-2 -translate-x-2">
                         <span className="text-2xl drop-shadow-sm"><UserRoundCheck /></span> Expert Breeders
                     </div>
 
                     {/* 2. Top Equipment (Blue) */}
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-90 flex items-center justify-center gap-3 transform rotate-2 translate-x-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-base sm:text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-70 md:w-90 flex items-center justify-center gap-3 transform rotate-2 translate-x-4">
                         <span className="text-2xl drop-shadow-sm"><HeartPlus /></span> Health & Vet Checked
                     </div>
 
                     {/* 3. Affordable (Pink-Blue Gradient) */}
-                    <div className="bg-gradient-to-r from-pink-400 to-blue-400 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-56 md:w-88 flex items-center justify-center gap-3 transform -translate-x-3">
+                    <div className="bg-gradient-to-r from-pink-400 to-blue-400 text-white text-base sm:text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-80 md:w-88 flex items-center justify-center gap-3 transform -translate-x-3">
                         <span className="text-2xl drop-shadow-sm"><Route /></span> Easy Adoption Process
                     </div>
 
                     {/* 4. Compassionate Care (Pink) */}
-                    <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-full md:w-auto flex items-center justify-center gap-3">
+                    <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white text-base sm:text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-full md:w-auto flex items-center justify-center gap-3">
                         <span className="text-2xl drop-shadow-sm"><HeartHandshake /></span> COMPASSIONATE CARE
                     </div>
 
                     {/* 5. Fast Service (Blue) */}
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-72 flex items-center justify-center gap-3 transform -rotate-3 -translate-x-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-base sm:text-lg md:text-xl font-bold py-3 px-6 rounded-lg shadow-sm w-64 md:w-72 flex items-center justify-center gap-3 transform -rotate-3 -translate-x-4">
                         <span className="text-2xl drop-shadow-sm"><Clock /></span> FAST SERVICE
                     </div>
 

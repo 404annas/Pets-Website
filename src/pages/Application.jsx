@@ -84,12 +84,12 @@ const ApplicationPage = () => {
 
                 {/* 2. THE FORM (LEFT COLUMN) */}
                 <div className="lg:col-span-7">
-                    <div className="bg-slate-50 rounded-[2rem] p-4 md:p-8 shadow-sm border border-brand-blue-500">
+                    <div className="bg-slate-50 rounded-2xl p-5 md:p-8 shadow-sm border border-brand-blue-500">
                         {/* Progress Header */}
-                        <div className="flex justify-between items-end mb-8">
+                        <div className="flex md:flex-row flex-col md:gap-0 gap-2 justify-between items-center md:items-end mb-8">
                             <div>
-                                <p className="text-brand-pink-700 font-bold text-sm uppercase">Step {currentStep + 1} of 5</p>
-                                <h3 className="text-xl font-bold">
+                                <p className="text-brand-pink-700 font-bold md:text-left text-center text-xs sm:text-sm uppercase">Step {currentStep + 1} of 5</p>
+                                <h3 className="text-lg md:text-xl md:text-left text-center font-bold leading-5">
                                     {currentStep === 0 && "Basic Information"}
                                     {currentStep === 1 && "Home Environment"}
                                     {currentStep === 2 && "Care Experience"}
@@ -138,7 +138,7 @@ const ApplicationPage = () => {
                                                 <label className="text-xs font-bold uppercase text-brand-pink-500 mb-2 block">Living Situation *</label>
                                                 <div className="flex flex-wrap gap-2">
                                                     {['House', 'Apartment', 'Other'].map(v => (
-                                                        <button key={v} type="button" onClick={() => setFormData({ ...formData, homeType: v })} className={`px-4 py-2 rounded-lg border transition-all cursor-pointer ${formData.homeType === v ? 'bg-brand-pink-500 border-brand-pink-500 text-white' : 'bg-white border-slate-200 hover:border-brand-pink-500'}`}>{v}</button>
+                                                        <button key={v} type="button" onClick={() => setFormData({ ...formData, homeType: v })} className={`px-4 py-2 rounded-lg border transition-all cursor-pointer sm:text-base text-sm ${formData.homeType === v ? 'bg-brand-pink-500 border-brand-pink-500 text-white' : 'bg-white border-slate-200 hover:border-brand-pink-500'}`}>{v}</button>
                                                     ))}
                                                 </div>
                                             </div>
@@ -192,7 +192,7 @@ const ApplicationPage = () => {
                                         <div className="bg-brand-pink-50 p-4 rounded-xl border border-brand-blue-500">
                                             <div className="flex gap-3">
                                                 <input type="checkbox" className="mt-1 accent-brand-blue-500" checked={formData.commitmentAgreement} onChange={e => setFormData({ ...formData, commitmentAgreement: e.target.checked })} />
-                                                <label className="text-sm text-gray-700">I confirm that I am prepared for the 15+ year commitment, grooming costs, and socialization required for a Toy Poodle.</label>
+                                                <label className="text-xs sm:text-sm text-gray-700">I confirm that I am prepared for the 15+ year commitment, grooming costs, and socialization required for a Toy Poodle.</label>
                                             </div>
                                         </div>
                                     )}
@@ -201,12 +201,12 @@ const ApplicationPage = () => {
 
                             {/* NAV BUTTONS */}
                             <div className="mt-8 flex justify-between items-center border-t border-brand-blue-500 pt-6">
-                                <button type="button" onClick={handleBack} className={`text-gray-400 hover:text-brand-blue-700 transition-all duration-300 font-bold flex items-center gap-1 cursor-pointer ${currentStep === 0 ? 'invisible' : 'visible'}`}><ChevronLeft size={18} /> Back</button>
+                                <button type="button" onClick={handleBack} className={`text-gray-400 hover:text-brand-blue-700 transition-all duration-300 font-semibold flex items-center gap-1 cursor-pointer ${currentStep === 0 ? 'invisible' : 'visible'}`}><ChevronLeft size={18} /> Back</button>
 
                                 {currentStep === 4 ? (
-                                    <button type="button" disabled={!isStepValid()} onClick={() => setIsSubmitted(true)} className="bg-brand-blue-500 text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 flex items-center cursor-pointer hover:scale-95 transition-all duration-300 gap-2">Submit Application <Send size={18} /></button>
+                                    <button type="button" disabled={!isStepValid()} onClick={() => setIsSubmitted(true)} className="bg-brand-blue-500 text-white px-8 py-3 rounded-xl font-semibold disabled:opacity-30 flex items-center cursor-pointer hover:scale-95 transition-all duration-300 gap-2">Submit <Send size={18} /></button>
                                 ) : (
-                                    <button type="button" disabled={!isStepValid()} onClick={handleNext} className="bg-brand-blue-500 cursor-pointer hover:scale-95 transition-all duration-300 text-white px-8 py-3 rounded-xl font-bold disabled:opacity-30 disabled:hover:cursor-not-allowed flex items-center gap-2">Next Step <ChevronRight size={18} /></button>
+                                    <button type="button" disabled={!isStepValid()} onClick={handleNext} className="bg-brand-blue-500 cursor-pointer hover:scale-95 transition-all duration-300 text-white px-8 py-3 rounded-xl font-semibold disabled:opacity-30 disabled:hover:cursor-not-allowed flex items-center gap-2">Next Step <ChevronRight size={18} /></button>
                                 )}
                             </div>
                         </form>
@@ -240,18 +240,20 @@ const ApplicationPage = () => {
                 </div>
             </div>
 
-            <div className="bg-red-50 p-6 rounded-2xl max-w-4xl mx-auto mb-10 border border-red-100">
-                <div className="flex items-center gap-2 text-red-600 mb-3">
-                    <AlertOctagon size={20} />
-                    <h4 className="font-bold text-3xl fr uppercase">Scam Alert!</h4>
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="bg-red-50 p-5 sm:p-6 rounded-2xl max-w-4xl mx-auto mb-10 border border-red-100">
+                    <div className="flex items-center gap-2 text-red-600 mb-3">
+                        <AlertOctagon size={20} />
+                        <h4 className="font-bold text-3xl fr uppercase">Scam Alert!</h4>
+                    </div>
+                    <p className="text-base text-red-800/80 leading-relaxed mb-4">Beware of breeders or advertisements who pressure immediate payment, refuse health testing, or use stock photos.</p>
+                    <ul className="text-sm space-y-2 text-red-700 font-medium">
+                        <li className='flex items-center gap-2'><ShieldAlert size={20} /> Pressure you to send payment immediately</li>
+                        <li className='flex items-center gap-2'><ShieldAlert size={20} /> Refuse to answer questions about health testing</li>
+                        <li className='flex items-center gap-2'><ShieldAlert size={20} /> Use stock photos without breeder credentials</li>
+                        <li className='flex items-center gap-2'><ShieldAlert size={20} /> Do not provide a clear application and screening process</li>
+                    </ul>
                 </div>
-                <p className="text-base text-red-800/80 leading-relaxed mb-4">Beware of breeders or advertisements who pressure immediate payment, refuse health testing, or use stock photos.</p>
-                <ul className="text-sm space-y-2 text-red-700 font-medium">
-                    <li className='flex items-center gap-2'><ShieldAlert size={20} /> Pressure you to send payment immediately</li>
-                    <li className='flex items-center gap-2'><ShieldAlert size={20} /> Refuse to answer questions about health testing</li>
-                    <li className='flex items-center gap-2'><ShieldAlert size={20} /> Use stock photos without breeder credentials</li>
-                    <li className='flex items-center gap-2'><ShieldAlert size={20} /> Do not provide a clear application and screening process</li>
-                </ul>
             </div>
 
             {/* 4. FAQ SECTION (FULL WIDTH) */}
@@ -276,14 +278,14 @@ const AccordionItem = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="bg-white rounded-2xl border border-brand-pink-500 overflow-hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="w-full p-5 flex justify-between items-center text-left font-bold transition-all duration-300 text-brand-pink-700 hover:bg-pink-100 cursor-pointer">
+            <button onClick={() => setIsOpen(!isOpen)} className="w-full p-5 flex justify-between items-center text-left font-semibold transition-all text-sm sm:text-base duration-300 text-brand-pink-700 hover:bg-pink-100 cursor-pointer">
                 {title}
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
             </button>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden">
-                        <p className="p-5 pt-4 text-gray-500 text-sm leading-relaxed border-t border-slate-50">{content}</p>
+                        <p className="p-5 pt-4 text-brand-blue-500 text-sm leading-relaxed border-t border-slate-50">{content}</p>
                     </motion.div>
                 )}
             </AnimatePresence>

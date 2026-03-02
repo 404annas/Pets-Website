@@ -77,14 +77,14 @@ const LitterShowcase = () => {
 
                         {/* DOG DETAILS CARD */}
                         <div className="bg-pink-50 border-l-4 border-brand-pink-500 px-6 py-8 md:p-8 rounded-r-3xl mb-10">
-                            <h3 className="text-brand-blue-700 font-black uppercase fr text-sm tracking-widest mb-6 flex items-center gap-2">
+                            <h3 className="text-brand-blue-700 font-black uppercase fr text-sm tracking-wide mb-6 flex items-center gap-2">
                                 <Info size={18} className="text-brand-blue-700" /> Litter Specification
                             </h3>
                             <div className="space-y-4">
                                 {Object.entries(litter.stats).map(([key, value]) => (
                                     <div key={key} className="flex justify-between border-b border-[#E2F1C4] pb-2 capitalize">
-                                        <span className="text-xs uppercase font-bold text-brand-blue-700 tracking-wide">{key}</span>
-                                        <span className="text-sm font-bold text-brand-pink-700">{value}</span>
+                                        <span className="text-xs uppercase font-semibold text-brand-blue-700 tracking-wide">{key}</span>
+                                        <span className="text-sm font-semibold text-brand-pink-700">{value}</span>
                                     </div>
                                 ))}
                             </div>

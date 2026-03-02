@@ -59,7 +59,7 @@ const About = () => {
         <div className="bg-white min-h-screen">
 
             {/* SECTION 1: OUR JOURNEY */}
-            <section className="py-10 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+            <section className="py-10 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14 md:gap-16">
                 <div className="w-full lg:w-1/2 relative">
                     <div className="relative z-10 w-[85%] h-[600px] overflow-hidden rounded-[60px] shadow-md">
                         <img loading='lazy' src={about1Img} className="w-full h-full object-bottom object-cover" alt="Journey" />
@@ -70,7 +70,7 @@ const About = () => {
                 </div>
                 <div className="w-full lg:w-1/2">
                     <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">OUR JOURNEY</p>
-                    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold fr text-[#333] leading-none mb-8">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold fr text-[#333] leading-none mb-8">
                         From <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Humble Beginnings</span> to Heartfelt Journeys
                     </h2>
                     <p className="text-blue-500 text-base md:text-lg leading-relaxed mb-10">
@@ -101,8 +101,8 @@ const About = () => {
             <section className="py-10 px-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center mb-10 gap-10 md:gap-20">
                     <div className="w-full lg:w-1/2">
-                        <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl mb-8"></div>
-                        <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">OUR HEARTFELT MISSION</p>
+                        <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl lg:block hidden"></div>
+                        <p className="uppercase text-pink-700 font-semibold tracking-wider mt-10 lg:mt-0 text-xs mb-4">OUR HEARTFELT MISSION</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold fr text-[#333] leading-none mb-8">
                             <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Nurturing Lives,</span> Creating Bonds With Furry Pets
                         </h2>
@@ -117,7 +117,7 @@ const About = () => {
                         <div className="w-[90%] h-[550px] overflow-hidden rounded-[60px] shadow-md">
                             <img loading='lazy' src={about1Img3} className="w-full h-full object-cover" alt="Mission" />
                         </div>
-                        <div className="absolute -bottom-12 -left-12 w-72 h-72 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
+                        <div className="absolute -bottom-12 -left-6 md:-left-12 w-72 h-72 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
                             <img loading='lazy' src={about1Img4} className="w-full h-full object-cover" alt="Pup" />
                         </div>
                     </div>
@@ -182,7 +182,7 @@ const About = () => {
                         <div className="space-y-10">
                             {/* Mentor Spotlight */}
                             <div>
-                                <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr mb-6 flex items-center gap-3">
+                                <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr mb-6 flex items-center gap-3">
                                     <UsersRound className="text-pink-500" size={28} /> Mentors Who Made Us Better
                                 </h3>
                                 <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-pink-500">
@@ -191,7 +191,7 @@ const About = () => {
                                             <img src="https://i.pravatar.cc/150?u=44" className="w-full h-full object-cover" alt="Linda DuBose" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xl font-bold text-[#333]">Honoring Linda DuBose</h4>
+                                            <h4 className="text-lg sm:text-xl leading-none font-bold text-[#333]">Honoring Linda DuBose</h4>
                                             <p className="text-pink-700 text-sm font-semibold italic">Scarlet’s Fancy Poodles</p>
                                         </div>
                                     </div>
@@ -227,8 +227,8 @@ const About = () => {
                         {/* Right Column: Values & Benefits */}
                         <div className="space-y-10">
                             {/* Mentorship Values */}
-                            <div className="bg-white p-8 rounded-[40px] border border-pink-500">
-                                <h3 className="text-xl font-bold text-[#333] mb-6">What Mentorship Means to Us</h3>
+                            <div className="bg-white p-6 sm:p-8 rounded-[40px] border border-pink-500">
+                                <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#333] mb-6">What Mentorship Means to Us</h3>
                                 <div className="space-y-6">
                                     {[
                                         { t: "Continued Learning", d: "A shared commitment to evolving ethical practices and breed standards." },
@@ -249,8 +249,8 @@ const About = () => {
                             </div>
 
                             {/* Benefit to Families */}
-                            <div className="bg-blue-50 p-8 rounded-[40px]">
-                                <h3 className="text-xl font-bold text-[#333] mb-4">Why This Matters to You</h3>
+                            <div className="bg-blue-50 p-6 sm:p-8 rounded-[40px]">
+                                <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#333] mb-4">Why This Matters to You</h3>
                                 <p className="text-blue-500 text-sm leading-relaxed mb-6">
                                     When you bring a puppy home, you are bringing decades of shared wisdom and medical practices grounded in experience.
                                 </p>
@@ -317,7 +317,7 @@ const About = () => {
 
             {/* SECTION 5: OUR ELITE FACILITIES */}
             <section className="py-10 px-6 md:px-10 bg-[#FAFAFA]">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-20 items-center">
                     <div className="w-full lg:w-1/2">
                         <p className="uppercase text-pink-700 font-bold tracking-wider text-xs mb-4">WORLD CLASS CARE</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] leading-none mb-8">
@@ -328,7 +328,7 @@ const About = () => {
                         </p>
                         <div className="flex items-center gap-4">
                             <div className="bg-pink-700 w-12 h-1"></div>
-                            <p className="font-bold text-pink-700">Environment First Philosophy</p>
+                            <p className="font-semibold text-pink-700">Environment First Philosophy</p>
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">

@@ -30,20 +30,20 @@ const RaisingSubPage = () => {
         <div className="bg-white min-h-screen text-slate-900 selection:bg-brand-pink-700 selection:text-white">
 
             {/* 1. HERO SECTION */}
-            <section className="py-10 px-6 bg-slate-50 border-b border-slate-100">
+            <section className="py-10 px-4 sm:px-6 bg-slate-50 border-b border-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <span className="text-brand-pink-700 font-semibold uppercase tracking-widest text-xs mb-4 block">Raising Protocol</span>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl fr font-black tracking-tighter uppercase leading-none mb-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl fr font-black tracking-tight uppercase leading-none mb-6">
                         Raised with <span className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">Intention.</span>
                     </h1>
-                    <p className="max-w-2xl text-base text-brand-blue-500 font-medium leading-relaxed">
+                    <p className="max-w-2xl text-base text-brand-blue-500 font-medium leading-normal">
                         Puppies learn who they are from the world we give them. Genetics matter, but experience shapes confidence.
                     </p>
                 </div>
             </section>
 
             {/* 2. THREE STAGES GRID */}
-            <section className="py-10 px-6">
+            <section className="py-10 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Stage 1 */}
@@ -75,7 +75,7 @@ const RaisingSubPage = () => {
             </section>
 
             {/* 3. FOCUS PILLARS (SPLIT) */}
-            <section className="py-10 px-6 bg-slate-900 text-white mx-4 md:mx-10 rounded-[1rem]">
+            <section className="py-10 px-4 sm:px-6 bg-slate-900 text-white mx-4 md:mx-10 rounded-[1rem]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8">
                         <div className="flex gap-6">
@@ -108,14 +108,14 @@ const RaisingSubPage = () => {
             </section>
 
             {/* 4. PUPPY MATCHING */}
-            <section className="bg-white py-10 px-6">
-                <div className="max-w-7xl mx-auto border border-gray-100 rounded-[2.5rem] overflow-hidden">
+            <section className="bg-white py-10 px-4 sm:px-6">
+                <div className="max-w-7xl mx-auto border border-gray-100 rounded-3xl overflow-hidden">
 
                     {/* Top Header Bar */}
-                    <div className="bg-gray-50 border-b border-gray-100 px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <div className="flex items-center gap-3">
+                    <div className="bg-gray-50 border-b border-gray-100 px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <Target className="text-brand-pink-700" size={20} />
-                            <span className="text-xs font-bold uppercase tracking-widest text-brand-pink-700">Placement Protocol</span>
+                            <span className="text-xs font-bold uppercase tracking-wide text-brand-pink-700">Placement Protocol</span>
                         </div>
                         <div className="h-px flex-grow bg-brand-pink-700 hidden md:block mx-8"></div>
                         <span className="text-brand-pink-700 text-xs font-bold uppercase tracking-widest">Est. 2024 • Professional Matching</span>
@@ -125,11 +125,11 @@ const RaisingSubPage = () => {
 
                         {/* Left Side: The Narrative */}
                         <div className="px-6 py-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
-                            <h2 className="text-gray-900 text-4xl md:text-5xl fr font-black uppercase tracking-tighter leading-none mb-4">
+                            <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl fr font-black uppercase tracking-tighter leading-none mb-4">
                                 Thoughtful <br />
                                 <span className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">Matching</span>
                             </h2>
-                            <p className="text-brand-blue-500 text-base leading-relaxed mb-6">
+                            <p className="text-brand-blue-500 text-base leading-normal mb-6">
                                 No two puppies are the same. We pay attention to the differences that define a dog's future, helping families find a puppy that fits their specific lifestyle.
                             </p>
                             <div className="bg-blue-50 px-4 py-6 md:p-8 rounded-2xl">
@@ -140,7 +140,7 @@ const RaisingSubPage = () => {
                         </div>
 
                         {/* Right Side: The Evaluation (Technical Data Look) */}
-                        <div className="px-6 py-8 md:p-10 bg-white flex flex-col justify-center">
+                        <div className="px-4 py-8 md:p-10 bg-white flex flex-col justify-center">
                             <div className="space-y-1">
 
                                 {/* Profile A */}
@@ -183,10 +183,10 @@ const RaisingSubPage = () => {
                     </div>
 
                     {/* Bottom Status Bar */}
-                    <div className="bg-brand-pink-700 py-6 px-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div className="bg-brand-pink-700 py-6 px-10 flex flex-col md:flex-row justify-between items-center gap-2">
                         <div className="flex items-center gap-3 text-white">
                             <ShieldCheck size={20} />
-                            <span className="text-xs font-bold uppercase tracking-widest">Our support does not end</span>
+                            <span className="text-xs font-bold uppercase tracking-wide">Our support does not end</span>
                         </div>
                         <button onClick={() => navigate("/#contact")} className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest hover:gap-4 transition-all duration-300 cursor-pointer">
                             Inquire About Our Process <ArrowRight size={14} />
@@ -196,7 +196,7 @@ const RaisingSubPage = () => {
             </section>
 
             {/* 5. CALL TO ACTION SECTION */}
-            <section className="pt-5 pb-20 px-6 text-center">
+            <section className="pt-5 pb-10 sm:pb-20 px-4 sm:px-6 text-center">
                 <div className="max-w-3xl mx-auto">
                     <HeartHandshake className="mx-auto text-brand-pink-700 mb-6" size={40} />
                     <h2 className="text-3xl md:text-4xl font-black text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase mb-6 tracking-tight">Our Relationship Continues</h2>

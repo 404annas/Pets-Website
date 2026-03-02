@@ -89,7 +89,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Button */}
-                <div onClick={() => navigate("/#contact")} className="flex justify-end items-center">
+                <div onClick={() => navigate("/#contact")} className="flex justify-end items-center lg:block hidden">
                     <button className="bg-[#1479cc] text-gray-800 text- font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
                         Book An Appointment
                     </button>
@@ -148,7 +148,7 @@ const Navbar = () => {
                     )}
 
                     {/* Button */}
-                    <div onClick={() => navigate("/#contact")} className="flex-1 flex justify-end items-center">
+                    <div onClick={() => navigate("/#contact")} className="flex-1 flex lg:justify-end items-center">
                         <button className="bg-[#1479cc] text-gray-800 text- font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
                             Book An Appointment
                         </button>

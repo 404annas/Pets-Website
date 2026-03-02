@@ -85,7 +85,7 @@ const PastLitters = () => {
         <div className="bg-white">
 
             {/* HERO SECTION */}
-            <section className="py-10 px-6 max-w-7xl mx-auto">
+            <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6">
                     <div className="max-w-2xl">
                         <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mb-6">
@@ -102,7 +102,7 @@ const PastLitters = () => {
             </section>
 
             {/* STICKY FILTER NAV */}
-            <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-4 px-6">
+            <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-4 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">Jump to Year</span>
                     <div className="flex gap-4 md:gap-8">
@@ -121,7 +121,7 @@ const PastLitters = () => {
             </nav>
 
             {/* ARCHIVE CONTENT */}
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {archiveData.map((section, sIdx) => (
                     <div key={sIdx} id={`year-${section.year}`} className="py-10 border-b border-gray-50 last:border-0">
 

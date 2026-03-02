@@ -69,7 +69,7 @@ const BreedProgram = () => {
                         <span className="text-brand-blue-500 font-medium uppercase tracking-widest text-xs mb-6 block">
                             Breeding Program and Ethics
                         </span>
-                        <h1 className="text-5xl md:text-6xl fr font-bold uppercase leading-none mb-8">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl fr font-bold uppercase leading-none mb-8">
                             Intentional. <br />
                             Preserved. <br />
                             <span className=" text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">Not Accidental.</span>
@@ -109,7 +109,7 @@ const BreedProgram = () => {
             {/* 3. THREE PILLAR CARDS */}
             <section className="px-4 md:px-10 py-10 bg-white">
             <div className="bg-slate-900 rounded-[2rem] overflow-hidden">
-                <div className="max-w-7xl mx-auto px-8 py-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
                     
                     {/* Header: Compact & Precise */}
                     <div className="pb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -117,7 +117,7 @@ const BreedProgram = () => {
                             <span className="text-brand-blue-500 font-semibold uppercase tracking-widest text-xs mb-3 block">
                                 Core Breeding Philosophy
                             </span>
-                            <h2 className="text-white text-3xl md:text-4xl font-black fr uppercase leading-none">
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-black fr uppercase leading-none">
                                 The Three Pillars
                             </h2>
                         </div>
@@ -131,7 +131,7 @@ const BreedProgram = () => {
                         {pillars.map((pillar, idx) => (
                             <div 
                                 key={idx} 
-                                className={`p-8 md:p-10 flex flex-col hover:bg-white/[0.02] transition-colors border-b md:border-b-0 md:border-r border-white/10 last:border-none`}
+                                className={`p-6 sm:p-8 md:p-10 flex flex-col hover:bg-white/[0.02] transition-colors border-b md:border-b-0 md:border-r border-white/10 last:border-none`}
                             >
                                 <div className="flex items-center justify-between mb-8">
                                     <div className="w-10 h-10 rounded-lg bg-brand-pink-700/10 flex items-center justify-center text-brand-pink-500">
@@ -159,7 +159,7 @@ const BreedProgram = () => {
                     </div>
 
                     {/* Footer Detail */}
-                    <div className="mt-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-brand-blue-500">
+                    <div className="mt-10 flex sm:flex-row flex-col sm:gap-0 gap-2 items-center justify-between text-xs font-bold uppercase tracking-widest text-brand-blue-500">
                         <span>Quality over Quantity</span>
                         <div className="hidden md:block h-px flex-grow mx-8 bg-white/5"></div>
                         <span>Established with Integrity</span>
@@ -197,7 +197,7 @@ const BreedProgram = () => {
                     >
                         <span className="font-bold text-sm md:text-base uppercase tracking-tight flex items-center gap-2">
                             <ShieldAlert className="text-brand-pink-500" size={22} />
-                            Health testing we follow for Toy Poodles
+                            Health testing we follow
                         </span>
                         <ChevronDown className={`text-brand-pink-500 transition-transform ${isHealthPanelOpen ? 'rotate-180' : ''}`} />
                     </button>
@@ -217,7 +217,7 @@ const BreedProgram = () => {
                                         onClick={() => handleNavigation('/health-testing')}
                                         className="flex items-center gap-2 px-6 py-3 bg-brand-blue-500 text-white font-bold uppercase text-xs tracking-widest rounded-lg hover:bg-brand-blue-700 transition-all duration-300 cursor-pointer"
                                     >
-                                        View Health Testing & OFA CHIC <ArrowRight size={16} />
+                                        View Health & OFA CHIC <ArrowRight size={16} />
                                     </button>
                                 </div>
                             </motion.div>
@@ -241,7 +241,7 @@ const BreedProgram = () => {
                                 "Short sessions building curiosity and coordination",
                                 "Human interaction teaching trust and calmness"
                             ].map((li, i) => (
-                                <li key={i} className="flex gap-3 text-sm font-bold text-slate-700 items-center">
+                                <li key={i} className="flex gap-3 text-sm font-semibold text-slate-700 items-center">
                                     <p><CheckCircle2 size={20} className='text-brand-blue-700' /></p>
                                     {li}
                                 </li>

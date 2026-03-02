@@ -18,7 +18,7 @@ const Hero2 = () => {
                 {/* Decorative SVG: Pink Circle */}
                 {/* <div className="absolute top-10 -right-6 md:-right-10 w-12 h-5 rounded-full bg-pink-500 z-0"></div> */}
 
-                <h1 className="text-5xl md:text-6xl font-semibold leading-none relative z-10 uppercase fr bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-none relative z-10 uppercase fr bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent">
                     Premium Poodles Available <br />
                     <span className="relative inline-block bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent">
                         Across the USA
@@ -40,7 +40,7 @@ const Hero2 = () => {
             <div className="relative w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center z-10">
 
                 {/* Background Paw Prints (Left) */}
-                <div className="absolute left-4 top-10 md:-left-8 text- pointer-events-none w-32 h-32 z-0">
+                <div className="absolute left-4 top-10 md:-left-8 text- pointer-events-none w-32 h-32 z-0 lg:block hidden">
 
                     {/* 1. Top Right Paw (Smallest) */}
                     <svg className="absolute top-0 right-0 w-10 h-10 transform rotate-20" fill="#3B82F6" viewBox="0 0 30 30">
@@ -60,7 +60,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 1. Cat Card (Left - Purple) */}
-                <div className="w-56 h-96 flex items-end justify-center overflow-hidden rounded-full pt-12 mt-12 md:mt-16 relative -rotate-12">
+                <div className="w-56 h-96 flex items-end justify-center overflow-hidden rounded-full pt-10 sm:mt-12 md:mt-16 relative -rotate-12">
                     {/* REPLACE SRC WITH TRANSPARENT CAT PNG */}
                     <img
                         loading='lazy'
@@ -71,7 +71,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 2. Dog Card (Center - Blue - Tallest) */}
-                <div className="w-70 h-[500px] rounded-full flex items-end justify-center overflow-hidden pt-16 relative z-10">
+                <div className="w-70 h-[500px] rounded-full flex items-end justify-center overflow-hidden pt-10 md:pt-16 relative z-10">
                     {/* REPLACE SRC WITH TRANSPARENT DOG PNG */}
                     <img
                         loading='lazy'
@@ -82,7 +82,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 3. Rabbit Card (Right - Yellow) */}
-                <div className="w-56 h-96 rounded-full flex items-end justify-center overflow-hidden pt-12 mt-12 md:mt-16 relative rotate-12">
+                <div className="w-56 h-96 rounded-full flex items-end justify-center overflow-hidden pt-10 sm:mt-12 md:mt-16 relative rotate-12">
                     {/* REPLACE SRC WITH TRANSPARENT RABBIT PNG */}
                     <img
                         loading='lazy'
@@ -93,7 +93,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* Background Paw Prints (Right) */}
-                <div className="absolute right-0 bottom-20 md:-right-6 text-gray-200 pointer-events-none">
+                <div className="absolute right-0 bottom-20 md:-right-6 text-gray-200 pointer-events-none lg:block hidden">
 
                     {/* 1. Top Right Paw (Smallest) */}
                     <svg className="absolute top-0 right-0 w-10 h-10 transform rotate-20" fill="#3B82F6" viewBox="0 0 30 30">

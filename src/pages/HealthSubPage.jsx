@@ -18,7 +18,7 @@ const HealthSubPage = () => {
     <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden selection:bg-[#8ECC14]/20">
       
       {/* 1. EDITORIAL HERO */}
-      <section className="relative pt-20 md:pt-28 pb-10 px-6">
+      <section className="relative pt-10 md:pt-20 pb-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between pb-10">
           <div className="max-w-4xl">
             <motion.div 
@@ -49,7 +49,7 @@ const HealthSubPage = () => {
       </section>
 
       {/* 2. PHILOSOPHY ROW (Asymmetric) */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="pb-10 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-brand-pink-700 mb-6">Real Life Impact</h2>
@@ -61,7 +61,7 @@ const HealthSubPage = () => {
             <p className="text-base md:text-lg text-brand-blue-500 font-normal leading-relaxed mb-10">
               When you bring a Toy Poodle home, you are planning for years of companionship. Health testing stacks the odds in favor of a long, comfortable, happy life. It allows us to:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 sm:gap-y-6">
                {[
                  "Reduce avoidable inherited risk",
                  "Make informed breeding decisions",
@@ -70,7 +70,7 @@ const HealthSubPage = () => {
                ].map((item, i) => (
                  <div key={i} className="flex items-center gap-4 pb-4 border-b border-slate-100">
                     <Check size={20} className="text-brand-pink-700" />
-                    <span className="text-base font-bold tracking-tight text-brand-blue-500">{item}</span>
+                    <span className="text-base font-semibold tracking-tight text-brand-blue-500">{item}</span>
                  </div>
                ))}
             </div>
@@ -79,7 +79,7 @@ const HealthSubPage = () => {
       </section>
 
       {/* 3. THE TRIAD (Technical Cards with Border Accents) */}
-      <section className="py-10 px-14 bg-slate-50">
+      <section className="py-10 px-4 sm:px-8 md:px-10 lg:px-14 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-pink-700 mb-4 block">Monitoring</span>
@@ -117,8 +117,8 @@ const HealthSubPage = () => {
       </section>
 
       {/* 4. THE DATA BLOCK (OFA / CHIC) - Floating Design */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
-        <div className="bg-slate-900 rounded-[4rem] px-10 py-14 md:p-20 text-white flex flex-col lg:flex-row gap-10 items-center overflow-hidden relative">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="bg-slate-900 rounded-3xl px-6 sm:px-10 py-10 md:p-20 text-white flex flex-col lg:flex-row gap-10 items-center overflow-hidden relative">
           <div className="lg:w-1/2 z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold fr uppercase leading-none mb-10">
               Transparency is <br />
@@ -136,9 +136,9 @@ const HealthSubPage = () => {
             </div>
           </div>
           <div className="lg:w-1/2 relative z-10">
-             <div className="bg-white/5 border border-white/10 px-6 py-8 md:p-10 backdrop-blur-md">
+             <div className="bg-white/5 border border-white/10 px-4 sm:px-6 py-6 sm:py-8 md:p-10 backdrop-blur-md">
                 <ShieldCheck className="text-brand-blue-500 mb-8" size={30} />
-                <p className="text-xl font-light leading-relaxed mb-8">
+                <p className="text-base sm:text-lg md::text-xl font-light leading-normal mb-8">
                   "Openness protects families. A CHIC number signifies <span className="text-brand-blue-500 font-bold">accountability</span> and <span className="text-brand-blue-500 font-bold">verified results</span>."
                 </p>
                 <div className="flex gap-2">
@@ -168,7 +168,7 @@ const HealthSubPage = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
           <button 
             onClick={() => {window.scrollTo(0,0); navigate('/breed-program')}}
-            className="flex items-center justify-between p-10 bg-slate-50 rounded-3xl hover:bg-slate-100 transition-all duration-300 group cursor-pointer"
+            className="flex items-center justify-between p-8 md:p-10 bg-slate-50 rounded-3xl hover:bg-slate-100 transition-all duration-300 group cursor-pointer"
           >
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-500 block mb-2">Back</span>
@@ -179,7 +179,7 @@ const HealthSubPage = () => {
 
           <button 
             onClick={() => {window.scrollTo(0,0); navigate('/puppy-raising')}}
-            className="flex items-center justify-between p-10 bg-slate-900 text-white rounded-3xl hover:bg-slate-800 transition-all duration-300 cursor-pointer group"
+            className="flex items-center justify-between p-8 md:p-10 bg-slate-900 text-white rounded-3xl hover:bg-slate-800 transition-all duration-300 cursor-pointer group"
           >
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-pink-500 block mb-2">Forward</span>

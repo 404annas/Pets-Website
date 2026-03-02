@@ -40,7 +40,7 @@ const ExploreProgram = () => {
     return (
         <section className="py-10 px-6 bg-gradient-to-b from-white to-pink-50 overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6">
                     <div className="max-w-xl">
                         <h2 className="text-blue-600 font-semibold uppercase text-xs tracking-widest mb-4">
                             Explore Our Program
