@@ -27,7 +27,7 @@ const RedPoodleGenetics = () => {
     <div className="bg-white text-gray-700 leading-relaxed">
       
       {/* HERO SECTION */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
@@ -40,10 +40,10 @@ const RedPoodleGenetics = () => {
               <p className="text-base font-bold text-brand-blue-700 uppercase flex items-center gap-2 mb-2">
                 <AlertCircle size={16} /> Quick Take
               </p>
-              <p className="text-brand-pink-500 text-base leading-6">Red is rare. Red can change as puppies mature. Great breeders plan for the whole dog, not just the shade.</p>
+              <p className="text-brand-pink-500 text-base leading-5">Red is rare. Red can change as puppies mature. Great breeders plan for the whole dog, not just the shade.</p>
             </div>
           </div>
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
             <img loading='lazy' src={poodle9} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
             <img loading='lazy' src={poodle10} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
           </div>
@@ -51,7 +51,7 @@ const RedPoodleGenetics = () => {
       </section>
 
       {/* THE SCIENCE SECTION */}
-      <section className="py-10 px-6 bg-gray-50 border-y border-gray-100">
+      <section className="py-10 px-4 sm:px-6 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-8">
             <div>
@@ -73,7 +73,7 @@ const RedPoodleGenetics = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white p-10 rounded-2xl border-2 border-brand-blue-500">
+          <div className="bg-white p-8 sm:p-10 rounded-2xl border-2 border-brand-blue-500">
              <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-2xl md:text-3xl font-black uppercase mb-6">Black Points</h2>
              <p className="text-gray-600 mb-6">When people say "that's a showy red," they are noticing contrast. Dark points—nose and eye rims—are preferred and make the look sharper and more "finished."</p>
              <div className="flex gap-2">
@@ -85,7 +85,7 @@ const RedPoodleGenetics = () => {
       </section>
 
       {/* COAT JOURNEY - 3 CARDS */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4">The Red Coat Journey</h2>
           <p className="text-brand-blue-500">"What you may see as your puppy grows"</p>
@@ -96,7 +96,7 @@ const RedPoodleGenetics = () => {
             { s: "Stage 02", t: "Around 6 to 10 Weeks", d: "Some lines show a lighter phase, then a darker band near the skin as the puppy coat begins to change." },
             { s: "Stage 03", t: "Teenage to Adult Coat", d: "Some reds deepen again, while some soften into copper or apricot. The final shade is clearer by adulthood." }
           ].map((stage, i) => (
-            <div key={i} className="group px-4 py-4 md:p-8 border border-brand-blue-500 rounded-3xl hover:bg-brand-blue-500/5 transition-colors">
+            <div key={i} className="group p-6 md:p-8 border border-brand-blue-500 rounded-3xl hover:bg-brand-blue-500/5 transition-colors">
               <span className="text-brand-blue-500 font-semibold text-xs uppercase tracking-widest mb-4 block">{stage.s}</span>
               <h3 className="text-xl font-bold mb-4 fr text-brand-pink-700">{stage.t}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{stage.d}</p>
@@ -109,9 +109,9 @@ const RedPoodleGenetics = () => {
       </section>
 
       {/* WHAT WE SELECT FOR - ICON GRID */}
-      <section className="py-10 px-6 bg-blue-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-          <div className="grid grid-cols-2 gap-4">
+      <section className="py-10 px-4 sm:px-6 bg-blue-50">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { icon: <ShieldCheck size={24}/>, t: "Health First", d: "Foundational testing above all." },
               { icon: <Heart size={24}/>, t: "Temperament", d: "Stable, affectionate souls." },
@@ -132,14 +132,14 @@ const RedPoodleGenetics = () => {
              </p>
              <div className="flex items-center gap-4">
                <div className="h-px flex-grow bg-brand-blue-500"></div>
-               <span className="text-brand-pink-700 font-bold uppercase text-sm tracking-wide">Balanced Breeding</span>
+               <span className="text-brand-pink-700 font-semibold uppercase text-sm tracking-wide">Balanced Breeding</span>
              </div>
           </div>
         </div>
       </section>
 
       {/* FAQ SECTION - ACCORDION */}
-      <section className="py-10 px-6 max-w-5xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-5xl mx-auto">
         <h2 className="text-center text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase mb-10">Genetics FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -148,7 +148,7 @@ const RedPoodleGenetics = () => {
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex justify-between items-center py-6 text-left text-brand-blue-700 hover:text-brand-pink-700 transition-colors duration-300 cursor-pointer"
               >
-                <span className="font-bold text-base uppercase pr-8">{faq.q}</span>
+                <span className="font-semibold text-sm sm:text-base uppercase pr-8">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 pb-6' : 'max-h-0'}`}>

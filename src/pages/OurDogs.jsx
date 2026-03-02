@@ -82,7 +82,7 @@ const OurDogs = () => {
     ];
 
     const DogCard = ({ dog, type }) => (
-        <div className="bg-white border border-brand-blue-500 rounded-[2.5rem] overflow-hidden group shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full">
+        <div className="bg-white border border-brand-blue-500 rounded-3xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full">
             {/* Image Container */}
             <div className="relative overflow-hidden aspect-[4/5]">
                 <img
@@ -99,7 +99,7 @@ const OurDogs = () => {
             </div>
 
             {/* Content */}
-            <div className="p-8 flex flex-col flex-grow">
+            <div className="p-6 sm:p-8 flex flex-col flex-grow">
                 <div className="mb-6">
                     <h3 className="text-3xl md:text-4xl font-black fr text-gray-900 leading-none mb-1">{dog.callName}</h3>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{dog.registeredName}</p>
@@ -112,7 +112,7 @@ const OurDogs = () => {
                     <div className='text-sm'><span className="text-gray-400 block text-xs uppercase mb-1 tracking-tighter">Dam</span><strong className="text-sm">{dog.dam}</strong></div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-6 border-l-2 border-brand-blue-500 pl-4">
+                <p className="text-gray-600 text-sm mb-6 leading-5 border-l-2 border-brand-blue-500 pl-4">
                     "{dog.personality}"
                 </p>
 
@@ -146,7 +146,7 @@ const OurDogs = () => {
         <div className="bg-white text-gray-700">
 
             {/* HERO COLLAGE SECTION */}
-            <section className="py-10 px-6 max-w-7xl mx-auto">
+            <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
                         <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md::text-6xl lg:text-7xl font-black leading-[0.9] uppercase tracking-tighter mb-8">
@@ -168,16 +168,16 @@ const OurDogs = () => {
             </section>
 
             {/* PHILOSOPHY SECTION */}
-            <section className="py-10 px-6 bg-blue-50">
+            <section className="py-10 px-4 sm:px-6 bg-blue-50">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
                     <div className="lg:w-1/2">
-                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl font-black uppercase mb-6 tracking-tighter leading-none">
+                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl sm:text-4xl font-black uppercase mb-6 tracking-tighter leading-none">
                             Healthy puppies start with <br /> healthy parents.
                         </h2>
                         <p className="text-base md:text-lg leading-normal text-brand-blue-500 mb-6">
                             Our Toy Poodles are not <span className='text-brand-blue-700 font-medium'>“breeding stock.”</span> They are our daily companions, our little comedians, and our proud constants. If you want to understand our program, start here. The parents tell the story.
                         </p>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             {["AKC Registered", "Loved as Family", "Health Focused", "Integrity Minded"].map((text, i) => (
                                 <div key={i} className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-pink-700">
                                     <Star size={18} className="text-brand-pink-700" /> {text}
@@ -208,10 +208,10 @@ const OurDogs = () => {
             </section>
 
             {/* FILTER TABS */}
-            <section className="py-10 px-6 max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10 pb-10">
+            <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-start sm:items-center gap-8 pb-10">
                     <div>
-                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Kings & Queens</h2>
+                        <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Kings & Queens</h2>
                         <p className="text-brand-blue-500 text-base">Scroll to meet our dams and sires</p>
                     </div>
                     <div className="flex bg-blue-50 p-1.5 rounded-full">
@@ -259,7 +259,7 @@ const OurDogs = () => {
             </section>
 
             {/* RETIRED / GUARDIAN SECTION */}
-            <section className="py-10 px-6 bg-gray-900 text-white overflow-hidden relative">
+            <section className="py-10 px-4 sm:px-6 bg-gray-900 text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-pink-700/10 blur-[100px]"></div>
                 <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
                     <div className="md:w-2/3">
@@ -269,8 +269,8 @@ const OurDogs = () => {
                         </p>
                     </div>
                     <div className="md:w-1/3">
-                        <div className="p-1 border border-brand-pink-700 rounded-[2rem]">
-                            <img loading="lazy" src={poodle19} className="rounded-[1.8rem] w-full h-96 object-cover object-top opacity-70" alt="Retired Poodle" />
+                        <div className="p-1 border border-brand-pink-700 rounded-3xl">
+                            <img loading="lazy" src={poodle19} className="rounded-3xl w-full h-96 object-cover object-top opacity-70" alt="Retired Poodle" />
                         </div>
                     </div>
                 </div>
@@ -278,12 +278,12 @@ const OurDogs = () => {
 
             {/* HELP CHOOSING CTA */}
             <section className="py-10 px-6 max-w-5xl mx-auto text-center">
-                <div className="bg-blue-50 rounded-[3rem] px-6 py-8 lg:p-10">
+                <div className="bg-blue-50 rounded-3xl px-6 py-8 lg:p-10">
                     <Heart size={40} className="text-brand-pink-700 mx-auto mb-8" />
-                    <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-3xl md:text-5xl font-black uppercase tracking-tight fr mb-6 leading-none">
+                    <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight fr mb-6 leading-none">
                         Want help choosing <br /> who you connect with?
                     </h2>
-                    <p className="text-brand-blue-500 mb-10 max-w-3xl mx-auto">
+                    <p className="text-brand-blue-500 mb-10 max-w-3xl sm:text-base text-sm mx-auto">
                         People fall in love with different things. Whether you want a calm lap companion or a bright little athlete, tell us what fits your life and we will guide you toward the right lines.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4">

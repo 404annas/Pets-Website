@@ -31,7 +31,7 @@ const ToyPoodleStandard = () => {
     <div className="bg-white text-gray-700 leading-relaxed">
 
       {/* HERO SECTION */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6">
@@ -50,14 +50,14 @@ const ToyPoodleStandard = () => {
             loading='lazy'
               src={poodle}
               alt="Elegant Toy Poodle"
-              className="relative z-10 rounded-[3rem] shadow-sm h-[80vh] w-full object-cover"
+              className="relative z-10 rounded-3xl shadow-sm h-[70vh] sm:h-[80vh] w-full object-cover"
             />
           </div>
         </div>
       </section>
 
       {/* AKC OFFICIAL TRAITS */}
-      <section className="py-10 px-6 bg-gray-50 border-y border-gray-100">
+      <section className="py-10 px-4 sm:px-6 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">AKC Official Traits</h2>
@@ -71,7 +71,7 @@ const ToyPoodleStandard = () => {
               { icon: <Brain size={32} />, t: "Intelligence", d: "One of the smartest breeds on the planet. They love mental enrichment, puzzles, and training games as much as lap time." },
               { icon: <Scissors size={32} />, t: "Coat Type", d: "Tight, low-shedding curls that are allergy-friendly. Requires professional grooming every 4–6 weeks to maintain health." }
             ].map((trait, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-brand-blue-500 flex gap-6 items-start group hover:border-brand-pink-500 transition-colors duration-300">
+              <div key={i} className="bg-white p-6 sm:p-8 rounded-2xl border border-brand-blue-500 flex gap-6 items-start group hover:border-brand-pink-500 transition-colors duration-300">
                 <div className="text-brand-blue-500 group-hover:text-brand-pink-700 transition-colors duration-300">{trait.icon}</div>
                 <div>
                   <h3 className="text-xl font-black uppercase tracking-tight fr text-gray-900 mb-2">{trait.t}</h3>
@@ -84,10 +84,10 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* TYPICAL BEHAVIORS */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="bg-gray-900 rounded-2xl px-6 py-10 sm:p-10 md:p-16 relative overflow-hidden text-center text-white mb-20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-700 blur-[120px] opacity-20"></div>
-          <h2 className="text-4xl md:text-5xl font-black fr uppercase tracking-tight mb-6 relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black fr uppercase tracking-tight mb-6 relative z-10">
             "Half dog, half brain <br /> <span className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">with a sprinkle of clown spirit."</span>
           </h2>
           <p className="text-brand-pink-500">— Common owner description —</p>
@@ -123,16 +123,16 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* QUICK VISUAL CHECKLIST */}
-      <section className="py-10 px-6 bg-blue-50">
+      <section className="py-10 px-4 sm:px-6 bg-blue-50">
         <div className="max-w-7xl mx-auto">
 
           {/* Header Section with a modern "split" look */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div className="space-y-2">
-              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight fr leading-none text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight fr leading-none text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text">
                 The <span className="text-white" style={{ WebkitTextStroke: '1.5px var(--color-brand-pink-700)' }}>Spec</span> Sheet
               </h2>
-              <p className="text-brand-pink-700 font-bold tracking-wide uppercase text-sm pl-1">Quick Visual Checklist</p>
+              <p className="text-brand-pink-700 font-semibold tracking-wide uppercase text-sm pl-1">Quick Visual Checklist</p>
             </div>
             <div className="text-right">
               <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-blue-700">01—06</span>
@@ -182,7 +182,7 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-10 px-6 max-w-5xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-5xl mx-auto">
         <h2 className="text-center text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase mb-10">Standard FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -191,7 +191,7 @@ const ToyPoodleStandard = () => {
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex justify-between items-center py-6 text-left text-brand-blue-700 hover:text-brand-pink-700 transition-colors duration-300 cursor-pointer"
               >
-                <span className="font-bold text-base uppercase pr-8">{faq.q}</span>
+                <span className="font-semibold text-sm sm:text-base uppercase pr-8">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 pb-6' : 'max-h-0'}`}>
@@ -203,9 +203,9 @@ const ToyPoodleStandard = () => {
       </section>
 
       {/* PINNED NAVIGATION BAR */}
-      <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-brand-blue-500/30 py-6 px-6 z-40 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+      <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-brand-blue-500/30 py-6 px-4 sm:px-6 z-40 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => navigate('/the-red-story')}
               className="flex items-center gap-2 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr font-bold text-base uppercase cursor-pointer group"
@@ -213,7 +213,7 @@ const ToyPoodleStandard = () => {
               The Science of Red <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-          <div className="flex gap-3">
+          <div className="flex sm:flex-row flex-col gap-2">
             <button
               onClick={() => navigate('/available')}
               className="bg-brand-pink-500 text-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer"

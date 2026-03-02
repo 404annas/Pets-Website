@@ -8,20 +8,20 @@ const OurDogsSubpage = () => {
         <div className="bg-white text-gray-700 leading-relaxed">
 
             {/* BREADCRUMB - Subtle navigation */}
-            <nav className="py-4 px-6 max-w-7xl mx-auto flex items-center gap-2 text-xs font-bold uppercase text-gray-400">
+            <nav className="py-4 px-4 sm:px-6 max-w-7xl mx-auto flex items-center gap-2 text-xs font-bold uppercase text-gray-400">
                 <button onClick={() => navigate('/our-dogs')} className="text-brand-pink-500 hover:text-brand-pink-700 cursor-pointer">Our Dogs</button>
                 <ChevronRight size={12} />
                 <span className="text-gray-900">Pedigree & Lineage</span>
             </nav>
 
             {/* HERO SECTION - Minimalist & Focused */}
-            <section className="py-10 px-6 max-w-7xl mx-auto">
+            <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row gap-10 items-center">
                     <div className="lg:w-2/3">
                         <h1 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-none mb-4">
                             Pedigree <br /> <span className="text-gray-900">& Lineage</span>
                         </h1>
-                        <p className="text-lg text-brand-blue-500 font-medium leading-tight max-w-xl">
+                        <p className="text-base sm:text-lg text-brand-blue-500 font-medium leading-tight max-w-xl">
                             Why pedigree matters <span className="text-brand-pink-500">more than most people realize.</span>
                         </p>
                     </div>
@@ -55,7 +55,7 @@ const OurDogsSubpage = () => {
             </section>
 
             {/* THE STORY SECTION - Narrative Layout */}
-            <section className="py-10 px-6 max-w-7xl mx-auto">
+            <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-10 items-start">
                     <div>
                         <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tighter mb-8">
@@ -112,11 +112,11 @@ const OurDogsSubpage = () => {
                         <div className="flex flex-col gap-3">
                             <div className="bg-white p-4 rounded-xl border border-brand-blue-500 flex justify-between items-center group cursor-default">
                                 <span className="text-xs font-bold uppercase text-brand-blue-500">Accomplished Foundation</span>
-                                <span className="text-brand-blue-700 font-bold">Health First</span>
+                                <span className="text-brand-blue-700 text-sm font-semibold">Health First</span>
                             </div>
                             <div className="bg-white p-4 rounded-xl border border-brand-pink-500 flex justify-between items-center group cursor-default">
                                 <span className="text-xs font-bold uppercase text-brand-pink-500">Breed Standards</span>
-                                <span className="text-brand-pink-700 font-bold">Temperament Always</span>
+                                <span className="text-brand-pink-700 text-sm font-semibold">Temperament Always</span>
                             </div>
                         </div>
                     </div>
@@ -130,8 +130,8 @@ const OurDogsSubpage = () => {
             </section>
 
             {/* CALL TO ACTION */}
-            <section className="py-10 px-6">
-                <div className="max-w-4xl mx-auto bg-gray-900 rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
+            <section className="py-10 px-4 sm:px-6">
+                <div className="max-w-4xl mx-auto bg-gray-900 rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-32 h-32 bg-brand-pink-700/20 blur-[60px]"></div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-black uppercase tracking-tight mb-8 relative z-10">

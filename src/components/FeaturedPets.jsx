@@ -97,7 +97,7 @@ const PetCard = ({ pet }) => {
         <div
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
-            className="relative h-[550px] pb-10 w-full grid grid-cols-1 md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px]"
+            className="relative h-[550px] pb-10 w-full grid grid-cols-1 w-full md:w-[calc(33.333%-1.333rem)] flex-shrink-0 [perspective:1000px]"
         >
             <motion.div
                 className="relative w-full h-full [transform-style:preserve-3d]"
@@ -188,7 +188,7 @@ const FeaturedPets = () => {
                 <h1 className="text-3xl md:text-4xl font-bold text-[#333333] fr uppercase pb-4">
                     Meet Today’s <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Little Red Hearts</span>
                 </h1>
-                <p className="text-blue-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                <p className="text-blue-500 max-w-3xl mx-auto text-base md:text-lg leading-normal">
                     Every puppy is from health-tested parents, raised in a loving home environment,
                     and evaluated for temperament and confidence.
                 </p>
@@ -220,7 +220,7 @@ const FeaturedPets = () => {
             {/* LOWER CONTENT SECTIONS */}
             <div className="mt-5 w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Waitlist */}
-                <div className="bg-pink-100/30 px-4 py-6 md:p-8 rounded-[40px] border border-pink-200/30">
+                <div className="bg-pink-100/30 p-5 md:p-8 rounded-3xl border border-pink-200/30">
                     <UsersRound size={30} className="text-pink-500 mb-4" />
                     <h3 className="text-2xl text-transparent bg-gradient-to-r from-pink-500 to-blue-700 bg-clip-text font-bold fr mb-3">No Puppies Right Now?</h3>
                     <p className="text-blue-500 text-sm md:text-base mb-6 leading-relaxed">
@@ -231,7 +231,7 @@ const FeaturedPets = () => {
                 </div>
 
                 {/* Shipping */}
-                <div className="bg-blue-50 px-4 py-6 md:p-8 rounded-[40px] border border-blue-200">
+                <div className="bg-blue-50 p-5 md:p-8 rounded-3xl border border-blue-200">
                     <Truck size={30} className="text-blue-500 mb-4" />
                     <h3 className="text-2xl font-bold mb-3 text-transparent bg-gradient-to-r from-pink-500 to-blue-700 bg-clip-text fr">Visiting & Pickup</h3>
                     <p className="text-pink-500 text-sm md:text-base mb-6 leading-relaxed">

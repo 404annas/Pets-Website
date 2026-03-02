@@ -48,14 +48,14 @@ const PetDetail = () => {
 
                     {/* Thumbnail Selector - FIX: Sliced to first 5 images only */}
                     {pet.gallery && (
-                        <div className="flex gap-4 mt-4 overflow-x-auto pb-2 no-scrollbar">
+                        <div className="flex gap-2 sm:gap-4 mt-4 overflow-x-auto pb-2 no-scrollbar">
                             {[pet.image, ...pet.gallery].slice(0, 5).map((img, idx) => (
                                 <img
                                     loading='lazy'
                                     key={idx}
                                     src={img}
                                     onClick={() => setActiveImage(img)}
-                                    className={`w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl cursor-pointer transition-all border-4 ${activeImage === img ? 'border-brand-blue-500 scale-95' : 'border-transparent opacity-70 hover:opacity-100'}`}
+                                    className={`w-16 h-16 md:w-28 md:h-28 object-cover rounded-2xl cursor-pointer transition-all border-4 ${activeImage === img ? 'border-brand-blue-500 scale-95' : 'border-transparent opacity-70 hover:opacity-100'}`}
                                     alt="Gallery thumb"
                                 />
                             ))}
@@ -127,8 +127,8 @@ const PetDetail = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {/* FIX: Removed duplicate pet.image and removed .slice(0, 4) so it shows all images! */}
                         {[pet.image, ...pet.gallery].map((img, i) => (
-                            <div key={i} className={`rounded-[30px] overflow-hidden shadow-sm ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
-                                <img src={img} alt="Gallery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                            <div key={i} className={`rounded-2xl overflow-hidden shadow-sm ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+                                <img loading='lazy' src={img} alt="Gallery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                             </div>
                         ))}
                     </div>
@@ -148,7 +148,7 @@ const PetDetail = () => {
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {pet.videos.map((vid, i) => (
-                                <div key={i} className={`rounded-[30px] overflow-hidden shadow-sm bg-black ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+                                <div key={i} className={`rounded-2xl overflow-hidden shadow-sm bg-black ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
                                     <video
                                         src={vid}
                                         // controls
@@ -195,7 +195,7 @@ const PetDetail = () => {
                         <h3 className="text-2xl font-bold mb-8 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase flex items-center gap-3">
                             <ClipboardCheck className="text-brand-pink-500" /> Breeder Health Report
                         </h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
                             {pet.health.map((item, index) => (
                                 <div key={index} className="flex flex-col items-center p-8 bg-pink-50 rounded-[40px] border border-brand-pink-500">
                                     <div className={`p-4 rounded-full mb-4 ${item.active ? 'bg-brand-pink-500 text-white' : 'bg-brand-blue-500 text-white'}`}>
@@ -216,7 +216,7 @@ const PetDetail = () => {
             {/* 4. RESERVATION PROCESS */}
             <div className="bg-slate-900 py-10 px-4 text-white">
                 <div className="max-w-6xl mx-auto text-center mb-16">
-                    <h2 className="text-4xl font-bold mb-6 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase">How to Reserve {pet.name}?</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr uppercase">How to Reserve {pet.name}?</h2>
                     <p className="text-brand-pink-500 max-w-2xl mx-auto">
                         Families who complete the application and deposit first are prioritized.
                         Our process is fair, transparent, and pressure-free.
@@ -231,7 +231,7 @@ const PetDetail = () => {
                         { n: "04", t: "Confirm", d: "Go-home dates and final details are locked in." },
                     ].map((step, i) => (
                         <div key={i} className="relative z-10 text-center md:text-left">
-                            <span className="text-6xl font-black text-brand-pink-500 mb-4 block">{step.n}</span>
+                            <span className="text-5xl sm:text-6xl font-black text-brand-pink-500 mb-4 block">{step.n}</span>
                             <h4 className="text-xl font-bold mb-2 text-brand-pink-500">{step.t}</h4>
                             <p className="text-brand-pink-500 text-sm leading-relaxed">{step.d}</p>
                         </div>
