@@ -37,6 +37,9 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_SERVER }}
           REMOTE_USER: ${{ secrets.HOST_USERNAME }}
           REMOTE_PORT: ${{ secrets.HOST_PORT }}
+
+          # This makes the transfer smoother and cleans up old deleted files safely!
+          ARGS: "-avz --delete" 
           
           # SOURCE: Upload everything inside the dist/ folder
           SOURCE: "dist/"
