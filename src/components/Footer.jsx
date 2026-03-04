@@ -111,6 +111,7 @@ const Footer = () => {
                 </div>
             </div>
 
+
             {/* Bottom Bar: Copyright & Links */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-blue-500/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-600">
                 <p>2026 © USA Poodle | All Rights Reserved</p>
