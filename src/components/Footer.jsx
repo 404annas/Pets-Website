@@ -106,7 +106,7 @@ const Footer = () => {
                     </div>
 
                     <button className="bg-pink-700 text-white font-bold px-8 py-4 rounded-full hover:bg-pink-800 transition-all duration-300 shadow-sm transform hover:-translate-y-1 cursor-pointer">
-                        Donate Today
+                        Donate Today <span className='text-xs'>(Coming Soon)</span>
                     </button>
                 </div>
             </div>

@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import contactMain from "../assets/contactMain.svg";
 
 const ContactUs = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [activePill, setActivePill] = useState(null);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 1023px)");
+        const updateScreenSize = () => {
+            const small = mediaQuery.matches;
+            setIsSmallScreen(small);
+            if (!small) {
+                setActivePill(null);
+            }
+        };
+
+        updateScreenSize();
+        mediaQuery.addEventListener("change", updateScreenSize);
+
+        return () => mediaQuery.removeEventListener("change", updateScreenSize);
+    }, []);
+
     const pillVariants = {
         initial: { width: 56 },
         hover: {
@@ -129,19 +149,19 @@ const ContactUs = () => {
                         {[
                             {
                                 icon: <Mail size={22} />,
-                                text: "hello@yoursite.com",
+                                text: "info@usapoodles.com",
                                 className:
-                                    "top-[20%] left-10 -translate-x-1/2 sm:left-0 sm:translate-x-0",
+                                    "top-[20%] left-30 sm:left-10 -translate-x-1/2 sm:left-0 sm:translate-x-0",
                             },
                             {
                                 icon: <MapPin size={22} />,
                                 text: "123 Sample St, NY",
                                 className:
-                                    "top-[45%] right-10 translate-x-1/2 sm:right-0 sm:translate-x-0",
+                                    "top-[55%] sm:top-[45%] right-23 sm:right-10 translate-x-1/2 sm:right-0 sm:translate-x-0",
                             },
                             {
                                 icon: <Phone size={22} />,
-                                text: "+1 (555) 000-0000",
+                                text: "(805) 888-0133",
                                 className:
                                     "bottom-[10%] left-25 -translate-x-1/2 sm:left-10",
                             },
@@ -150,7 +170,12 @@ const ContactUs = () => {
                                 key={i}
                                 variants={pillVariants}
                                 initial="initial"
-                                whileHover="hover"
+                                animate={isSmallScreen && activePill === i ? "hover" : "initial"}
+                                whileHover={!isSmallScreen ? "hover" : undefined}
+                                onClick={() =>
+                                    isSmallScreen &&
+                                    setActivePill((current) => (current === i ? null : i))
+                                }
                                 className={`absolute ${pill.className} flex items-center bg-blue-500 rounded-full overflow-hidden shadow-lg h-12 cursor-pointer`}
                             >
                                 <div className="min-w-[48px] h-12 flex items-center justify-center bg-white rounded-full m-0.5 border-4 border-blue-500 text-blue-500">
