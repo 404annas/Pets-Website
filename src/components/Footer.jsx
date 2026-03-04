@@ -25,7 +25,7 @@ const Footer = () => {
                     </p>
 
                     <div className="space-y-4">
-                        <div className="flex items-center gap-4 group cursor-pointer">
+                        {/* <div className="flex items-center gap-4 group cursor-pointer">
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <MapPin size={18} strokeWidth={3} />
                             </div>
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <MapPin size={18} strokeWidth={3} />
                             </div>
                             <span className="text-gray-600">2108 N ST STE N, Sacramento, CA 95816, United States</span>
-                        </div>
+                        </div> */}
 
                         <div className="flex items-center gap-4 group cursor-pointer">
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
@@ -113,7 +113,7 @@ const Footer = () => {
 
             {/* Bottom Bar: Copyright & Links */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-blue-500/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-600">
-                <p>2026 © USA Poodles | All Rights Reserved</p>
+                <p>2026 © USA Poodle | All Rights Reserved</p>
 
                 <div className="flex flex-wrap justify-center gap-6">
                     <span className="cursor-pointer">Developed by <a href="https://techxudo.com/   " target='_blank' className='text-blue-900'>Techxudo</a></span>

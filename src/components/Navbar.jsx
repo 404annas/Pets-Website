@@ -52,7 +52,7 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <Link to={"/"} className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold cursor-pointer text-2xl font-serif sm:text-3xl md:text-4xl" >USA Poodles</Link>
+                <Link to={"/"} className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold cursor-pointer text-2xl font-serif sm:text-3xl md:text-4xl" >USA Poodle</Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-5 font-medium">

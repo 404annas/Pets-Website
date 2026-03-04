@@ -7,7 +7,7 @@ const Navbar2 = () => {
 
             {/* 1. Logo Section (Left) */}
             <div className="flex-1 flex justify-start items-center">
-                <Link to={"/"} className='text-4xl font-bold font-serif cursor-pointer bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent'>USA Poodles</Link>
+                <Link to={"/"} className='text-4xl font-bold font-serif cursor-pointer bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent'>USA Poodle</Link>
             </div>
 
             {/* 2. Navigation Links (Center) */}
