@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+name: Deploy to Hostinger via SSH
 
 on:
   push:
@@ -23,22 +23,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build Vite project
+        # This creates your "dist" folder
         run: npm run build
         env:
           NODE_ENV: production
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./dist/
-          server-dir: ./
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Deploy to Hostinger via SSH (Rsync)
+        uses: easingthemes/ssh-deploy@main
+        env:
+          # Pulling the secrets you just saved in GitHub
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_SERVER }}
+          REMOTE_USER: ${{ secrets.HOST_USERNAME }}
+          REMOTE_PORT: ${{ secrets.HOST_PORT }}
+          
+          # SOURCE: Upload everything inside the dist/ folder
+          SOURCE: "dist/"
+          
+          # TARGET: The exact folder on your Hostinger server for usapoodle.com
+          TARGET: "/home/u128469588/domains/usapoodle.com/public_html/"

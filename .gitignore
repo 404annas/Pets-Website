@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+hostinger_key
+hostinger_key.pub
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
