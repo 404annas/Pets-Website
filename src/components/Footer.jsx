@@ -10,6 +10,22 @@ import {
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    
+    // Function to open Gmail in a small popup window
+    const handleEmailClick = (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        
+        const email = "info@usapoodles.com";
+        // This is Gmail's direct compose URL
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+        
+        // Define the small window size (e.g., 800px width, 600px height)
+        const windowFeatures = "width=800,height=600,left=300,top=50,resizable=yes,scrollbars=yes";
+        
+        // Open the popup
+        window.open(gmailUrl, "GmailCompose", windowFeatures);
+    };
+
     return (
         <footer className="bg-pink-100 text-white pt-10 pb-8 px-6 md:px-10">
             {/* Top Section: Grid Layout */}
@@ -18,39 +34,38 @@ const Footer = () => {
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
                     <div className="flex items-center gap-2 mb-2">
-                        <h2 className="text-3xl font-bold font-serif tracking-tight text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">USA Poodle</h2>
+                        <h2 className="text-3xl font-bold font-serif tracking-tight text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text uppercase">USA Poodle</h2>
                     </div>
                     <p className="text-[10px] uppercase tracking-tight text-blue-600 font-bold mb-8">
                         Premium Poodles Across the USA
                     </p>
 
                     <div className="space-y-4">
-                        {/* <div className="flex items-center gap-4 group cursor-pointer">
+                        <div className="flex items-center gap-2 group cursor-pointer">
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <MapPin size={18} strokeWidth={3} />
                             </div>
-                            <span className="text-gray-600">9452 Telephone Road Suite 210, Ventura, CA 93004, United States</span>
+                            <span className="text-gray-600">CENTRAL COAST, CALIFORNIA</span>
                         </div>
 
-                        <div className="flex items-center gap-4 group cursor-pointer">
-                            <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
-                                <MapPin size={18} strokeWidth={3} />
-                            </div>
-                            <span className="text-gray-600">2108 N ST STE N, Sacramento, CA 95816, United States</span>
-                        </div> */}
-
-                        <div className="flex items-center gap-4 group cursor-pointer">
+                        <div className="flex items-center gap-2 group cursor-pointer">
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <Phone size={18} strokeWidth={3} />
                             </div>
                             <a href="tel:(805) 888-0133" className="text-gray-600">(805) 888-0133</a>
                         </div>
 
-                        <div className="flex items-center gap-4 group cursor-pointer">
+                        {/* UPDATED: Email Link Section */}
+                        <div 
+                            className="flex items-center gap-2 group cursor-pointer" 
+                            onClick={handleEmailClick}
+                        >
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <Mail size={18} strokeWidth={3} />
                             </div>
-                            <span className="text-gray-600">info@usapoodles.com</span>
+                            <a href="mailto:info@usapoodles.com" className="text-gray-600 hover:text-gray-800 transition-colors">
+                                info@usapoodles.com
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -111,13 +126,12 @@ const Footer = () => {
                 </div>
             </div>
 
-
             {/* Bottom Bar: Copyright & Links */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-blue-500/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-600">
-                <p>2026 © USA Poodle | All Rights Reserved</p>
+                <p>2026 © <span className='uppercase'>USA Poodle</span> | All Rights Reserved</p>
 
                 <div className="flex flex-wrap justify-center gap-6">
-                    <span className="cursor-pointer">Developed by <a href="https://techxudo.com/   " target='_blank' className='text-blue-900'>Techxudo</a></span>
+                    <span className="cursor-pointer">Developed by <a href="https://techxudo.com/" target='_blank' rel="noreferrer" className='text-blue-900'>Techxudo</a></span>
                     <span className="hover:text-blue-900 cursor-pointer underline transition-all duration-300">Privacy Policy</span>
                 </div>
             </div>

@@ -26,7 +26,7 @@ const Hero2 = () => {
                 </h1>
 
                 <p className="mt-6 text-blue-600 text-base max-w-4xl mx-auto font-medium">
-                    USA Poodle is America’s premier breeder of AKC grand champion Red Toy Poodles. That’s all we do. We produce champions with perfect confirmation and perfect temperament.
+                    <span className='uppercase'>USA Poodle</span> is America’s premier breeder of AKC grand champion Red Toy Poodles. That’s all we do. We produce champions with perfect confirmation and perfect temperament.
                 </p>
 
                 {/* <Link to={"/available"}>

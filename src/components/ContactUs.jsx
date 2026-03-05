@@ -155,7 +155,7 @@ const ContactUs = () => {
                             },
                             {
                                 icon: <MapPin size={22} />,
-                                text: "123 Sample St, NY",
+                                text: "CENTRAL COAST, CALIFORNIA",
                                 className:
                                     "top-[55%] sm:top-[45%] right-23 sm:right-10 translate-x-1/2 sm:right-0 sm:translate-x-0",
                             },
