@@ -10,7 +10,9 @@ import {
     ArrowRight,
     Camera,
     Info,
-    Video
+    Video,
+    Coins,
+    DollarSign
 } from 'lucide-react';
 
 const PetDetail = () => {
@@ -65,10 +67,31 @@ const PetDetail = () => {
 
                 {/* Content Column */}
                 <div className="w-full lg:w-1/2">
-                    <p className="text-brand-blue-500 font-medium tracking-[0.2em] mb-2 uppercase text-xs flex items-center gap-2">
+                    <p className="text-brand-blue-500 font-medium sm:tracking-[0.2em] mb-2 uppercase text-xs flex items-center gap-2">
                         <span className="w-8 h-[2px] bg-brand-blue-500"></span> {pet.breed}
                     </p>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr mb-4">{pet.name}</h1>
+                    <div className='flex items-center justify-between mb-4'>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr mb-4">{pet.name}</h1>
+                        <div className="flex items-center gap-3 bg-brand-pink-50/50 backdrop-blur-sm px-4 md:px-6 py-2 md:py-4 rounded-lg md:rounded-2xl border-2 border-brand-blue-700 shadow-sm transition-all">
+                            {/* Icon Container - thoda highlight karne ke liye */}
+                            <div className="p-2 bg-brand-blue-700 rounded-lg w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                                <DollarSign className="text-white" />
+                            </div>
+
+                            <div className="flex flex-col">
+                                {/* Label ko "Adoption Fee" kar diya hai jo behtar lagta hai */}
+                                <span className='text-[10px] sm:text-xs font-semibold text-brand-blue-700/70 uppercase tracking-wider'>
+                                    Adoption Fee
+                                </span>
+
+                                {pet.adoptionFee && (
+                                    <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none">
+                                        {pet.adoptionFee}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="flex flex-wrap gap-4 mb-6">
                         <span className="bg-blue-50 text-brand-blue-500 px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2">
@@ -106,7 +129,7 @@ const PetDetail = () => {
                         >
                             Reserve {pet.name} <ArrowRight size={20} />
                         </button>
-                        <button className="flex-1 border-2 border-brand-pink-500 text-slate-800 font-bold px-8 py-5 rounded-xl hover:bg-pink-50 transition-all duration-300 cursor-pointer">
+                        <button className="flex-1 flex items-center justify-center gap-2 border-2 border-brand-pink-500 hover:bg-pink-50 transition-all duration-300 text-brand-pink-700 font-bold px-8 py-5 rounded-xl bg-white cursor-pointer">
                             Download Health Records
                         </button>
                     </div>
@@ -180,7 +203,7 @@ const PetDetail = () => {
                                 { l: "Projected Adult Weight", v: pet.projectedAdultWeight },
                                 { l: "Father Weight", v: pet.fatherWeight },
                                 { l: "Mother Weight", v: pet.motherWeight },
-                                { l: "Adoption Fee", v: pet.adoptionFee || "$3,500" },
+                                { l: "Adoption Fee", v: "$" + (pet.adoptionFee || "5,000") },
                             ].map((item, i) => (
                                 <div key={i} className="flex justify-between items-center p-4 bg-white rounded-2xl border border-brand-blue-500">
                                     <span className="text-brand-blue-700 fr font-medium text-sm">{item.l}</span>

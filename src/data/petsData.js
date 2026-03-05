@@ -45,7 +45,7 @@ export const petData = [
         motherWeight: "5 lb",
         gender: "Male",
         age: "4 months",
-        adoptionFee: "$5000",
+        adoptionFee: "5000",
         goodWithDogs: "Yes",
         goodWithKids: "Yes",
         image: mainPoodle,
