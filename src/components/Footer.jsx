@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     
+    
     // Function to open Gmail in a small popup window
     const handleEmailClick = (e) => {
         e.preventDefault(); // Prevent default link behavior
