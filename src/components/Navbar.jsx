@@ -21,7 +21,7 @@ const Navbar = () => {
         { label: "Past Litters", type: "route", path: "/past-litters" },
         { label: "Breed Program", type: "route", path: "/breed-program" },
         { label: "The Red Story", type: "route", path: "/the-red-story" },
-        { label: "Poodle Standard", type: "route", path: "/red-toy-standard" },
+        { label: "Scarlett's Fancy Poodles", type: "route", path: "/scarletts-fancy-poodles" },
         { label: "Application", type: "route", path: "/application" },
     ];
 
@@ -43,7 +43,7 @@ const Navbar = () => {
     return (
         <>
             {/* NAVBAR */}
-            <nav className="flex items-center justify-between px-6 lg:px-6 py-4 bg-white relative z-50">
+            <nav className="flex items-center justify-between px-6 lg:px-4 py-4 bg-white relative z-50">
                 {/* Logo */}
                 {/* <img
                     loading="lazy"
@@ -52,10 +52,10 @@ const Navbar = () => {
                     alt="Logo"
                     onClick={() => handleScroll("home")}
                 /> */}
-                <Link to={"/"} className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold cursor-pointer uppercase text-2xl font-serif sm:text-3xl md:text-4xl tracking-tight">USA Poodle</Link>
+                <Link to={"/"} className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold cursor-pointer uppercase text-2xl font-serif sm:text-3xl md:text-4xl fr">USA Poodle</Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-5 font-medium">
+                <div className="hidden lg:flex items-center gap-4 font-medium">
                     {menuItems.map((item, idx) =>
                         item.type === "route" ? (
                             <Link
@@ -125,7 +125,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu Items */}
-                <div className="flex flex-col gap-6 px-8 font-medium">
+                <div className="flex flex-col gap-4 px-8 font-medium">
                     {menuItems.map((item) =>
                         item.type === "route" ? (
                             <Link

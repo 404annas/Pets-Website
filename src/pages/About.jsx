@@ -21,6 +21,8 @@ import about1Img5 from "../assets/about5.jfif"
 import about1Img6 from "../assets/about6.jfif"
 import about1Img7 from "../assets/about7.jfif"
 
+import linda from "../assets/linda3.jpeg"
+
 const testimonials = [
     { name: "Linda DuBose", img: "https://i.pravatar.cc/150?u=11", text: "As a mentor, I've watched this program prioritize genetics and temperament above all else. They truly honor the legacy of Scarlet’s Fancy Poodles." },
     { name: "Sarah J.", img: "https://i.pravatar.cc/150?u=28", text: "The connection to the Apricot Red Poodle Club gave us so much confidence. You aren't just buying a puppy; you're joining a community." },
@@ -187,8 +189,8 @@ const About = () => {
                                 </h3>
                                 <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-pink-500">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-500">
-                                            <img src="https://i.pravatar.cc/150?u=44" className="w-full h-full object-cover" alt="Linda DuBose" />
+                                        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-pink-500">
+                                            <img loading='lazy' src={linda} className="w-full h-full object-cover object-top" alt="Linda DuBose" />
                                         </div>
                                         <div>
                                             <h4 className="text-lg sm:text-xl leading-none font-bold text-[#333]">Honoring Linda DuBose</h4>
@@ -198,8 +200,8 @@ const About = () => {
                                     <p className="text-gray-500 leading-relaxed text-sm mb-6">
                                         Our founder’s close friend and mentor taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more than superficial color claims. Her influence is woven through every puppy we place.
                                     </p>
-                                    <Link to={"/about-breeder"} className="flex items-center gap-2 text-pink-700 font-bold text-sm hover:underline cursor-pointer">
-                                        Visit About Breeder <ExternalLink size={14} />
+                                    <Link to={"https://redandapricotpoodles.com/available-poodles/"}target='_blank' className="flex items-center gap-2 text-pink-700 font-bold text-sm hover:underline cursor-pointer">
+                                        Visit Scarlet’s Fancy Poodles <ExternalLink size={14} />
                                     </Link>
                                 </div>
                             </div>

@@ -33,6 +33,7 @@ import Steps from './components/Steps';
 import Benefits from './components/Benifits';
 import PetsSlider from './components/PetsSlider';
 import FloatingIcons from './components/FloatingIcons';
+import FancyPoodles from './pages/FancyPoodles';
 
 const Home = () => (
   <>
@@ -75,6 +76,7 @@ const App = () => {
           <Route path='/the-red-story' element={<RedPoodleGenetics />}/>
           <Route path='/red-toy-standard' element={<ToyPoodleStandard />}/>
           <Route path="/pet/:id" element={<PetDetail />} />
+          <Route path='/scarletts-fancy-poodles' element={<FancyPoodles />}/>
         </Routes>
         <FloatingIcons />
         <Footer />

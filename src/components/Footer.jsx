@@ -35,7 +35,7 @@ const Footer = () => {
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
                     <div className="flex items-center gap-2 mb-2">
-                        <h2 className="text-3xl font-bold font-serif tracking-tight text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text uppercase">USA Poodle</h2>
+                        <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text uppercase fr">USA Poodle</h2>
                     </div>
                     <p className="text-[10px] uppercase tracking-tight text-blue-600 font-bold mb-8">
                         Premium Poodles Across the USA
@@ -98,7 +98,7 @@ const Footer = () => {
                         <li className="hover:text-gray-800 cursor-pointer"><Link to="/our-dogs">Our Dogs</Link></li>
                         <li className="hover:text-gray-800 cursor-pointer"><Link to="/dogs-page">Dogs Page</Link></li>
                         <li className="hover:text-gray-800 cursor-pointer"><Link to="/the-red-story">The Red Story</Link></li>
-                        <li className="hover:text-gray-800 cursor-pointer"><Link to="/red-toy-standard">Red Toy Standard</Link></li>
+                        <li className="hover:text-gray-800 cursor-pointer"><Link to='/scarletts-fancy-poodles'>Scarletts Fancy Poodles</Link></li>
                         <li className="hover:text-gray-800 cursor-pointer"><Link to="/available">Available Poodles</Link></li>
                     </ul>
                 </div>
