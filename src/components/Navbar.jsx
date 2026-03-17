@@ -132,7 +132,7 @@ const Navbar = () => {
                                 key={item.label}
                                 to={item.path}
                                 onClick={() => setOpen(false)}
-                                className="text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
+                                className="text-base md:text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
                             >
                                 {item.label}
                             </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                             <p
                                 key={item.label}
                                 onClick={() => handleNavScroll(item.id)}
-                                className="text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
+                                className="text-base md:text-lg text-gray-800 cursor-pointer hover:text-pink-500 transition"
                             >
                                 {item.label}
                             </p>
@@ -149,7 +149,7 @@ const Navbar = () => {
 
                     {/* Button */}
                     <div onClick={() => navigate("/#contact")} className="flex-1 flex lg:justify-end items-center">
-                        <button className="bg-[#1479cc] text-gray-800 text- font-semibold py-3 px-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
+                        <button className="bg-[#1479cc] text-gray-800 text-sm sm:text-base font-semibold py-3 px-4 sm:x-6 rounded-full transition-all cursor-pointer hover:scale-97 duration-300 text-white">
                             Book An Appointment
                         </button>
                     </div>

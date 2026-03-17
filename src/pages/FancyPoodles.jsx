@@ -86,7 +86,7 @@ const FancyPoodles = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white min-h-screen selection:bg-brand-pink-500/10">
+    <div className="bg-white min-h-screen selection:bg-brand-pink-500/10md:pt-0 pt-10">
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-screen flex items-center bg-white overflow-hidden px-4 lg:px-10">
         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -108,16 +108,16 @@ const FancyPoodles = () => {
               Pure <br />
               <span className="bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent">Elegance.</span>
             </h1>
-            <p className="mt-10 text-base sm:text-lg text-brand-blue-500 max-w-xl leading-normal font-regular">
+            <p className="mt-6 sm:mt-10 text-sm sm:text-base md:text-lg text-brand-blue-500 max-w-xl leading-normal font-regular">
               A legacy of excellence for over two decades. Specializing in the distinct health, temperament, and sophisticated beauty of the Toy and Miniature Poodle.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center gap-2">
+            <div className="mt-6 sm:mt-10 flex flex-row items-center gap-2">
               <Link to={"https://redandapricotpoodles.com/available-poodles/"} target="_blank">
-                <button className="w-full sm:w-auto px-8 py-5 bg-brand-blue-500 border-2 border-brand-blue-700 text-white rounded-xl text-xs font-semibold uppercase transition-all duration-300 hover:bg-brand-blue-700 shadow-sm active:scale-95 cursor-pointer">
+                <button className="w-full sm:w-auto px-6 py-4 sm:px-8 sm:py-5 bg-brand-blue-500 border-2 border-brand-blue-700 text-white rounded-xl text-xs font-semibold uppercase transition-all duration-300 hover:bg-brand-blue-700 shadow-sm active:scale-95 cursor-pointer">
                   View Fancy Poodles
                 </button>
               </Link>
-              <button onClick={() => { navigate("/application"); scrollTo(0, 0); }} className="text-xs font-semibold uppercase px-8 py-5 bg-brand-pink-500 border-2 border-brand-pink-700 text-white rounded-xl transition-all duration-300 hover:bg-brand-pink-700 shadow-sm active:scale-95 cursor-pointer">
+              <button onClick={() => { navigate("/application"); scrollTo(0, 0); }} className="text-xs font-semibold uppercase px-6 py-4 sm:px-8 sm:py-5 bg-brand-pink-500 border-2 border-brand-pink-700 text-white rounded-xl transition-all duration-300 hover:bg-brand-pink-700 shadow-sm active:scale-95 cursor-pointer">
                 Puppy Application
               </button>
             </div>
@@ -137,14 +137,14 @@ const FancyPoodles = () => {
       {/* --- RE-DESIGNED AVAILABLE SECTION (MANAGING DYNAMIC COUNTS) --- */}
       <section className="py-10 max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-          <h2 className="fr text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent uppercase">Available Puppies</h2>
-          <p className="text-brand-blue-500 font-medium">Currently showcasing {puppies.length} litters</p>
+          <h2 className="fr text-3xl md:text-4xl sm:text-left text-center font-bold bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent uppercase">Available Puppies</h2>
+          <p className="text-brand-blue-500 font-medium sm:text-base text-sm">Currently showcasing {puppies.length} litters</p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-10 md:space-y-20">
           {puppies.map((puppy, index) => (
             <div key={index} className="group">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:ap-12">
                 
                 {/* DYNAMIC BENTO GRID SYSTEM */}
                 <div className={`lg:col-span-7 grid grid-cols-6 gap-2 h-fit ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
@@ -170,11 +170,11 @@ const FancyPoodles = () => {
                   <div className="flex gap-2 mb-6">
                     {puppy.stats.map((s, i) => <span key={i} className="text-[10px] font-medium uppercase px-3 py-1 bg-brand-blue-500 text-white rounded-full">{s}</span>)}
                   </div>
-                  <h3 className="fr bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-3xl md:text-4xl mb-6 font-semibold">{puppy.name}</h3>
-                  <p className="text-sm sm:text-base text-brand-blue-500 leading-normal mb-10 pb-10 border-b border-blue-100">{puppy.desc}</p>
+                  <h3 className="fr bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-3xl md:text-4xl mb-6 font-semibold leading-7">{puppy.name}</h3>
+                  <p className="text-sm sm:text-base text-brand-blue-500 leading-normal mb-6 sm:mb-10 pb-6 sm:pb-10 border-b border-blue-100">{puppy.desc}</p>
                   <div className="flex items-center gap-8">
                     <div className="text-3xl md:text-4xl font-bold fr text-brand-blue-700">{puppy.price}</div>
-                    <button onClick={() => { navigate("/application"); scrollTo(0,0); }} className="flex-1 bg-brand-pink-500 text-white py-4 px-8 rounded-sm text-sm font-bold uppercase hover:bg-brand-pink-700 transition-all duration-300 cursor-pointer shadow-sm active:scale-95">Request Reservation</button>
+                    <button onClick={() => { navigate("/application"); scrollTo(0,0); }} className="flex-1 bg-brand-pink-500 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-sm text-xs sm:text-sm font-bold uppercase hover:bg-brand-pink-700 transition-all duration-300 cursor-pointer shadow-sm active:scale-95">Request Reservation</button>
                   </div>
                 </div>
               </div>
@@ -184,13 +184,13 @@ const FancyPoodles = () => {
       </section>
 
       {/* --- PRESS RELEASE / AWARDS SECTION --- */}
-      <section className="py-10 bg-white px-6">
+      <section className="py-10 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
               <div className="inline-block px-4 py-1 rounded-full bg-brand-pink-500/10 text-brand-pink-500 text-xs font-semibold uppercase tracking-widest mb-6 fr">Press Release</div>
               <h2 className="fr text-3xl md:text-4xl uppercase bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-bold leading-8 mb-6">Scarlet’s Fancy Poodles Receives <br /> 2019 Best of Arroyo Grande Award</h2>
-              <p className="text-brand-blue-500 text-lg leading-normal">We are honored to be recognized for our commitment to excellence. This award reflects our 20-year legacy of breeding healthy, beautiful poodles with exceptional temperaments.</p>
+              <p className="text-brand-blue-500 text-base md:text-lg leading-normal">We are honored to be recognized for our commitment to excellence. This award reflects our 20-year legacy of breeding healthy, beautiful poodles with exceptional temperaments.</p>
             </div>
             <div className="order-1 md:order-2 flex justify-center">
               <div className="relative group max-w-sm">
@@ -202,13 +202,13 @@ const FancyPoodles = () => {
       </section>
 
       {/* --- INFO GRID --- */}
-      <section className="py-10 bg-slate-50 px-6">
+      <section className="py-10 bg-slate-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-xl">
-          <div className="bg-white p-12">
+          <div className="bg-white p-6 sm:p-12">
             <h4 className="fr text-2xl mb-8 bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-semibold">About Moyen Poodles</h4>
             <p className="text-brand-blue-500 text-sm leading-loose">Moyen Poodles are between 15 and 20 inches tall. A medium-sized breed between miniature and standard. Highly intelligent, energetic, and excellent service companions.</p>
           </div>
-          <div className="bg-white p-12">
+          <div className="bg-white p-6 sm:p-12">
             <h4 className="fr text-2xl mb-8 bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-semibold">Health Standards</h4>
             <ul className="space-y-3 text-sm text-brand-pink-500">
               <li className="flex items-center gap-3">✓ AKC Compliance & Registration</li>
@@ -217,7 +217,7 @@ const FancyPoodles = () => {
               <li className="flex items-center gap-3">✓ Reputable Breeder for 20+ Years</li>
             </ul>
           </div>
-          <div className="bg-white p-12">
+          <div className="bg-white p-6 sm:p-12">
             <h4 className="fr text-2xl mb-8 bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent font-semibold">Breeding Rights</h4>
             <p className="text-brand-blue-500 text-sm leading-loose">We sell our puppies to excellent pet homes with AKC limited registration. We are NOT granting breeding rights at this time. All puppies must be neutered by 6 months.</p>
           </div>
@@ -225,11 +225,11 @@ const FancyPoodles = () => {
       </section>
 
       {/* --- POLICY SECTION --- */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
-            <h2 className="fr text-3xl md:text-4xl mb-8 bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent uppercase font-bold">Safety & Health <br /> Reservation Policies</h2>
-            <div className="p-8 bg-brand-pink-500/5 border border-brand-pink-500/50 rounded-sm">
+            <h2 className="fr text-3xl md:text-4xl mb-8 bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent uppercase font-bold leading-7">Safety & Health <br /> Reservation Policies</h2>
+            <div className="p-6 sm:p-8 bg-brand-pink-500/5 border border-brand-pink-500/50 rounded-sm">
               <p className="text-brand-pink-500 font-bold fr text-sm mb-4 uppercase tracking-wide">Strict Notice</p>
               <p className="text-brand-blue-500 text-sm leading-normal">"We are NOT accepting visits until further notice. Poodles are the most highly trainable canines, but require significant time and care. If you do not have the time, please do not apply."</p>
             </div>
