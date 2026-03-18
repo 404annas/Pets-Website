@@ -13,10 +13,10 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import about1Img from "../assets/about1.jfif"
+import about1Img from "../assets/poodle8.jfif"
 import about1Img2 from "../assets/about2.jfif"
-import about1Img3 from "../assets/about3.jfif"
-import about1Img4 from "../assets/about4.jfif"
+import about1Img3 from "../assets/point2.jfif"
+import about1Img4 from "../assets/poodle12.jfif"
 import about1Img5 from "../assets/about5.jfif"
 import about1Img6 from "../assets/about6.jfif"
 import about1Img7 from "../assets/about7.jfif"
@@ -103,7 +103,7 @@ const About = () => {
             <section className="py-10 px-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center mb-10 gap-10 md:gap-20">
                     <div className="w-full lg:w-1/2">
-                        <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl lg:block hidden"></div>
+                        {/* <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl lg:block hidden"></div> */}
                         <p className="uppercase text-pink-700 font-semibold tracking-wider mt-10 lg:mt-0 text-xs mb-4">OUR HEARTFELT MISSION</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold fr text-[#333] leading-none mb-8">
                             <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Nurturing Lives,</span> Creating Bonds With Furry Pets

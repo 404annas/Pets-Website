@@ -8,8 +8,8 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import smallPoodle1 from "../assets/small3.jfif"
-import smallPoodle2 from "../assets/small4.jfif"
+import smallPoodle1 from "../assets/poodle10.jfif"
+import smallPoodle2 from "../assets/poodle13.jfif"
 
 import poodle from "../assets/heroDog2.png"
 

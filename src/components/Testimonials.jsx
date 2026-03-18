@@ -85,7 +85,7 @@ const FAQSection = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="mt-4 text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr"
+                        className="mt-4 text-3xl md:text-4xl uppercase font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr"
                     >
                         Frequently Asked Questions
                     </motion.h1>

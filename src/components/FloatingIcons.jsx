@@ -8,7 +8,7 @@ const FloatingIcons = () => {
                 href="https://marketplace.akc.org/breeder/usapoodle"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full overflow-hidden shadow-lg transition-transform duration-300 hover:scale-110"
+                className="w-14 sm:w-16 h-14 sm:h-16 rounded-full overflow-hidden shadow-lg transition-transform duration-300 hover:scale-110"
                 aria-label="Open featured link"
             >
                 <img
@@ -23,7 +23,7 @@ const FloatingIcons = () => {
                 href="https://www.instagram.com/usapoodle/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full flex items-center justify-center bg-white border border-gray-300 shadow-lg transition-transform duration-300 hover:scale-110"
+                className="w-14 sm:w-16 h-14 sm:h-16 rounded-full flex items-center justify-center bg-white border border-gray-300 shadow-lg transition-transform duration-300 hover:scale-110"
                 aria-label="Open Instagram"
             >
                 <FaInstagram

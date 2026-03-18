@@ -2,12 +2,12 @@ import { AudioLines, AudioWaveform, Ban, Blocks, Dna, HeartHandshake, Home, Lang
 
 import poodleSmall from "../assets/small1.jfif"
 import middlePoodle from "../assets/middle2.jfif"
-import aboutBreeder from "../assets/about8.jfif"
+import aboutBreeder from "../assets/point3.jfif"
 import aboutBreeder2 from "../assets/about11.jfif"
 
-import point1 from "../assets/point1.jfif"
+import point1 from "../assets/about9.jfif"
 import point2 from "../assets/point2.jfif"
-import point3 from "../assets/point3.jfif"
+import point3 from "../assets/small2.jfif"
 
 const AboutBreeder = () => {
     const images = {

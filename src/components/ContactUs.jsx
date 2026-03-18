@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
-import contactMain from "../assets/contactMain.svg";
+import contactMain from "../assets/poodle11.jfif";
 
 const ContactUs = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -135,7 +135,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="w-full lg:w-1/2 -mt-20 md:-mt-40 relative flex justify-center">
+                <div className="w-full lg:w-1/2 relative flex justify-center">
                     {/* <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full -z-10" /> */}
 
                     <div className="relative w-full max-w-[420px] sm:max-w-[500px]">

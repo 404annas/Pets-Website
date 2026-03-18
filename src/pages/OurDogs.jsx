@@ -5,10 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import poodle11 from "../assets/poodle11.jfif"
 import poodle12 from "../assets/poodle12.jfif"
 import poodle13 from "../assets/poodle13.jfif"
-import poodle14 from "../assets/poodle14.jfif"
-import poodle15 from "../assets/poodle15.jfif"
-import poodle16 from "../assets/poodle16.jfif"
-import poodle19 from "../assets/poodle19.jfif"
+import poodle14 from "../assets/poodle20.jfif"
+import poodle15 from "../assets/middle.jpeg"
+import poodle16 from "../assets/poodle9.jfif"
+import poodle19 from "../assets/poodle1.jfif"
+import poodle5 from "../assets/poodle5.jfif"
+import poodle22 from"../assets/poodle22.jfif"
+import poodle25 from "../assets/poodle25.jfif"
 
 const OurDogs = () => {
     const [filter, setFilter] = useState('all');
@@ -29,7 +32,7 @@ const OurDogs = () => {
             bestTrait: "Intuitive connection",
             loves: "Morning porch coffee",
             knownFor: "Her mahogany coat",
-            img: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=100&w=1000"
+            img: poodle5
         },
         {
             id: 2,
@@ -44,7 +47,7 @@ const OurDogs = () => {
             bestTrait: "Calm confidence",
             loves: "Plush toys",
             knownFor: "Expressive eyes",
-            img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=100&w=1000"
+            img: poodle22
         },
         {
             id: 3,
@@ -59,7 +62,7 @@ const OurDogs = () => {
             bestTrait: "High adaptability",
             loves: "Chasing balls",
             knownFor: "Endless energy",
-            img: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvb2RsZXxlbnwwfHwwfHx8MA%3D%3D"
+            img: poodle11
         }
     ];
 
@@ -77,7 +80,7 @@ const OurDogs = () => {
             bestTrait: "Gentle soul",
             loves: "Playing fetch",
             knownFor: "Incredible pigment",
-            img: "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=100&w=1000"
+            img: poodle25
         }
     ];
 

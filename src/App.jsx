@@ -34,6 +34,7 @@ import Benefits from './components/Benifits';
 import PetsSlider from './components/PetsSlider';
 import FloatingIcons from './components/FloatingIcons';
 import FancyPoodles from './pages/FancyPoodles';
+import HomeGallery from './components/HomeGallery';
 
 const Home = () => (
   <>
@@ -48,6 +49,7 @@ const Home = () => (
     <Mentorship />
     <ExploreProgram />
     <Testimonials />
+    <HomeGallery />
     <ContactUs />
   </>
 );
