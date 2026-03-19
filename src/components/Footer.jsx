@@ -30,7 +30,7 @@ const Footer = () => {
     return (
         <footer className="bg-pink-100 text-white pt-10 pb-8 px-6 md:px-10">
             {/* Top Section: Grid Layout */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
                 {/* Column 1: Logo & Contact */}
                 <div className="lg:col-span-1">
@@ -104,7 +104,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 5: Follow & Donation */}
-                <div>
+                {/* <div>
                     <h3 className="text-xl text-pink-700 font-bold mb-6">Follow Us</h3>
                     <div className="flex gap-3 mb-10">
                         <div className="bg-pink-700 p-2 rounded-full text-pink-300 cursor-pointer hover:scale-110 transition-transform duration-300">
@@ -124,7 +124,7 @@ const Footer = () => {
                     <button className="bg-pink-700 text-white font-bold px-8 py-4 rounded-full hover:bg-pink-800 transition-all duration-300 shadow-sm transform hover:-translate-y-1 cursor-pointer">
                         Donate Today <span className='text-xs'>(Coming Soon)</span>
                     </button>
-                </div>
+                </div> */}
             </div>
 
             {/* Bottom Bar: Copyright & Links */}

@@ -1,11 +1,29 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Phone, ChevronDown, LoaderCircle } from "lucide-react";
 import contactMain from "../assets/poodle11.jfif";
 
 const ContactUs = () => {
+    const initialFormData = {
+        name: "",
+        email: "",
+        inquiryType: "",
+        message: "",
+    };
+
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [activePill, setActivePill] = useState(null);
+    const [formData, setFormData] = useState(initialFormData);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState({
+        type: "",
+        text: "",
+    });
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 1023px)");
@@ -23,12 +41,75 @@ const ContactUs = () => {
         return () => mediaQuery.removeEventListener("change", updateScreenSize);
     }, []);
 
+    useEffect(() => {
+        if (submitMessage.type !== "success") {
+            return undefined;
+        }
+
+        const timeoutId = window.setTimeout(() => {
+            setSubmitMessage({ type: "", text: "" });
+        }, 3000);
+
+        return () => window.clearTimeout(timeoutId);
+    }, [submitMessage]);
+
     const pillVariants = {
         initial: { width: 56 },
         hover: {
             width: "auto",
             transition: { duration: 0.3, ease: "easeOut" },
         },
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData((current) => ({
+            ...current,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSubmitMessage({ type: "", text: "" });
+
+        if (!serviceId || !templateId || !publicKey) {
+            setSubmitMessage({
+                type: "error",
+                text: "Email service is not configured yet. Please add the EmailJS environment values.",
+            });
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            await emailjs.send(
+                serviceId,
+                templateId,
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    inquiry_type: formData.inquiryType,
+                    message: formData.message,
+                },
+                publicKey
+            );
+
+            setFormData(initialFormData);
+            setSubmitMessage({
+                type: "success",
+                text: "We have received your inquiry and will get back to you soon.",
+            });
+        } catch (error) {
+            setSubmitMessage({
+                type: "error",
+                text: "Something went wrong while sending your inquiry. Please try again.",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -59,13 +140,19 @@ const ContactUs = () => {
                         </h2>
                     </div>
 
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                         {[
-                            { label: "Name *", placeholder: "Enter your name", type: "text" },
+                            {
+                                label: "Name *",
+                                placeholder: "Enter your name",
+                                type: "text",
+                                name: "name",
+                            },
                             {
                                 label: "Email *",
                                 placeholder: "Enter your email",
                                 type: "email",
+                                name: "email",
                             },
                         ].map((field) => (
                             <div key={field.label}>
@@ -73,8 +160,12 @@ const ContactUs = () => {
                                     {field.label}
                                 </label>
                                 <input
+                                    name={field.name}
                                     type={field.type}
                                     placeholder={field.placeholder}
+                                    value={formData[field.name]}
+                                    onChange={handleChange}
+                                    required
                                     className="w-full mt-2 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-pink-500"
                                 />
                             </div>
@@ -85,29 +176,35 @@ const ContactUs = () => {
                                 Nature of Inquiry *
                             </label>
                             <div className="relative mt-2">
-                                <select className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-pink-500 text-gray-700">
-                                    <option value="" disabled selected>Select Inquiry Type...</option>
+                                <select
+                                    name="inquiryType"
+                                    value={formData.inquiryType}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-pink-500 text-gray-700"
+                                >
+                                    <option value="" disabled>Select Inquiry Type...</option>
 
                                     <optgroup label="New Puppy Inquiry">
-                                        <option>Toy Poodle (Red/Apricot)</option>
-                                        <option>Join the Waiting List</option>
-                                        <option>Service/Therapy Potential</option>
+                                        <option value="Toy Poodle (Red/Apricot)">Toy Poodle (Red/Apricot)</option>
+                                        <option value="Join the Waiting List">Join the Waiting List</option>
+                                        <option value="Service/Therapy Potential">Service/Therapy Potential</option>
                                     </optgroup>
 
                                     <optgroup label="Specific Pairings / Archive">
-                                        <option>Ruby x Jasper Line</option>
-                                        <option>Bella x Winston Line</option>
-                                        <option>Penny x Oliver Line</option>
-                                        <option>Daisy x Max Line</option>
+                                        <option value="Ruby x Jasper Line">Ruby x Jasper Line</option>
+                                        <option value="Bella x Winston Line">Bella x Winston Line</option>
+                                        <option value="Penny x Oliver Line">Penny x Oliver Line</option>
+                                        <option value="Daisy x Max Line">Daisy x Max Line</option>
                                     </optgroup>
 
                                     <optgroup label="Health & Contract">
-                                        <option>Health Guarantee Questions</option>
-                                        <option>Contract Review</option>
+                                        <option value="Health Guarantee Questions">Health Guarantee Questions</option>
+                                        <option value="Contract Review">Contract Review</option>
                                     </optgroup>
 
                                     <optgroup label="Other">
-                                        <option>General Question</option>
+                                        <option value="General Question">General Question</option>
                                     </optgroup>
                                 </select>
                                 <ChevronDown
@@ -122,15 +219,42 @@ const ContactUs = () => {
                                 Message
                             </label>
                             <textarea
+                                name="message"
                                 rows={4}
                                 placeholder="Write your message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                                 className="w-full mt-2 border border-gray-200 rounded-xl px-4 py-3 resize-none focus:outline-none focus:border-pink-500"
                             />
                         </div>
 
-                        <button className="w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-full transition-all cursor-pointer duration-300 shadow-lg shadow-blue-500/20">
-                            Send Inquiry
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full mt-4 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-bold py-4 rounded-full transition-all cursor-pointer duration-300 shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2"
+                        >
+                            {isSubmitting ? (
+                                <>
+                                    <LoaderCircle size={20} className="animate-spin" />
+                                    Sending...
+                                </>
+                            ) : (
+                                "Send Inquiry"
+                            )}
                         </button>
+
+                        {submitMessage.text && (
+                            <p
+                                className={`text-sm font-medium ${
+                                    submitMessage.type === "success"
+                                        ? "text-green-600"
+                                        : "text-red-500"
+                                }`}
+                            >
+                                {submitMessage.text}
+                            </p>
+                        )}
                     </form>
                 </div>
 
