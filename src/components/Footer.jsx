@@ -64,8 +64,8 @@ const Footer = () => {
                             <div className="bg-pink-700 p-2.5 rounded-full text-pink-300">
                                 <Mail size={18} strokeWidth={3} />
                             </div>
-                            <a href="mailto:info@usapoodles.com" className="text-gray-600 hover:text-gray-800 transition-colors">
-                                info@usapoodles.com
+                            <a href="mailto:socallhass@gmail.com" className="text-gray-600 hover:text-gray-800 transition-colors">
+                                socallhass@gmail.com
                             </a>
                         </div>
                     </div>
