@@ -35,6 +35,7 @@ import PetsSlider from './components/PetsSlider';
 import FloatingIcons from './components/FloatingIcons';
 import FancyPoodles from './pages/FancyPoodles';
 import HomeGallery from './components/HomeGallery';
+import Gallery from './pages/Gallery';
 
 const Home = () => (
   <>
@@ -73,6 +74,7 @@ const App = () => {
           <Route path='/past-litters' element={<PastLitters />}/>
           <Route path='/past-litters/:id' element={<LitterShowcase />}/>
           <Route path='/galleries' element={<GalleryHub />}/>
+          <Route path='/gallery' element={<Gallery />}/>
           <Route path='/our-dogs' element={<OurDogs />}/>
           <Route path='/dogs-page' element={<OurDogsSubpage />}/>
           <Route path='/the-red-story' element={<RedPoodleGenetics />}/>
