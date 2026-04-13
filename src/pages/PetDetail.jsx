@@ -43,8 +43,8 @@ const PetDetail = () => {
                             alt={pet.name}
                             className="w-full h-[400px] md:h-[470px] object-cover object-center rounded-[20px] md:rounded-[30px] shadow-sm transition-all duration-500"
                         />
-                        <div className="absolute top-6 left-6 bg-pink-50 fr backdrop-blur-sm px-4 py-2 rounded-full text-brand-pink-500 font-bold text-xs uppercase tracking-widest shadow-sm">
-                            Available for Reservation
+                        <div className="absolute top-4 left-4 bg-pink-50 fr backdrop-blur-sm px-4 py-2 rounded-full text-brand-pink-500 font-bold text-sm uppercase shadow-sm">
+                            SOLD
                         </div>
                     </div>
 
@@ -85,10 +85,11 @@ const PetDetail = () => {
                                 </span>
 
                                 {pet.adoptionFee && (
-                                    <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none">
-                                        {pet.adoptionFee}
-                                    </span>
-                                )}
+                                <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none">
+                                    ${pet.adoptionFee} - <span className="text-brand-pink-700 uppercase">SOLD</span>
+                                </span>
+                            )}
+                            
                             </div>
                         </div>
                     </div>
@@ -203,7 +204,7 @@ const PetDetail = () => {
                                 { l: "Projected Adult Weight", v: pet.projectedAdultWeight },
                                 { l: "Father Weight", v: pet.fatherWeight },
                                 { l: "Mother Weight", v: pet.motherWeight },
-                                { l: "Adoption Fee", v: "$" + (pet.adoptionFee || "5,000") },
+                                { l: "Adoption Fee", v: "$5,000 — SOLD" },
                             ].map((item, i) => (
                                 <div key={i} className="flex justify-between items-center p-4 bg-white rounded-2xl border border-brand-blue-500">
                                     <span className="text-brand-blue-700 fr font-medium text-sm">{item.l}</span>

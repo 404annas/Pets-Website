@@ -22,7 +22,7 @@ const sellingPet = {
     id: 1,
     name: "Ricky",
     breed: "TOY POODLE",
-    availability: "Available",
+    availability: "SOLD",
     color: "Deep Red",
     size: "Small Toy Class",
     birthdate: "Dec 15, 2025",
@@ -58,7 +58,7 @@ const SellingCard = ({ pet }) => {
                 <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`}>
                     <div className="group relative h-full w-full rounded-[40px] overflow-hidden shadow-md">
                         <img loading="lazy" src={pet.image} alt={pet.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-[10px] uppercase tracking-widest fr z-10 shadow-sm border border-pink-200">
+                        <div className="absolute top-6 left-6 bg-white/90 px-4 py-1.5 rounded-full text-pink-700 font-bold text-xs uppercase fr z-10 shadow-sm border border-pink-200">
                             {pet.availability}
                         </div>
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white py-4 rounded-3xl text-center shadow-sm z-10">

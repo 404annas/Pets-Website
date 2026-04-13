@@ -23,7 +23,7 @@ const petData = [
         id: 1,
         name: "Ricky",
         breed: "TOY POODLE",
-        availability: "Available",
+        availability: "SOLD",
         color: "Deep Red",
         size: "Small Toy Class",
         birthdate: "Dec 15, 2025",
