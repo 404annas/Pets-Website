@@ -115,7 +115,7 @@ const Benefits = () => {
 
             <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
                 <h2 className="text-4xl md:text-5xl animate-pulse uppercase fr font-black bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent mb-4">
-                    Selling Now
+                    Sold
                 </h2>
             </div>
 

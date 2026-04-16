@@ -12,12 +12,34 @@ import poodle8 from "../assets/poodle3.jfif"
 import poodle10 from "../assets/poodle13.jfif"
 import poodle9 from "../assets/small1.jfif"
 import poodle11 from "../assets/small2.jfif"
-import poodle12 from "../assets/point2.jfif"
 import poodle13 from "../assets/poodle21.jfif"
 import poodle14 from "../assets/poodle22.jfif"
 import poodle15 from "../assets/poodle23.jfif"
 import poodle16 from "../assets/poodle24.jfif"
 import poodle17 from "../assets/poodle25.jfif"
+
+import dan1 from "../assets/dan1.jpeg";
+import dan2 from "../assets/dan2.jpeg";
+import dan3 from "../assets/dan3.jpeg";
+import dan4 from "../assets/dan4.jpeg";
+import dan5 from "../assets/dan5.jpeg";
+import dan6 from "../assets/dan6.jpeg";
+import dan7 from "../assets/dan7.jpeg";
+import dan8 from "../assets/dan8.jpeg";
+import dan9 from "../assets/dan9.jpeg";
+import dan10 from "../assets/dan10.jpeg";
+import dan11 from "../assets/dan11.jpeg";
+import dan12 from "../assets/dan12.jpeg";
+import dan13 from "../assets/dan13.jpeg";
+import dan14 from "../assets/dan14.jpeg";
+import dan15 from "../assets/dan15.jpeg";
+import dan16 from "../assets/dan16.jpeg";
+import dan17 from "../assets/dan17.jpeg";   
+
+import danVid1 from "../assets/danVid1.mp4";
+import danVid2 from "../assets/danVid2.mp4";
+import danVid3 from "../assets/danVid3.mp4";
+import danVid4 from "../assets/danVid4.mp4";
 
 import poodleVideo1 from "../assets/video1.mp4";
 import poodleVideo2 from "../assets/video2.mp4";
@@ -28,6 +50,14 @@ import poodleVideo6 from "../assets/video6.mp4";
 import poodleVideo7 from "../assets/video7.mp4";
 import poodleVideo8 from "../assets/video8.mp4";
 import poodleVideo9 from "../assets/video9.mp4";
+
+const danGallery = [
+    dan2, dan3, dan4, dan5, dan6, dan7, dan8, dan9, dan10, dan11, dan12, dan13, dan14, dan15, dan16, dan17
+];
+
+const danVideos = [
+    danVid1, danVid2, danVid3, danVid4
+];
 
 export const petData = [
     {
@@ -51,34 +81,10 @@ export const petData = [
         goodWithKids: "Yes",
         image: mainPoodle,
         gallery: [
-            poodle1,
-            poodle2,
-            poodle3,
-            poodle4,
-            poodle5,
-            poodle6,
-            poodle7,
-            poodle8,
-            poodle10,
-            poodle9,
-            poodle11,
-            // poodle12,
-            poodle13,
-            poodle14,
-            poodle15,
-            poodle16,
-            poodle17
+            poodle1, poodle2, poodle3, poodle4, poodle5, poodle6, poodle7, poodle8, poodle10, poodle9, poodle11, poodle13, poodle14, poodle15, poodle16, poodle17
         ],
         videos: [
-            poodleVideo1,
-            poodleVideo2,
-            poodleVideo3,
-            poodleVideo4,
-            poodleVideo5,
-            poodleVideo6,
-            poodleVideo7,
-            poodleVideo8,
-            poodleVideo9
+            poodleVideo1, poodleVideo2, poodleVideo3, poodleVideo4, poodleVideo5, poodleVideo6, poodleVideo7, poodleVideo8, poodleVideo9
         ],
         health: [
             { name: "Health Check", icon: Heart, active: true },
@@ -89,94 +95,68 @@ export const petData = [
             { name: "De-sexed", icon: Thermometer, active: false },
         ]
     },
-    // {
-    //     id: 2,
-    //     name: "Rufus",
-    //     breed: "MINIATURE POODLE",
-    //     color: "Rich Red with Black Points",
-    //     estimatedSize: "Miniature Class",
-    //     birthdate: "Oct 15, 2025",
-    //     goHomeWindow: "Dec 10–12, 2025",
-    //     personalitySnapshot: "Active explorer, highly responsive to training and play.",
-    //     description: "Rufus is an energetic Miniature Poodle who loves outdoor adventures. He is very responsive to training and has a playful spirit that is contagious. He weighs around 14 pounds and is great with active families.",
-    //     weight: "14 lbs",
-    //     gender: "Male",
-    //     age: "6 months",
-    //     adoptionFee: "$1000",
-    //     goodWithDogs: "Yes",
-    //     goodWithKids: "Yes",
-    //     image: "https://images.unsplash.com/photo-1602165640367-68676c0ec5f0?w=1000&q=80",
-    //     gallery: [
-    //         "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=1000&q=80",
-    //         "https://images.unsplash.com/photo-1534361960057-19889db9621e?w=1000&q=80"
-    //     ],
-    //     health: [
-    //         { name: "Health Check", icon: Heart, active: true },
-    //         { name: "Wormed", icon: Pill, active: true },
-    //         { name: "Microchip", icon: Cpu, active: true },
-    //         { name: "Heartworm treated", icon: ShieldCheck, active: true },
-    //         { name: "Vaccinated", icon: Activity, active: true },
-    //         { name: "De-sexed", icon: Thermometer, active: true },
-    //     ]
-    // },
-    // {
-    //     id: 3,
-    //     name: "Luna",
-    //     breed: "STANDARD POODLE",
-    //     color: "Apricot Red",
-    //     estimatedSize: "Standard Class",
-    //     birthdate: "Sept 20, 2025",
-    //     goHomeWindow: "Waitlist",
-    //     personalitySnapshot: "Graceful, calm, and highly intelligent companion.",
-    //     description: "Luna is a graceful Standard Poodle. She is highly intelligent and calm. She enjoys long walks and being part of family activities. Luna is one year old and weighs around 45 pounds.",
-    //     weight: "45 lbs",
-    //     gender: "Female",
-    //     age: "1 year",
-    //     adoptionFee: "$1500",
-    //     goodWithDogs: "Yes",
-    //     goodWithKids: "Yes",
-    //     image: "https://images.unsplash.com/photo-1614261812340-5ee9a3ed33a3?w=1000&q=80",
-    //     gallery: [
-    //         "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&q=80",
-    //         "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=1000&q=80"
-    //     ],
-    //     health: [
-    //         { name: "Health Check", icon: Heart, active: true },
-    //         { name: "Wormed", icon: Pill, active: true },
-    //         { name: "Microchip", icon: Cpu, active: true },
-    //         { name: "Heartworm treated", icon: ShieldCheck, active: true },
-    //         { name: "Vaccinated", icon: Activity, active: true },
-    //         { name: "De-sexed", icon: Thermometer, active: true },
-    //     ]
-    // },
-    // {
-    //     id: 4,
-    //     name: "Charlie",
-    //     breed: "TOY POODLE",
-    //     color: "Deep Red",
-    //     estimatedSize: "Toy Standard",
-    //     birthdate: "October 15, 2025",
-    //     goHomeWindow: "December 10–12, 2025",
-    //     personalitySnapshot: "Playful explorer, loves gentle games and adventure.",
-    //     description: "Charlie is a small Toy Poodle with a big personality. He is very brave and loves to explore. He is 5 months old and is perfect for someone looking for a tiny companion with lots of character.",
-    //     weight: "7 lbs",
-    //     gender: "Male",
-    //     age: "5 months",
-    //     adoptionFee: "$1100",
-    //     goodWithDogs: "Yes",
-    //     goodWithKids: "Yes",
-    //     image: "https://images.unsplash.com/photo-1625760492002-15adf1fe003e?w=1000&q=80",
-    //     gallery: [
-    //         "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?w=1000&q=80",
-    //         "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1000&q=80"
-    //     ],
-    //     health: [
-    //         { name: "Health Check", icon: Heart, active: true },
-    //         { name: "Wormed", icon: Pill, active: true },
-    //         { name: "Microchip", icon: Cpu, active: true },
-    //         { name: "Heartworm treated", icon: ShieldCheck, active: true },
-    //         { name: "Vaccinated", icon: Activity, active: true },
-    //         { name: "De-sexed", icon: Thermometer, active: false },
-    //     ]
-    // }
+    {
+        id: 2,
+        name: "YAN",
+        breed: "TOY POODLE",
+        color: "Deep Red",
+        estimatedSize: "Small Toy Class",
+        birthdate: "January 10, 2026",
+        parents: "Poppy and Pepe",
+        personalitySnapshot: "Small and sweet, loves to play and cuddle.",
+        description: "YAN is a tiny and adorable Toy Poodle from Poppy and Pepe. She has a sweet temperament and loves being the center of attention. Perfect for a loving home looking for a small companion.",
+        weight: "30 oz",
+        projectedAdultWeight: "4.5 - 5 pounds",
+        fatherWeight: "5.5 lb",
+        motherWeight: "5 lb",
+        gender: "Female",
+        age: "3 months",
+        adoptionFee: "5000",
+        status: "AVAILABLE",
+        goodWithDogs: "Yes",
+        goodWithKids: "Yes",
+        image: dan1,
+        gallery: danGallery,
+        videos: danVideos,
+        health: [
+            { name: "Health Check", icon: Heart, active: true },
+            { name: "Wormed", icon: Pill, active: true },
+            { name: "Microchip", icon: Cpu, active: true },
+            { name: "Heartworm treated", icon: ShieldCheck, active: true },
+            { name: "Vaccinated", icon: Activity, active: true },
+            { name: "De-sexed", icon: Thermometer, active: false },
+        ]
+    },
+    {
+        id: 3,
+        name: "DAN DAN",
+        breed: "TOY POODLE",
+        color: "Deep Red",
+        estimatedSize: "Toy Class",
+        birthdate: "January 10, 2026",
+        parents: "Poppy and Pepe",
+        personalitySnapshot: "The bigger sister, energetic, friendly, and smart.",
+        description: "DAN DAN is the energetic bigger sister of YAN, born to Poppy and Pepe. She is highly intelligent and enjoys exploring. She's a wonderful companion with a great personality.",
+        weight: "40 oz",
+        projectedAdultWeight: "5.5 - 6 pounds",
+        fatherWeight: "5.5 lb",
+        motherWeight: "5 lb",
+        gender: "Female",
+        age: "3 months",
+        adoptionFee: "4500",
+        status: "AVAILABLE",
+        goodWithDogs: "Yes",
+        goodWithKids: "Yes",
+        image: dan4,
+        gallery: danGallery, // Showing 17 images total
+        videos: danVideos, // Showing 4 videos total
+        health: [
+            { name: "Health Check", icon: Heart, active: true },
+            { name: "Wormed", icon: Pill, active: true },
+            { name: "Microchip", icon: Cpu, active: true },
+            { name: "Heartworm treated", icon: ShieldCheck, active: true },
+            { name: "Vaccinated", icon: Activity, active: true },
+            { name: "De-sexed", icon: Thermometer, active: false },
+        ]
+    }
 ];

@@ -43,8 +43,8 @@ const PetDetail = () => {
                             alt={pet.name}
                             className="w-full h-[400px] md:h-[470px] object-cover object-center rounded-[20px] md:rounded-[30px] shadow-sm transition-all duration-500"
                         />
-                        <div className="absolute top-4 left-4 bg-pink-50 fr backdrop-blur-sm px-4 py-2 rounded-full text-brand-pink-500 font-bold text-sm uppercase shadow-sm">
-                            SOLD
+                        <div className={`absolute top-4 left-4 ${pet.status === 'SOLD' ? 'bg-pink-50 text-brand-pink-500' : 'bg-green-50 text-green-600'} fr backdrop-blur-sm px-4 py-2 rounded-full font-bold text-sm uppercase shadow-sm`}>
+                            {pet.status}
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@ const PetDetail = () => {
 
                                 {pet.adoptionFee && (
                                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none">
-                                    ${pet.adoptionFee} - <span className="text-brand-pink-700 uppercase">SOLD</span>
+                                    ${pet.adoptionFee} - <span className={pet.status === 'SOLD' ? 'text-brand-pink-700' : 'text-green-600'}>{pet.status}</span>
                                 </span>
                             )}
                             
@@ -204,7 +204,7 @@ const PetDetail = () => {
                                 { l: "Projected Adult Weight", v: pet.projectedAdultWeight },
                                 { l: "Father Weight", v: pet.fatherWeight },
                                 { l: "Mother Weight", v: pet.motherWeight },
-                                { l: "Adoption Fee", v: "$5,000 — SOLD" },
+                                { l: "Adoption Fee", v: `$${pet.adoptionFee} — ${pet.status}` },
                             ].map((item, i) => (
                                 <div key={i} className="flex justify-between items-center p-4 bg-white rounded-2xl border border-brand-blue-500">
                                     <span className="text-brand-blue-700 fr font-medium text-sm">{item.l}</span>
