@@ -60,7 +60,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 1. Cat Card (Left - Purple) */}
-                <div className="w-56 h-96 flex items-end justify-center overflow-hidden rounded-full pt-10 sm:mt-12 md:mt-16 relative -rotate-12">
+                <div className="w-70 h-[450px] flex items-end justify-center overflow-hidden rounded-full pt-10 sm:mt-12 md:mt-16 relative -rotate-12">
                     {/* REPLACE SRC WITH TRANSPARENT CAT PNG */}
                     <img
                         loading='lazy'
@@ -71,7 +71,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 2. Dog Card (Center - Blue - Tallest) */}
-                <div className="w-70 h-[500px] rounded-full flex items-end justify-center overflow-hidden pt-10 md:pt-16 relative z-10">
+                <div className="w-80 h-[550px] rounded-full flex items-end justify-center overflow-hidden pt-10 md:pt-16 relative z-10">
                     {/* REPLACE SRC WITH TRANSPARENT DOG PNG */}
                     <img
                         loading='lazy'
@@ -82,7 +82,7 @@ const Hero2 = () => {
                 </div>
 
                 {/* 3. Rabbit Card (Right - Yellow) */}
-                <div className="w-56 h-96 rounded-full flex items-end justify-center overflow-hidden pt-10 sm:mt-12 md:mt-16 relative rotate-12">
+                <div className="w-70 h-[450px] rounded-full flex items-end justify-center overflow-hidden pt-10 sm:mt-12 md:mt-16 relative rotate-12">
                     {/* REPLACE SRC WITH TRANSPARENT RABBIT PNG */}
                     <img
                         loading='lazy'
