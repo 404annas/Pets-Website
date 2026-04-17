@@ -43,7 +43,7 @@ const PetDetail = () => {
                             alt={pet.name}
                             className="w-full h-[400px] md:h-[470px] object-cover object-center rounded-[20px] md:rounded-[30px] shadow-sm transition-all duration-500"
                         />
-                        <div className={`absolute top-4 left-4 ${pet.status === 'SOLD' ? 'bg-pink-50 text-brand-pink-500' : 'bg-green-50 text-green-600'} fr backdrop-blur-sm px-4 py-2 rounded-full font-bold text-sm uppercase shadow-sm`}>
+                        <div className={`absolute top-4 left-4 ${pet.status === 'SOLD' ? 'bg-pink-50 text-brand-pink-500 fr' : 'bg-blue-50 text-brand-blue-500'} fr backdrop-blur-sm px-4 py-2 rounded-full font-bold text-sm uppercase shadow-sm`}>
                             {pet.status}
                         </div>
                     </div>
@@ -85,8 +85,8 @@ const PetDetail = () => {
                                 </span>
 
                                 {pet.adoptionFee && (
-                                <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none">
-                                    ${pet.adoptionFee} - <span className={pet.status === 'SOLD' ? 'text-brand-pink-700' : 'text-green-600'}>{pet.status}</span>
+                                <span className="text-lg sm:text-xl md:text-2xl font-bold text-brand-blue-700 leading-none fr">
+                                    ${pet.adoptionFee} - <span className={pet.status === 'SOLD' ? 'text-brand-pink-700' : 'text-brand-blue-700'}>{pet.status}</span>
                                 </span>
                             )}
                             

@@ -122,7 +122,7 @@ export const petData = [
             { name: "Health Check", icon: Heart, active: true },
             { name: "Wormed", icon: Pill, active: true },
             { name: "Microchip", icon: Cpu, active: true },
-            { name: "Heartworm treated", icon: ShieldCheck, active: true },
+            { name: "Heartworm", icon: ShieldCheck, active: true },
             { name: "Vaccinated", icon: Activity, active: true },
             { name: "De-sexed", icon: Thermometer, active: false },
         ]
@@ -154,7 +154,7 @@ export const petData = [
             { name: "Health Check", icon: Heart, active: true },
             { name: "Wormed", icon: Pill, active: true },
             { name: "Microchip", icon: Cpu, active: true },
-            { name: "Heartworm treated", icon: ShieldCheck, active: true },
+            { name: "Heartworm", icon: ShieldCheck, active: true },
             { name: "Vaccinated", icon: Activity, active: true },
             { name: "De-sexed", icon: Thermometer, active: false },
         ]
