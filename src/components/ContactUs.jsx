@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, ChevronDown, LoaderCircle } from "lucide-react";
-import contactMain from "../assets/poodle11.jfif";
+import { client, urlFor } from "../lib/sanity"; // Sanity Client
+import contactMain from "../assets/poodle11.jfif"; // Fallback Image
 
 const ContactUs = () => {
     const initialFormData = {
@@ -16,6 +17,7 @@ const ContactUs = () => {
     const [activePill, setActivePill] = useState(null);
     const [formData, setFormData] = useState(initialFormData);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [sanityImg, setSanityImg] = useState(contactMain); // Default to local image
     const [submitMessage, setSubmitMessage] = useState({
         type: "",
         text: "",
@@ -26,6 +28,13 @@ const ContactUs = () => {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     useEffect(() => {
+        // --- Fetch Image from Sanity (Just like Hero/Benefits) ---
+        client.fetch(`*[_type == "contactSection"][0]`).then((data) => {
+            if (data && data.contactImage) {
+                setSanityImg(urlFor(data.contactImage).url());
+            }
+        });
+
         const mediaQuery = window.matchMedia("(max-width: 1023px)");
         const updateScreenSize = () => {
             const small = mediaQuery.matches;
@@ -129,7 +138,7 @@ const ContactUs = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-                {/* LEFT FORM */}
+                {/* LEFT FORM - (Same as before) */}
                 <div className="w-full lg:w-1/2 border-2 border-blue-500 rounded-[35px] sm:rounded-[45px] p-6 sm:p-8">
                     <div className="mb-6">
                         <p className="uppercase text-blue-400 font-medium tracking-widest text-xs mb-2">
@@ -258,18 +267,16 @@ const ContactUs = () => {
                     </form>
                 </div>
 
-                {/* RIGHT IMAGE */}
+                {/* RIGHT IMAGE - (NOW FETCHED FROM SANITY) */}
                 <div className="w-full lg:w-1/2 relative flex justify-center">
-                    {/* <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full -z-10" /> */}
-
                     <div className="relative w-full max-w-[420px] sm:max-w-[500px]">
                         <img
-                            src={contactMain}
+                            src={sanityImg} // This comes from Sanity now
                             alt="Contact"
                             className="w-full h-auto object-contain"
                         />
 
-                        {/* Pills */}
+                        {/* Pills - (Same as before) */}
                         {[
                             {
                                 icon: <Mail size={22} />,

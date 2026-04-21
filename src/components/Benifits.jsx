@@ -1,43 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { client, urlFor } from "../lib/sanity"; // Sanity Client
 import {
-    Heart,
-    Pill,
-    Cpu,
-    ShieldCheck,
-    Activity,
-    Thermometer
+    Heart, Pill, Cpu, ShieldCheck, Activity, Thermometer
 } from 'lucide-react';
 
-import mainPoodle from "../assets/mainPoodle.jfif";
+import mainPoodle from "../assets/mainPoodle.jfif"; // Fallback image
 
 const BackgroundPaw = ({ className, color }) => (
     <svg className={`lg:block hidden absolute pointer-events-none z-0 ${className}`} fill={color || "#EC4899"} viewBox="0 0 30 30">
         <path d="M22.1 19.3c-1.4-2.7-4.1-4.4-7.1-4.4-3 0-5.7 1.7-7.1 4.4-1.2 2.2-1.2 4.8 0 7 1.4 2.7 4.1 4.4 7.1 4.4 3 0 5.7-1.7 7.1-4.4 1.2-2.2 1.2-4.8 0-7zM9.6 11.5c2.2 0 3.9-1.7 3.9-3.9s-1.7-3.9-3.9-3.9-3.9 1.8-3.9 3.9 1.8 3.9 3.9 3.9zm10.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zM4.1 16.2c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9zm21.8 0c2.2 0 3.9-1.7 3.9-3.9 0-2.2-1.7-3.9-3.9-3.9s-3.9 1.8-3.9 3.9c0 2.2 1.8 3.9 3.9 3.9z" />
     </svg>
 );
-
-const sellingPet = {
-    id: 1,
-    name: "Ricky",
-    breed: "TOY POODLE",
-    availability: "SOLD",
-    color: "Deep Red",
-    size: "Small Toy Class",
-    birthdate: "Dec 15, 2025",
-    weight: "35 oz",
-    personality: "Warm snuggler, curious about sounds.",
-    health: [
-        { id: 'h1', name: "Heart", icon: Heart, active: true },
-        { id: 'h2', name: "Meds", icon: Pill, active: false },
-        { id: 'h3', name: "Chip", icon: Cpu, active: true },
-        { id: 'h4', name: "Vax", icon: ShieldCheck, active: true },
-        { id: 'h5', name: "Pulse", icon: Activity, active: true },
-        { id: 'h6', name: "Check", icon: Thermometer, active: true },
-    ],
-    image: mainPoodle
-};
 
 const SellingCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -102,9 +77,41 @@ const SellingCard = ({ pet }) => {
 };
 
 const Benefits = () => {
+    const [sanityImage, setSanityImage] = useState(mainPoodle);
+
+    useEffect(() => {
+        // Fetch Image from Sanity soldSection document
+        client.fetch(`*[_type == "soldSection"][0]`).then((data) => {
+            if (data && data.soldPetImage) {
+                setSanityImage(urlFor(data.soldPetImage).url());
+            }
+        });
+    }, []);
+
+    const sellingPet = {
+        id: 1,
+        name: "Ricky",
+        breed: "TOY POODLE",
+        availability: "SOLD",
+        color: "Deep Red",
+        size: "Small Toy Class",
+        birthdate: "Dec 15, 2025",
+        weight: "35 oz",
+        personality: "Warm snuggler, curious about sounds.",
+        health: [
+            { id: 'h1', name: "Heart", icon: Heart, active: true },
+            { id: 'h2', name: "Meds", icon: Pill, active: false },
+            { id: 'h3', name: "Chip", icon: Cpu, active: true },
+            { id: 'h4', name: "Vax", icon: ShieldCheck, active: true },
+            { id: 'h5', name: "Pulse", icon: Activity, active: true },
+            { id: 'h6', name: "Check", icon: Thermometer, active: true },
+        ],
+        image: sanityImage // Dynamic Image from Sanity
+    };
+
     return (
         <section className="relative w-full bg-gradient-to-b from-white to-pink-50 flex flex-col items-center py-6 overflow-hidden">
-
+            {/* Background Paws remain exactly same */}
             <BackgroundPaw className="top-10 left-10 w-12 h-12 transform -rotate-12 opacity-60" color="#DB2777" />
             <BackgroundPaw className="top-32 left-40 w-16 h-16 transform rotate-45 opacity-40" color="#1D4ED8" />
             <BackgroundPaw className="bottom-20 left-20 w-14 h-14 transform -rotate-45 opacity-50" color="#DB2777" />
@@ -120,27 +127,16 @@ const Benefits = () => {
             </div>
 
             <div className="relative mt-4">
-                <svg
-                    className="absolute -top-15 -right-25 w-28 h-44 z-30 hidden md:block pointer-events-none"
-                    viewBox="0 0 80 180"
-                    fill="none"
-                >
+                {/* Arrow SVG remains exactly same */}
+                <svg className="absolute -top-15 -right-25 w-28 h-44 z-30 hidden md:block pointer-events-none" viewBox="0 0 80 180" fill="none">
                     <motion.path
                         d="M10 12 C42 -2 58 24 52 54 C46 84 34 108 24 125 M24 126 L13 112 M24 126 L38 118"
-                        stroke="#DB2777"
-                        strokeWidth="3"
-                        fill="transparent"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        stroke="#DB2777" strokeWidth="3" fill="transparent" strokeLinecap="round" strokeLinejoin="round"
+                        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeInOut" }}
                     />
                 </svg>
-
                 <SellingCard pet={sellingPet} />
             </div>
-
         </section>
     );
 };
