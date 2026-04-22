@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 export const client = createClient({
-  projectId: 'your_project_id', // Sanity dashboard se milega
+  projectId: 'm951hq80', // Sanity dashboard se milega
   dataset: 'production',
   useCdn: true,
   apiVersion: '2023-01-01',

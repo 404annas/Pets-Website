@@ -1,4 +1,5 @@
-import images from './images'
+import hero from './hero' 
+
 export const schemaTypes = [
-    images, // Yahan images ko add kar den
+    hero, // Ab Studio mein "Hero Section" ka alag dabba nazar aayega
 ]
