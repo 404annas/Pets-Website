@@ -12,6 +12,7 @@ import {
     CheckCircle2
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { client, urlFor } from "../lib/sanity"; // Sanity Connect
 
 import about1Img from "../assets/poodle8.jfif"
 import about1Img2 from "../assets/about2.jfif"
@@ -33,10 +34,16 @@ const testimonials = [
 const About = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
+    const [sanityData, setSanityData] = useState(null); // State for Sanity Images
 
     const navigate = useNavigate()
 
     useEffect(() => {
+        // Fetching Images from Sanity
+        client.fetch(`*[_type == "aboutPage"][0]`).then((data) => {
+            if (data) setSanityData(data);
+        });
+
         const handleResize = () => {
             if (window.innerWidth < 768) setVisibleCards(1);
             else setVisibleCards(3);
@@ -64,10 +71,10 @@ const About = () => {
             <section className="py-10 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14 md:gap-16">
                 <div className="w-full lg:w-1/2 relative">
                     <div className="relative z-10 w-[85%] h-[600px] overflow-hidden rounded-[60px] shadow-md">
-                        <img loading='lazy' src={about1Img} className="w-full h-full object-bottom object-cover" alt="Journey" />
+                        <img loading='lazy' src={sanityData?.journeyMain ? urlFor(sanityData.journeyMain).url() : about1Img} className="w-full h-full object-bottom object-cover" alt="Journey" />
                     </div>
                     <div className="absolute -bottom-10 -right-4 z-20 w-64 h-64 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
-                        <img loading='lazy' src={about1Img2} className="w-full h-full object-bottom object-cover" alt="Small Poodle" />
+                        <img loading='lazy' src={sanityData?.journeySmall ? urlFor(sanityData.journeySmall).url() : about1Img2} className="w-full h-full object-bottom object-cover" alt="Small Poodle" />
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2">
@@ -103,7 +110,6 @@ const About = () => {
             <section className="py-10 px-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center mb-10 gap-10 md:gap-20">
                     <div className="w-full lg:w-1/2">
-                        {/* <div className="w-16 h-16 bg-pink-200 animate-pulse rounded-2xl lg:block hidden"></div> */}
                         <p className="uppercase text-pink-700 font-semibold tracking-wider mt-10 lg:mt-0 text-xs mb-4">OUR HEARTFELT MISSION</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold fr text-[#333] leading-none mb-8">
                             <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Nurturing Lives,</span> Creating Bonds With Furry Pets
@@ -117,57 +123,18 @@ const About = () => {
                     </div>
                     <div className="w-full lg:w-1/2 relative">
                         <div className="w-[90%] h-[550px] overflow-hidden rounded-[60px] shadow-md">
-                            <img loading='lazy' src={about1Img3} className="w-full h-full object-cover" alt="Mission" />
+                            <img loading='lazy' src={sanityData?.missionMain ? urlFor(sanityData.missionMain).url() : about1Img3} className="w-full h-full object-cover" alt="Mission" />
                         </div>
                         <div className="absolute -bottom-12 -left-6 md:-left-12 w-72 h-72 border-[15px] border-white rounded-[50px] overflow-hidden shadow-md">
-                            <img loading='lazy' src={about1Img4} className="w-full h-full object-cover" alt="Pup" />
+                            <img loading='lazy' src={sanityData?.missionSmall ? urlFor(sanityData.missionSmall).url() : about1Img4} className="w-full h-full object-cover" alt="Pup" />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 3: IMPACT BY THE NUMBERS */}
-            {/* <section className="py-10 px-6 bg-white">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-20 items-center">
-                    <div className="w-full lg:w-1/2 grid grid-cols-2 gap-6 relative">
-                        <div className="w-full h-64 overflow-hidden rounded-[50px] shadow-md">
-                            <img loading='lazy' src="https://images.unsplash.com/photo-1594387974538-72145cc6c0c6?w=1000&q=100" className="w-full h-full object-cover" alt="Adoption" />
-                        </div>
-                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-blue-700 transition-all duration-300">
-                            <h3 className="text-5xl font-bold text-blue-700 group-hover:text-white mb-2">95%</h3>
-                            <p className="text-blue-700 font-bold text-xs uppercase group-hover:text-white">Adoption Success Rate</p>
-                        </div>
-                        <div className="bg-[#F9FFF0] flex flex-col items-center justify-center p-8 rounded-[50px] text-center group hover:bg-pink-700 transition-all duration-300">
-                            <h3 className="text-5xl font-bold text-pink-700 group-hover:text-white mb-2">98%</h3>
-                            <p className="text-pink-700 font-bold text-xs uppercase group-hover:text-white">Care Satisfaction</p>
-                        </div>
-                        <div className="w-full h-64 overflow-hidden rounded-[50px] shadow-md">
-                            <img loading='lazy' src="https://media.istockphoto.com/id/2208781930/photo/portrait-of-two-beautiful-curly-dogs-sharing-a-beige-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=cRgAVcD9DjrX04dD8UMa9iOkvn7odJTYL3K_5AzSQmQ=" className="w-full h-full object-cover" alt="Dogs" />
-                        </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-[10px] border-white rounded-[40px] overflow-hidden shadow-xl z-20">
-                            <img src="https://images.unsplash.com/photo-1766471416360-e7932245d3c2?w=1000&q=100" className="w-full h-full object-cover" alt="Poodle" />
-                        </div>
-                    </div>
-                    <div className="w-full lg:w-1/2">
-                        <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">TRANSFORMING LIVES</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] leading-none mb-8">
-                            Our <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Impact</span> by the <span className="text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text">Numbers</span>
-                        </h2>
-                        <p className="text-blue -500 text-base md:text-lg leading-relaxed mb-10">
-                            Hundreds of poodles placed into loving homes across the country.
-                        </p>
-                        <button onClick={() => navigate("/#contact")} className="bg-pink-700 font-bold px-6 py-4 rounded-xl hover:bg-pink-800 text-white transition-all duration-300 shadow-sm cursor-pointer">
-                            Donate To Our Cause
-                        </button>
-                    </div>
-                </div>
-            </section> */}
-
-            {/* SECTION: PARTNERS & MENTORSHIP (New Section) */}
             {/* SECTION: PARTNERS & MENTORSHIP */}
             <section className="py-10 px-6 bg-[#F9FFF0]">
                 <div className="max-w-7xl mx-auto">
-                    {/* Header Block */}
                     <div className="text-center mb-10">
                         <p className="uppercase text-pink-700 font-semibold tracking-wider text-xs mb-4">Partners & Mentorship</p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl fr font-bold text-[#333] mb-6 leading-14">
@@ -175,14 +142,11 @@ const About = () => {
                         </h2>
                         <p className="text-blue-500 max-w-3xl mx-auto leading-normal text-base md:text-lg">
                             Behind every ethical breeding program is a network of support, wisdom, and shared values.
-                            These partnerships ensure our puppies thrive and continue the tradition of quality this breed deserves.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-10">
-                        {/* Left Column: Mentors & Organizations */}
                         <div className="space-y-10">
-                            {/* Mentor Spotlight */}
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text fr mb-6 flex items-center gap-3">
                                     <UsersRound className="text-pink-500" size={28} /> Mentors Who Made Us Better
@@ -190,7 +154,7 @@ const About = () => {
                                 <div className="bg-white px-4 py-6 md:p-8 rounded-[40px] shadow-sm border border-pink-500">
                                     <div className="flex items-center gap-4 mb-6">
                                         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-pink-500">
-                                            <img loading='lazy' src={linda} className="w-full h-full object-cover object-top" alt="Linda DuBose" />
+                                            <img loading='lazy' src={sanityData?.lindaImg ? urlFor(sanityData.lindaImg).url() : linda} className="w-full h-full object-cover object-top" alt="Linda DuBose" />
                                         </div>
                                         <div>
                                             <h4 className="text-lg sm:text-xl leading-none font-bold text-[#333]">Honoring Linda DuBose</h4>
@@ -198,15 +162,14 @@ const About = () => {
                                         </div>
                                     </div>
                                     <p className="text-gray-500 leading-relaxed text-sm mb-6">
-                                        Our founder’s close friend and mentor taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more than superficial color claims. Her influence is woven through every puppy we place.
+                                        Our founder’s close friend and mentor taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more.
                                     </p>
-                                    <Link to={"https://redandapricotpoodles.com/available-poodles/"}target='_blank' className="flex items-center gap-2 text-pink-700 font-bold text-sm hover:underline cursor-pointer">
+                                    <Link to={"https://redandapricotpoodles.com/available-poodles/"} target='_blank' className="flex items-center gap-2 text-pink-700 font-bold text-sm hover:underline cursor-pointer">
                                         Visit Scarlet’s Fancy Poodles <ExternalLink size={14} />
                                     </Link>
                                 </div>
                             </div>
 
-                            {/* Organizations */}
                             <div>
                                 <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-700 to-pink-700 bg-clip-text fr mb-6 flex items-center gap-3">
                                     <Handshake className="text-blue-500" size={28} /> Breed Organizations
@@ -226,9 +189,7 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* Right Column: Values & Benefits */}
                         <div className="space-y-10">
-                            {/* Mentorship Values */}
                             <div className="bg-white p-6 sm:p-8 rounded-[40px] border border-pink-500">
                                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#333] mb-6">What Mentorship Means to Us</h3>
                                 <div className="space-y-6">
@@ -250,7 +211,6 @@ const About = () => {
                                 </div>
                             </div>
 
-                            {/* Benefit to Families */}
                             <div className="bg-blue-50 p-6 sm:p-8 rounded-[40px]">
                                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#333] mb-4">Why This Matters to You</h3>
                                 <p className="text-blue-500 text-sm leading-relaxed mb-6">
@@ -264,7 +224,6 @@ const About = () => {
                                 </ul>
                             </div>
 
-                            {/* Final CTA Block */}
                             <div className="text-center pt-4">
                                 <h4 className="text-xl font-bold text-[#333] mb-6">Interested in Learning More?</h4>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -334,8 +293,8 @@ const About = () => {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                        <img loading='lazy' src={about1Img5} className="w-full h-70 object-cover rounded-[50px]" alt="Facility" />
-                        <img loading='lazy' src={about1Img6} className="w-full h-70 object-cover rounded-[50px] mt-12" alt="Play Area" />
+                        <img loading='lazy' src={sanityData?.facility1 ? urlFor(sanityData.facility1).url() : about1Img5} className="w-full h-70 object-cover rounded-[50px]" alt="Facility" />
+                        <img loading='lazy' src={sanityData?.facility2 ? urlFor(sanityData.facility2).url() : about1Img6} className="w-full h-70 object-cover rounded-[50px] mt-12" alt="Play Area" />
                     </div>
                 </div>
             </section>
