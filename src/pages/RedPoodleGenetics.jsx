@@ -1,28 +1,46 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Dna, Palette, Activity, ShieldCheck, Heart, Sparkles, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { createClient } from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
 
-import poodle9 from "../assets/poodle9.jfif"
-import poodle10 from "../assets/poodle10.jfif"
+// --- SANITY CONFIG (Apni details yahan dalein) ---
+const client = createClient({
+  projectId: 'm951hq80', 
+  dataset: 'production',
+  useCdn: true,
+  apiVersion: '2023-05-03',
+});
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source);
+}
 
 const RedPoodleGenetics = () => {
   const [openFaq, setOpenFaq] = useState(null);
+  const [sanityData, setSanityData] = useState(null);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    client.fetch(`*[_type == "redPoodleGenetics"][0]`).then((data) => {
+      setSanityData(data);
+    });
+  }, []);
+
   const faqs = [
-    { q: "Will my red Toy Poodle stay red?", a: "Red can shift as the coat matures. Many sources note that fading or change can occur early and continue as the dog grows. We select lines with a history of richer adult coats when possible." },
-    { q: "At what age do red Toy Poodles change color?", a: "Some references describe changes starting in the early weeks, with noticeable shifts around 6 to 10 weeks, and continued change into adulthood." },
-    { q: "Can a breeder guarantee a non-fading red?", a: "No ethical breeder should promise permanent coat shade. Genetics are complex and poodles are known for coat changes. What we do is show you patterns in our lines." },
-    { q: "What nose color should a red Toy Poodle have?", a: "Many red descriptions highlight dark points, often black, as the ideal look for a sharp, finished appearance." },
-    { q: "Does sun exposure affect coat color?", a: "Yes, environment can influence coat appearance. Frequent sun exposure can sometimes cause the outer tips of the curls to lighten or 'sun-bleach'." },
-    { q: "Does diet affect coat color or shine?", a: "Nutrition and coat care are huge factors. A high-quality diet supports the vibrancy and condition of the hair follicles from the inside out." },
-    { q: "Are red Toy Poodles rarer than other colors?", a: "Yes, especially deep reds with strong pigment. Consistent, rich reds are hard to reproduce predictably compared to more dominant colors." },
-    { q: "Are red Toy Poodles more expensive?", a: "High demand and rarity can influence pricing. However, we price based on care, health work, and quality. Beware if 'rare color' is the only justification for a high price." },
-    { q: "Do red Toy Poodles have different temperaments?", a: "No. Temperament is not determined by coat color. Personality comes from genetics, socialization, and individual development." },
-    { q: "How do you reduce the chance of fading?", a: "We focus on pedigree planning and avoiding known fading lines, while acknowledging that environmental factors always play a role." }
+    { q: "Will my red Toy Poodle stay red?", a: "Red can shift as the coat matures. Many sources note that fading or change can occur early and continue as the dog grows." },
+    { q: "At what age do red Toy Poodles change color?", a: "Some references describe changes starting in the early weeks, with noticeable shifts around 6 to 10 weeks." },
+    { q: "Can a breeder guarantee a non-fading red?", a: "No ethical breeder should promise permanent coat shade. Genetics are complex." },
+    { q: "What nose color should a red Toy Poodle have?", a: "Many red descriptions highlight dark points, often black, as the ideal look." },
+    { q: "Does sun exposure affect coat color?", a: "Yes, environment can influence coat appearance. Sun exposure can cause lightening." },
+    { q: "Does diet affect coat color or shine?", a: "Nutrition is a huge factor. A high-quality diet supports vibrancy." },
+    { q: "Are red Toy Poodles rarer than other colors?", a: "Yes, especially deep reds with strong pigment." },
+    { q: "Are red Toy Poodles more expensive?", a: "High demand can influence pricing. We price based on care and health." },
+    { q: "Do red Toy Poodles have different temperaments?", a: "No. Temperament is not determined by coat color." },
+    { q: "How do you reduce the chance of fading?", a: "We focus on pedigree planning and avoiding known fading lines." }
   ];
 
-  
   return (
     <div className="bg-white text-gray-700 leading-relaxed">
       
@@ -44,8 +62,16 @@ const RedPoodleGenetics = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img loading='lazy' src={poodle9} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
-            <img loading='lazy' src={poodle10} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
+            {sanityData?.heroImage1 ? (
+              <img src={urlFor(sanityData.heroImage1).url()} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Red puppy" />
+            ) : (
+              <div className="bg-gray-100 rounded-3xl h-92 animate-pulse"></div>
+            )}
+            {sanityData?.heroImage2 ? (
+              <img src={urlFor(sanityData.heroImage2).url()} className="rounded-3xl shadow-sm w-full h-92 object-cover" alt="Adult red poodle" />
+            ) : (
+              <div className="bg-gray-100 rounded-3xl h-92 animate-pulse"></div>
+            )}
           </div>
         </div>
       </section>
@@ -84,11 +110,11 @@ const RedPoodleGenetics = () => {
         </div>
       </section>
 
-      {/* COAT JOURNEY - 3 CARDS */}
+      {/* COAT JOURNEY */}
       <section className="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4">The Red Coat Journey</h2>
-          <p className="text-brand-blue-500">"What you may see as your puppy grows"</p>
+          <p className='text-blue-600'>"What you may see as your puppy grows"</p>
         </div>
         <div className="grid md:grid-cols-3 gap-4">
           {[
@@ -97,18 +123,15 @@ const RedPoodleGenetics = () => {
             { s: "Stage 03", t: "Teenage to Adult Coat", d: "Some reds deepen again, while some soften into copper or apricot. The final shade is clearer by adulthood." }
           ].map((stage, i) => (
             <div key={i} className="group p-6 md:p-8 border border-brand-blue-500 rounded-3xl hover:bg-brand-blue-500/5 transition-colors">
-              <span className="text-brand-blue-500 font-semibold text-xs uppercase tracking-widest mb-4 block">{stage.s}</span>
+              <span className="text-brand-blue-500 font-semibold text-xs uppercase mb-4 block">{stage.s}</span>
               <h3 className="text-xl font-bold mb-4 fr text-brand-pink-700">{stage.t}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{stage.d}</p>
+              <p className="text-gray-500 text-sm">{stage.d}</p>
             </div>
           ))}
         </div>
-        <p className="text-center mt-10 text-sm text-brand-pink-500 max-w-2xl mx-auto">
-          Our promise: We will always tell you what we see and what lineage suggests. No exaggerated guarantees, just honest guidance.
-        </p>
       </section>
 
-      {/* WHAT WE SELECT FOR - ICON GRID */}
+      {/* WHAT WE SELECT FOR */}
       <section className="py-10 px-4 sm:px-6 bg-blue-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -121,25 +144,19 @@ const RedPoodleGenetics = () => {
               <div key={i} className="bg-white border border-brand-blue-500 p-6 rounded-2xl flex flex-col items-center text-center">
                 <div className="text-brand-pink-700 mb-3">{item.icon}</div>
                 <h4 className="text-lg font-black uppercase text-brand-pink-700 fr mb-1">{item.t}</h4>
-                <p className="text-xs text-gray-500 uppercase leading-tight">{item.d}</p>
+                <p className="text-xs text-gray-500 uppercase">{item.d}</p>
               </div>
             ))}
           </div>
           <div>
-             <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Color is one piece <br /> of the puzzle</h2>
-             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
-               We love rich reds, but we do not chase color at the expense of the dog. A complete dog includes temperament, health, conformation, and beauty—not only coat shade.
-             </p>
-             <div className="flex items-center gap-4">
-               <div className="h-px flex-grow bg-brand-blue-500"></div>
-               <span className="text-brand-pink-700 font-semibold uppercase text-sm tracking-wide">Balanced Breeding</span>
-             </div>
+             <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Color is one piece</h2>
+             <p className="text-gray-600 text-sm md:text-base mb-6">We do not chase color at the expense of the dog. Health and temperament come first.</p>
           </div>
         </div>
       </section>
 
       {/* FAQ SECTION - ACCORDION */}
-      <section className="py-10 px-4 sm:px-6 max-w-5xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 max-w-5xl mx-auto ">
         <h2 className="text-center text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr text-3xl md:text-4xl font-black uppercase mb-10">Genetics FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -159,7 +176,6 @@ const RedPoodleGenetics = () => {
         </div>
       </section>
 
-      {/* PINNED CTA BAR */}
       <section className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-brand-blue-500/30 py-6 px-6 z-40">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text fr font-bold uppercase text-base">
@@ -175,6 +191,10 @@ const RedPoodleGenetics = () => {
           </div>
         </div>
       </section>
+
+      
+
+      
 
     </div>
   );
