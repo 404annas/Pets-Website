@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { petData } from '../data/petsData'; // Ensure your data file has 'gallery' and 'color' fields
-// import FeaturedPets from '../components/FeaturedPets'; // Un-comment if needed
+import { petData } from '../data/petsData';
+import { fetchPoodleAssets } from '../lib/sanityQueries';
+import { urlFor } from '../lib/sanity';
 import {
     Calendar,
     Ruler,
@@ -18,16 +19,57 @@ import {
 const PetDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const pet = petData.find(p => p.id === parseInt(id));
+    const [pet, setPet] = useState(null);
     const [activeImage, setActiveImage] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (pet) {
-            setActiveImage(pet.image);
-            window.scrollTo(0, 0);
-        }
-    }, [id, pet]);
+        const loadPetData = async () => {
+            const localPet = petData.find(p => p.id === parseInt(id));
+            if (!localPet) {
+                setLoading(false);
+                return;
+            }
 
+            try {
+                const sanityAssets = await fetchPoodleAssets();
+                const key = localPet.name.toLowerCase() === 'dan dan' ? 'danDan' : localPet.name.toLowerCase();
+                const assets = sanityAssets[key];
+
+                let updatedPet = { ...localPet };
+
+                if (assets) {
+                    if (assets.pictures) {
+                        if (assets.pictures.mainImage) {
+                            updatedPet.image = urlFor(assets.pictures.mainImage).url();
+                        }
+                        if (assets.pictures.gallery && assets.pictures.gallery.length > 0) {
+                            updatedPet.gallery = assets.pictures.gallery.map(img => urlFor(img).url());
+                        }
+                    }
+                    if (assets.videos && assets.videos.videos) {
+                        updatedPet.videos = assets.videos.videos
+                            .filter(v => v.asset && v.asset.url)
+                            .map(v => v.asset.url);
+                    }
+                }
+
+                setPet(updatedPet);
+                setActiveImage(updatedPet.image);
+            } catch (err) {
+                console.error("Error fetching sanity assets for detail:", err);
+                setPet(localPet);
+                setActiveImage(localPet.image);
+            } finally {
+                setLoading(false);
+                window.scrollTo(0, 0);
+            }
+        };
+
+        loadPetData();
+    }, [id]);
+
+    if (loading) return <div className="py-20 text-center text-2xl font-bold text-brand-blue-500">Loading Poodle Details...</div>;
     if (!pet) return <div className="py-20 text-center text-2xl font-bold text-brand-blue-500">Poodle not found</div>;
 
     return (

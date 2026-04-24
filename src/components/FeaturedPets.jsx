@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { petData as importedPetData } from '../data/petsData';
+import { fetchPoodleAssets } from '../lib/sanityQueries';
+import { urlFor } from '../lib/sanity';
 
 const PetCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -86,22 +88,60 @@ const PetCard = ({ pet }) => {
 
 const FeaturedPets = () => {
     const navigate = useNavigate();
-    
-    // Filter for available pets and map fields to match the component's expectations
-    const petData = importedPetData
-        .filter(pet => pet.status === "AVAILABLE")
-        .map(pet => ({
-            ...pet,
-            availability: pet.status,
-            size: pet.estimatedSize,
-            personality: pet.personalitySnapshot,
-            // Ensure health items have an id if they don't
-            health: pet.health.map((h, i) => ({ ...h, id: h.id || `h-${pet.id}-${i}` }))
-        }));
+    const [pets, setPets] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const sanityAssets = await fetchPoodleAssets();
+                
+                const mappedPets = importedPetData
+                    .filter(pet => pet.status === "AVAILABLE")
+                    .map(pet => {
+                        let updatedPet = { ...pet };
+                        
+                        // Map Sanity assets by name
+                        const key = pet.name.toLowerCase() === 'dan dan' ? 'danDan' : pet.name.toLowerCase();
+                        const assets = sanityAssets[key];
+                        
+                        if (assets && assets.pictures && assets.pictures.mainImage) {
+                            updatedPet.image = urlFor(assets.pictures.mainImage).url();
+                        }
+
+                        return {
+                            ...updatedPet,
+                            availability: updatedPet.status,
+                            size: updatedPet.estimatedSize,
+                            personality: updatedPet.personalitySnapshot,
+                            health: updatedPet.health.map((h, i) => ({ ...h, id: h.id || `h-${updatedPet.id}-${i}` }))
+                        };
+                    });
+                
+                setPets(mappedPets);
+            } catch (err) {
+                console.error("Error loading sanity assets:", err);
+                // Fallback to local data
+                setPets(importedPetData
+                    .filter(pet => pet.status === "AVAILABLE")
+                    .map(pet => ({
+                        ...pet,
+                        availability: pet.status,
+                        size: pet.estimatedSize,
+                        personality: pet.personalitySnapshot,
+                        health: pet.health.map((h, i) => ({ ...h, id: h.id || `h-${pet.id}-${i}` }))
+                    })));
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadData();
+    }, []);
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
-    const canSlide = petData.length > visibleCards;
+    const canSlide = pets.length > visibleCards;
 
     useEffect(() => {
         const handleResize = () => {
@@ -138,18 +178,18 @@ const FeaturedPets = () => {
                     animate={canSlide ? { x: `calc(-${currentIndex * movePercentage}% - ${currentIndex * gapCorrection}rem)` } : { x: 0 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    {petData.map(pet => (
+                    {pets.map(pet => (
                         <PetCard key={pet.id} pet={pet} />
                     ))}
                 </motion.div>
             </div>
 
-            {petData.length > visibleCards && (
+            {pets.length > visibleCards && (
                 <div className="flex items-center gap-4">
                     <button onClick={prevSlide} disabled={currentIndex === 0} className={`border-2 border-pink-400 p-3.5 rounded-full text-pink-700 cursor-pointer transition-all ${currentIndex === 0 ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-pink-400 hover:text-white'}`}>
                         <ChevronLeft size={20} />
                     </button>
-                    <button onClick={nextSlide} disabled={currentIndex >= petData.length - visibleCards} className={`border-2 border-pink-400 p-3.5 rounded-full text-pink-700 cursor-pointer transition-all ${currentIndex >= petData.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-pink-400 hover:text-white'}`}>
+                    <button onClick={nextSlide} disabled={currentIndex >= pets.length - visibleCards} className={`border-2 border-pink-400 p-3.5 rounded-full text-pink-700 cursor-pointer transition-all ${currentIndex >= pets.length - visibleCards ? 'opacity-30 hover:cursor-not-allowed' : 'hover:bg-pink-400 hover:text-white'}`}>
                         <ChevronRight size={20} />
                     </button>
                 </div>

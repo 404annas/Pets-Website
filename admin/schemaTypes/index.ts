@@ -11,7 +11,30 @@ import pastLitters from './pastLitters'
 
 import redPoodleGeneticsPage from './redPoodleGeneticsPage'
 import fancyPoodlesPage from './fancyPoodlesPage'
+import rickyPictures from './rickyPictures'
+import rickyVideos from './rickyVideos'
+import yanPictures from './yanPictures'
+import yanVideos from './yanVideos'
+import danDanPictures from './danDanPictures'
+import danDanVideos from './danDanVideos'
 
-
-
-export const schemaTypes = [hero, soldSection, galleryImage, contactSection, aboutPage, breedProgram, aboutBreeder, raisingPage, ourDogs, pastLitters, redPoodleGeneticsPage, fancyPoodlesPage] // Naya export
+export const schemaTypes = [
+  hero,
+  soldSection,
+  galleryImage,
+  contactSection,
+  aboutPage,
+  breedProgram,
+  aboutBreeder,
+  raisingPage,
+  ourDogs,
+  pastLitters,
+  redPoodleGeneticsPage,
+  fancyPoodlesPage,
+  rickyPictures,
+  rickyVideos,
+  yanPictures,
+  yanVideos,
+  danDanPictures,
+  danDanVideos
+]
