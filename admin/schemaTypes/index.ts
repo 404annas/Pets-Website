@@ -3,5 +3,7 @@ import soldSection from './soldSection' // Naya import
 import galleryImage from './galleryImage' // Naya import
 import contactSection from './contactSection' // Naya import
 import aboutPage from './aboutPage' // Naya import
+import breedProgram from './breedProgram'
 
-export const schemaTypes = [hero, soldSection, galleryImage, contactSection, aboutPage] // Naya export
+
+export const schemaTypes = [hero, soldSection, galleryImage, contactSection, aboutPage, breedProgram] // Naya export

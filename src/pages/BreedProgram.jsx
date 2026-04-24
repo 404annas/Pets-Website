@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     ShieldCheck, Heart, Dna, Eye, Stethoscope,
@@ -8,10 +8,13 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+// Aapki local backup images
 import smallPoodle1 from "../assets/poodle10.jfif"
 import smallPoodle2 from "../assets/poodle13.jfif"
-
 import poodle from "../assets/heroDog2.png"
+
+// Sanity Imports
+import { client, urlFor } from "../lib/sanity"; 
 
 const pillars = [
     {
@@ -37,6 +40,14 @@ const pillars = [
 const BreedProgram = () => {
     const navigate = useNavigate();
     const [isHealthPanelOpen, setIsHealthPanelOpen] = useState(false);
+    
+    // Sanity Data State
+    const [sanityData, setSanityData] = useState(null);
+
+    // Sanity Fetch Logic (Images load karne ke liye zaroori hai)
+    useEffect(() => {
+        client.fetch(`*[_type == "breedProgram"][0]`).then(data => setSanityData(data));
+    }, []);
 
     // Helper for clean navigation
     const handleNavigation = (path) => {
@@ -52,7 +63,7 @@ const BreedProgram = () => {
                 <div className="absolute inset-0 z-0">
                     <img
                         loading='lazy'
-                        src={poodle}
+                        src={sanityData?.heroImage ? urlFor(sanityData.heroImage).url() : poodle}
                         alt="Adult Red Toy Poodle with confident posture"
                         className="w-full h-full object-cover object-center"
                     />
@@ -111,7 +122,6 @@ const BreedProgram = () => {
             <div className="bg-slate-900 rounded-[2rem] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
                     
-                    {/* Header: Compact & Precise */}
                     <div className="pb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
                         <div className="max-w-xl">
                             <span className="text-brand-blue-500 font-semibold uppercase tracking-widest text-xs mb-3 block">
@@ -126,7 +136,6 @@ const BreedProgram = () => {
                         </p>
                     </div>
 
-                    {/* Content Grid: Professional Row Style */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 rounded-2xl overflow-hidden">
                         {pillars.map((pillar, idx) => (
                             <div 
@@ -158,7 +167,6 @@ const BreedProgram = () => {
                         ))}
                     </div>
 
-                    {/* Footer Detail */}
                     <div className="mt-10 flex sm:flex-row flex-col sm:gap-0 gap-2 items-center justify-between text-xs font-bold uppercase tracking-widest text-brand-blue-500">
                         <span>Quality over Quantity</span>
                         <div className="hidden md:block h-px flex-grow mx-8 bg-white/5"></div>
@@ -212,7 +220,6 @@ const BreedProgram = () => {
                                 <div className="p-4 md:p-8 bg-slate-50 border-t border-slate-200 text-sm text-slate-600 leading-relaxed space-y-4">
                                     <p>We perform prcd PRA DNA testing and Annual eye exams yearly via an ACVO ophthalmologist. These are specifically listed for Toy Poodles in the <span className="font-bold text-brand-blue-500">Poodle Club of America</span> health statement.</p>
                                     <p>Eye disease in poodles can involve more than one condition, which is why annual eye exams remain important even when DNA testing is completed.</p>
-                                    {/* Subpage CTA Button */}
                                     <button
                                         onClick={() => handleNavigation('/health-testing')}
                                         className="flex items-center gap-2 px-6 py-3 bg-brand-blue-500 text-white font-bold uppercase text-xs tracking-widest rounded-lg hover:bg-brand-blue-700 transition-all duration-300 cursor-pointer"
@@ -247,7 +254,6 @@ const BreedProgram = () => {
                                 </li>
                             ))}
                         </ul>
-                        {/* Subpage CTA Button */}
                         <button
                             onClick={() => handleNavigation('/puppy-raising')}
                             className="px-8 py-4 bg-brand-blue-500 text-white font-bold uppercase text-xs tracking-widest rounded-xl hover:bg-brand-blue-700 transition-all duration-300 cursor-pointer flex items-center gap-2"
@@ -256,8 +262,16 @@ const BreedProgram = () => {
                         </button>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <img src={smallPoodle1} alt="Raised in home" className="rounded-3xl shadow-xl object-cover" />
-                        <img src={smallPoodle2} alt="Grooming exposure" className="rounded-3xl shadow-xl mt-10 h-[100%] object-cover" />
+                        <img 
+                            src={sanityData?.raisingImage1 ? urlFor(sanityData.raisingImage1).url() : smallPoodle1} 
+                            alt="Raised in home" 
+                            className="rounded-3xl shadow-xl object-cover" 
+                        />
+                        <img 
+                            src={sanityData?.raisingImage2 ? urlFor(sanityData.raisingImage2).url() : smallPoodle2} 
+                            alt="Grooming exposure" 
+                            className="rounded-3xl shadow-xl mt-10 h-[100%] object-cover" 
+                        />
                     </div>
                 </div>
             </section>
