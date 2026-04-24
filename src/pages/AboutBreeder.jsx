@@ -1,26 +1,31 @@
+import { useEffect, useState } from "react";
 import { AudioLines, AudioWaveform, Ban, Blocks, Dna, HeartHandshake, Home, Languages, LineSquiggle, SearchCheck, ShieldCheck } from "lucide-react";
+import { client, urlFor } from "../lib/sanity";
 
+// Local Assets (As Fallbacks)
 import poodleSmall from "../assets/small1.jfif"
 import middlePoodle from "../assets/middle2.jfif"
-import aboutBreeder from "../assets/point3.jfif"
+import aboutBreederImg from "../assets/point3.jfif"
 import aboutBreeder2 from "../assets/about11.jfif"
-
 import point1 from "../assets/about9.jfif"
 import point2 from "../assets/point2.jfif"
 import point3 from "../assets/small2.jfif"
 
 const AboutBreeder = () => {
-    const images = {
-        hero: "https://images.unsplash.com/photo-1604916287784-c324202b3205?auto=format&fit=crop&q=80&w=1200",
-        puppy1: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&q=80&w=600",
-        puppy2: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=600",
-        mentor: "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=800",
-        moments: [
-            "https://images.pexels.com/photos/1458916/pexels-photo-1458916.jpeg?auto=compress&cs=tinysrgb&w=400",
-            "https://images.pexels.com/photos/5965259/pexels-photo-5965259.jpeg?auto=compress&cs=tinysrgb&w=400",
-            "https://images.pexels.com/photos/7310222/pexels-photo-7310222.jpeg?auto=compress&cs=tinysrgb&w=400",
-            "https://images.pexels.com/photos/20124401/pexels-photo-20124401/free-photo-of-cocker-spaniel-puppy-lying-on-a-fluffy-blanket.jpeg?auto=compress&cs=tinysrgb&w=400"
-        ]
+    const [sanityData, setSanityData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const query = `*[_type == "aboutBreeder"][0]`;
+            const data = await client.fetch(query);
+            setSanityData(data);
+        };
+        fetchData();
+    }, []);
+
+    // Helper function to handle image URLs with fallback
+    const getImg = (sanityImg, fallback) => {
+        return sanityImg ? urlFor(sanityImg).url() : fallback;
     };
 
     const beliefs = [
@@ -58,19 +63,19 @@ const AboutBreeder = () => {
 
     const moments = [
         {
-            img: point1,
+            img: getImg(sanityData?.moment1, point1),
             title: "Opening Eyes",
             desc: "The first time a puppy opens their eyes and sees the world.",
             id: "01"
         },
         {
-            img: point2,
+            img: getImg(sanityData?.moment2, point2),
             title: "Wobbly Steps",
             desc: "The awkward, wobbly first steps across our living room floor.",
             id: "02"
         },
         {
-            img: point3,
+            img: getImg(sanityData?.moment3, point3),
             title: "Quiet Sleep",
             desc: "The quiet moment when one falls asleep in the palm of your hand.",
             id: "03"
@@ -121,16 +126,13 @@ const AboutBreeder = () => {
 
                         {/* Image Column */}
                         <div className="w-full lg:w-2/5 relative">
-                            {/* Abstract shape behind image */}
                             <div className="absolute -bottom-5 -right-5 w-full h-full border-[12px] border-brand-blue-500 z-0 rounded-2xl" />
-
                             <div className="relative z-10 rounded-2xl overflow-hidden shadow-sm">
                                 <img
-                                    src={middlePoodle}
+                                    src={getImg(sanityData?.heroImage, middlePoodle)}
                                     alt="Red Toy Poodle in a home environment"
                                     className="w-full h-[500px] object-cover object-top"
                                 />
-                                {/* Subtle overlay tag */}
                                 <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                                     <p className="text-[11px] uppercase tracking-widest text-brand-pink-700 font-bold">
                                         Real Life • Real Dogs • Real Connection
@@ -138,7 +140,6 @@ const AboutBreeder = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -146,8 +147,6 @@ const AboutBreeder = () => {
             {/* SECTION 2: THE ORIGIN STORY */}
             <section className="bg-blue-50 py-10 px-4 sm:px-6 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
-
-                    {/* Header with Background Text Effect */}
                     <div className="relative mb-10 text-center lg:text-left">
                         <span className="absolute -top-10 left-0 text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black opacity-80 select-none fr hidden lg:block">
                             ORIGIN
@@ -158,8 +157,6 @@ const AboutBreeder = () => {
                     </div>
 
                     <div className="grid lg:grid-cols-12 gap-10 items-start">
-
-                        {/* Part 1: The First Poodle (Visual Card) */}
                         <div className="lg:col-span-5 relative group">
                             <div className="absolute inset-0 bg-brand-blue-500/20 rounded-3xl translate-x-3 translate-y-3"></div>
                             <div className="relative bg-white px-6 py-8 sm:p-8 md:p-12 rounded-3xl shadow-sm border border-brand-blue-500/30">
@@ -173,14 +170,13 @@ const AboutBreeder = () => {
                                     and endlessly entertaining.
                                 </p>
                                 <img
-                                    src={poodleSmall}
+                                    src={getImg(sanityData?.originImage, poodleSmall)}
                                     alt="First Poodle"
                                     className="mt-8 rounded-xl w-full h-80 object-cover"
                                 />
                             </div>
                         </div>
 
-                        {/* Part 2: Curiosity & Research (Staggered text) */}
                         <div className="lg:col-span-7 space-y-12 lg:pl-12">
                             <div className="max-w-xl">
                                 <h3 className="text-brand-pink-700 fr font-bold text-xl md:text-2xl mb-4">The Curiosity Phase</h3>
@@ -194,7 +190,6 @@ const AboutBreeder = () => {
                                 </div>
                             </div>
 
-                            {/* The "2 AM" Highlight Block */}
                             <div className="bg-white/60 backdrop-blur-md px-4 py-6 md:p-8 rounded-2xl border-l-8 border-brand-pink-500 shadow-sm">
                                 <h3 className="text-gray-800 fr font-bold text-xl mb-4 uppercase tracking-tighter">The Real Lessons</h3>
                                 <p className="text-gray-700 leading-normal italic">
@@ -220,12 +215,11 @@ const AboutBreeder = () => {
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 3: BELIEFS (The Grid) */}
+            {/* SECTION 3: BELIEFS */}
             <section className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="text-center mb-10">
                     <h2 className="text-gray-900 text-4xl md:text-5xl fr uppercase font-black leading-none mb-6">
@@ -237,7 +231,6 @@ const AboutBreeder = () => {
                     </p>
                 </div>
 
-                {/* The 3-then-2 Centered Flexbox Layout */}
                 <div className="flex flex-wrap justify-center gap-4">
                     {beliefs.map((item, idx) => (
                         <div
@@ -256,7 +249,6 @@ const AboutBreeder = () => {
                         </div>
                     ))}
 
-                    {/* Full Width Quote Card */}
                     <div className="max-w-6xl mt-6 bg-gray-900 p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
                         <p className="text-white text-base md:text-lg md:max-w-2xl italic leading-normal text-center md:text-left">
                             "If a decision benefits us but not the dog, it’s the wrong decision. Full stop."
@@ -271,7 +263,11 @@ const AboutBreeder = () => {
             {/* SECTION 4: MENTORSHIP */}
             <section className="bg-white py-10 px-4 sm:px-8 border-gray-100">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-                    <img src={aboutBreeder} alt="Mentorship" className="w-full md:w-1/3 h-80 sm:h-88 object-cover rounded-full shadow-sm" />
+                    <img 
+                        src={getImg(sanityData?.mentorshipImage, aboutBreederImg)} 
+                        alt="Mentorship" 
+                        className="w-full md:w-1/3 h-80 sm:h-88 object-cover rounded-full shadow-sm" 
+                    />
                     <div className="flex-1">
                         <h2 className="text-transparent bg-gradient-to-r from-brand-pink-700 to-brand-blue-700 bg-clip-text text-2xl md:text-3xl fr uppercase font-bold mb-6">How we learned to do this properly ?</h2>
                         <p className="text-base md:text-lg text-brand-blue-500 mb-6">
@@ -292,8 +288,6 @@ const AboutBreeder = () => {
             <section className="py-10 px-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col lg:flex-row items-stretch gap-0">
-
-                        {/* LEFT SIDE: Narrative & The "No Mystery" Label */}
                         <div className="lg:w-5/12 pb-10 lg:pb-0 lg:pr-10 flex flex-col justify-center">
                             <span className="text-brand-pink-700 font-semibold tracking-widest uppercase text-xs mb-6 block">
                                 Direct Connection
@@ -315,7 +309,6 @@ const AboutBreeder = () => {
                                 </p>
                             </div>
 
-                            {/* Tasks as a Sleek Vertical List */}
                             <div className="mt-10 space-y-4">
                                 {["Weigh the puppies", "Clean the whelping area", "First grooming session", "Sit on the floor during playtime"].map((item, idx) => (
                                     <div key={idx} className="flex items-center gap-4 group cursor-default">
@@ -328,19 +321,15 @@ const AboutBreeder = () => {
                             </div>
                         </div>
 
-                        {/* RIGHT SIDE: The Mosaic & Personal Insight */}
                         <div className="lg:w-7/12 lg:pl-16 pt-12 lg:pt-0 flex flex-col">
                             <div className="relative">
-                                {/* Main Large Image */}
                                 <div className="aspect-[16/14] overflow-hidden rounded-sm">
                                     <img
-                                        src={aboutBreeder2}
+                                        src={getImg(sanityData?.raisingImage, aboutBreeder2)}
                                         alt="Raising puppies"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-
-                                {/* Overlapping Insight Card */}
                                 <div className="absolute -bottom-10 -left-10 bg-brand-blue-700/30 p-8 md:p-12 max-w-sm shadow-sm hidden md:block">
                                     <p className="text-white text-base md:text-lg font-medium leading-normal">
                                         "We know who prefers the red toy over the blue one. We know who falls asleep mid-play."
@@ -351,7 +340,6 @@ const AboutBreeder = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -370,11 +358,9 @@ const AboutBreeder = () => {
                 </div>
             </section>
 
-            {/* SECTION 7: MOMENTS (Candid Gallery) */}
+            {/* SECTION 7: MOMENTS */}
             <section className="py-10 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6">
-
-                    {/* Header Area */}
                     <div className="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-6">
                         <div className="relative">
                             <span className="text-brand-blue-500 fr font-black text-4xl md:text-5xl lg:text-6xl opacity-20 absolute -top-8 -left-4 select-none lg:block hidden">
@@ -386,14 +372,12 @@ const AboutBreeder = () => {
                         </div>
                     </div>
 
-                    {/* Horizontal Row Wrapper */}
                     <div className="flex lg:flex-row flex-col overflow-x-auto pb-10 gap-10 sm:gap-4 snap-x snap-mandatory no-scrollbar">
                         {moments.map((item, i) => (
                             <div
                                 key={i}
                                 className="min-w-[300px] md:min-w-[400px] snap-center group"
                             >
-                                {/* Image Container with Custom Frame */}
                                 <div className="relative h-[500px] w-full mb-6 overflow-hidden rounded-2xl">
                                     <img
                                         loading="lazy"
@@ -401,13 +385,9 @@ const AboutBreeder = () => {
                                         alt={item.title}
                                         className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
                                     />
-
-                                    {/* ID Tag */}
                                     <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md w-12 h-12 rounded-full flex items-center justify-center shadow-sm">
                                         <span className="text-brand-pink-700 font-black text-xs">{item.id}</span>
                                     </div>
-
-                                    {/* Glassmorphism Bottom Overlay */}
                                     <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-brand-pink-700/90 to-transparent backdrop-blur-sm">
                                         <p className="text-white text-sm font-medium leading-relaxed">
                                             {item.desc}
@@ -415,7 +395,6 @@ const AboutBreeder = () => {
                                     </div>
                                 </div>
 
-                                {/* Title & Decorative Line */}
                                 <div className="px-2">
                                     <div className="flex items-center gap-4 mb-1">
                                         <div className="h-[2px] w-8 bg-brand-blue-500"></div>
@@ -431,7 +410,6 @@ const AboutBreeder = () => {
                         ))}
                     </div>
 
-                    {/* Subtle Scroll Hint */}
                     <div className="flex justify-center mt-4">
                         <div className="w-48 h-1 bg-brand-pink-500 rounded-full overflow-hidden">
                             <div className="w-1/3 h-full bg-brand-blue-500 rounded-full"></div>
@@ -439,19 +417,13 @@ const AboutBreeder = () => {
                     </div>
                 </div>
 
-                {/* CSS for hiding scrollbar but keeping functionality */}
                 <style dangerouslySetInnerHTML={{
                     __html: `
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}} />
+                        .no-scrollbar::-webkit-scrollbar { display: none; }
+                        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+                    `}} 
+                />
             </section>
-
         </div>
     );
 };

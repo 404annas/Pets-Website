@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     ArrowLeft,
     ArrowRight,
     Scissors,
-    Users,
-    Zap,
     HeartHandshake,
-    CheckCircle2,
-    Activity,
-    Sun,
     ShieldCheck,
     UsersRound,
     Eye,
@@ -16,15 +11,31 @@ import {
     Target
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { client, urlFor } from "../lib/sanity";
 
+// Local Asset (Fallback)
 import poodle from "../assets/poodle8.jfif"
 
 const RaisingSubPage = () => {
     const navigate = useNavigate();
+    const [sanityData, setSanityData] = useState(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        
+        // Fetch Sanity Data
+        const fetchData = async () => {
+            const query = `*[_type == "raisingPage"][0]`;
+            const data = await client.fetch(query);
+            setSanityData(data);
+        };
+        fetchData();
     }, []);
+
+    // Image Helper
+    const getImg = (sanityImg, fallback) => {
+        return sanityImg ? urlFor(sanityImg).url() : fallback;
+    };
 
     return (
         <div className="bg-white min-h-screen text-slate-900 selection:bg-brand-pink-700 selection:text-white">
@@ -99,7 +110,7 @@ const RaisingSubPage = () => {
                     </div>
                     <div className="relative h-64 md:h-80 overflow-hidden rounded-2xl">
                         <img
-                            src={poodle}
+                            src={getImg(sanityData?.bondingImage, poodle)}
                             className="w-full h-full object-cover opacity-70"
                             alt="Puppy bonding"
                         />

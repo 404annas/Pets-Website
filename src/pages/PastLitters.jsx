@@ -1,14 +1,31 @@
-import { useState } from "react";
-import { Calendar, Info, Camera, ArrowUpRight, History } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Info, Camera, ArrowUpRight, History } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { client, urlFor } from "../lib/sanity";
 
+// Local Assets (Fallbacks)
 import poodle1 from "../assets/left.jpeg"
 import poodle2 from "../assets/poodle8.jfif"
 import poodle3 from "../assets/about6.jfif"
 
 const PastLitters = () => {
   const [activeYear, setActiveYear] = useState("2026");
+  const [sanityData, setSanityData] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const query = `*[_type == "pastLittersImages"][0]`;
+      const data = await client.fetch(query);
+      setSanityData(data);
+    };
+    fetchData();
+  }, []);
+
+  // Image Helper function
+  const getImg = (sanityImg, fallback) => {
+    return sanityImg ? urlFor(sanityImg).url() : fallback;
+  };
 
   const archiveData = [
     {
@@ -18,11 +35,9 @@ const PastLitters = () => {
           parents: "Pepe x Poppy",
           date: "March 08, 2026",
           goHome: "April 8–10, 2026",
-          details:
-            "This beautiful red and deep-apricot litter brought us 5 lively pups. All went on to loving homes.",
-          highlights:
-            "Strong color retention, calm temperaments, confident explorers.",
-          img: poodle1,
+          details: "This beautiful red and deep-apricot litter brought us 5 lively pups. All went on to loving homes.",
+          highlights: "Strong color retention, calm temperaments, confident explorers.",
+          img: getImg(sanityData?.litter1Image, poodle1), // Sanity Image 1
         },
       ],
     },
@@ -33,60 +48,20 @@ const PastLitters = () => {
           parents: "Pepe x Penny",
           date: "December 15, 2025",
           goHome: "January 15–17, 2026",
-          details:
-            "A balanced litter with vivid red coats and engaging personalities. Quick learners and affectionate.",
+          details: "A balanced litter with vivid red coats and engaging personalities. Quick learners and affectionate.",
           highlights: "Vivid red coats, high engagement, social butterflies.",
-          img: poodle2,
+          img: getImg(sanityData?.litter2Image, poodle2), // Sanity Image 2
         },
         {
           parents: "Pepe x Poppy",
           date: "July 17, 2025",
           goHome: "August 15–17, 2026",
-          details:
-            "A balanced litter with vivid red coats and engaging personalities. Quick learners and affectionate.",
+          details: "A balanced litter with vivid red coats and engaging personalities. Quick learners and affectionate.",
           highlights: "Vivid red coats, high engagement, social butterflies.",
-          img: poodle3,
+          img: getImg(sanityData?.litter3Image, poodle3), // Sanity Image 3
         },
       ],
     },
-    // {
-    //   year: "2024",
-    //   litters: [
-    //     {
-    //       parents: "Penny x Oliver",
-    //       date: "October 9, 2024",
-    //       goHome: "December 1–3, 2024",
-    //       details:
-    //         "Red coat depth and social confidence defined this group. Many were noted for quick social responses.",
-    //       highlights: "Deep red hues, social confidence, bright curiosity.",
-    //       img: "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=800",
-    //     },
-    //     {
-    //       parents: "Daisy x Max",
-    //       date: "June 17, 2024",
-    //       goHome: "August 10–12, 2024",
-    //       details:
-    //         "Rich red hues with expressive temperaments. They made fast friends during socialization days.",
-    //       highlights:
-    //         "Expressive eyes, rapid socialization, consistent sizing.",
-    //       img: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800",
-    //     },
-    //   ],
-    // },
-    // {
-    //   year: "2023",
-    //   litters: [
-    //     {
-    //       parents: "Poppy x Leo",
-    //       date: "April 3, 2023",
-    //       goHome: "June 1–3, 2023",
-    //       details:
-    //         "Energetic and affectionate, these puppies enjoyed early play sessions and calm family interactions.",
-    //       highlights: "Therapy dog potential, high affection, dense coats.",
-    //       img: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=800",
-    //     },
-    //   ],
-    // },
   ];
 
   const scrollToYear = (year) => {

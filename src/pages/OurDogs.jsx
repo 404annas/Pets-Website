@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Heart, Star, ArrowUpRight, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { client, urlFor } from "../lib/sanity";
 
+// Local Assets (Fallbacks)
 import poodle11 from "../assets/poodle11.jfif"
 import poodle12 from "../assets/poodle12.jfif"
 import poodle13 from "../assets/poodle13.jfif"
@@ -10,13 +12,34 @@ import poodle15 from "../assets/middle.jpeg"
 import poodle16 from "../assets/poodle9.jfif"
 import poodle19 from "../assets/poodle1.jfif"
 import poodle5 from "../assets/poodle5.jfif"
-import poodle22 from"../assets/poodle22.jfif"
+import poodle22 from "../assets/poodle22.jfif"
 import poodle25 from "../assets/poodle25.jfif"
 
 const OurDogs = () => {
     const [filter, setFilter] = useState('all');
-
+    const [sanityData, setSanityData] = useState(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const query = `*[_type == "ourDogsPage"][0]`;
+            const data = await client.fetch(query);
+            setSanityData(data);
+        };
+        fetchData();
+    }, []);
+
+    // Helper function for images
+    const getImg = (sanityImg, fallback) => {
+        return sanityImg ? urlFor(sanityImg).url() : fallback;
+    };
+
+    // Helper for hero collage array
+    const getHeroImg = (index, fallback) => {
+        return sanityData?.heroCollage?.[index] 
+            ? urlFor(sanityData.heroCollage[index]).url() 
+            : fallback;
+    };
 
     const dams = [
         {
@@ -32,7 +55,7 @@ const OurDogs = () => {
             bestTrait: "Intuitive connection",
             loves: "Morning porch coffee",
             knownFor: "Her mahogany coat",
-            img: poodle5
+            img: getImg(sanityData?.rubyImage, poodle5)
         },
         {
             id: 2,
@@ -47,7 +70,7 @@ const OurDogs = () => {
             bestTrait: "Calm confidence",
             loves: "Plush toys",
             knownFor: "Expressive eyes",
-            img: poodle22
+            img: getImg(sanityData?.bellaImage, poodle22)
         },
         {
             id: 3,
@@ -62,7 +85,7 @@ const OurDogs = () => {
             bestTrait: "High adaptability",
             loves: "Chasing balls",
             knownFor: "Endless energy",
-            img: poodle11
+            img: getImg(sanityData?.miloImage, poodle11)
         }
     ];
 
@@ -80,13 +103,12 @@ const OurDogs = () => {
             bestTrait: "Gentle soul",
             loves: "Playing fetch",
             knownFor: "Incredible pigment",
-            img: poodle25
+            img: getImg(sanityData?.jasperImage, poodle25)
         }
     ];
 
     const DogCard = ({ dog, type }) => (
         <div className="bg-white border border-brand-blue-500 rounded-3xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full">
-            {/* Image Container */}
             <div className="relative overflow-hidden aspect-[4/5]">
                 <img
                     loading='lazy'
@@ -101,7 +123,6 @@ const OurDogs = () => {
                 </div>
             </div>
 
-            {/* Content */}
             <div className="p-6 sm:p-8 flex flex-col flex-grow">
                 <div className="mb-6">
                     <h3 className="text-3xl md:text-4xl font-black fr text-gray-900 leading-none mb-1">{dog.callName}</h3>
@@ -134,9 +155,6 @@ const OurDogs = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 mt-auto">
-                    {/* <button onClick={() => navigate("/dogs-page")} className="bg-gray-900 text-white text-xs font-bold uppercase py-3 rounded-full hover:bg-brand-pink-700 transition-colors duration-300 cursor-pointer">
-                        Full Profile
-                    </button> */}
                     <button onClick={() => navigate("/#contact")} className="border-2 border-brand-blue-500 text-gray-600 text-xs font-bold uppercase py-3 rounded-full hover:border-brand-pink-500 transition-all duration-300 cursor-pointer">
                         Inquire
                     </button>
@@ -160,12 +178,12 @@ const OurDogs = () => {
                         </p>
                     </div>
                     <div className="grid grid-cols-3 gap-2 h-[400px]">
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={poodle11} className="w-full h-full object-cover grayscale" alt="Poodle 1" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-4"><img src={poodle15} className="w-full h-full object-cover" alt="Poodle 5" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-8"><img src={poodle12} className="w-full h-full object-cover grayscale" alt="Poodle 2" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={poodle14} className="w-full h-full object-cover object-top" alt="Poodle 4" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-4"><img src={poodle13} className="w-full h-full object-cover grayscale" alt="Poodle 3" /></div>
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-8"><img src={poodle16} className="w-full h-full object-cover" alt="Poodle 6" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={getHeroImg(0, poodle11)} className="w-full h-full object-cover grayscale" alt="Poodle 1" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-4"><img src={getHeroImg(1, poodle15)} className="w-full h-full object-cover" alt="Poodle 5" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden translate-y-8"><img src={getHeroImg(2, poodle12)} className="w-full h-full object-cover grayscale" alt="Poodle 2" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden"><img src={getHeroImg(3, poodle14)} className="w-full h-full object-cover object-top" alt="Poodle 4" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-4"><img src={getHeroImg(4, poodle13)} className="w-full h-full object-cover grayscale" alt="Poodle 3" /></div>
+                        <div className="bg-gray-100 rounded-2xl overflow-hidden -translate-y-8"><img src={getHeroImg(5, poodle16)} className="w-full h-full object-cover" alt="Poodle 6" /></div>
                     </div>
                 </div>
             </section>
@@ -273,7 +291,7 @@ const OurDogs = () => {
                     </div>
                     <div className="md:w-1/3">
                         <div className="p-1 border border-brand-pink-700 rounded-3xl">
-                            <img loading="lazy" src={poodle19} className="rounded-3xl w-full h-96 object-cover object-top opacity-70" alt="Retired Poodle" />
+                            <img loading="lazy" src={getImg(sanityData?.retiredImage, poodle19)} className="rounded-3xl w-full h-96 object-cover object-top opacity-70" alt="Retired Poodle" />
                         </div>
                     </div>
                 </div>
@@ -302,7 +320,6 @@ const OurDogs = () => {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };
